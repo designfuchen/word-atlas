@@ -209,9 +209,9 @@ function scheduleSave() {
 export function flush() {
   window.clearTimeout(saveTimer);
   if (!dirty) return;
-  dirty = false;
   const progressOk = loadedId !== state.progress.datasetId || write(progressKey(state.progress.datasetId), state.progress);
   const ok = progressOk && write(SETTINGS_KEY, state.settings);
+  dirty = !ok; // keep the change pending so a later flush retries after a transient failure (e.g. quota)
   if (ok === state.saveError) {
     state = { ...state, saveError: !ok };
     emit();
