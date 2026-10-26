@@ -306,6 +306,8 @@ export function importBackup(text: string): { ok: true; cards: number } | { ok: 
     return { ok: false, error: "这不是词光的学习备份。" };
   const id = state.progress.datasetId;
   if (data.progress.datasetId !== id) return { ok: false, error: "备份来自另一个词库，请先切换到对应词库。" };
+  // Reject an unsupported inner version instead of letting sanitizeProgress empty it and overwrite real cards.
+  if (data.progress.version !== 2) return { ok: false, error: "备份的数据版本不受支持，未做改动。" };
   const progress = sanitizeProgress({ ...data.progress, session: null }, id);
   state = { ...state, progress, settings: { ...sanitizeSettings(data.settings), onboarded: true } };
   emit();
