@@ -152,7 +152,7 @@ export function sanitizeProgress(v: unknown, datasetId: string): Progress {
       )
       .slice(-500);
   const s = v.session;
-  if (isObj(s) && typeof s.id === "string" && Array.isArray(s.steps) && num(s.index, 0) && isObj(s.graded))
+  if (isObj(s) && typeof s.id === "string" && num(s.started, 0) && Array.isArray(s.steps) && num(s.index, 0) && isObj(s.graded) && Array.isArray(s.newIds) && Array.isArray(s.reviewIds))
     out.session = s as unknown as ActiveSession;
   return out;
 }

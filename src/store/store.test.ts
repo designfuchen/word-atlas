@@ -29,3 +29,19 @@ test("rejects other versions and unknown settings", () => {
   assert.equal(s.theme, "dark");
   assert.equal(s.retention, 0.9);
 });
+
+const session = { id: "s1", started: 1, steps: [], index: 0, graded: {}, newIds: [], reviewIds: [] };
+
+test("keeps a well-formed session", () => {
+  const p = sanitizeProgress({ version: 2, session }, "x");
+  assert.equal(p.session?.id, "s1");
+});
+
+test("drops a session missing newIds/reviewIds/started without losing other progress", () => {
+  for (const key of ["newIds", "reviewIds", "started"] as const) {
+    const { [key]: _drop, ...partial } = session;
+    const p = sanitizeProgress({ version: 2, cards: { ok: card }, session: partial }, "word-atlas-open");
+    assert.equal(p.session, null, `session with missing ${key} should be dropped`);
+    assert.deepEqual(Object.keys(p.cards), ["ok"], "the rest of progress is kept");
+  }
+});
