@@ -161,6 +161,8 @@ b2_env = [w for w in words if w["cefr"] == "B2" and w["topic"] == "environment"]
 
 ## 本地运行
 
+[![Launch on PicoRunner](https://picorunner.com/badges/launch.svg)](https://picorunner.com/launch/?repository=https%3A%2F%2Fgithub.com%2Fdesignfuchen%2Fword-atlas)
+
 需要 Node.js 20+。
 
 ```bash
