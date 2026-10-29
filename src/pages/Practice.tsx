@@ -4,8 +4,8 @@ import { prefetch, useAtlas } from "../atlas/context";
 import type { Entry } from "../atlas/types";
 import { play, stopAudio } from "../lib/audio";
 import { cue } from "../lib/sound";
-import { hashSeed, shuffle } from "../lib/text";
-import { clean, correctCharacterCount, same, typingDelta, typingMetrics } from "../lib/typing";
+import { hashSeed } from "../lib/text";
+import { clean, correctCharacterCount, practiceBatch, same, typingDelta, typingMetrics } from "../lib/typing";
 import { store, useStore } from "../store/store";
 import { AmbiencePicker } from "../ui/Ambience";
 import { Illustration } from "../ui/Illustration";
@@ -43,7 +43,7 @@ export function Practice() {
   }, [atlas, progress.cards, progress.mistakes, progress.bookmarks, source, startLevel]);
 
   const start = async () => {
-    const ids = shuffle(pool.slice(0, 60), hashSeed(String(Date.now()))).slice(0, 10);
+    const ids = practiceBatch(pool, hashSeed(String(Date.now())));
     const entries = (await prefetch(atlas, ids)).filter((e): e is Entry => !!e && (mode === "word" || e.ex.length > 0));
     if (entries.length) setRound({ entries, key: Date.now() });
   };
