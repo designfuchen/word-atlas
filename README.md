@@ -12,20 +12,20 @@
 
 [![Code: MIT](https://img.shields.io/badge/Code-MIT-17283B?style=flat-square)](LICENSE)
 [![Dataset: CC BY 4.0](https://img.shields.io/badge/Dataset-CC_BY_4.0-AD5038?style=flat-square)](CONTENT_LICENSE.md)
-[![Follow on X](https://img.shields.io/badge/X-@yangleiocx3-17283B?style=flat-square&logo=x&logoColor=white)](https://x.com/yangleiocx3)
 
 <br>
 
 **词光 iOS App 测试版已开放，免费下载：[api.billswise.cn/app](https://api.billswise.cn/app/)**
 
-</div>
+[![关注 @yangleiocx3](https://img.shields.io/badge/%E5%85%B3%E6%B3%A8%E6%88%91-@yangleiocx3-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/yangleiocx3)
 
-## 请我喝杯咖啡
+### 请我喝杯咖啡
 
 这个项目开源，又免费，我自己投了很多钱和时间。觉得有用的话，请我喝杯咖啡吧。
 
-<table><tr><td align="center"><img src="docs/assets/sponsor/wechatpay.png" width="200" alt="微信赞助二维码"><br>微信</td><td align="center"><img src="docs/assets/sponsor/alipay.png" width="200" alt="支付宝赞助二维码"><br>支付宝</td></tr></table>
+<table><tr><td align="center"><img src="docs/assets/sponsor/wechatpay.png" width="240" alt="微信赞助二维码"><br>微信</td><td align="center"><img src="docs/assets/sponsor/alipay.png" width="240" alt="支付宝赞助二维码"><br>支付宝</td></tr></table>
 
+</div>
 
 ---
 

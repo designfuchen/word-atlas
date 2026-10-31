@@ -12,20 +12,20 @@
 
 [![Code: MIT](https://img.shields.io/badge/Code-MIT-17283B?style=flat-square)](LICENSE)
 [![Dataset: CC BY 4.0](https://img.shields.io/badge/Dataset-CC_BY_4.0-AD5038?style=flat-square)](CONTENT_LICENSE.md)
-[![Follow on X](https://img.shields.io/badge/X-@yangleiocx3-17283B?style=flat-square&logo=x&logoColor=white)](https://x.com/yangleiocx3)
 
 <br>
 
 **The Word Atlas iOS app beta is open and free: [api.billswise.cn/app](https://api.billswise.cn/app/)**
 
-</div>
+[![Follow @yangleiocx3](https://img.shields.io/badge/Follow_me-@yangleiocx3-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/yangleiocx3)
 
-## Buy me a coffee
+### Buy me a coffee
 
 This project is open source and free, and I have put a lot of my own money and time into it. If it helps you, you can buy me a coffee.
 
-<table><tr><td align="center"><img src="docs/assets/sponsor/wechatpay.png" width="200" alt="WeChat Pay QR code"><br>WeChat Pay</td><td align="center"><img src="docs/assets/sponsor/alipay.png" width="200" alt="Alipay QR code"><br>Alipay</td></tr></table>
+<table><tr><td align="center"><img src="docs/assets/sponsor/wechatpay.png" width="240" alt="WeChat Pay QR code"><br>WeChat Pay</td><td align="center"><img src="docs/assets/sponsor/alipay.png" width="240" alt="Alipay QR code"><br>Alipay</td></tr></table>
 
+</div>
 
 ---
 
