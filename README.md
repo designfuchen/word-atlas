@@ -16,11 +16,16 @@
 
 <br>
 
-<a href="https://0xlei.tech/words/"><img src="https://0xlei.tech/words/beta/banner.png" alt="词光 iOS 首批内测：微信扫码加入内测群" width="100%"></a>
-
-**词光 iOS 正在开发，首批内测招募中。** 微信扫上图二维码进群；二维码过期或群满了，打开 [网站](https://0xlei.tech/words/) 点顶栏「内测」，加作者微信拉你进群。
+**词光 iOS App 测试版已开放，免费下载：[api.billswise.cn/app](https://api.billswise.cn/app/)**
 
 </div>
+
+## 请我喝杯咖啡
+
+这个项目开源，又免费，我自己投了很多钱和时间。觉得有用的话，请我喝杯咖啡吧。
+
+<table><tr><td align="center"><img src="docs/assets/sponsor/wechatpay.png" width="200" alt="微信赞助二维码"><br>微信</td><td align="center"><img src="docs/assets/sponsor/alipay.png" width="200" alt="支付宝赞助二维码"><br>支付宝</td></tr></table>
+
 
 ---
 

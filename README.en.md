@@ -16,11 +16,16 @@
 
 <br>
 
-<a href="https://0xlei.tech/words/"><img src="https://0xlei.tech/words/beta/banner.png" alt="Word Atlas iOS beta — scan with WeChat to join the beta group" width="100%"></a>
-
-**The Word Atlas iOS app is in development.** Scan the code with WeChat to join the beta group. If the code has expired, open the [website](https://0xlei.tech/words/) and tap 「内测」 in the top bar to add the author on WeChat.
+**The Word Atlas iOS app beta is open and free: [api.billswise.cn/app](https://api.billswise.cn/app/)**
 
 </div>
+
+## Buy me a coffee
+
+This project is open source and free, and I have put a lot of my own money and time into it. If it helps you, you can buy me a coffee.
+
+<table><tr><td align="center"><img src="docs/assets/sponsor/wechatpay.png" width="200" alt="WeChat Pay QR code"><br>WeChat Pay</td><td align="center"><img src="docs/assets/sponsor/alipay.png" width="200" alt="Alipay QR code"><br>Alipay</td></tr></table>
+
 
 ---
 
