@@ -7,6 +7,9 @@ import { toast } from "./Toast";
 const SERIF = '"Fraunces Variable", "Songti SC", "Noto Serif SC", Georgia, serif';
 const SANS = '-apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif';
 
+/** Distinct words studied this session. The card shows at most 9 thumbnails but reports them all. */
+export const sessionWordCount = (s: ActiveSession) => new Set(s.steps.map((x) => x.id)).size;
+
 const load = (src: string) =>
   new Promise<HTMLImageElement | null>((r) => {
     const i = new Image();
@@ -27,6 +30,7 @@ export async function shareSession(atlas: Atlas, s: ActiveSession) {
     await document.fonts.load(`600 96px ${SERIF}`).catch(() => null);
     ctx.fillStyle = "#F3ECDF";
     ctx.fillRect(0, 0, W, H);
+    const total = sessionWordCount(s);
     const ids = [...new Set(s.steps.map((x) => x.id))].slice(0, 9);
     const refs = ids.map((id) => atlas.byId.get(id)!).filter(Boolean);
     const pad = 64;
@@ -59,10 +63,10 @@ export async function shareSession(atlas: Atlas, s: ActiveSession) {
     const d = new Date();
     ctx.fillStyle = "#8A8C96";
     ctx.font = `500 28px ${SANS}`;
-    ctx.fillText(`${d.getMonth() + 1}月${d.getDate()}日 · 今天点亮了 ${ids.length} 颗星`, pad, top - 24);
+    ctx.fillText(`${d.getMonth() + 1}月${d.getDate()}日 · 今天点亮了 ${total} 颗星`, pad, top - 24);
     ctx.fillStyle = "#1E2640";
     ctx.font = `600 64px ${SERIF}`;
-    ctx.fillText(`学了 ${ids.length} 个词，首次正确 ${st.accuracy}%`, pad, top + 52, W - pad * 2);
+    ctx.fillText(`学了 ${total} 个词，首次正确 ${st.accuracy}%`, pad, top + 52, W - pad * 2);
     const wrong = Object.values(s.graded).filter((g) => g === Rating.Again).length;
     ctx.font = `400 30px ${SANS}`;
     ctx.fillStyle = "#5A6075";
