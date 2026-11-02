@@ -8,8 +8,9 @@
 | --- | --- | --- |
 | `id` | string | URL 安全的唯一标识，同时是媒体文件名，例如 `principle`、`day-off` |
 | `w` | string | 词头 |
-| `uk` / `us` | string | 英式 / 美式 IPA，带斜杠 |
-| `senses` | `{pos, zh, en}[]` | 1–3 个义项：词性、中文释义、简明英文释义 |
+| `uk` / `us` | string | 英式 / 美式 IPA，带斜杠。有 `pron` 时这里放第一读音 |
+| `pron` | `{uk, us}[]` | 可选：一个拼写两个读音时的读音组（全库 14 个词），`senses[i].v` 指回其中一组 |
+| `senses` | `{pos, zh, en, v?}[]` | 1–3 个义项：词性、中文释义、简明英文释义；`v` 是读音组下标，缺省为 0 |
 | `ex` | `{en, zh}[]` | 两条原创例句：`ex[0]` 日常短句，`ex[1]` 雅思语境长句 |
 | `col` | string[] | 常用搭配，格式 `english｜中文` |
 | `fam` | string[] | 词族，格式 `word (pos)` |
