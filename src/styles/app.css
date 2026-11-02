@@ -972,6 +972,41 @@ code {
   flex-wrap: wrap;
   gap: 8px;
 }
+
+/* 同形异音：一个拼写两套读音，一行一组，组号与义项前的圆标对应 */
+.pron-groups {
+  display: grid;
+  gap: 6px;
+}
+.pron-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.pron-idx,
+.sense-v {
+  display: inline-grid;
+  place-items: center;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  color: var(--ink-3);
+  font: 600 10.5px/1 var(--sans);
+  font-variant-numeric: tabular-nums;
+  flex: none;
+}
+.senses.has-pron li {
+  grid-template-columns: 17px 44px 1fr;
+}
+.senses.has-pron .sense-v {
+  align-self: start;
+  margin-top: 4px;
+}
+.senses.has-pron .en {
+  grid-column: 3;
+}
 .speak {
   display: inline-flex;
   align-items: center;

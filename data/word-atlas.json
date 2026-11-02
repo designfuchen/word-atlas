@@ -437,8 +437,18 @@
  },
  {
   "w": "use",
-  "uk": "/juːz/, /juːs/",
-  "us": "/juːz/, /juːs/",
+  "uk": "/juːz/",
+  "us": "/juːz/",
+  "pron": [
+   {
+    "uk": "/juːz/",
+    "us": "/juːz/"
+   },
+   {
+    "uk": "/juːs/",
+    "us": "/juːs/"
+   }
+  ],
   "senses": [
    {
     "pos": "v.",
@@ -448,12 +458,14 @@
    {
     "pos": "n.",
     "zh": "使用；利用",
-    "en": "The act of employing something for a purpose."
+    "en": "The act of employing something for a purpose.",
+    "v": 1
    },
    {
     "pos": "n.",
     "zh": "用途；用处",
-    "en": "A purpose something serves or a way it can help."
+    "en": "A purpose something serves or a way it can help.",
+    "v": 1
    }
   ],
   "ex": [
@@ -491,8 +503,18 @@
  },
  {
   "w": "minute",
-  "uk": "/ˈmɪnɪt/, /maɪˈnjuːt/",
-  "us": "/ˈmɪnɪt/, /maɪˈnuːt/",
+  "uk": "/ˈmɪnɪt/",
+  "us": "/ˈmɪnɪt/",
+  "pron": [
+   {
+    "uk": "/ˈmɪnɪt/",
+    "us": "/ˈmɪnɪt/"
+   },
+   {
+    "uk": "/maɪˈnjuːt/",
+    "us": "/maɪˈnuːt/"
+   }
+  ],
   "senses": [
    {
     "pos": "n.",
@@ -507,7 +529,8 @@
    {
     "pos": "adj.",
     "zh": "极小的；微细的",
-    "en": "Extremely small in size or amount"
+    "en": "Extremely small in size or amount",
+    "v": 1
    }
   ],
   "ex": [
@@ -18645,8 +18668,18 @@
  },
  {
   "w": "mouth",
-  "uk": "/maʊθ/ (n.); /maʊð/ (v.)",
-  "us": "/maʊθ/ (n.); /maʊð/ (v.)",
+  "uk": "/maʊθ/",
+  "us": "/maʊθ/",
+  "pron": [
+   {
+    "uk": "/maʊθ/",
+    "us": "/maʊθ/"
+   },
+   {
+    "uk": "/maʊð/",
+    "us": "/maʊð/"
+   }
+  ],
   "senses": [
    {
     "pos": "n.",
@@ -18661,7 +18694,8 @@
    {
     "pos": "v.",
     "zh": "用口形无声地说",
-    "en": "to form words with your lips without making a sound"
+    "en": "to form words with your lips without making a sound",
+    "v": 1
    }
   ],
   "ex": [
@@ -20689,8 +20723,18 @@
  },
  {
   "w": "live",
-  "uk": "/lɪv/, /laɪv/",
-  "us": "/lɪv/, /laɪv/",
+  "uk": "/lɪv/",
+  "us": "/lɪv/",
+  "pron": [
+   {
+    "uk": "/lɪv/",
+    "us": "/lɪv/"
+   },
+   {
+    "uk": "/laɪv/",
+    "us": "/laɪv/"
+   }
+  ],
   "senses": [
    {
     "pos": "v.",
@@ -20700,12 +20744,14 @@
    {
     "pos": "adj.",
     "zh": "现场直播的；现场的",
-    "en": "broadcast or performed as it happens, rather than recorded"
+    "en": "broadcast or performed as it happens, rather than recorded",
+    "v": 1
    },
    {
     "pos": "adj.",
     "zh": "活的",
-    "en": "alive rather than dead"
+    "en": "alive rather than dead",
+    "v": 1
    }
   ],
   "ex": [
@@ -30005,8 +30051,18 @@
  },
  {
   "w": "close",
-  "uk": "/kləʊz/, /kləʊs/",
-  "us": "/kloʊz/, /kloʊs/",
+  "uk": "/kləʊz/",
+  "us": "/kloʊz/",
+  "pron": [
+   {
+    "uk": "/kləʊz/",
+    "us": "/kloʊz/"
+   },
+   {
+    "uk": "/kləʊs/",
+    "us": "/kloʊs/"
+   }
+  ],
   "senses": [
    {
     "pos": "v.",
@@ -30016,12 +30072,14 @@
    {
     "pos": "adj.",
     "zh": "近的；亲密的",
-    "en": "Near in distance or connected by a strong personal relationship"
+    "en": "Near in distance or connected by a strong personal relationship",
+    "v": 1
    },
    {
     "pos": "adv.",
     "zh": "靠近；接近",
-    "en": "At a short distance from someone or something"
+    "en": "At a short distance from someone or something",
+    "v": 1
    }
   ],
   "ex": [
@@ -49889,8 +49947,18 @@
  },
  {
   "w": "present",
-  "uk": "/ˈprezənt/; /prɪˈzent/",
-  "us": "/ˈprezənt/; /prɪˈzent/",
+  "uk": "/ˈprezənt/",
+  "us": "/ˈprezənt/",
+  "pron": [
+   {
+    "uk": "/ˈprezənt/",
+    "us": "/ˈprezənt/"
+   },
+   {
+    "uk": "/prɪˈzent/",
+    "us": "/prɪˈzent/"
+   }
+  ],
   "senses": [
    {
     "pos": "adj.",
@@ -49900,7 +49968,8 @@
    {
     "pos": "v.",
     "zh": "展示；提出；颁发",
-    "en": "to show, explain or formally give something"
+    "en": "to show, explain or formally give something",
+    "v": 1
    },
    {
     "pos": "n.",
@@ -63049,8 +63118,18 @@
  },
  {
   "w": "project",
-  "uk": "/ˈprɒdʒekt/; /prəˈdʒekt/",
-  "us": "/ˈprɑːdʒekt/; /prəˈdʒekt/",
+  "uk": "/ˈprɒdʒekt/",
+  "us": "/ˈprɑːdʒekt/",
+  "pron": [
+   {
+    "uk": "/ˈprɒdʒekt/",
+    "us": "/ˈprɑːdʒekt/"
+   },
+   {
+    "uk": "/prəˈdʒekt/",
+    "us": "/prəˈdʒekt/"
+   }
+  ],
   "senses": [
    {
     "pos": "n.",
@@ -63060,12 +63139,14 @@
    {
     "pos": "v.",
     "zh": "预计；预测",
-    "en": "To estimate a future amount or situation using current information."
+    "en": "To estimate a future amount or situation using current information.",
+    "v": 1
    },
    {
     "pos": "v.",
     "zh": "投射；放映",
-    "en": "To send light or images onto a surface."
+    "en": "To send light or images onto a surface.",
+    "v": 1
    }
   ],
   "ex": [
@@ -76420,8 +76501,18 @@
  },
  {
   "w": "wind",
-  "uk": "/wɪnd/, /waɪnd/",
-  "us": "/wɪnd/, /waɪnd/",
+  "uk": "/wɪnd/",
+  "us": "/wɪnd/",
+  "pron": [
+   {
+    "uk": "/wɪnd/",
+    "us": "/wɪnd/"
+   },
+   {
+    "uk": "/waɪnd/",
+    "us": "/waɪnd/"
+   }
+  ],
   "senses": [
    {
     "pos": "n.",
@@ -76431,12 +76522,14 @@
    {
     "pos": "v.",
     "zh": "缠绕；卷绕",
-    "en": "To wrap something around an object or itself."
+    "en": "To wrap something around an object or itself.",
+    "v": 1
    },
    {
     "pos": "v.",
     "zh": "蜿蜒；曲折延伸",
-    "en": "To follow a route with many bends and turns."
+    "en": "To follow a route with many bends and turns.",
+    "v": 1
    }
   ],
   "ex": [
@@ -82426,8 +82519,18 @@
  },
  {
   "w": "content",
-  "uk": "/ˈkɒntent/; /kənˈtent/",
-  "us": "/ˈkɑːntent/; /kənˈtent/",
+  "uk": "/ˈkɒntent/",
+  "us": "/ˈkɑːntent/",
+  "pron": [
+   {
+    "uk": "/ˈkɒntent/",
+    "us": "/ˈkɑːntent/"
+   },
+   {
+    "uk": "/kənˈtent/",
+    "us": "/kənˈtent/"
+   }
+  ],
   "senses": [
    {
     "pos": "n.",
@@ -82437,12 +82540,14 @@
    {
     "pos": "adj.",
     "zh": "满意的；知足的",
-    "en": "Happy with what you have or with your situation"
+    "en": "Happy with what you have or with your situation",
+    "v": 1
    },
    {
     "pos": "v.",
     "zh": "使满足；使满意",
-    "en": "To make someone satisfied with what is available"
+    "en": "To make someone satisfied with what is available",
+    "v": 1
    }
   ],
   "ex": [
@@ -87514,8 +87619,18 @@
  },
  {
   "w": "object",
-  "uk": "/ˈɒbdʒɪkt/; /əbˈdʒekt/",
-  "us": "/ˈɑːbdʒekt/; /əbˈdʒekt/",
+  "uk": "/ˈɒbdʒɪkt/",
+  "us": "/ˈɑːbdʒɪkt/",
+  "pron": [
+   {
+    "uk": "/ˈɒbdʒɪkt/",
+    "us": "/ˈɑːbdʒɪkt/"
+   },
+   {
+    "uk": "/əbˈdʒekt/",
+    "us": "/əbˈdʒekt/"
+   }
+  ],
   "senses": [
    {
     "pos": "n.",
@@ -87525,7 +87640,8 @@
    {
     "pos": "v.",
     "zh": "反对",
-    "en": "to express disagreement with something"
+    "en": "to express disagreement with something",
+    "v": 1
    },
    {
     "pos": "n.",
@@ -98321,8 +98437,18 @@
  },
  {
   "w": "produce",
-  "uk": "/prəˈdjuːs/; /ˈprɒdjuːs/",
-  "us": "/prəˈduːs/; /ˈproʊduːs/",
+  "uk": "/prəˈdjuːs/",
+  "us": "/prəˈduːs/",
+  "pron": [
+   {
+    "uk": "/prəˈdjuːs/",
+    "us": "/prəˈduːs/"
+   },
+   {
+    "uk": "/ˈprɒdjuːs/",
+    "us": "/ˈproʊduːs/"
+   }
+  ],
   "senses": [
    {
     "pos": "v.",
@@ -98337,7 +98463,8 @@
    {
     "pos": "n.",
     "zh": "农产品",
-    "en": "Food grown on farms, especially fruit and vegetables."
+    "en": "Food grown on farms, especially fruit and vegetables.",
+    "v": 1
    }
   ],
   "ex": [
@@ -103333,8 +103460,18 @@
  },
  {
   "w": "tear",
-  "uk": "/teə/, /tɪə/",
-  "us": "/ter/, /tɪr/",
+  "uk": "/teə/",
+  "us": "/ter/",
+  "pron": [
+   {
+    "uk": "/teə/",
+    "us": "/ter/"
+   },
+   {
+    "uk": "/tɪə/",
+    "us": "/tɪr/"
+   }
+  ],
   "senses": [
    {
     "pos": "v.",
@@ -103344,7 +103481,8 @@
    {
     "pos": "n.",
     "zh": "眼泪",
-    "en": "A drop of liquid that comes from your eye."
+    "en": "A drop of liquid that comes from your eye.",
+    "v": 1
    },
    {
     "pos": "n.",
@@ -126295,8 +126433,18 @@
  },
  {
   "w": "separate",
-  "uk": "/ˈseprət/ (adj.); /ˈsepəreɪt/ (v.)",
-  "us": "/ˈseprət/ (adj.); /ˈsepəreɪt/ (v.)",
+  "uk": "/ˈseprət/",
+  "us": "/ˈseprət/",
+  "pron": [
+   {
+    "uk": "/ˈseprət/",
+    "us": "/ˈseprət/"
+   },
+   {
+    "uk": "/ˈsepəreɪt/",
+    "us": "/ˈsepəreɪt/"
+   }
+  ],
   "senses": [
    {
     "pos": "adj.",
@@ -126306,7 +126454,8 @@
    {
     "pos": "v.",
     "zh": "分开；分离",
-    "en": "to divide things or move them apart"
+    "en": "to divide things or move them apart",
+    "v": 1
    }
   ],
   "ex": [
@@ -240358,8 +240507,18 @@
  },
  {
   "w": "bow",
-  "uk": "/bəʊ/; /baʊ/",
-  "us": "/boʊ/; /baʊ/",
+  "uk": "/bəʊ/",
+  "us": "/boʊ/",
+  "pron": [
+   {
+    "uk": "/bəʊ/",
+    "us": "/boʊ/"
+   },
+   {
+    "uk": "/baʊ/",
+    "us": "/baʊ/"
+   }
+  ],
   "senses": [
    {
     "pos": "n.",
@@ -240374,7 +240533,8 @@
    {
     "pos": "v.",
     "zh": "鞠躬；低头",
-    "en": "To bend your head or body forward, often showing respect."
+    "en": "To bend your head or body forward, often showing respect.",
+    "v": 1
    }
   ],
   "ex": [

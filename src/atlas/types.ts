@@ -7,6 +7,18 @@ export interface Sense {
   pos: string;
   zh: string;
   en: string;
+  /** Which reading in `Entry.pron` says this sense; absent means the only one. */
+  v?: number;
+}
+
+/**
+ * One reading of a word that is spelled the same but said two ways — `tear` as
+ * in rip (`/teə/`) and as in crying (`/tɪə/`). Senses point back at a group
+ * through `Sense.v`, so a card can say which meaning goes with which sound.
+ */
+export interface Pron {
+  uk: string;
+  us: string;
 }
 
 export interface Example {
@@ -19,6 +31,8 @@ export interface Entry {
   w: string;
   uk: string;
   us: string;
+  /** Present only when the spelling covers more than one pronunciation. */
+  pron?: Pron[];
   senses: Sense[];
   ex: Example[];
   col: string[];
@@ -33,7 +47,15 @@ export interface Entry {
   /** Media bit flags, see MEDIA. */
   m: number;
   /** Absolute media URLs for datasets that do not follow the atlas layout. */
-  media?: { img?: string | null; uk?: string | null; us?: string | null; ex?: string | null; ex2?: string | null };
+  media?: {
+    img?: string | null;
+    uk?: string | null;
+    us?: string | null;
+    uk2?: string | null;
+    us2?: string | null;
+    ex?: string | null;
+    ex2?: string | null;
+  };
 }
 
 export const MEDIA = { img: 1, uk: 2, us: 4, ex: 8, ex2: 16 } as const;
@@ -65,5 +87,11 @@ export interface Atlas {
   entry: (id: string) => Promise<Entry>;
   peek: (id: string) => Entry | undefined;
   img: (ref: WordRef | Entry, size?: "thumb" | "full") => string | null;
-  audio: (ref: WordRef | Entry, kind: "uk" | "us" | "ex" | "ex2") => string | null;
+  /**
+   * `variant` selects a reading group for words with `pron`. Group 0 is the
+   * ordinary recording and needs no bit; groups 1+ live in `audio/<kind>2/`,
+   * which each build fills from its own source (TTS for share, OALDPEX for
+   * private), so the media bits say nothing about them.
+   */
+  audio: (ref: WordRef | Entry, kind: "uk" | "us" | "ex" | "ex2", variant?: number) => string | null;
 }

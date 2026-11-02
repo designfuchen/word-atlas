@@ -1,0 +1,104 @@
+{
+  "version": 1,
+  "about": "Words whose spelling covers two pronunciations. `senses` maps each sense to a group in `pron`; `src` is the OALDPEX recording for that group, copied verbatim because the file names cannot be derived. Consumed by apply_pron.py and import_audio.py --heteronyms.",
+  "words": {
+    "tear": {
+      "senses": [0, 1, 0],
+      "pron": [
+        { "uk": "/teə/", "us": "/ter/", "src": { "uk": "tear__gb_1.mp3", "us": "tear__us_1.mp3" } },
+        { "uk": "/tɪə/", "us": "/tɪr/", "src": { "uk": "tear__gb_2.mp3", "us": "tear__us_2.mp3" } }
+      ]
+    },
+    "use": {
+      "senses": [0, 1, 1],
+      "pron": [
+        { "uk": "/juːz/", "us": "/juːz/", "src": { "uk": "use__gb_3.mp3", "us": "use__us_1.mp3" } },
+        { "uk": "/juːs/", "us": "/juːs/", "src": { "uk": "use__gb_4.mp3", "us": "use__us_2.mp3" } }
+      ]
+    },
+    "wind": {
+      "senses": [0, 1, 1],
+      "pron": [
+        { "uk": "/wɪnd/", "us": "/wɪnd/", "src": { "uk": "wind__gb_1.mp3", "us": "wind__us_1.mp3" } },
+        { "uk": "/waɪnd/", "us": "/waɪnd/", "src": { "uk": "wind__gb_2.mp3", "us": "wind__us_2.mp3" } }
+      ]
+    },
+    "present": {
+      "senses": [0, 1, 0],
+      "pron": [
+        { "uk": "/ˈprezənt/", "us": "/ˈprezənt/", "src": { "uk": "present__gb_4.mp3", "us": "present__us_1.mp3" } },
+        { "uk": "/prɪˈzent/", "us": "/prɪˈzent/", "src": { "uk": "present__gb_3.mp3", "us": "present__us_3.mp3" } }
+      ]
+    },
+    "minute": {
+      "senses": [0, 0, 1],
+      "pron": [
+        { "uk": "/ˈmɪnɪt/", "us": "/ˈmɪnɪt/", "src": { "uk": "minute__gb_1.mp3", "us": "minute__us_1.mp3" } },
+        { "uk": "/maɪˈnjuːt/", "us": "/maɪˈnuːt/", "src": { "uk": "minute__gb_2.mp3", "us": "minute__us_3.mp3" } }
+      ]
+    },
+    "close": {
+      "senses": [0, 1, 1],
+      "pron": [
+        { "uk": "/kləʊz/", "us": "/kloʊz/", "src": { "uk": "close__gb_1.mp3", "us": "close__us_1.mp3" } },
+        { "uk": "/kləʊs/", "us": "/kloʊs/", "src": { "uk": "close__gb_2.mp3", "us": "close__us_2.mp3" } }
+      ]
+    },
+    "live": {
+      "senses": [0, 1, 1],
+      "pron": [
+        { "uk": "/lɪv/", "us": "/lɪv/", "src": { "uk": "live__gb_1.mp3", "us": "live__us_1.mp3" } },
+        { "uk": "/laɪv/", "us": "/laɪv/", "src": { "uk": "live__gb_2.mp3", "us": "live__us_2.mp3" } }
+      ]
+    },
+    "bow": {
+      "senses": [0, 0, 1],
+      "pron": [
+        { "uk": "/bəʊ/", "us": "/boʊ/", "src": { "uk": "bow__gb_4.mp3", "us": "bow__us_3.mp3" } },
+        { "uk": "/baʊ/", "us": "/baʊ/", "src": { "uk": "bow__gb_3.mp3", "us": "bow__us_1.mp3" } }
+      ]
+    },
+    "object": {
+      "senses": [0, 1, 0],
+      "pron": [
+        { "uk": "/ˈɒbdʒɪkt/", "us": "/ˈɑːbdʒɪkt/", "src": { "uk": "object__gb_1.mp3", "us": "object__us_1_rr.mp3" } },
+        { "uk": "/əbˈdʒekt/", "us": "/əbˈdʒekt/", "src": { "uk": "object__gb_2.mp3", "us": "object__us_3.mp3" } }
+      ]
+    },
+    "produce": {
+      "senses": [0, 0, 1],
+      "pron": [
+        { "uk": "/prəˈdjuːs/", "us": "/prəˈduːs/", "src": { "uk": "produce__gb_1.mp3", "us": "produce__us_1.mp3" } },
+        { "uk": "/ˈprɒdjuːs/", "us": "/ˈproʊduːs/", "src": { "uk": "produce__gb_2.mp3", "us": "produce__us_3.mp3" } }
+      ]
+    },
+    "content": {
+      "senses": [0, 1, 1],
+      "pron": [
+        { "uk": "/ˈkɒntent/", "us": "/ˈkɑːntent/", "src": { "uk": "xcontent__gb_3.mp3", "us": "xcontent__us_1.mp3" } },
+        { "uk": "/kənˈtent/", "us": "/kənˈtent/", "src": { "uk": "xcontent__gb_2.mp3", "us": "xcontent__us_2.mp3" } }
+      ]
+    },
+    "separate": {
+      "senses": [0, 1],
+      "pron": [
+        { "uk": "/ˈseprət/", "us": "/ˈseprət/", "src": { "uk": "separate__gb_3.mp3", "us": "separate__us_1.mp3" } },
+        { "uk": "/ˈsepəreɪt/", "us": "/ˈsepəreɪt/", "src": { "uk": "separate__gb_2.mp3", "us": "separate__us_2.mp3" } }
+      ]
+    },
+    "mouth": {
+      "senses": [0, 0, 1],
+      "pron": [
+        { "uk": "/maʊθ/", "us": "/maʊθ/", "src": { "uk": "mouth__gb_3.mp3", "us": "mouth__us_1.mp3" } },
+        { "uk": "/maʊð/", "us": "/maʊð/", "src": { "uk": "mouth__gb_2.mp3", "us": "mouth__us_2.mp3" } }
+      ]
+    },
+    "project": {
+      "senses": [0, 1, 1],
+      "pron": [
+        { "uk": "/ˈprɒdʒekt/", "us": "/ˈprɑːdʒekt/", "src": { "uk": "project__gb_3.mp3", "us": "project__us_1_rr.mp3" } },
+        { "uk": "/prəˈdʒekt/", "us": "/prəˈdʒekt/", "src": { "uk": "project__gb_2.mp3", "us": "project__us_2.mp3" } }
+      ]
+    }
+  }
+}
