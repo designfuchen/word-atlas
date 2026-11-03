@@ -1,0 +1,556 @@
+{
+  "id": "54bb395d-3e60-4c94-b525-85523901575b",
+  "revision": 0,
+  "last_node_id": 500,
+  "last_link_id": 800,
+  "nodes": [
+    {
+      "id": 13,
+      "type": "ResolutionSelector",
+      "pos": [
+        140,
+        680
+      ],
+      "size": [
+        300,
+        190
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            701
+          ]
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            702
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ResolutionSelector"
+      },
+      "widgets_values": [
+        "1:1 (Square)",
+        1,
+        8
+      ],
+      "widgets_values_named": {
+        "aspect_ratio": "1:1 (Square)",
+        "megapixels": 1,
+        "multiple": 8
+      },
+      "showAdvanced": true
+    },
+    {
+      "id": 451,
+      "type": "UnetLoaderGGUF",
+      "pos": [
+        140,
+        100
+      ],
+      "size": [
+        380,
+        90
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            703
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UnetLoaderGGUF"
+      },
+      "widgets_values": [
+        "qwen-image-2.1-UC-Q4_K_M.gguf"
+      ],
+      "widgets_values_named": {
+        "unet_name": "qwen-image-2.1-UC-Q4_K_M.gguf"
+      }
+    },
+    {
+      "id": 453,
+      "type": "CLIPLoader",
+      "pos": [
+        140,
+        240
+      ],
+      "size": [
+        380,
+        120
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            704
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": [
+        "qwen3vl_8b_bf16.safetensors",
+        "qwen_image",
+        "default"
+      ],
+      "widgets_values_named": {
+        "clip_name": "qwen3vl_8b_bf16.safetensors",
+        "type": "qwen_image",
+        "device": "default"
+      }
+    },
+    {
+      "id": 454,
+      "type": "VAELoader",
+      "pos": [
+        140,
+        420
+      ],
+      "size": [
+        380,
+        70
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            705
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "qwen_image_2.1_vae_bf16.safetensors"
+      ],
+      "widgets_values_named": {
+        "vae_name": "qwen_image_2.1_vae_bf16.safetensors"
+      }
+    },
+    {
+      "id": 456,
+      "type": "EmptyLatentImage",
+      "pos": [
+        480,
+        680
+      ],
+      "size": [
+        300,
+        120
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 701
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 702
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            706
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        1
+      ],
+      "widgets_values_named": {
+        "width": 1024,
+        "height": 1024,
+        "batch_size": 1
+      }
+    },
+    {
+      "id": 452,
+      "type": "TextEncodeQwenImage21",
+      "pos": [
+        560,
+        100
+      ],
+      "size": [
+        480,
+        640
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 704
+        },
+        {
+          "name": "images.image_1",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            707
+          ]
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [
+            708
+          ]
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TextEncodeQwenImage21"
+      },
+      "widgets_values": [
+        "Illustrate this everyday moment, and nothing else: {{example_en}}\n\nThe headword is {{word}} ({{pos}} — {{sense_en}}); it is what the picture is about. Draw the same action, the same objects, the same number of people or things, the same place, and the same time of day the moment states. If it states a habitual or general truth rather than one event, depict the typical instance it implies, at the moment it puts itself in: morning sunlight must actually flood the room, rain must actually be falling, a weekly lunch must actually be laid on the table. Keep every element it names visible and recognisable, and add no people, animals, props, buildings, vehicles or weather it does not imply. Never swap the moment for a metaphor, a symbol, a mood board or a collage.\n\nArt direction: mid-century modern editorial illustration, like a plate from a vintage illustrated field guide. Limited palette of deep ink navy, warm terracotta, mustard ochre, muted sage green and soft sky blue on warm cream paper. Flat geometric shapes, confident clean silhouettes, subtle risograph grain and paper texture, gentle shading, generous negative space, centered square composition, calm and charming mood, one clear focal group or a readable action with every participant visible, textless.",
+        "text, letters, typography, words, numbers, digits, captions, subtitles, lettering, handwriting, paragraphs, signage, labels, brand logos, headline, title card, poster, banner, book cover, mockup, watermark, signature, border, frame, panel dividers, collage, split screen, mood board, abstract symbolism, extra people, extra fingers, extra limbs, deformed hands, distorted faces, cluttered composition, photographic realism, 3d render, glossy plastic, neon colours, muddy colours, low contrast, blurry, jpeg artifacts",
+        1024
+      ],
+      "widgets_values_named": {
+        "prompt": "Illustrate this everyday moment, and nothing else: {{example_en}}\n\nThe headword is {{word}} ({{pos}} — {{sense_en}}); it is what the picture is about. Draw the same action, the same objects, the same number of people or things, the same place, and the same time of day the moment states. If it states a habitual or general truth rather than one event, depict the typical instance it implies, at the moment it puts itself in: morning sunlight must actually flood the room, rain must actually be falling, a weekly lunch must actually be laid on the table. Keep every element it names visible and recognisable, and add no people, animals, props, buildings, vehicles or weather it does not imply. Never swap the moment for a metaphor, a symbol, a mood board or a collage.\n\nArt direction: mid-century modern editorial illustration, like a plate from a vintage illustrated field guide. Limited palette of deep ink navy, warm terracotta, mustard ochre, muted sage green and soft sky blue on warm cream paper. Flat geometric shapes, confident clean silhouettes, subtle risograph grain and paper texture, gentle shading, generous negative space, centered square composition, calm and charming mood, one clear focal group or a readable action with every participant visible, textless.",
+        "negative_prompt": "text, letters, typography, words, numbers, digits, captions, subtitles, lettering, handwriting, paragraphs, signage, labels, brand logos, headline, title card, poster, banner, book cover, mockup, watermark, signature, border, frame, panel dividers, collage, split screen, mood board, abstract symbolism, extra people, extra fingers, extra limbs, deformed hands, distorted faces, cluttered composition, photographic realism, 3d render, glossy plastic, neon colours, muddy colours, low contrast, blurry, jpeg artifacts",
+        "resolution": 1024
+      }
+    },
+    {
+      "id": 458,
+      "type": "KSampler",
+      "pos": [
+        1080,
+        100
+      ],
+      "size": [
+        300,
+        380
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 703
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 707
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 708
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 706
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            709
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        593103825222985,
+        "randomize",
+        25,
+        2.5,
+        "euler",
+        "simple",
+        1.0
+      ],
+      "widgets_values_named": {
+        "seed": 593103825222985,
+        "control_after_generate": "randomize",
+        "steps": 25,
+        "cfg": 2.5,
+        "sampler_name": "euler",
+        "scheduler": "simple",
+        "denoise": 1.0
+      }
+    },
+    {
+      "id": 457,
+      "type": "VAEDecode",
+      "pos": [
+        1420,
+        100
+      ],
+      "size": [
+        230,
+        60
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 709
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 705
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            710
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 461,
+      "type": "SaveImageAdvanced",
+      "pos": [
+        1690,
+        100
+      ],
+      "size": [
+        500,
+        300
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 710
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": []
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "word-atlas/scene",
+        "png",
+        "8-bit",
+        "sRGB"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "word-atlas/scene",
+        "format": "png",
+        "format.bit_depth": "8-bit",
+        "format.input_color_space": "sRGB"
+      }
+    },
+    {
+      "id": 500,
+      "type": "Note",
+      "pos": [
+        1690,
+        440
+      ],
+      "size": [
+        500,
+        400
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "word-atlas 单词生图模板 v4 —— 例句是剧本，风格是外衣\n\n顺序：例句（无引号）→ 词条锚点 → 画风。\n\n为什么没有引号：v3 把例句加引号放首行，Qwen-Image 直接把它当海报标题排了出来，整张图变成带正文的版式。引号 = 待排版文本，删掉引号、改成陈述句后文字消失。\n\n占位符（scripts/atlas/gen_images_comfy.py 自动填充）：\n{{example_en}}  日常例句 ex[0].en，必填，唯一场景依据\n{{word}}       词形\n{{pos}}        词性\n{{sense_en}}   英文释义（senses[0]）\n\ncfg ≥2 才能让 negative prompt 生效（当前 2.5）；蒸馏少步模型降回 1.0。\n\n验收：不懂英文的人看图能指出该词对应的事物/动作，画面元素不超出例句，且画面里没有字。"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    }
+  ],
+  "links": [
+    [
+      701,
+      13,
+      0,
+      456,
+      0,
+      "INT"
+    ],
+    [
+      702,
+      13,
+      1,
+      456,
+      1,
+      "INT"
+    ],
+    [
+      703,
+      451,
+      0,
+      458,
+      0,
+      "MODEL"
+    ],
+    [
+      704,
+      453,
+      0,
+      452,
+      0,
+      "CLIP"
+    ],
+    [
+      705,
+      454,
+      0,
+      457,
+      1,
+      "VAE"
+    ],
+    [
+      706,
+      456,
+      0,
+      458,
+      3,
+      "LATENT"
+    ],
+    [
+      707,
+      452,
+      0,
+      458,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      708,
+      452,
+      1,
+      458,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      709,
+      458,
+      0,
+      457,
+      0,
+      "LATENT"
+    ],
+    [
+      710,
+      457,
+      0,
+      461,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "frontendVersion": "1.53.7",
+    "wordAtlas": {
+      "template": "word-scene-v4",
+      "sceneSource": "data/word-atlas.json -> ex[0].en (everyday example sentence)",
+      "placeholders": [
+        "example_en",
+        "word",
+        "pos",
+        "sense_en"
+      ],
+      "runner": "python3 scripts/atlas/gen_images_comfy.py"
+    }
+  },
+  "version": 0.4
+}
