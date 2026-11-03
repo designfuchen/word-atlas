@@ -1,31 +1,10 @@
 import { CornerDownLeft, Search } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
-import type { Atlas, WordRef } from "../atlas/types";
+import type { WordRef } from "../atlas/types";
 import { useAtlas } from "../atlas/context";
+import { isChinese, matchSense, searchAtlas } from "../lib/search";
 import { openWord } from "../lib/router";
 import { Illustration } from "./Illustration";
-
-export function searchAtlas(atlas: Atlas, raw: string, limit = 40): WordRef[] {
-  const q = raw.trim().toLowerCase();
-  if (!q) return [];
-  const zh = /[一-鿿]/.test(q);
-  const hits: [number, WordRef][] = [];
-  for (const w of atlas.words) {
-    let score = 0;
-    if (zh) {
-      const i = w.zh.indexOf(q);
-      if (i >= 0) score = 60 - Math.min(40, i) - w.zh.length * 0.2;
-    } else {
-      const word = w.word.toLowerCase();
-      if (word === q) score = 1000;
-      else if (word.startsWith(q)) score = 500 - word.length;
-      else if (word.includes(q)) score = 200 - word.indexOf(q) - word.length;
-    }
-    if (score > 0) hits.push([score, w]);
-  }
-  hits.sort((a, b) => b[0] - a[0] || a[1].order - b[1].order);
-  return hits.slice(0, limit).map((h) => h[1]);
-}
 
 export function Palette({ open, onClose }: { open: boolean; onClose: () => void }) {
   const atlas = useAtlas();
@@ -33,6 +12,10 @@ export function Palette({ open, onClose }: { open: boolean; onClose: () => void 
   const [sel, setSel] = useState(0);
   const input = useRef<HTMLInputElement>(null);
   const results = useMemo(() => searchAtlas(atlas, q, 30), [atlas, q]);
+  // When a hit comes from a later sense (缠绕 on `wind`), show that sense, not
+  // the first one — otherwise the result looks unrelated to what was typed.
+  const term = q.trim();
+  const gloss = (w: WordRef) => (isChinese(term) ? (matchSense(w, term)?.sense ?? w.zh) : w.zh);
   useEffect(() => {
     if (open) {
       setQ("");
@@ -90,14 +73,14 @@ export function Palette({ open, onClose }: { open: boolean; onClose: () => void 
               <span className="palette-word" lang="en">
                 {w.word}
               </span>
-              <span className="palette-zh">{w.zh}</span>
+              <span className="palette-zh">{gloss(w)}</span>
               {i === sel && <CornerDownLeft size={15} className="palette-enter" />}
             </li>
           ))}
           {q && !results.length && <li className="palette-empty">没有找到「{q}」</li>}
           {!q && (
             <li className="palette-hint">
-              {atlas.count.toLocaleString()} 个词条 · 支持英文前缀与中文释义搜索 · <kbd>↑</kbd>
+              {atlas.count.toLocaleString()} 个词条 · 支持英文前缀与全部中文义项搜索 · <kbd>↑</kbd>
               <kbd>↓</kbd> 选择 <kbd>↵</kbd> 打开
             </li>
           )}

@@ -25,7 +25,7 @@
 
 ## 网页数据 `public/atlas/`
 
-- `index.json`：紧凑索引，`words` 中每行为 `[id, word, zh, ipa, cefrIndex, topicIndex, media]`。`media` 是位标记：`1` 插画、`2` 英音、`4` 美音、`8` 例句朗读。
+- `index.json`：紧凑索引，`words` 中每行为 `[id, word, zh, ipa, cefrIndex, topicIndex, media, more]`。`media` 是位标记：`1` 插画、`2` 英音、`4` 美音、`8` 例句朗读。`more` 是第一个义项之外的其他义项（`词性 释义`，用 `|` 连接，可能为空字符串），供中文搜索命中「wind → 缠绕 / 蜿蜒」这类后续义项；`zh` 仍只放第一个义项，列表和卡片显示的就是它。
 - `entries/<n>.json`：完整词条，每块 100 条，第 `n` 块对应索引中第 `n*100` 到 `n*100+99` 行。
 - `img/<id>.webp`（512px）、`thumb/<id>.webp`（256px）。
 - `audio/uk/<id>.mp3`、`audio/us/<id>.mp3`、`audio/ex/<id>.mp3`（`ex[0]` 的朗读）。

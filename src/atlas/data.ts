@@ -24,6 +24,7 @@ export async function loadOpenAtlas(): Promise<Atlas> {
     id: r[0],
     word: r[1],
     zh: r[2],
+    more: r[7] || undefined,
     ipa: r[3],
     cefr: r[4],
     topic: r[5],
@@ -134,10 +135,15 @@ export async function loadPrivateAtlas(open: Atlas | null): Promise<Atlas | null
       m: (w.image ? MEDIA.img : 0) | (w.uk ? MEDIA.uk : 0) | (w.us ? MEDIA.us : 0) | (w.sentenceAudio ? MEDIA.ex : 0),
       media: { img: w.image, uk: w.uk, us: w.us, ex: w.sentenceAudio },
     });
+    const sense = entries.get(w.id)!.senses;
     return {
       id: w.id,
       word: w.word,
       zh: `${pos} ${zh}`.trim(),
+      more: sense
+        .slice(1)
+        .map((s) => `${s.pos} ${s.zh}`.trim())
+        .join("|") || undefined,
       ipa: w.phonetic,
       cefr: twin?.cefr ?? 2,
       topic: twin?.topic ?? 16,
