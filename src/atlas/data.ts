@@ -78,7 +78,11 @@ export async function loadOpenAtlas(): Promise<Atlas> {
       ("media" in ref && typeof ref.media === "number" ? ref.media : (ref as Entry).m) & MEDIA.img
         ? url(`${size === "thumb" ? "thumb" : "img"}/${ref.id}.webp`)
         : null,
-    audio(ref, kind) {
+    audio(ref, kind, variant = 0) {
+      // A second reading has no media bit: the share build fills `audio/uk2`
+      // from its own voice, the private build from OALDPEX, and neither ships
+      // the other's files. Group 0 keeps the ordinary bit-gated path.
+      if (variant > 0) return kind === "uk" || kind === "us" ? url(`audio/${kind}2/${ref.id}.mp3`) : null;
       const m = "media" in ref && typeof ref.media === "number" ? ref.media : (ref as Entry).m;
       const bit = MEDIA[kind];
       return m & bit ? url(`audio/${kind}/${ref.id}.mp3`) : null;
@@ -165,6 +169,15 @@ export async function loadPrivateAtlas(open: Atlas | null): Promise<Atlas | null
       return e;
     },
     img: (ref) => pick(ref)?.img ?? null,
-    audio: (ref, kind) => pick(ref)?.[kind] ?? null,
+    audio: (ref, kind, variant = 0) => {
+      const m = pick(ref);
+      if (!m) return null;
+      if (variant > 0) {
+        if (kind === "uk") return m.uk2 ?? null;
+        if (kind === "us") return m.us2 ?? null;
+        return null;
+      }
+      return m[kind] ?? null;
+    },
   };
 }
