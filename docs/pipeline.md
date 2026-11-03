@@ -4,7 +4,7 @@
 
 1. **词头**：`.local/forge/headwords.json`，每项 `{hid, word, raw}`。`raw` 是可选的义项提示，只用于判断哪些义项重要，不会被复制进输出。
 2. **词条文本** `gen_text.py`：每批 10 个词，按 [`gen_text.py`](../scripts/atlas/gen_text.py) 中的编写规范（准确优先、原创、两类例句、不编造词源、安全中立）生成 JSON。
-3. **插画** `gen_images.py`：以词条的日常例句 `ex[0].en` 作为场景规范（`scene` 只作补充提示），按 `SCENE → Subject → Art direction` 组装提示词，生成 1024px 图片并压缩为 768px WebP 母版。
+3. **插画** `gen_images.py`：以词条的日常例句 `ex[0].en` 作为场景规范（`scene` 只作补充提示），按 `SCENE → Subject → Art direction` 组装提示词，生成 1024px 图片并压缩为 768px WebP 母版。默认 `--quality medium`（官方价约 $0.013/张），个别返工再升 `high`（$0.053/张）。缓存按完整提示词的指纹判定，改句意会自动重画。
 4. **发音** `gen_word_audio.py`：ElevenLabs，英音 Alice、美音 Sarah。
 5. **例句朗读** `gen_sentence_audio.py`：为 `ex[0]` 合成朗读，按学习路线顺序。
 6. **编译** `build_atlas.py`：清洗字段、排序、切块，生成 `public/atlas/` 与 `data/`。
