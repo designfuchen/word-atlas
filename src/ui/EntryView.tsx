@@ -24,6 +24,42 @@ export function Highlight({ text, word }: { text: string; word: string }) {
 export function Pronounce({ entry, refw }: { entry: Entry; refw: WordRef | Entry }) {
   const atlas = useAtlas();
   const accent = useStore((s) => s.settings.accent);
+  // Two readings of one spelling: a row per reading, both accents inside it,
+  // numbered so the sense list can point back at the sound it belongs to.
+  if (entry.pron?.length) {
+    const order = accent === "us" ? (["us", "uk"] as const) : (["uk", "us"] as const);
+    return (
+      <div className="pron pron-groups">
+        {entry.pron.map((p, i) => (
+          <div className="pron-group" key={i}>
+            <span className="pron-idx" title={`读音 ${i + 1}`} aria-label={`读音 ${i + 1}`}>
+              {i + 1}
+            </span>
+            {p.tts && (
+              <span className="pron-tts" title="合成语音，非真人录音">
+                合成
+              </span>
+            )}
+            {order.map((acc) => (
+              <Speak
+                key={acc}
+                url={atlas.audio(refw, acc, i)}
+                text={entry.w}
+                accent={acc}
+                size="sm"
+                label={
+                  <>
+                    <em>{acc === "uk" ? "英" : "美"}</em>
+                    <span className="ipa">{acc === "uk" ? p.uk || p.us : p.us || p.uk}</span>
+                  </>
+                }
+              />
+            ))}
+          </div>
+        ))}
+      </div>
+    );
+  }
   const both = entry.uk && entry.us && entry.uk !== entry.us;
   const items: ["uk" | "us", string, string][] = both
     ? [["uk", "英", entry.uk], ["us", "美", entry.us]]
@@ -101,9 +137,14 @@ export function EntryView({ entry, mode = "detail", eager = true }: { entry: Ent
         </h2>
         <Pronounce entry={entry} refw={ref ?? entry} />
 
-        <ol className="senses">
+        <ol className={`senses${entry.pron?.length ? " has-pron" : ""}`}>
           {entry.senses.map((s, i) => (
             <li key={i}>
+              {entry.pron?.length ? (
+                <span className="sense-v" title={`读音 ${(s.v ?? 0) + 1}`} aria-label={`读音 ${(s.v ?? 0) + 1}`}>
+                  {(s.v ?? 0) + 1}
+                </span>
+              ) : null}
               <span className="pos">{s.pos}</span>
               <span className="zh">{s.zh}</span>
               {s.en && (

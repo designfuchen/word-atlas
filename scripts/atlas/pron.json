@@ -1,0 +1,2687 @@
+{
+ "version": 1,
+ "about": "Words whose spelling covers two pronunciations. `senses` maps each sense to a group in `pron`; `src` is the OALDPEX recording for that group, copied verbatim because the file names cannot be derived. Consumed by apply_pron.py and import_audio.py --heteronyms. `voice` says where the audio came from: oaldpex, commons, or tts (generated).",
+ "words": {
+  "accent": {
+   "voice": "commons",
+   "senses": [
+    0,
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈæksent/",
+     "us": "/ˈæksent/",
+     "src": {
+      "uk": "accent__gb_1.mp3",
+      "us": "accent__us_1_rr.mp3"
+     }
+    },
+    {
+     "uk": "/ækˈsent/",
+     "us": "/ækˈsent/",
+     "src": {
+      "uk": "accent__gb_3.mp3",
+      "us": "accent__us_3_rr.mp3"
+     }
+    }
+   ]
+  },
+  "adept": {
+   "voice": "tts",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/əˈdept/",
+     "us": "/əˈdept/",
+     "src": {
+      "uk": "adept__gb_1.mp3",
+      "us": "adept__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/ˈædept/",
+     "us": "/ˈædept/",
+     "src": {
+      "uk": "adept__gb_2.mp3",
+      "us": "adept__us_2_rr.mp3"
+     }
+    }
+   ],
+   "arp": [
+    "AH0 D EH1 P T",
+    "AE1 D EH2 P T"
+   ]
+  },
+  "advocate": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈædvəkeɪt/",
+     "us": "/ˈædvəkeɪt/",
+     "src": {
+      "uk": "advocate__gb_4.mp3",
+      "us": "advocate__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/ˈædvəkət/",
+     "us": "/ˈædvəkət/",
+     "src": {
+      "uk": "advocate__gb_2.mp3",
+      "us": "advocate__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "affiliate": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/əˈfɪlieɪt/",
+     "us": "/əˈfɪlieɪt/",
+     "src": {
+      "uk": "affiliate__gb_1.mp3",
+      "us": "affiliate__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/əˈfɪliət/",
+     "us": "/əˈfɪliət/",
+     "src": {
+      "uk": "affiliate__gb_2.mp3",
+      "us": "affiliate__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "alloy": {
+   "voice": "tts",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈælɔɪ/",
+     "us": "/ˈælɔɪ/",
+     "src": {
+      "uk": "alloy__gb_1.mp3",
+      "us": "alloy__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/əˈlɔɪ/",
+     "us": "/əˈlɔɪ/",
+     "src": {
+      "uk": "alloy__gb_2.mp3",
+      "us": "alloy__us_2_rr.mp3"
+     }
+    }
+   ]
+  },
+  "ally": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈælaɪ/",
+     "us": "/ˈælaɪ/",
+     "src": {
+      "uk": "ally__gb_1.mp3",
+      "us": "ally__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/əˈlaɪ/",
+     "us": "/əˈlaɪ/",
+     "src": {
+      "uk": "ally__gb_2.mp3",
+      "us": "ally__us_2_rr.mp3"
+     }
+    }
+   ]
+  },
+  "appropriate": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/əˈprəʊpriət/",
+     "us": "/əˈproʊpriət/",
+     "src": {
+      "uk": "appropriate__gb_4.mp3",
+      "us": "appropriate__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/əˈprəʊprieɪt/",
+     "us": "/əˈproʊprieɪt/",
+     "src": {
+      "uk": "appropriate__gb_2.mp3",
+      "us": "appropriate__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "approximate": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/əˈprɒksɪmət/",
+     "us": "/əˈprɑːksɪmət/",
+     "src": {
+      "uk": "approximate__gb_1.mp3",
+      "us": "approximate__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/əˈprɒksɪmeɪt/",
+     "us": "/əˈprɑːksɪmeɪt/",
+     "src": {
+      "uk": "approximate__gb_2.mp3",
+      "us": "approximate__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "articulate": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ɑːˈtɪkjələt/",
+     "us": "/ɑːrˈtɪkjələt/",
+     "src": {
+      "uk": "articulate__gb_2.mp3",
+      "us": "articulate__us_2.mp3"
+     }
+    },
+    {
+     "uk": "/ɑːˈtɪkjuleɪt/",
+     "us": "/ɑːrˈtɪkjuleɪt/",
+     "src": {
+      "uk": "articulate__gb_1.mp3",
+      "us": "articulate__us_1.mp3"
+     }
+    }
+   ]
+  },
+  "associate": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/əˈsəʊsieɪt/",
+     "us": "/əˈsoʊsieɪt/",
+     "src": {
+      "uk": "associate__gb_2.mp3",
+      "us": "associate__us_2_rr.mp3"
+     }
+    },
+    {
+     "uk": "/əˈsəʊsiət/",
+     "us": "/əˈsoʊsiət/",
+     "src": {
+      "uk": "associate__gb_4.mp3",
+      "us": "associate__us_5_rr.mp3"
+     }
+    }
+   ]
+  },
+  "attribute": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/əˈtrɪbjuːt/",
+     "us": "/əˈtrɪbjuːt/",
+     "src": {
+      "uk": "attribute__gb_3.mp3",
+      "us": "attribute__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/ˈætrɪbjuːt/",
+     "us": "/ˈætrɪbjuːt/",
+     "src": {
+      "uk": "attribute__gb_2.mp3",
+      "us": "attribute__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "bow": {
+   "voice": "tts",
+   "senses": [
+    0,
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/bəʊ/",
+     "us": "/boʊ/",
+     "src": {
+      "uk": "bow__gb_4.mp3",
+      "us": "bow__us_3.mp3"
+     }
+    },
+    {
+     "uk": "/baʊ/",
+     "us": "/baʊ/",
+     "src": {
+      "uk": "bow__gb_3.mp3",
+      "us": "bow__us_1.mp3"
+     }
+    }
+   ]
+  },
+  "close": {
+   "voice": "tts",
+   "senses": [
+    0,
+    1,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/kləʊz/",
+     "us": "/kloʊz/",
+     "src": {
+      "uk": "close__gb_1.mp3",
+      "us": "close__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/kləʊs/",
+     "us": "/kloʊs/",
+     "src": {
+      "uk": "close__gb_2.mp3",
+      "us": "close__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "combine": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/kəmˈbaɪn/",
+     "us": "/kəmˈbaɪn/",
+     "src": {
+      "uk": "combine__gb_1.mp3",
+      "us": "combine__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/ˈkɒmbaɪn/",
+     "us": "/ˈkɑːmbaɪn/",
+     "src": {
+      "uk": "combine__gb_2.mp3",
+      "us": "combine__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "compliment": {
+   "voice": "tts",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈkɒmplɪmənt/",
+     "us": "/ˈkɑːmplɪmənt/",
+     "src": {
+      "uk": "compliment__gb_1.mp3",
+      "us": "complement__us_2.mp3"
+     }
+    },
+    {
+     "uk": "/ˈkɒmplɪment/",
+     "us": "/ˈkɑːmplɪment/",
+     "src": {
+      "uk": "compliment__gb_2.mp3",
+      "us": "complement__us_1.mp3"
+     }
+    }
+   ]
+  },
+  "compound": {
+   "voice": "commons",
+   "senses": [
+    0,
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈkɒmpaʊnd/",
+     "us": "/ˈkɑːmpaʊnd/",
+     "src": {
+      "uk": "compound__gb_1.mp3",
+      "us": "compound__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/kəmˈpaʊnd/",
+     "us": "/kəmˈpaʊnd/",
+     "src": {
+      "uk": "compound__gb_3.mp3",
+      "us": "compound__us_2_rr.mp3"
+     }
+    }
+   ]
+  },
+  "conduct": {
+   "voice": "commons",
+   "senses": [
+    0,
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/kənˈdʌkt/",
+     "us": "/kənˈdʌkt/",
+     "src": {
+      "uk": "xconduct__gb_4.mp3",
+      "us": "xconduct__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/ˈkɒndʌkt/",
+     "us": "/ˈkɑːndʌkt/",
+     "src": {
+      "uk": "xconduct__gb_2.mp3",
+      "us": "xconduct__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "conflict": {
+   "voice": "commons",
+   "senses": [
+    0,
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈkɒnflɪkt/",
+     "us": "/ˈkɑːnflɪkt/",
+     "src": {
+      "uk": "xconflict__gb_1.mp3",
+      "us": "xconflict__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/kənˈflɪkt/",
+     "us": "/kənˈflɪkt/",
+     "src": {
+      "uk": "xconflict__gb_2.mp3",
+      "us": "xconflict__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "console": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/kənˈsəʊl/",
+     "us": "/kənˈsoʊl/",
+     "src": {
+      "uk": "xconsole__gb_1.mp3",
+      "us": "xconsole__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/ˈkɒnsəʊl/",
+     "us": "/ˈkɑːnsoʊl/",
+     "src": {
+      "uk": "xconsole__gb_2.mp3",
+      "us": "xconsole__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "content": {
+   "voice": "tts",
+   "senses": [
+    0,
+    1,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈkɒntent/",
+     "us": "/ˈkɑːntent/",
+     "src": {
+      "uk": "xcontent__gb_3.mp3",
+      "us": "xcontent__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/kənˈtent/",
+     "us": "/kənˈtent/",
+     "src": {
+      "uk": "xcontent__gb_2.mp3",
+      "us": "xcontent__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "contest": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈkɒntest/",
+     "us": "/ˈkɑːntest/",
+     "src": {
+      "uk": "xcontest__gb_1.mp3",
+      "us": "xcontest__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/kənˈtest/",
+     "us": "/kənˈtest/",
+     "src": {
+      "uk": "xcontest__gb_2.mp3",
+      "us": "xcontest__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "contract": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈkɒntrækt/",
+     "us": "/ˈkɑːntrækt/",
+     "src": {
+      "uk": "xcontract__gb_3.mp3",
+      "us": "xcontract__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/kənˈtrækt/",
+     "us": "/kənˈtrækt/",
+     "src": {
+      "uk": "xcontract__gb_4.mp3",
+      "us": "xcontract__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "convert": {
+   "voice": "commons",
+   "senses": [
+    0,
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/kənˈvɜːt/",
+     "us": "/kənˈvɜːrt/",
+     "src": {
+      "uk": "xconvert__gb_3.mp3",
+      "us": "xconvert__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/ˈkɒnvɜːt/",
+     "us": "/ˈkɑːnvɜːrt/",
+     "src": {
+      "uk": "xconvert__gb_2.mp3",
+      "us": "xconvert__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "convict": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈkɒnvɪkt/",
+     "us": "/ˈkɑːnvɪkt/",
+     "src": {
+      "uk": "xconvict__gb_2.mp3",
+      "us": "xconvict__us_2.mp3"
+     }
+    },
+    {
+     "uk": "/kənˈvɪkt/",
+     "us": "/kənˈvɪkt/",
+     "src": {
+      "uk": "xconvict__gb_1.mp3",
+      "us": "xconvict__us_1.mp3"
+     }
+    }
+   ]
+  },
+  "decrease": {
+   "voice": "tts",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/dɪˈkriːs/",
+     "us": "/dɪˈkriːs/",
+     "src": {
+      "uk": "decrease__gb_4.mp3",
+      "us": "decrease__us_4_rr.mp3"
+     }
+    },
+    {
+     "uk": "/ˈdiːkriːs/",
+     "us": "/ˈdiːkriːs/",
+     "src": {
+      "uk": "decrease__gb_3.mp3",
+      "us": "decrease__us_3_rr.mp3"
+     }
+    }
+   ]
+  },
+  "defect": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈdiːfekt/",
+     "us": "/ˈdiːfekt/",
+     "src": {
+      "uk": "defect__gb_4.mp3",
+      "us": "defect__us_1_rr.mp3"
+     }
+    },
+    {
+     "uk": "/dɪˈfekt/",
+     "us": "/dɪˈfekt/",
+     "src": {
+      "uk": "defect__gb_2.mp3",
+      "us": "defect__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "degenerate": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/dɪˈdʒenəreɪt/",
+     "us": "/dɪˈdʒenəreɪt/",
+     "src": {
+      "uk": "degenerate__gb_4.mp3",
+      "us": "degenerate__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/dɪˈdʒenərət/",
+     "us": "/dɪˈdʒenərət/",
+     "src": {
+      "uk": "degenerate__gb_6.mp3",
+      "us": "degenerate__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "deliberate": {
+   "voice": "commons",
+   "senses": [
+    0,
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/dɪˈlɪbərət/",
+     "us": "/dɪˈlɪbərət/",
+     "src": {
+      "uk": "deliberate__gb_4.mp3",
+      "us": "deliberate__us_2_rr.mp3"
+     }
+    },
+    {
+     "uk": "/dɪˈlɪbəreɪt/",
+     "us": "/dɪˈlɪbəreɪt/",
+     "src": {
+      "uk": "deliberate__gb_3.mp3",
+      "us": "deliberate__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "desert": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈdezət/",
+     "us": "/ˈdezərt/",
+     "src": {
+      "uk": "desert__gb_3.mp3",
+      "us": "desert__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/dɪˈzɜːt/",
+     "us": "/dɪˈzɜːrt/",
+     "src": {
+      "uk": "desert__gb_2.mp3",
+      "us": "desert__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "diffuse": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/dɪˈfjuːz/",
+     "us": "/dɪˈfjuːz/",
+     "src": {
+      "uk": "diffuse__gb_2.mp3",
+      "us": "diffuse__us_2.mp3"
+     }
+    },
+    {
+     "uk": "/dɪˈfjuːs/",
+     "us": "/dɪˈfjuːs/",
+     "src": {
+      "uk": "diffuse__gb_1.mp3",
+      "us": "diffuse__us_1.mp3"
+     }
+    }
+   ]
+  },
+  "digest": {
+   "voice": "commons",
+   "senses": [
+    0,
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/daɪˈdʒest/",
+     "us": "/daɪˈdʒest/",
+     "src": {
+      "uk": "digest__gb_1.mp3",
+      "us": "digest__us_1_rr.mp3"
+     }
+    },
+    {
+     "uk": "/ˈdaɪdʒest/",
+     "us": "/ˈdaɪdʒest/",
+     "src": {
+      "uk": "digest__gb_3.mp3",
+      "us": "digest__us_3.mp3"
+     }
+    }
+   ]
+  },
+  "document": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈdɒkjumənt/",
+     "us": "/ˈdɑːkjumənt/",
+     "src": {
+      "uk": "document__gb_4.mp3",
+      "us": "document__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/ˈdɒkjument/",
+     "us": "/ˈdɑːkjument/",
+     "src": {
+      "uk": "document__gb_2.mp3",
+      "us": "document__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "download": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˌdaʊnˈləʊd/",
+     "us": "/ˌdaʊnˈloʊd/",
+     "src": {
+      "uk": "download__gb_1.mp3",
+      "us": "download__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/ˈdaʊnləʊd/",
+     "us": "/ˈdaʊnloʊd/",
+     "src": {
+      "uk": "download__gb_2.mp3",
+      "us": "download__us_3.mp3"
+     }
+    }
+   ]
+  },
+  "duplicate": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1,
+    0
+   ],
+   "pron": [
+    {
+     "uk": "/ˈdjuːplɪkət/",
+     "us": "/ˈduːplɪkət/",
+     "src": {
+      "uk": "duplicate__gb_2.mp3",
+      "us": "duplicate__us_2.mp3"
+     }
+    },
+    {
+     "uk": "/ˈdjuːplɪkeɪt/",
+     "us": "/ˈduːplɪkeɪt/",
+     "src": {
+      "uk": "duplicate__gb_1.mp3",
+      "us": "duplicate__us_1.mp3"
+     }
+    }
+   ]
+  },
+  "elaborate": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ɪˈlæbərət/",
+     "us": "/ɪˈlæbərət/",
+     "src": {
+      "uk": "elaborate__gb_1.mp3",
+      "us": "elaborate__us_2_rr.mp3"
+     }
+    },
+    {
+     "uk": "/ɪˈlæbəreɪt/",
+     "us": "/ɪˈlæbəreɪt/",
+     "src": {
+      "uk": "elaborate__gb_2.mp3",
+      "us": "elaborate__us_4.mp3"
+     }
+    }
+   ]
+  },
+  "escort": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ɪˈskɔːt/",
+     "us": "/ɪˈskɔːrt/",
+     "src": {
+      "uk": "escort__gb_2.mp3",
+      "us": "escort__us_2.mp3"
+     }
+    },
+    {
+     "uk": "/ˈeskɔːt/",
+     "us": "/ˈeskɔːrt/",
+     "src": {
+      "uk": "escort__gb_1.mp3",
+      "us": "escort__us_1.mp3"
+     }
+    }
+   ]
+  },
+  "estimate": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈestɪmeɪt/",
+     "us": "/ˈestɪmeɪt/",
+     "src": {
+      "uk": "estimate__gb_3.mp3",
+      "us": "estimate__us_2.mp3"
+     }
+    },
+    {
+     "uk": "/ˈestɪmət/",
+     "us": "/ˈestɪmət/",
+     "src": {
+      "uk": "estimate__gb_4.mp3",
+      "us": "estimate__us_1.mp3"
+     }
+    }
+   ]
+  },
+  "excess": {
+   "voice": "tts",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ɪkˈses/",
+     "us": "/ɪkˈses/",
+     "src": {
+      "uk": "excess__gb_1.mp3",
+      "us": "excess__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/ˈekses/",
+     "us": "/ˈekses/",
+     "src": {
+      "uk": "excess__gb_2.mp3",
+      "us": "excess__us_2_rr.mp3"
+     }
+    }
+   ]
+  },
+  "excuse": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ɪkˈskjuːs/",
+     "us": "/ɪkˈskjuːs/",
+     "src": {
+      "uk": "excuse__gb_1.mp3",
+      "us": "excuse__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/ɪkˈskjuːz/",
+     "us": "/ɪkˈskjuːz/",
+     "src": {
+      "uk": "excuse__gb_2.mp3",
+      "us": "excuse__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "experiment": {
+   "voice": "tts",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ɪkˈsperɪmənt/",
+     "us": "/ɪkˈsperɪmənt/",
+     "src": {
+      "uk": "experiment__gb_6.mp3",
+      "us": "experiment__us_2.mp3"
+     }
+    },
+    {
+     "uk": "/ɪkˈsperɪment/",
+     "us": "/ɪkˈsperɪment/",
+     "src": {
+      "uk": "experiment__gb_7.mp3",
+      "us": "experiment__us_3.mp3"
+     }
+    }
+   ]
+  },
+  "export": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1,
+    0
+   ],
+   "pron": [
+    {
+     "uk": "/ɪkˈspɔːt/",
+     "us": "/ɪkˈspɔːrt/",
+     "src": {
+      "uk": "export__gb_1.mp3",
+      "us": "export__us_1_rr.mp3"
+     }
+    },
+    {
+     "uk": "/ˈekspɔːt/",
+     "us": "/ˈekspɔːrt/",
+     "src": {
+      "uk": "export__gb_2.mp3",
+      "us": "export__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "extract": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ɪkˈstrækt/",
+     "us": "/ɪkˈstrækt/",
+     "src": {
+      "uk": "extract__gb_2.mp3",
+      "us": "extract__us_2.mp3"
+     }
+    },
+    {
+     "uk": "/ˈekstrækt/",
+     "us": "/ˈekstrækt/",
+     "src": {
+      "uk": "extract__gb_1.mp3",
+      "us": "extract__us_1.mp3"
+     }
+    }
+   ]
+  },
+  "fragment": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈfræɡmənt/",
+     "us": "/ˈfræɡmənt/",
+     "src": {
+      "uk": "fragment__gb_1.mp3",
+      "us": "fragment__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/fræɡˈment/",
+     "us": "/ˈfræɡment/",
+     "src": {
+      "uk": "fragment__gb_2.mp3",
+      "us": "fragment__us_4.mp3"
+     }
+    }
+   ]
+  },
+  "frequent": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈfriːkwənt/",
+     "us": "/ˈfriːkwənt/",
+     "src": {
+      "uk": "frequent__gb_3.mp3",
+      "us": "frequent__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/friˈkwent/",
+     "us": "/friˈkwent/",
+     "src": {
+      "uk": "frequent__gb_2.mp3",
+      "us": "frequent__us_2_rr.mp3"
+     }
+    }
+   ]
+  },
+  "graduate": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈɡrædʒuət/",
+     "us": "/ˈɡrædʒuət/",
+     "src": {
+      "uk": "graduate__gb_4.mp3",
+      "us": "graduate__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/ˈɡrædʒueɪt/",
+     "us": "/ˈɡrædʒueɪt/",
+     "src": {
+      "uk": "graduate__gb_3.mp3",
+      "us": "graduate__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "grown-up": {
+   "voice": "tts",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈɡrəʊnʌp/",
+     "us": "/ˈɡroʊnʌp/",
+     "src": {
+      "uk": "grown_up_1_gb_3.mp3",
+      "us": "grown_up_1_us_2.mp3"
+     }
+    },
+    {
+     "uk": "/ˌɡrəʊnˈʌp/",
+     "us": "/ˌɡroʊnˈʌp/",
+     "src": {
+      "uk": "grown_up_1_gb_1.mp3",
+      "us": "grown_up_1_us_1.mp3"
+     }
+    }
+   ]
+  },
+  "house": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/haʊs/",
+     "us": "/haʊs/",
+     "src": {
+      "uk": "house__gb_3.mp3",
+      "us": "house__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/haʊz/",
+     "us": "/haʊz/",
+     "src": {
+      "uk": "house__gb_2.mp3",
+      "us": "house__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "impact": {
+   "voice": "commons",
+   "senses": [
+    0,
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈɪmpækt/",
+     "us": "/ˈɪmpækt/",
+     "src": {
+      "uk": "impact__gb_3.mp3",
+      "us": "impact__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/ɪmˈpækt/",
+     "us": "/ɪmˈpækt/",
+     "src": {
+      "uk": "impact__gb_4.mp3",
+      "us": "impact__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "implement": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈɪmplɪment/",
+     "us": "/ˈɪmplɪment/",
+     "src": {
+      "uk": "implement__gb_3.mp3",
+      "us": "implement__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/ˈɪmplɪmənt/",
+     "us": "/ˈɪmplɪmənt/",
+     "src": {
+      "uk": "implement__gb_2.mp3",
+      "us": "implement__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "incline": {
+   "voice": "tts",
+   "senses": [
+    0,
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ɪnˈklaɪn/",
+     "us": "/ɪnˈklaɪn/",
+     "src": {
+      "uk": "incline__gb_1.mp3",
+      "us": "incline__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/ˈɪnklaɪn/",
+     "us": "/ˈɪnklaɪn/",
+     "src": {
+      "uk": "incline__gb_2.mp3",
+      "us": "incline__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "increase": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ɪnˈkriːs/",
+     "us": "/ɪnˈkriːs/",
+     "src": {
+      "uk": "increase__gb_4.mp3",
+      "us": "increase__us_1_rr.mp3"
+     }
+    },
+    {
+     "uk": "/ˈɪŋkriːs/",
+     "us": "/ˈɪŋkriːs/",
+     "src": {
+      "uk": "increase__gb_3.mp3",
+      "us": "increase__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "inland": {
+   "voice": "tts",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈɪnlænd/",
+     "us": "/ˈɪnlænd/",
+     "src": {
+      "uk": "inland__gb_2.mp3",
+      "us": "inland__us_2.mp3"
+     }
+    },
+    {
+     "uk": "/ˌɪnˈlænd/",
+     "us": "/ˌɪnˈlænd/",
+     "src": {
+      "uk": "inland__gb_1.mp3",
+      "us": "inland__us_1.mp3"
+     }
+    }
+   ]
+  },
+  "insert": {
+   "voice": "commons",
+   "senses": [
+    0,
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ɪnˈsɜːt/",
+     "us": "/ɪnˈsɜːrt/",
+     "src": {
+      "uk": "insert__gb_3.mp3",
+      "us": "insert__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/ˈɪnsɜːt/",
+     "us": "/ˈɪnsɜːrt/",
+     "src": {
+      "uk": "insert__gb_2.mp3",
+      "us": "insert__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "insult": {
+   "voice": "tts",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ɪnˈsʌlt/",
+     "us": "/ɪnˈsʌlt/",
+     "src": {
+      "uk": "insult__gb_1.mp3",
+      "us": "insult__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/ˈɪnsʌlt/",
+     "us": "/ˈɪnsʌlt/",
+     "src": {
+      "uk": "insult__gb_2.mp3",
+      "us": "insult__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "intrigue": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ɪnˈtriːɡ/",
+     "us": "/ɪnˈtriːɡ/",
+     "src": {
+      "uk": "intrigue__gb_1.mp3",
+      "us": "intrigue__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/ˈɪntriːɡ/",
+     "us": "/ˈɪntriːɡ/",
+     "src": {
+      "uk": "intrigue__gb_2.mp3",
+      "us": "intrigue__us_2_rr.mp3"
+     }
+    }
+   ]
+  },
+  "lead": {
+   "voice": "commons",
+   "senses": [
+    0,
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/liːd/",
+     "us": "/liːd/",
+     "src": {
+      "uk": "lead__gb_1.mp3",
+      "us": "lead__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/led/",
+     "us": "/led/",
+     "src": {
+      "uk": "lead__gb_4.mp3",
+      "us": "lead__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "live": {
+   "voice": "tts",
+   "senses": [
+    0,
+    1,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/lɪv/",
+     "us": "/lɪv/",
+     "src": {
+      "uk": "live__gb_1.mp3",
+      "us": "live__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/laɪv/",
+     "us": "/laɪv/",
+     "src": {
+      "uk": "live__gb_2.mp3",
+      "us": "live__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "merchandise": {
+   "voice": "tts",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈmɜːtʃəndaɪs/",
+     "us": "/ˈmɜːrtʃəndaɪs/",
+     "src": {
+      "uk": "merchandise__gb_1.mp3",
+      "us": "merchandise__us_1_rr.mp3"
+     }
+    },
+    {
+     "uk": "/ˈmɜːtʃəndaɪz/",
+     "us": "/ˈmɜːrtʃəndaɪz/",
+     "src": {
+      "uk": "merchandise__gb_2.mp3",
+      "us": "merchandise__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "minute": {
+   "voice": "tts",
+   "senses": [
+    0,
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈmɪnɪt/",
+     "us": "/ˈmɪnɪt/",
+     "src": {
+      "uk": "minute__gb_1.mp3",
+      "us": "minute__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/maɪˈnjuːt/",
+     "us": "/maɪˈnuːt/",
+     "src": {
+      "uk": "minute__gb_2.mp3",
+      "us": "minute__us_3.mp3"
+     }
+    }
+   ]
+  },
+  "misuse": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˌmɪsˈjuːz/",
+     "us": "/ˌmɪsˈjuːz/",
+     "src": {
+      "uk": "misuse__gb_2.mp3",
+      "us": "misuse__us_2.mp3"
+     }
+    },
+    {
+     "uk": "/ˌmɪsˈjuːs/",
+     "us": "/ˌmɪsˈjuːs/",
+     "src": {
+      "uk": "misuse__gb_1.mp3",
+      "us": "misuse__us_1.mp3"
+     }
+    }
+   ]
+  },
+  "moderate": {
+   "voice": "commons",
+   "senses": [
+    0,
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈmɒdərət/",
+     "us": "/ˈmɑːdərət/",
+     "src": {
+      "uk": "moderate__gb_4.mp3",
+      "us": "moderate__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/ˈmɒdəreɪt/",
+     "us": "/ˈmɑːdəreɪt/",
+     "src": {
+      "uk": "moderate__gb_2.mp3",
+      "us": "moderate__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "mouth": {
+   "voice": "tts",
+   "senses": [
+    0,
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/maʊθ/",
+     "us": "/maʊθ/",
+     "src": {
+      "uk": "mouth__gb_3.mp3",
+      "us": "mouth__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/maʊð/",
+     "us": "/maʊð/",
+     "src": {
+      "uk": "mouth__gb_2.mp3",
+      "us": "mouth__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "object": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1,
+    0
+   ],
+   "pron": [
+    {
+     "uk": "/ˈɒbdʒɪkt/",
+     "us": "/ˈɑːbdʒɪkt/",
+     "src": {
+      "uk": "object__gb_1.mp3",
+      "us": "object__us_2_rr.mp3"
+     }
+    },
+    {
+     "uk": "/əbˈdʒekt/",
+     "us": "/əbˈdʒekt/",
+     "src": {
+      "uk": "object__gb_2.mp3",
+      "us": "object__us_3.mp3"
+     }
+    }
+   ]
+  },
+  "ornament": {
+   "voice": "tts",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈɔːnəmənt/",
+     "us": "/ˈɔːrnəmənt/",
+     "src": {
+      "uk": "ornament__gb_1.mp3",
+      "us": "ornament__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/ˈɔːnəment/",
+     "us": "/ˈɔːrnəment/",
+     "src": {
+      "uk": "ornament__gb_2.mp3",
+      "us": "ornament__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "outside": {
+   "voice": "commons",
+   "senses": [
+    0,
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˌaʊtˈsaɪd/",
+     "us": "/ˌaʊtˈsaɪd/",
+     "src": {
+      "uk": "outside__gb_1.mp3",
+      "us": "outside__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/ˈaʊtsaɪd/",
+     "us": "/ˈaʊtsaɪd/",
+     "src": {
+      "uk": "outside__gb_2.mp3",
+      "us": "outside__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "pan": {
+   "voice": "commons",
+   "senses": [
+    0,
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/pæn/",
+     "us": "/pæn/",
+     "src": {
+      "uk": "pan__gb_2.mp3",
+      "us": "pan__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/pɑːn/",
+     "us": "/pɑːn/",
+     "src": {
+      "uk": "pan__gb_1.mp3",
+      "us": "pan__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "patent": {
+   "voice": "commons",
+   "senses": [
+    0,
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈpætnt/",
+     "us": "/ˈpætnt/",
+     "src": {
+      "uk": "patent__gb_1.mp3",
+      "us": "patent__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/ˈpeɪtnt/",
+     "us": "/ˈpeɪtnt/",
+     "src": {
+      "uk": "patent__gb_3.mp3",
+      "us": "patent__us_2_rr.mp3"
+     }
+    }
+   ]
+  },
+  "perfect": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1,
+    0
+   ],
+   "pron": [
+    {
+     "uk": "/ˈpɜːfɪkt/",
+     "us": "/ˈpɜːrfɪkt/",
+     "src": {
+      "uk": "perfect__gb_1.mp3",
+      "us": "perfect__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/pəˈfekt/",
+     "us": "/pərˈfekt/",
+     "src": {
+      "uk": "perfect__gb_2.mp3",
+      "us": "perfect__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "permit": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1,
+    0
+   ],
+   "pron": [
+    {
+     "uk": "/pəˈmɪt/",
+     "us": "/pərˈmɪt/",
+     "src": {
+      "uk": "permit__gb_1.mp3",
+      "us": "permit__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/ˈpɜːmɪt/",
+     "us": "/ˈpɜːrmɪt/",
+     "src": {
+      "uk": "permit__gb_2.mp3",
+      "us": "permit__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "precipitate": {
+   "voice": "commons",
+   "senses": [
+    0,
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/prɪˈsɪpɪteɪt/",
+     "us": "/prɪˈsɪpɪteɪt/",
+     "src": {
+      "uk": "precipitate__gb_1.mp3",
+      "us": "precipitate__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/prɪˈsɪpɪtət/",
+     "us": "/prɪˈsɪpɪtət/",
+     "src": {
+      "uk": "precipitate__gb_2.mp3",
+      "us": "precipitate__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "present": {
+   "voice": "tts",
+   "senses": [
+    0,
+    1,
+    0
+   ],
+   "pron": [
+    {
+     "uk": "/ˈpreznt/",
+     "us": "/ˈpreznt/",
+     "src": {
+      "uk": "present__gb_4.mp3",
+      "us": "present__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/prɪˈzent/",
+     "us": "/prɪˈzent/",
+     "src": {
+      "uk": "present__gb_3.mp3",
+      "us": "present__us_3.mp3"
+     }
+    }
+   ]
+  },
+  "produce": {
+   "voice": "commons",
+   "senses": [
+    0,
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/prəˈdjuːs/",
+     "us": "/prəˈduːs/",
+     "src": {
+      "uk": "produce__gb_1.mp3",
+      "us": "produce__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/ˈprɒdjuːs/",
+     "us": "/ˈproʊduːs/",
+     "src": {
+      "uk": "produce__gb_2.mp3",
+      "us": "produce__us_3.mp3"
+     }
+    }
+   ]
+  },
+  "progress": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈprəʊɡres/",
+     "us": "/ˈprɑːɡres/",
+     "src": {
+      "uk": "progress__gb_4.mp3",
+      "us": "progress__us_1_rr.mp3"
+     }
+    },
+    {
+     "uk": "/prəˈɡres/",
+     "us": "/prəˈɡres/",
+     "src": {
+      "uk": "progress__gb_5.mp3",
+      "us": "progress__us_7.mp3"
+     }
+    }
+   ]
+  },
+  "project": {
+   "voice": "tts",
+   "senses": [
+    0,
+    1,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈprɒdʒekt/",
+     "us": "/ˈprɑːdʒekt/",
+     "src": {
+      "uk": "project__gb_3.mp3",
+      "us": "project__us_1_rr.mp3"
+     }
+    },
+    {
+     "uk": "/prəˈdʒekt/",
+     "us": "/prəˈdʒekt/",
+     "src": {
+      "uk": "project__gb_2.mp3",
+      "us": "project__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "prospect": {
+   "voice": "commons",
+   "senses": [
+    0,
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈprɒspekt/",
+     "us": "/ˈprɑːspekt/",
+     "src": {
+      "uk": "prospect__gb_1.mp3",
+      "us": "prospect__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/prəˈspekt/",
+     "us": "/ˈprɑːspekt/",
+     "src": {
+      "uk": "prospect__gb_2.mp3",
+      "us": "prospect__us_1.mp3"
+     }
+    }
+   ]
+  },
+  "prostrate": {
+   "voice": "tts",
+   "senses": [
+    0,
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈprɒstreɪt/",
+     "us": "/ˈprɑːstreɪt/",
+     "src": {
+      "uk": "prostrate__gb_1.mp3",
+      "us": "prostrate__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/prɒˈstreɪt/",
+     "us": "/prɒˈstreɪt/",
+     "src": {
+      "uk": "prostrate__gb_2.mp3",
+      "us": "prostrate__us_1.mp3"
+     }
+    }
+   ]
+  },
+  "protest": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈprəʊtest/",
+     "us": "/ˈproʊtest/",
+     "src": {
+      "uk": "protest__gb_1.mp3",
+      "us": "protest__us_1_rr.mp3"
+     }
+    },
+    {
+     "uk": "/prəˈtest/",
+     "us": "/prəˈtest/",
+     "src": {
+      "uk": "protest__gb_2.mp3",
+      "us": "protest__us_2_rr.mp3"
+     }
+    }
+   ]
+  },
+  "recall": {
+   "voice": "tts",
+   "senses": [
+    0,
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/rɪˈkɔːl/",
+     "us": "/rɪˈkɔːl/",
+     "src": {
+      "uk": "recall__gb_2.mp3",
+      "us": "recall__us_1_rr.mp3"
+     }
+    },
+    {
+     "uk": "/ˈriːkɔːl/",
+     "us": "/ˈriːkɔːl/",
+     "src": {
+      "uk": "recall__gb_3.mp3",
+      "us": "recall__us_3.mp3"
+     }
+    }
+   ]
+  },
+  "record": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1,
+    0
+   ],
+   "pron": [
+    {
+     "uk": "/ˈrekɔːd/",
+     "us": "/ˈrekərd/",
+     "src": {
+      "uk": "record__gb_3.mp3",
+      "us": "record__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/rɪˈkɔːd/",
+     "us": "/rɪˈkɔːrd/",
+     "src": {
+      "uk": "record__gb_4.mp3",
+      "us": "record__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "refund": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈriːfʌnd/",
+     "us": "/ˈriːfʌnd/",
+     "src": {
+      "uk": "refund__gb_6.mp3",
+      "us": "refund__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/rɪˈfʌnd/",
+     "us": "/rɪˈfʌnd/",
+     "src": {
+      "uk": "refund__gb_7.mp3",
+      "us": "refund__us_2_rr.mp3"
+     }
+    }
+   ]
+  },
+  "refuse": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/rɪˈfjuːz/",
+     "us": "/rɪˈfjuːz/",
+     "src": {
+      "uk": "refuse__gb_1.mp3",
+      "us": "refuse__us_4.mp3"
+     }
+    },
+    {
+     "uk": "/ˈrefjuːs/",
+     "us": "/ˈrefjuːs/",
+     "src": {
+      "uk": "refuse__gb_2.mp3",
+      "us": "refuse__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "reject": {
+   "voice": "commons",
+   "senses": [
+    0,
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/rɪˈdʒekt/",
+     "us": "/rɪˈdʒekt/",
+     "src": {
+      "uk": "reject__gb_3.mp3",
+      "us": "reject__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/ˈriːdʒekt/",
+     "us": "/ˈriːdʒekt/",
+     "src": {
+      "uk": "reject__gb_4.mp3",
+      "us": "reject__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "relay": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1,
+    0
+   ],
+   "pron": [
+    {
+     "uk": "/ˈriːleɪ/",
+     "us": "/ˈriːleɪ/",
+     "src": {
+      "uk": "relay__gb_1.mp3",
+      "us": "relay__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/rɪˈleɪ/",
+     "us": "/rɪˈleɪ/"
+    }
+   ]
+  },
+  "row": {
+   "voice": "commons",
+   "senses": [
+    0,
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/rəʊ/",
+     "us": "/roʊ/",
+     "src": {
+      "uk": "row__gb_1.mp3",
+      "us": "row__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/raʊ/",
+     "us": "/raʊ/",
+     "src": {
+      "uk": "row__gb_2.mp3",
+      "us": "row__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "second": {
+   "voice": "commons",
+   "senses": [
+    0,
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈsekənd/",
+     "us": "/ˈsekənd/",
+     "src": {
+      "uk": "second__gb_1.mp3",
+      "us": "second__us_3.mp3"
+     }
+    },
+    {
+     "uk": "/sɪˈkɒnd/",
+     "us": "/sɪˈkɑːnd/",
+     "src": {
+      "uk": "second__gb_2.mp3",
+      "us": "second__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "segment": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈseɡmənt/",
+     "us": "/ˈseɡmənt/",
+     "src": {
+      "uk": "segment__gb_3.mp3",
+      "us": "segment__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/seɡˈment/",
+     "us": "/seɡˈment/",
+     "src": {
+      "uk": "segment__gb_2.mp3",
+      "us": "segment__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "separate": {
+   "voice": "tts",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈseprət/",
+     "us": "/ˈseprət/",
+     "src": {
+      "uk": "separate__gb_3.mp3",
+      "us": "separate__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/ˈsepəreɪt/",
+     "us": "/ˈsepəreɪt/",
+     "src": {
+      "uk": "separate__gb_2.mp3",
+      "us": "separate__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "subject": {
+   "voice": "commons",
+   "senses": [
+    0,
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈsʌbdʒɪkt/",
+     "us": "/ˈsʌbdʒɪkt/",
+     "src": {
+      "uk": "subject__gb_7.mp3",
+      "us": "subject__us_4_rr.mp3"
+     }
+    },
+    {
+     "uk": "/səbˈdʒekt/",
+     "us": "/səbˈdʒekt/",
+     "src": {
+      "uk": "subject__gb_5.mp3",
+      "us": "subject__us_5.mp3"
+     }
+    }
+   ]
+  },
+  "surmise": {
+   "voice": "tts",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/səˈmaɪz/",
+     "us": "/sərˈmaɪz/",
+     "src": {
+      "uk": "surmise__gb_1.mp3",
+      "us": "surmise__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/ˈsɜːmaɪz/",
+     "us": "/ˈsɜːrmaɪz/",
+     "src": {
+      "uk": "surmise__gb_2.mp3",
+      "us": "surmise__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "survey": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈsɜːveɪ/",
+     "us": "/ˈsɜːrveɪ/",
+     "src": {
+      "uk": "survey__gb_4.mp3",
+      "us": "survey__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/səˈveɪ/",
+     "us": "/sərˈveɪ/",
+     "src": {
+      "uk": "survey__gb_3.mp3",
+      "us": "survey__us_2_rr.mp3"
+     }
+    }
+   ]
+  },
+  "suspect": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/səˈspekt/",
+     "us": "/səˈspekt/",
+     "src": {
+      "uk": "suspect__gb_1.mp3",
+      "us": "suspect__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/ˈsʌspekt/",
+     "us": "/ˈsʌspekt/",
+     "src": {
+      "uk": "suspect__gb_3.mp3",
+      "us": "suspect__us_3.mp3"
+     }
+    }
+   ]
+  },
+  "tear": {
+   "voice": "tts",
+   "senses": [
+    0,
+    1,
+    0
+   ],
+   "pron": [
+    {
+     "uk": "/teə/",
+     "us": "/ter/",
+     "src": {
+      "uk": "tear__gb_1.mp3",
+      "us": "tear__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/tɪə/",
+     "us": "/tɪr/",
+     "src": {
+      "uk": "tear__gb_2.mp3",
+      "us": "tear__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "that": {
+   "voice": "commons",
+   "senses": [
+    0,
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ðæt/",
+     "us": "/ðæt/",
+     "src": {
+      "uk": "that__gb_1.mp3",
+      "us": "that__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/ðət/",
+     "us": "/ðət/",
+     "src": {
+      "uk": "that__gb_3.mp3",
+      "us": "that__us_6_rr.mp3"
+     }
+    }
+   ]
+  },
+  "torment": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈtɔːment/",
+     "us": "/ˈtɔːrment/",
+     "src": {
+      "uk": "torment__gb_1.mp3",
+      "us": "torment__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/tɔːˈment/",
+     "us": "/tɔːrˈment/",
+     "src": {
+      "uk": "torment__gb_2.mp3",
+      "us": "torment__us_2_rr.mp3"
+     }
+    }
+   ]
+  },
+  "transfer": {
+   "voice": "commons",
+   "senses": [
+    0,
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/trænsˈfɜː/",
+     "us": "/trænsˈfɜːr/",
+     "src": {
+      "uk": "transfer__gb_3.mp3",
+      "us": "transfer__us_1_rr.mp3"
+     }
+    },
+    {
+     "uk": "/ˈtrænsfɜː/",
+     "us": "/ˈtrænsfɜːr/",
+     "src": {
+      "uk": "transfer__gb_4.mp3",
+      "us": "transfer__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "transplant": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/trænsˈplɑːnt/",
+     "us": "/trænsˈplænt/",
+     "src": {
+      "uk": "transplant__gb_1.mp3",
+      "us": "transplant__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/ˈtrænsplɑːnt/",
+     "us": "/ˈtrænsplænt/",
+     "src": {
+      "uk": "transplant__gb_3.mp3",
+      "us": "transplant__us_3.mp3"
+     }
+    }
+   ]
+  },
+  "transport": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˈtrænspɔːt/",
+     "us": "/ˈtrænspɔːrt/",
+     "src": {
+      "uk": "transport__gb_1.mp3",
+      "us": "transport__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/trænˈspɔːt/",
+     "us": "/trænˈspɔːrt/",
+     "src": {
+      "uk": "transport__gb_2.mp3",
+      "us": "transport__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "underestimate": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˌʌndərˈestɪmeɪt/",
+     "us": "/ˌʌndərˈestɪmeɪt/",
+     "src": {
+      "uk": "underestimate__gb_1.mp3",
+      "us": "underestimate__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/ˌʌndərˈestɪmət/",
+     "us": "/ˌʌndərˈestɪmət/",
+     "src": {
+      "uk": "underestimate__gb_2.mp3",
+      "us": "underestimate__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "underground": {
+   "voice": "tts",
+   "senses": [
+    0,
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˌʌndəˈɡraʊnd/",
+     "us": "/ˌʌndərˈɡraʊnd/",
+     "src": {
+      "uk": "underground__gb_1.mp3",
+      "us": "underground__us_5.mp3"
+     }
+    },
+    {
+     "uk": "/ˈʌndəɡraʊnd/",
+     "us": "/ˈʌndərɡraʊnd/",
+     "src": {
+      "uk": "underground__gb_3.mp3",
+      "us": "underground__us_3.mp3"
+     }
+    }
+   ]
+  },
+  "update": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˌʌpˈdeɪt/",
+     "us": "/ˌʌpˈdeɪt/",
+     "src": {
+      "uk": "update__gb_1.mp3",
+      "us": "update__us_1_rr.mp3"
+     }
+    },
+    {
+     "uk": "/ˈʌpdeɪt/",
+     "us": "/ˈʌpdeɪt/",
+     "src": {
+      "uk": "update__gb_2.mp3",
+      "us": "update__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "upgrade": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˌʌpˈɡreɪd/",
+     "us": "/ˌʌpˈɡreɪd/",
+     "src": {
+      "uk": "upgrade__gb_1.mp3",
+      "us": "upgrade__us_1_rr.mp3"
+     }
+    },
+    {
+     "uk": "/ˈʌpɡreɪd/",
+     "us": "/ˈʌpɡreɪd/",
+     "src": {
+      "uk": "upgrade__gb_2.mp3",
+      "us": "upgrade__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "upload": {
+   "voice": "commons",
+   "senses": [
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ˌʌpˈləʊd/",
+     "us": "/ˌʌpˈloʊd/",
+     "src": {
+      "uk": "upload__gb_1.mp3",
+      "us": "upload__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/ˈʌpləʊd/",
+     "us": "/ˈʌploʊd/",
+     "src": {
+      "uk": "upload__gb_2.mp3",
+      "us": "upload__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "upset": {
+   "voice": "tts",
+   "senses": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/ʌpˈset/",
+     "us": "/ʌpˈset/",
+     "src": {
+      "uk": "upset__gb_1.mp3",
+      "us": "upset__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/ˈʌpset/",
+     "us": "/ˈʌpset/",
+     "src": {
+      "uk": "upset__gb_3.mp3",
+      "us": "upset__us_3.mp3"
+     }
+    }
+   ]
+  },
+  "use": {
+   "voice": "tts",
+   "senses": [
+    0,
+    1,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/juːz/",
+     "us": "/juːz/",
+     "src": {
+      "uk": "use__gb_3.mp3",
+      "us": "use__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/juːs/",
+     "us": "/juːs/",
+     "src": {
+      "uk": "use__gb_4.mp3",
+      "us": "use__us_2.mp3"
+     }
+    }
+   ]
+  },
+  "wind": {
+   "voice": "tts",
+   "senses": [
+    0,
+    1,
+    1
+   ],
+   "pron": [
+    {
+     "uk": "/wɪnd/",
+     "us": "/wɪnd/",
+     "src": {
+      "uk": "wind__gb_1.mp3",
+      "us": "wind__us_1.mp3"
+     }
+    },
+    {
+     "uk": "/waɪnd/",
+     "us": "/waɪnd/",
+     "src": {
+      "uk": "wind__gb_2.mp3",
+      "us": "wind__us_2.mp3"
+     }
+    }
+   ]
+  }
+ }
+}
