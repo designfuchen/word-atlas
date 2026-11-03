@@ -1,7 +1,12 @@
 export type Accent = "uk" | "us";
 
-/** Compact row from atlas/index.json: [id, word, zh, ipa, cefr, topic, media]. */
-export type IndexRow = [string, string, string, string, number, number, number];
+/**
+ * Compact row from atlas/index.json: [id, word, zh, ipa, cefr, topic, media,
+ * more]. `zh` is the first sense (what the grid shows); `more` carries the
+ * remaining senses, `pos zh` joined with `|`, so Chinese search can reach past
+ * the headword's first meaning. Absent on single-sense rows and old datasets.
+ */
+export type IndexRow = [string, string, string, string, number, number, number, string?];
 
 export interface Sense {
   pos: string;
@@ -42,6 +47,8 @@ export interface WordRef {
   id: string;
   word: string;
   zh: string;
+  /** Remaining senses as `pos zh`, separated by `|`; absent when there is one. */
+  more?: string;
   ipa: string;
   cefr: number;
   topic: number;

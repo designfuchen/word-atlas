@@ -8,7 +8,7 @@ import { go, openWord, type Route } from "../lib/router";
 import { isMastered } from "../store/srs";
 import { useStore } from "../store/store";
 import { Illustration } from "../ui/Illustration";
-import { searchAtlas } from "../ui/Palette";
+import { isChinese, matchSense, searchAtlas } from "../lib/search";
 import { Speak } from "../ui/Speak";
 
 type Status = "all" | "new" | "learning" | "mastered" | "saved";
@@ -232,9 +232,9 @@ export function AtlasPage({
           <p>这片星域还没有词。换个筛选条件试试。</p>
         </div>
       ) : view === "grid" ? (
-        <VirtualGrid items={list} cards={cards} />
+        <VirtualGrid items={list} cards={cards} query={q} />
       ) : (
-        <VirtualList items={list} cards={cards} />
+        <VirtualList items={list} cards={cards} query={q} />
       )}
     </div>
   );
@@ -289,12 +289,20 @@ function useWidth(ref: React.RefObject<HTMLDivElement | null>) {
   return w;
 }
 
+/** The gloss under a headword: whichever sense the Chinese query hit, else the first. */
+function glossFor(w: WordRef, query: string) {
+  const term = query.trim();
+  return term && isChinese(term) ? (matchSense(w, term)?.sense ?? w.zh) : w.zh;
+}
+
 function VirtualGrid({
   items,
   cards,
+  query,
 }: {
   items: WordRef[];
   cards: Record<string, { s: number; st: number }>;
+  query: string;
 }) {
   const atlas = useAtlas();
   const box = useRef<HTMLDivElement>(null);
@@ -346,7 +354,7 @@ function VirtualGrid({
               <span className={`tile-lv lv-${atlas.cefr[w.cefr]}`}>
                 {atlas.cefr[w.cefr]}
               </span>
-              <span className="tile-zh">{w.zh}</span>
+              <span className="tile-zh">{glossFor(w, query)}</span>
             </span>
           </button>,
         );
@@ -361,9 +369,11 @@ function VirtualGrid({
 function VirtualList({
   items,
   cards,
+  query,
 }: {
   items: WordRef[];
   cards: Record<string, { s: number; st: number }>;
+  query: string;
 }) {
   const atlas = useAtlas();
   const accent = useStore((s) => s.settings.accent);
@@ -394,7 +404,7 @@ function VirtualList({
               {w.word}
             </span>
             <span className="row-ipa ipa">{w.ipa}</span>
-            <span className="row-zh">{w.zh}</span>
+            <span className="row-zh">{glossFor(w, query)}</span>
             <span
               className={`row-dot ${card ? (card.st === 2 && card.s >= 21 ? "is-mastered" : "is-learning") : ""}`}
             />

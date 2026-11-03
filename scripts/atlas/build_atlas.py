@@ -132,7 +132,10 @@ def main():
         c["m"] = m
         s0 = c["senses"][0]
         zh = f'{s0["pos"]} {s0["zh"]}'.strip()
-        index.append([c["id"], c["w"], zh, c["uk"] or c["us"], CEFR.index(c["cefr"]), TOPIC_INDEX[c["topic"]], m])
+        # Senses after the first ride along so search can reach 缠绕 and 蜿蜒 on
+        # the `wind` row, not just its first meaning. `|` never appears in a gloss.
+        more = "|".join(f'{s["pos"]} {s["zh"]}'.strip() for s in c["senses"][1:])
+        index.append([c["id"], c["w"], zh, c["uk"] or c["us"], CEFR.index(c["cefr"]), TOPIC_INDEX[c["topic"]], m, more])
 
     for n in range(0, len(entries), 100):
         chunk = [{k: v for k, v in c.items() if not k.startswith("_")} for c in entries[n : n + 100]]
@@ -150,7 +153,7 @@ def main():
         "chunk": 100,
         "topics": TOPICS,
         "cefr": CEFR,
-        "fields": ["id", "word", "zh", "ipa", "cefr", "topic", "media"],
+        "fields": ["id", "word", "zh", "ipa", "cefr", "topic", "media", "more"],
         "words": index,
     }
     (PUB / "index.json").write_text(json.dumps(meta, ensure_ascii=False, separators=(",", ":")))
