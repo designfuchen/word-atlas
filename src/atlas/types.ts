@@ -23,9 +23,17 @@ export interface Entry {
   ex: Example[];
   col: string[];
   fam: string[];
+  /** 同根词 — cognates that share the headword's root, from the etymology dictionary. */
+  root?: string[];
   syn: string[];
   ant: string[];
   tip: string;
+  /**
+   * 词源图景 — one line from the etymology dictionary reading the word's
+   * literal meaning out of its root (`com- (共同) + currere (跑) 的字面意思是…`).
+   * Reaches 6,754 of the 7,298 entries; the rest go without the block.
+   */
+  ety?: string;
   cefr: string;
   topic: string;
   /** Usage caution (register, offensiveness, spelling), shown with the entry. */

@@ -30,6 +30,8 @@ TOPIC_INDEX = {k: i for i, (k, _) in enumerate(TOPICS)}
 CEFR = ["A1", "A2", "B1", "B2", "C1", "C2"]
 PUB = ROOT / "public" / "atlas"
 DATA = ROOT / "data"
+# 词源词典的解析结果：词源图景 / 近义词 / 同根词，见 scripts/etymology/import_etymology.py
+ETY = ROOT / "scripts" / "etymology" / "etymology.json"
 
 
 def slugify(word):
@@ -73,6 +75,33 @@ def webp(src, dst, size, q):
     subprocess.run(["cwebp", "-quiet", "-q", str(q), "-m", "6", "-resize", str(size), str(size), str(src), "-o", str(dst)], check=True)
 
 
+def apply_etymology(entries):
+    """Fold in 词源图景, extra 近义 and 同根词 from the parsed etymology dictionary.
+
+    The dictionary reaches 6,754 of the 7,298 entries; the rest simply go without
+    the block. Synonyms it adds go first, and same-root words already covered by
+    `fam` or `syn` are dropped so a card never lists one word twice.
+    """
+    if not ETY.exists():
+        return 0
+    words = json.loads(ETY.read_text(encoding="utf-8"))["words"]
+    hit = 0
+    for c in entries:
+        d = words.get(c["w"].lower())
+        if not d:
+            continue
+        hit += 1
+        c["ety"] = d["s"]
+        have = {s.lower() for s in c["syn"]}
+        extra = [s for s in d["syn"] if s.lower() not in have][:4]
+        c["syn"] = (extra + c["syn"])[:6]
+        skip = {re.sub(r"\s*\(.*\)\s*$", "", f).strip().lower() for f in c["fam"]} | {s.lower() for s in c["syn"]}
+        roots = [w for w in d["root"] if w.lower() not in skip][:6]
+        if roots:
+            c["root"] = roots
+    return hit
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--no-media", action="store_true")
@@ -100,6 +129,7 @@ def main():
     # Learning path: easier levels first, deterministic shuffle inside each level
     # so neighbouring words come from different topics.
     entries.sort(key=lambda c: (CEFR.index(c["cefr"]), hashlib.sha1(c["id"].encode()).hexdigest()))
+    ety = apply_etymology(entries)
 
     for d in ("img", "thumb", "audio/uk", "audio/us", "audio/ex", "audio/ex2", "entries"):
         (PUB / d).mkdir(parents=True, exist_ok=True)
@@ -171,7 +201,7 @@ def main():
                         ex[0]["en"], ex[0]["zh"], ex[1]["en"], ex[1]["zh"],
                         " ; ".join(c["col"]), " ; ".join(c["fam"]), ", ".join(c["syn"]), ", ".join(c["ant"]), c["tip"]])
     (FORGE / "build-warnings.json").write_text(json.dumps(warnings, ensure_ascii=False, indent=1))
-    print(json.dumps({k: meta[k] for k in ("count", "examples", "illustrated", "voiced")}), "warnings", len(warnings))
+    print(json.dumps({k: meta[k] for k in ("count", "examples", "illustrated", "voiced")}), "warnings", len(warnings), "etymology", ety)
 
 
 if __name__ == "__main__":
