@@ -155,6 +155,8 @@ export interface EngineOptions {
   reducedMotion: boolean;
   preserve?: boolean;
   autoRotate?: number;
+  /** Multiplies the default viewing distance; smaller galaxies stand closer. */
+  distScale?: number;
 }
 
 /** Choose a quality tier before the first frame. */
@@ -257,7 +259,8 @@ export class GalaxyEngine {
   /** Default viewing distance: portrait screens need to stand further back. */
   baseDist() {
     const aspect = this.w / this.h;
-    return aspect < 1 ? 1.8 / Math.max(0.55, aspect) * 0.82 : 1.8;
+    const d = aspect < 1 ? (1.8 / Math.max(0.55, aspect)) * 0.82 : 1.8;
+    return d * (this.opts.distScale ?? 1);
   }
 
   resize() {
