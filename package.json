@@ -9,6 +9,8 @@
     "preview": "vite preview --host 0.0.0.0",
     "test": "node --import tsx --test src/**/*.test.ts",
     "check:atlas": "node scripts/check-atlas.mjs",
+    "check:poetry": "node scripts/check-poetry.mjs",
+    "build:poetry": "python3 scripts/poetry/build_poetry.py --src ../chinese-poetry",
     "build:atlas": "python3 scripts/atlas/build_atlas.py",
     "render:cards": "node scripts/render-cards.mjs",
     "pack:public": "python3 scripts/package_public.py --out ../开源发布/word-atlas",
