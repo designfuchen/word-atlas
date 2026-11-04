@@ -9,3 +9,7 @@ output/
 .DS_Store
 .playwright-cli/
 *.tsbuildinfo
+
+# 词源词典：解析脚本 scripts/etymology/import_etymology.py，只有解析结果
+# scripts/etymology/etymology.json 随仓库，51 MB 的 MDX 本身不进 Git
+/etymology/

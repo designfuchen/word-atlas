@@ -13,7 +13,9 @@
 | `ex` | `{en, zh}[]` | 两条原创例句：`ex[0]` 日常短句，`ex[1]` 雅思语境长句 |
 | `col` | string[] | 常用搭配，格式 `english｜中文` |
 | `fam` | string[] | 词族，格式 `word (pos)` |
-| `syn` / `ant` | string[] | 近义 / 反义 |
+| `root` | string[] | 可选：同根词——与词头共享词根的同源词，来自词源词典 |
+| `ety` | string | 可选：词源图景小结，一句话读出词根的字面义（覆盖 6,754 条） |
+| `syn` / `ant` | string[] | 近义 / 反义。`syn` 先放词源词典的近义词辨析，再放原有补充，最多 6 个 |
 | `tip` | string | 一条中文用法或辨析提示 |
 | `cefr` | `A1`…`C2` | 估计难度 |
 | `topic` | string | 19 个话题之一：education, work, technology, science, environment, health, society, government, economy, media, arts, travel, city, nature, daily, emotion, thinking, sport, history |

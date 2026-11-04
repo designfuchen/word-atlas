@@ -1075,6 +1075,21 @@ code {
   color: var(--ink-3);
   font-variation-settings: "opsz" 14;
 }
+/* 词源图景：音标与释义之间的一条批注，靠一竖线站住，不抢翻译的重量。 */
+.etym {
+  margin-top: 18px;
+  padding: 3px 0 3px 14px;
+  border-left: 2px solid var(--ochre);
+}
+.etym .eyebrow {
+  color: var(--ochre);
+  margin-bottom: 7px;
+}
+.etym-sum {
+  font: 400 15px/1.7 var(--serif);
+  color: var(--ink-2);
+  text-wrap: pretty;
+}
 .block {
   margin-top: 26px;
   padding-top: 22px;
