@@ -96,6 +96,17 @@ export function About() {
         </section>
 
         <section className="panel">
+          <h3 className="eyebrow">诗词从哪里来</h3>
+          <p className="muted">
+            诗词数据整理自开源项目{" "}
+            <a className="link" href="https://github.com/chinese-poetry/chinese-poetry" target="_blank" rel="noreferrer">
+              chinese-poetry
+            </a>
+            （MIT）。古诗原文是公版作品；拼音由程序生成，只修正了少数确定的读音。这些内容没有逐首人工审校，看到错的地方，欢迎提 Issue 或 PR。
+          </p>
+        </section>
+
+        <section className="panel">
           <h3 className="eyebrow">给开发者</h3>
           <p className="muted">
             <code>data/word-atlas.json</code> 和 <code>.csv</code> 是完整词库；<code>public/atlas</code> 里是网页用的分块数据、插画和音频。拿去做 Anki 牌组、背词小程序、浏览器插件，或者 AI 应用的评测集，署名即可。
