@@ -1,4 +1,4 @@
-import { BookOpen, ChevronLeft, ChevronRight, Compass, Github, Keyboard, Moon, Search, Sun, User } from "lucide-react";
+import { BookOpen, ChevronLeft, ChevronRight, Compass, Github, Keyboard, Moon, ScrollText, Search, Sun, User } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 import { AtlasContext, useAtlas, useEntry } from "./atlas/context";
 import { loadOpenAtlas, loadPrivateAtlas } from "./atlas/data";
@@ -10,6 +10,7 @@ import { About } from "./pages/About";
 import { Learn } from "./pages/Learn";
 import { Me } from "./pages/Me";
 import { Onboarding } from "./pages/Onboarding";
+import { Poetry } from "./pages/Poetry";
 import { Practice } from "./pages/Practice";
 import { Today } from "./pages/Today";
 import { cue } from "./lib/sound";
@@ -26,6 +27,7 @@ const NAV: { page: Route["page"]; label: string; icon: typeof Compass }[] = [
   { page: "today", label: "今日", icon: Compass },
   { page: "atlas", label: "图鉴", icon: BookOpen },
   { page: "practice", label: "练习", icon: Keyboard },
+  { page: "poetry", label: "诗词", icon: ScrollText },
   { page: "me", label: "我的", icon: User },
 ];
 
@@ -97,23 +99,28 @@ function Shell({ privateAvailable }: { privateAvailable: boolean }) {
   const theme = useStore((s) => s.settings.theme);
   const [palette, setPalette] = useState(false);
   const [splash, setSplash] = useState(shouldShowSplash);
-  const focus = route.page === "learn";
+  const poetry = route.page === "poetry";
+  const focus = route.page === "learn" || (route.page === "poetry" && !!route.learn);
 
   useEffect(() => {
     const on = (e: KeyboardEvent) => {
       const t = e.target as HTMLElement;
       const typing = t.tagName === "INPUT" || t.tagName === "TEXTAREA";
+      // The word palette searches words only; on poetry pages the shortcuts focus the poem search box.
+      const search = () => (poetry ? document.querySelector<HTMLInputElement>(".poem-search input")?.focus() : undefined);
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
         e.preventDefault();
-        setPalette((p) => !p);
+        if (poetry) search();
+        else setPalette((p) => !p);
       } else if (e.key === "/" && !typing && !focus) {
         e.preventDefault();
-        setPalette(true);
+        if (poetry) search();
+        else setPalette(true);
       }
     };
     window.addEventListener("keydown", on);
     return () => window.removeEventListener("keydown", on);
-  }, [focus]);
+  }, [focus, poetry]);
 
   useEffect(() => {
     if (!word) window.scrollTo({ top: 0 });
@@ -136,11 +143,13 @@ function Shell({ privateAvailable }: { privateAvailable: boolean }) {
             ))}
           </nav>
           <div className="topbar-tools">
-            <button className="search-pill" onClick={() => setPalette(true)} aria-label="搜索单词">
-              <Search size={17} />
-              <span>搜索单词</span>
-              <kbd>⌘K</kbd>
-            </button>
+            {!poetry && (
+              <button className="search-pill" onClick={() => setPalette(true)} aria-label="搜索单词">
+                <Search size={17} />
+                <span>搜索单词</span>
+                <kbd>⌘K</kbd>
+              </button>
+            )}
             <AmbiencePicker />
             <button className="icon-btn" onClick={() => store.settings({ theme: dark ? "light" : "dark" })} aria-label={dark ? "切换到浅色" : "切换到深色"}>
               {dark ? <Sun size={19} /> : <Moon size={19} />}
@@ -157,6 +166,7 @@ function Shell({ privateAvailable }: { privateAvailable: boolean }) {
         {route.page === "atlas" && <AtlasPage route={route} />}
         {route.page === "learn" && <Learn />}
         {route.page === "practice" && <Practice />}
+        {route.page === "poetry" && <Poetry route={route} />}
         {route.page === "me" && <Me privateAvailable={privateAvailable} />}
         {route.page === "about" && <About />}
       </main>

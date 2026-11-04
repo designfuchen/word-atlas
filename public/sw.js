@@ -24,7 +24,8 @@ self.addEventListener("fetch", (event) => {
   if (req.method !== "GET" || req.headers.has("range")) return;
   const url = new URL(req.url);
   if (url.origin !== location.origin) return;
-  const isShell = req.mode === "navigate" || url.pathname.endsWith("/index.json");
+  // Poetry chunks are corrected over time, so they follow the index: network first, cache as the offline fallback.
+  const isShell = req.mode === "navigate" || url.pathname.endsWith("/index.json") || /\/poetry\/poems\/\d+\.json$/.test(url.pathname);
   if (isShell) {
     event.respondWith(
       fetch(req)
