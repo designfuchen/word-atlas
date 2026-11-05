@@ -16,17 +16,23 @@ export const AMBIENCE = [
 ] as const;
 export type AmbienceId = (typeof AMBIENCE)[number]["id"];
 
+/**
+ * The regenerated UI cues are level-matched to -20 dBFS on their loudest
+ * 100 ms with a -3 dBFS peak ceiling, so a uniform 0.60 puts each of them
+ * about 5-6 dB above the ambience bed. `tap` stays quieter (it fires on every
+ * press); `fly` / `ignite` keep their original gains.
+ */
 const CUE_GAIN: Record<Cue, number> = {
-  correct: 0.55,
-  wrong: 0.5,
-  flip: 0.45,
-  page: 0.4,
+  correct: 0.6,
+  wrong: 0.6,
+  flip: 0.6,
+  page: 0.6,
   complete: 0.6,
-  streak: 0.5,
-  start: 0.5,
-  tap: 0.3,
-  key: 0.18,
-  twinkle: 0.22,
+  streak: 0.6,
+  start: 0.6,
+  tap: 0.45,
+  key: 0.6,
+  twinkle: 0.6,
   fly: 0.4,
   ignite: 0.45,
 };
