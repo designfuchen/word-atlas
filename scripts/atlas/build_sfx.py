@@ -52,7 +52,11 @@ def main():
             "-af",
             "silenceremove=start_periods=1:start_threshold=-50dB:start_silence=0.01,"
             "areverse,silenceremove=start_periods=1:start_threshold=-60dB,areverse,"
-            "afade=t=out:st=0:d=0.001,loudnorm=I=-18:TP=-2:LRA=7,afade=t=in:d=0.004",
+            # Fade the *tail*: reverse, fade in the head, reverse back.
+            # afade=t=out:st=0:d=0.001 muted everything after 1 ms, leaving
+            # each UI cue as only ~10 ms of audio (see issue #48).
+            "areverse,afade=t=in:st=0:d=0.01,areverse,"
+            "loudnorm=I=-18:TP=-2:LRA=7,afade=t=in:d=0.004",
             "-ac", "1", "-ar", "44100", "-b:a", "96k", str(OUT / f"{name}.mp3"),
         )
     for name, src in AMBIENT.items():
