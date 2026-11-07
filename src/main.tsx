@@ -12,7 +12,7 @@ createRoot(document.getElementById("root")!).render(
 );
 
 if (import.meta.env.PROD && "serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register(`${import.meta.env.BASE_URL}sw.js`).catch(() => null);
-  });
+  // Register as early as possible: the worker precaches the shell on install, so
+  // the first offline revisit works instead of waiting for a later load event.
+  navigator.serviceWorker.register(`${import.meta.env.BASE_URL}sw.js`).catch(() => null);
 }
