@@ -324,6 +324,29 @@ export class GalaxyEngine {
     this.onFrame = undefined;
   }
 
+  /** WebGL context lost (GPU reset, tab evicted): drop the stale GL objects. */
+  handleContextLost() {
+    this.stop();
+    this.gl = null;
+    this.star = undefined;
+    this.neb = undefined;
+    this.vao = undefined;
+    this.stateBuf = undefined;
+  }
+
+  /** WebGL context restored: rebuild programs and buffers, then resume drawing. */
+  handleContextRestored() {
+    const gl = this.canvas.getContext("webgl2");
+    if (!gl) return;
+    try {
+      this.initGL(gl);
+      this.gl = gl;
+      this.start();
+    } catch {
+      this.gl = null;
+    }
+  }
+
   private matrices() {
     const c = this.cam;
     const ex = c.tx + c.dist * Math.cos(c.pitch) * Math.sin(c.yaw);

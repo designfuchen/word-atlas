@@ -83,6 +83,15 @@ export function Galaxy({
     // Only animate while visible.
     const io = new IntersectionObserver(([e]) => (e.isIntersecting && !document.hidden ? eng.start() : eng.stop()));
     io.observe(cv);
+    // Browsers drop WebGL contexts under memory pressure; without handling this
+    // the galaxy stays blank until a reload.
+    const lost = (e: Event) => {
+      e.preventDefault(); // let the browser restore the context
+      eng.handleContextLost();
+    };
+    const restored = () => eng.handleContextRestored();
+    cv.addEventListener("webglcontextlost", lost);
+    cv.addEventListener("webglcontextrestored", restored);
     const vis = () => (document.hidden ? eng.stop() : eng.start());
     document.addEventListener("visibilitychange", vis);
     if (mode === "full") {
@@ -106,6 +115,8 @@ export function Galaxy({
     return () => {
       ro.disconnect();
       io.disconnect();
+      cv.removeEventListener("webglcontextlost", lost);
+      cv.removeEventListener("webglcontextrestored", restored);
       document.removeEventListener("visibilitychange", vis);
       eng.destroy();
       engine.current = null;
@@ -157,13 +168,24 @@ export function Galaxy({
   // First visit to the full galaxy: one quiet sentence explaining what it is.
   useEffect(() => {
     if (mode !== "full") return;
+    // Leave the greeting unconsumed while sound is off, so turning it on later
+    // still plays it instead of losing it forever.
+    if (!store.get().settings.sfx) return;
     try {
       if (localStorage.getItem("word-atlas:galaxy-hello")) return;
-      localStorage.setItem("word-atlas:galaxy-hello", "1");
     } catch {
       return;
     }
-    const t = window.setTimeout(() => store.get().settings.sfx && void playFile("voice-galaxy-hello.mp3", 0.9), 900);
+    const t = window.setTimeout(() => {
+      void playFile("voice-galaxy-hello.mp3", 0.9).then(() => {
+        // Mark it heard only once it has actually been handed to the audio engine.
+        try {
+          localStorage.setItem("word-atlas:galaxy-hello", "1");
+        } catch {
+          /* optional */
+        }
+      });
+    }, 900);
     return () => clearTimeout(t);
   }, [mode]);
 

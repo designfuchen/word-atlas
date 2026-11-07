@@ -1,3 +1,4 @@
+import { downloadFile, shareFile } from "../ui/nativeShare";
 import { toast } from "../ui/Toast";
 
 const SERIF = '"Fraunces Variable", "Songti SC", "Noto Serif SC", Georgia, serif';
@@ -48,15 +49,8 @@ export async function shareGalaxy(source: HTMLCanvasElement, lit: number, total:
     const blob = await new Promise<Blob | null>((r) => c.toBlob(r, "image/png"));
     if (!blob) throw new Error("no blob");
     const file = new File([blob], "word-atlas-galaxy.png", { type: "image/png" });
-    if (navigator.canShare?.({ files: [file] })) {
-      await navigator.share({ files: [file] }).catch(() => null);
-      return;
-    }
-    const a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = file.name;
-    a.click();
-    setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+    if ((await shareFile(file)) !== "unavailable") return;
+    downloadFile(file);
     toast("星图已保存", "ok");
   } catch {
     toast("星图生成失败", "warn");
