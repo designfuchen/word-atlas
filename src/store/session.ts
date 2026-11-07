@@ -105,6 +105,25 @@ export function buildSession(atlas: Atlas, p: Progress, s: Settings, opts?: { id
   return { id: `s${seed}`, started: seed, steps, index: 0, graded: {}, newIds, reviewIds };
 }
 
+/**
+ * Re-roll the quiz kinds of the steps that have not been answered yet. Kinds are baked
+ * into the steps when the session is built, so turning a kind-shaping setting (e.g.
+ * `spell`) off mid-session would otherwise leave those questions in place.
+ */
+export function retuneSession(sess: ActiveSession, atlas: Atlas, p: Progress, s: Settings): ActiveSession {
+  if (s.spell) return sess;
+  let changed = false;
+  const steps = sess.steps.map((step, i) => {
+    if (i < sess.index || step.kind !== "spell") return step;
+    changed = true;
+    const ref = atlas.byId.get(step.id)!;
+    const seed = hashSeed(sess.id + i);
+    const kind = quizKind(ref, p, s, seed);
+    return { id: step.id, kind, options: kind === "spell" ? undefined : distractors(atlas, ref, kind, seed) };
+  });
+  return changed ? { ...sess, steps } : sess;
+}
+
 export function gradeFor(kind: QuizKind, correct: boolean, ms: number, hinted: boolean): Grade {
   if (!correct) return Rating.Again;
   if (hinted) return Rating.Hard;
