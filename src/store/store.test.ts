@@ -29,3 +29,49 @@ test("rejects other versions and unknown settings", () => {
   assert.equal(s.theme, "dark");
   assert.equal(s.retention, 0.9);
 });
+
+const session = {
+  id: "s1",
+  started: 1,
+  index: 0,
+  steps: [
+    { id: "library", kind: "intro" },
+    { id: "library", kind: "meaning", options: ["library", "museum", "office"] },
+  ],
+  graded: { library: 3 },
+  newIds: ["library"],
+  reviewIds: [],
+};
+
+test("keeps a well-formed session", () => {
+  const p = sanitizeProgress({ version: 2, session }, "word-atlas-open");
+  assert.equal(p.session?.id, "s1");
+  assert.equal(p.session?.steps.length, 2);
+});
+
+test("drops a session missing newIds/reviewIds/started without losing other progress", () => {
+  for (const missing of ["started", "newIds", "reviewIds"]) {
+    const broken: Record<string, unknown> = { ...session };
+    delete broken[missing];
+    const p = sanitizeProgress({ version: 2, cards: { ok: card }, session: broken }, "word-atlas-open");
+    assert.equal(p.session, null, `session with missing ${missing} should be dropped`);
+    assert.deepEqual(Object.keys(p.cards), ["ok"]);
+  }
+});
+
+test("drops a session with malformed steps or an out-of-range index", () => {
+  const badSteps = { ...session, steps: [null, { id: "library", kind: "nope" }] };
+  assert.equal(sanitizeProgress({ version: 2, session: badSteps }, "x").session, null);
+
+  const badOptions = { ...session, steps: [{ id: "library", kind: "meaning", options: [1, 2] }] };
+  assert.equal(sanitizeProgress({ version: 2, session: badOptions }, "x").session, null);
+
+  const clamped = sanitizeProgress({ version: 2, session: { ...session, index: 99 } }, "x");
+  assert.equal(clamped.session?.index, session.steps.length);
+});
+
+test("ignores prototype keys in a restored card map", () => {
+  const p = sanitizeProgress({ version: 2, cards: JSON.parse('{"__proto__": {"due": 1}}') }, "x");
+  assert.deepEqual(Object.keys(p.cards), []);
+  assert.equal(({} as Record<string, unknown>).due, undefined);
+});
