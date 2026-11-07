@@ -22,33 +22,59 @@ export function Learn() {
   const atlas = useAtlas();
   const session = useStore((s) => s.progress.session);
   const [ready, setReady] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
+    // Another tab can clear the session while this page is open, and a corrupted
+    // session may contain no steps; rebuild instead of rendering an eternal spinner.
+    if (session && session.steps.length) return;
     const { progress, settings } = store.get();
-    if (!progress.session) {
-      const s = buildSession(atlas, progress, settings);
-      if (!s.steps.length) {
-        go({ page: "today" }, null, true);
-        return;
-      }
-      store.progress((p) => ({ ...p, session: s }));
+    const s = buildSession(atlas, progress, settings);
+    if (!s.steps.length) {
+      go({ page: "today" }, null, true);
+      return;
     }
-  }, [atlas]);
+    store.progress((p) => ({ ...p, session: s }));
+  }, [atlas, session]);
 
   const ids = useMemo(() => [...new Set(session?.steps.map((s) => s.id) ?? [])], [session?.id]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (!ids.length) return;
     let live = true;
+    setError(null);
+    setReady(false);
     // Load the first chunk before rendering, the rest in the background.
-    prefetch(atlas, ids.slice(0, 6)).then(() => live && setReady(true));
+    void prefetch(atlas, ids.slice(0, 6)).then((first) => {
+      if (!live) return;
+      if (!first.some((e) => !!e)) {
+        setError("词条加载失败，可能是网络中断。请重试。");
+        return;
+      }
+      setReady(true);
+    });
     void prefetch(atlas, ids);
     return () => {
       live = false;
     };
-  }, [atlas, ids]);
+  }, [atlas, ids, attempt]);
 
   useEffect(() => () => stopAudio(), []);
 
+  if (error)
+    return (
+      <div className="learn learn-error">
+        <p>{error}</p>
+        <div className="learn-error-actions">
+          <button className="btn btn-primary" onClick={() => setAttempt((a) => a + 1)}>
+            重试
+          </button>
+          <button className="btn btn-ghost" onClick={() => go({ page: "today" })}>
+            返回今日
+          </button>
+        </div>
+      </div>
+    );
   if (!session || !ready) return <div className="learn learn-loading"><span className="spinner" /></div>;
   if (session.finished || session.index >= session.steps.length) return <Summary session={session} />;
   return <Runner session={session} />;
@@ -97,11 +123,12 @@ function Intro({ step }: { step: Step }) {
     if (entry && settings.autoplay) void play(atlas.audio(entry, settings.accent), entry.w, settings.accent);
   }, [entry, atlas, settings.autoplay, settings.accent]);
   const next = useCallback(() => {
+    if (!entry) return;
     stopAudio();
     if (store.get().settings.sfx) void cue("flip");
     advance(elapsed());
-  }, [elapsed]);
-  useKeys({ Enter: next, " ": next });
+  }, [elapsed, entry]);
+  useKeys(entry ? { Enter: next, " ": next } : {});
   if (!entry) return <span className="spinner" />;
   return (
     <div className="intro">
@@ -130,7 +157,7 @@ const KIND_LABEL: Record<QuizKind, string> = {
 
 function Quiz({ step, session }: { step: Step & { kind: QuizKind }; session: ActiveSession }) {
   const atlas = useAtlas();
-  const ref = atlas.byId.get(step.id)!;
+  const ref = atlas.byId.get(step.id);
   const { entry } = useEntry(step.id);
   const settings = useStore((s) => s.settings);
   const pending = session.pending;
@@ -140,7 +167,8 @@ function Quiz({ step, session }: { step: Step & { kind: QuizKind }; session: Act
 
   const submit = useCallback(
     (value: string, correct: boolean) => {
-      if (pending) return;
+      // Never grade a step whose card has not loaded yet.
+      if (pending || !entry || !ref) return;
       const ms = elapsed() * 1000;
       if (correct) {
         const el = document.querySelector<HTMLElement>(step.kind === "spell" ? ".slots" : `[data-option="${value}"]`);
@@ -151,7 +179,7 @@ function Quiz({ step, session }: { step: Step & { kind: QuizKind }; session: Act
       answer(atlas, step, correct, gradeFor(step.kind, correct, ms, hints > 0), value);
       if (entry) void play(atlas.audio(entry, settings.accent), entry.w, settings.accent);
     },
-    [pending, elapsed, settings, atlas, step, hints, entry],
+    [pending, elapsed, settings, atlas, step, hints, entry, ref],
   );
 
   const next = useCallback(() => {
@@ -167,12 +195,12 @@ function Quiz({ step, session }: { step: Step & { kind: QuizKind }; session: Act
   if (pending) {
     keys.Enter = next;
     keys[" "] = next;
-  } else if (step.kind !== "spell") {
+  } else if (step.kind !== "spell" && entry && ref) {
     options.forEach((o, i) => (keys[String(i + 1)] = () => submit(o.id, o.id === ref.id)));
   }
   useKeys(keys);
 
-  if (!entry) return <span className="spinner" />;
+  if (!entry || !ref) return <span className="spinner" />;
   const sentence = entry.ex[0] ? gap(entry.ex[0].en, entry.w) : null;
 
   return (

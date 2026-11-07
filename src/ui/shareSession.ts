@@ -2,6 +2,7 @@ import type { Atlas } from "../atlas/types";
 import { sessionStats } from "../store/session";
 import { Rating } from "../store/srs";
 import type { ActiveSession } from "../store/store";
+import { downloadFile, shareFile } from "./nativeShare";
 import { toast } from "./Toast";
 
 const SERIF = '"Fraunces Variable", "Songti SC", "Noto Serif SC", Georgia, serif';
@@ -27,8 +28,9 @@ export async function shareSession(atlas: Atlas, s: ActiveSession) {
     await document.fonts.load(`600 96px ${SERIF}`).catch(() => null);
     ctx.fillStyle = "#F3ECDF";
     ctx.fillRect(0, 0, W, H);
-    const ids = [...new Set(s.steps.map((x) => x.id))].slice(0, 9);
-    const refs = ids.map((id) => atlas.byId.get(id)!).filter(Boolean);
+    const ids = [...new Set(s.steps.map((x) => x.id))];
+    const shown = ids.slice(0, 9);
+    const refs = shown.map((id) => atlas.byId.get(id)!).filter(Boolean);
     const pad = 64;
     const gapPx = 16;
     const cell = (W - pad * 2 - gapPx * 2) / 3;
@@ -79,15 +81,8 @@ export async function shareSession(atlas: Atlas, s: ActiveSession) {
     const blob = await new Promise<Blob | null>((r) => c.toBlob(r, "image/png"));
     if (!blob) throw new Error();
     const file = new File([blob], `word-atlas-${d.toISOString().slice(0, 10)}.png`, { type: "image/png" });
-    if (navigator.canShare?.({ files: [file] })) {
-      await navigator.share({ files: [file] }).catch(() => null);
-      return;
-    }
-    const a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = file.name;
-    a.click();
-    setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+    if ((await shareFile(file)) !== "unavailable") return;
+    downloadFile(file);
     toast("成绩卡已保存", "ok");
   } catch {
     toast("成绩卡生成失败", "warn");
