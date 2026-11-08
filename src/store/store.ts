@@ -218,22 +218,26 @@ export function flush() {
   }
 }
 
+/** Another tab saved: adopt its data instead of keeping a stale copy. */
+export function onExternalStorage(key: string | null, newValue: string | null) {
+  if (!newValue) return;
+  // But never over an unsaved change this tab made: adopting would drop the pending
+  // bookmark/review edit, which the next flush would otherwise persist.
+  if (dirty) return;
+  try {
+    if (key === SETTINGS_KEY) state = { ...state, settings: sanitizeSettings(JSON.parse(newValue)) };
+    else if (key === progressKey(state.progress.datasetId)) state = { ...state, progress: sanitizeProgress(JSON.parse(newValue), state.progress.datasetId) };
+    else return;
+    emit();
+  } catch {
+    /* ignore malformed writes */
+  }
+}
+
 if (typeof window !== "undefined") {
   window.addEventListener("pagehide", flush);
   document.addEventListener("visibilitychange", () => document.visibilityState === "hidden" && flush());
-  // Another tab saved: adopt its data instead of keeping a stale copy.
-  window.addEventListener("storage", (e) => {
-    if (!e.newValue) return;
-    try {
-      if (e.key === SETTINGS_KEY) state = { ...state, settings: sanitizeSettings(JSON.parse(e.newValue)) };
-      else if (e.key === progressKey(state.progress.datasetId))
-        state = { ...state, progress: sanitizeProgress(JSON.parse(e.newValue), state.progress.datasetId) };
-      else return;
-      emit();
-    } catch {
-      /* ignore malformed writes */
-    }
-  });
+  window.addEventListener("storage", (e) => onExternalStorage(e.key, e.newValue));
 }
 
 export const store = {
