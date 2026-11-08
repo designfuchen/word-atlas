@@ -87,13 +87,20 @@ def secrets() -> list[bytes]:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", required=True)
+    ap.add_argument("--force", action="store_true", help="allow clearing a non-empty directory that is not a previous export")
     a = ap.parse_args()
     out = Path(a.out).resolve()
     if out == ROOT or ROOT in out.parents:
         print("refusing to export inside the project")
         return 2
+    if out in ROOT.parents:
+        print("refusing to export into an ancestor of the project")
+        return 2
     keep_git = (out / ".git").exists()
-    if out.exists():
+    if out.exists() and any(out.iterdir()):
+        if not (out / "PUBLIC_MANIFEST.json").is_file() and not a.force:
+            print("refusing to clear a non-empty directory that is not a previous export (pass --force)")
+            return 2
         for child in out.iterdir():
             if child.name == ".git":
                 continue

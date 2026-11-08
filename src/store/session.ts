@@ -49,17 +49,36 @@ function quizKind(ref: WordRef, p: Progress, s: Settings, salt: number): QuizKin
   return roll < 50 ? "listen" : hasImg ? "picture" : "meaning";
 }
 
+const POS_TAG = /^(?:n|v|adj|adv|prep|conj|pron|num|art|int|aux|phr)\.\s*/i;
+
+/** Split a gloss such as "n. 春天；弹簧 | n. 泉水" into its distinct meaning segments. */
+export function senses(zh: string): Set<string> {
+  const out = new Set<string>();
+  for (const part of zh.split(/[|｜；;，,/]/)) {
+    const s = part.trim().replace(POS_TAG, "").replace(/\s+/g, " ").trim();
+    if (s) out.add(s);
+  }
+  return out;
+}
+
+const overlaps = (a: Set<string>, b: Set<string>) => {
+  for (const x of a) if (b.has(x)) return true;
+  return false;
+};
+
 /** Distractors that look plausible: same level, similar spelling or length, different meaning. */
 export function distractors(atlas: Atlas, ref: WordRef, kind: QuizKind, seed: number) {
   const target = normalize(ref.word);
-  const zhCore = ref.zh.replace(/^[a-z.]+\s*/, "").split(/[；;，,]/)[0];
+  const answer = senses(ref.zh);
   const scored: [number, WordRef][] = [];
   const pool = atlas.words;
   const start = Math.max(0, ref.order - 400);
   for (let i = start; i < Math.min(pool.length, ref.order + 400); i++) {
     const w = pool[i];
     if (w.id === ref.id || normalize(w.word) === target) continue;
-    if (zhCore && w.zh.includes(zhCore)) continue;
+    // A candidate that shares *any* meaning with the answer would be a correct
+    // answer shown as a wrong option (dorm / dormitory, spring / spring water).
+    if (overlaps(answer, senses(w.zh))) continue;
     let score = hashSeed(w.id + seed) % 100;
     if (kind === "listen" || kind === "picture") {
       if (w.word[0]?.toLowerCase() === target[0]) score += 120;
@@ -71,12 +90,16 @@ export function distractors(atlas: Atlas, ref: WordRef, kind: QuizKind, seed: nu
     scored.push([score, w]);
   }
   scored.sort((a, b) => b[0] - a[0]);
-  const seen = new Set<string>();
+  const used = new Set<string>();
+  const seenWords = new Set<string>();
   const picks: string[] = [];
   for (const [, w] of scored) {
-    const key = kind === "meaning" ? w.zh : normalize(w.word);
-    if (seen.has(key)) continue;
-    seen.add(key);
+    const segs = senses(w.zh);
+    if (overlaps(answer, segs) || overlaps(used, segs)) continue;
+    const word = normalize(w.word);
+    if (kind !== "meaning" && seenWords.has(word)) continue;
+    seenWords.add(word);
+    segs.forEach((s) => used.add(s));
     picks.push(w.id);
     if (picks.length === 3) break;
   }

@@ -121,6 +121,13 @@ npm run dev
 
 打开 **http://localhost:5188**。
 
+开发服务器默认只监听 `127.0.0.1`：`.local/` 里的私人词库和媒体只会服务本机。需要用手机在同网段调试时，
+显式放宽监听（这会把 `.local/` 一并暴露给局域网，请只在可信网络下使用）：
+
+```bash
+npm run dev -- --host 0.0.0.0
+```
+
 ```bash
 npm test             # 单元测试
 npm run check:atlas  # 词库结构与媒体校验

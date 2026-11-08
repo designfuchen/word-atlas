@@ -10,11 +10,36 @@ ATLAS_BASE=/words/ npm run build
 
 ## Nginx 示例
 
+`index.html`、`sw.js` 和 `atlas/index.json` 必须每次回源校验（它们决定加载哪一版带哈希的资源）；只有带哈希的
+`assets/`、`atlas/`（图片、音频、分块词条）才可以长期缓存。注意 `atlas/index.json` 要放在 `atlas/` 规则之前，
+精确匹配优先。
+
 ```nginx
+location = /words/index.html {
+    alias /var/www/word-atlas/index.html;
+    add_header Cache-Control "no-cache";
+}
+location = /words/sw.js {
+    alias /var/www/word-atlas/sw.js;
+    add_header Cache-Control "no-cache";
+}
+location = /words/atlas/index.json {
+    alias /var/www/word-atlas/atlas/index.json;
+    add_header Cache-Control "no-cache";
+}
+location ^~ /words/assets/ {
+    alias /var/www/word-atlas/assets/;
+    add_header Cache-Control "public, max-age=31536000, immutable";
+}
+location ^~ /words/atlas/ {
+    alias /var/www/word-atlas/atlas/;
+    add_header Cache-Control "public, max-age=31536000, immutable";
+    try_files $uri =404;
+}
 location ^~ /words/ {
     alias /var/www/word-atlas/;
     try_files $uri $uri/ /words/index.html;
-    expires 7d;
+    add_header Cache-Control "no-cache";
 }
 ```
 
