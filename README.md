@@ -110,7 +110,7 @@
 
 ## 本地运行
 
-需要 **Node.js 20+** 和 npm。仓库含完整图片与录音，首次下载可能较久。
+需要 **Node.js 20+** 和 npm（用 `node -v` 确认版本）。仓库含完整图片与录音，首次下载可能较久。
 
 ```bash
 git clone --depth 1 https://github.com/designfuchen/word-atlas.git
@@ -119,13 +119,21 @@ npm ci
 npm run dev
 ```
 
-打开 **http://localhost:5188**。
+等终端出现 `VITE ready in ... — Local: http://localhost:5188/` 后，打开 **http://localhost:5188**。
+
+以下命令是提交贡献前的校验，本地预览不需要运行（见 [参与贡献](#参与贡献)）：
 
 ```bash
 npm test             # 单元测试
 npm run check:atlas  # 词库结构与媒体校验
 npm run build        # 构建到 dist/
 ```
+
+打不开页面时依次排查：
+
+- 终端没有出现 `VITE ready ... Local: http://localhost:5188/`：说明 dev server 没有启动成功。先看终端报错；报 `vite: not found` 说明依赖未装好，重跑 `npm ci`。
+- 报 `Error: Port 5188 is already in use`：5188 被其他程序占用。Vite 配置了 `strictPort`，端口被占会直接退出而不会自动换端口。释放该端口，或指定其他端口启动：`npm run dev -- --port 5189`，再打开对应地址。
+- Node 版本低于 20 可能导致安装或启动失败，升级后重试。
 
 子路径部署：`ATLAS_BASE=/words/ npm run build`。完整说明见 [部署文档](docs/deployment.md)。
 

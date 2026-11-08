@@ -7,7 +7,7 @@ import { burst } from "../lib/burst";
 import { cue } from "../lib/sound";
 import { go } from "../lib/router";
 import { gap, normalize } from "../lib/text";
-import { answer, advance, buildSession, gradeFor, sessionStats } from "../store/session";
+import { answer, advance, buildSession, gradeFor, retuneSession, sessionStats } from "../store/session";
 import { Rating } from "../store/srs";
 import { store, useStore, type ActiveSession, type QuizKind, type Step } from "../store/store";
 import { EntryView, Highlight } from "../ui/EntryView";
@@ -32,6 +32,13 @@ export function Learn() {
         return;
       }
       store.progress((p) => ({ ...p, session: s }));
+      return;
+    }
+    // Quiz kinds are baked into the steps at build time: retune the unanswered ones
+    // when a kind-shaping setting (e.g. spell) changed since the session started.
+    const tuned = retuneSession(progress.session, atlas, progress, settings);
+    if (tuned !== progress.session) {
+      store.progress((p) => (p.session ? { ...p, session: retuneSession(p.session, atlas, p, settings) } : p));
     }
   }, [atlas]);
 
