@@ -678,7 +678,8 @@ code {
   right: 0;
   bottom: 0;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
   padding: 6px 8px calc(6px + env(safe-area-inset-bottom));
   background: color-mix(in oklab, var(--paper) 86%, transparent);
   backdrop-filter: saturate(1.4) blur(18px);
@@ -4119,4 +4120,464 @@ a:hover .mark-needle,
 }
 .streak-panel .mini-stats div:first-child dd {
   color: var(--ochre);
+}
+
+/* Poetry */
+.poem-list,
+.poem-rows {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.poem-list {
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+.poem-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--r);
+  background: var(--card);
+  box-shadow: var(--shadow-sm);
+  color: inherit;
+  text-decoration: none;
+}
+.poem-item:hover {
+  background: var(--card-2);
+}
+.poem-item-body {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+}
+.poem-rows .poem-item {
+  border-radius: var(--r-sm);
+}
+.poem-rows .poem-item-body {
+  padding: 10px 16px;
+}
+.poem-item-side {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.poem-ring-track {
+  stroke: var(--line-strong);
+}
+.poem-ring-started {
+  stroke: color-mix(in oklab, var(--ochre) 30%, transparent);
+}
+.poem-ring-mastered {
+  stroke: var(--ochre);
+}
+.poem-ring.is-done .poem-ring-started,
+.poem-ring.is-done .poem-ring-mastered {
+  stroke: var(--sage);
+}
+.poem-item-main {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  gap: 2px;
+}
+.poem-item b,
+.poem-meta,
+.poem-first {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.poem-item b {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+}
+.poem-first {
+  font-family: var(--serif);
+  font-style: normal;
+  font-size: 0.92rem;
+  color: var(--ink-2);
+}
+.poem-meta {
+  color: var(--ink-3);
+  font-size: 0.8rem;
+}
+.poem-item small {
+  color: var(--ink-3);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+.poem-item.is-learning small {
+  color: var(--ochre);
+}
+.poem-item.is-mastered small {
+  color: var(--sage-ink);
+}
+.poem-count {
+  margin: 16px 0 0;
+  color: var(--ink-3);
+  font-size: 0.85rem;
+}
+.poem-mark {
+  flex: none;
+  color: var(--ochre);
+}
+.poem {
+  max-width: 640px;
+  margin: 24px auto 0;
+  text-align: center;
+}
+.poem-toggle {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--ink-3);
+  font-size: 0.9rem;
+}
+.poem-lines {
+  margin: 28px 0;
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  line-height: 2.6;
+}
+.poem-lines p {
+  margin: 0;
+}
+.poem-lines .ch {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 1.05em;
+  margin: 0 0.04em;
+  line-height: 1.2;
+  vertical-align: bottom;
+}
+.poem-lines.has-py .ch {
+  min-width: 1.6em;
+}
+.poem-lines.has-py .ch-punct {
+  min-width: 0.6em;
+}
+.poem-lines .ch small {
+  min-height: 1.2em;
+  font-family: var(--sans);
+  font-size: 0.5em;
+  line-height: 1.2;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+.poem-tags,
+.poem-status {
+  color: var(--ink-3);
+  font-size: 0.9rem;
+}
+@media (max-width: 480px) {
+  .poem-lines {
+    font-size: 1.25rem;
+  }
+}
+.poem-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 8px 0 12px;
+}
+.poem-filters .poem-search {
+  flex: 1 1 220px;
+  height: 44px;
+}
+.poem-filters select {
+  height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--ink);
+}
+.poetry .segmented {
+  margin-bottom: 10px;
+  overflow-x: auto;
+}
+.poem-empty {
+  margin: 32px 0;
+  color: var(--ink-3);
+  text-align: center;
+}
+.poem-bar,
+.poem-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.poem-nav {
+  justify-content: center;
+  gap: 16px;
+  margin: 32px 0;
+  color: var(--ink-3);
+  font-size: 0.9rem;
+}
+.poem-gist {
+  margin: 24px 0 8px;
+  text-align: left;
+  color: var(--ink-2);
+  line-height: 1.8;
+}
+.poem-plan {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  margin: 20px 0 12px;
+  padding: 16px 20px;
+}
+.poem-plan > div {
+  flex: 1 1 160px;
+}
+.poem-plan-line {
+  margin: 4px 0 0;
+  font-size: 1.1rem;
+}
+.poem-plan-line b {
+  color: var(--ochre);
+}
+.poem-plan-new {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink-3);
+  font-size: 0.9rem;
+}
+.poem-plan-new select {
+  height: 36px;
+  padding: 0 10px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--ink);
+}
+.btn.is-disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+.poem-bar-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.verse {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  line-height: 1.3;
+  text-align: center;
+}
+.verse + .verse {
+  margin-top: 0.7em;
+}
+.verse .ch {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 1.05em;
+  margin: 0 0.04em;
+  vertical-align: bottom;
+}
+.verse.has-py .ch {
+  min-width: 1.6em;
+}
+.verse.has-py .ch-punct {
+  min-width: 0.6em;
+}
+.verse .ch small {
+  min-height: 1.2em;
+  font-family: var(--sans);
+  font-size: 0.5em;
+  line-height: 1.2;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+.verse .ch-blank > span {
+  min-width: 1em;
+  border-bottom: 2px solid var(--ochre);
+}
+.verse-ask {
+  color: var(--ink-4);
+}
+.poem-source {
+  margin: 0 0 6px;
+  text-align: center;
+  color: var(--ink-3);
+  font-size: 0.9rem;
+}
+.poem-prompt {
+  display: grid;
+  gap: 0.5em;
+  margin: 16px 0 24px;
+}
+.options-lines,
+.options-chars {
+  display: grid;
+  gap: 10px;
+  padding: 0;
+  list-style: none;
+}
+.options-chars {
+  grid-template-columns: repeat(4, 1fr);
+}
+.options-chars .option {
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 1.6rem;
+}
+.options-lines .option {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+}
+.arrange {
+  display: grid;
+  gap: 16px;
+  justify-items: center;
+}
+.arrange-slots,
+.arrange-tokens {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+.arrange .slot {
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.8rem;
+  border-bottom: 2px solid var(--line-strong);
+  font-family: var(--serif);
+  font-size: 1.5rem;
+}
+.arrange .slot.is-ok {
+  color: var(--sage-ink);
+}
+.arrange .slot.is-bad {
+  color: var(--terra-ink);
+}
+.arrange-tokens .option {
+  flex: 0 0 auto;
+  width: 3.4rem;
+  height: 3.4rem;
+  padding: 0;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 1.5rem;
+}
+.poem-hint {
+  color: var(--ink-3);
+  font-size: 0.9rem;
+}
+.poem-intro {
+  text-align: center;
+}
+.poem-sum-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+  padding: 0;
+  list-style: none;
+}
+.poem-sum-list li {
+  display: grid;
+  padding: 8px 12px;
+  border-radius: var(--r-sm);
+  background: var(--card-2);
+}
+.poem-sum-list li.is-wrong {
+  box-shadow: inset 0 0 0 1px var(--terra);
+}
+.poem-sum-list small {
+  color: var(--ink-3);
+}
+@media (max-width: 480px) {
+  .verse {
+    font-size: 1.2rem;
+  }
+}
+.feedback-poem .feedback-inner {
+  grid-template-columns: 1fr;
+  text-align: center;
+}
+.feedback-poem .verse {
+  font-size: 1.15rem;
+  white-space: nowrap;
+}
+.feedback-poem .verse + .verse {
+  margin-top: 0.35em;
+}
+.feedback-poem .feedback-verdict {
+  margin-bottom: 6px;
+}
+/* Poem feedback is tall; flow it under the options instead of covering the answer. */
+.feedback.feedback-poem {
+  position: static;
+  margin: 20px 0 0;
+  padding: 0;
+}
+.feedback-poem .feedback-inner {
+  border-radius: var(--r-lg);
+  border-bottom: 1px solid var(--line);
+  box-shadow: none;
+}
+.poem-tools {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px 16px;
+  margin-top: 10px;
+}
+.poem-line {
+  cursor: pointer;
+  border-radius: var(--r-sm);
+}
+.poem-line:hover,
+.poem-line:focus-visible {
+  background: color-mix(in oklab, var(--ochre) 12%, transparent);
+  outline: 0;
+}
+.poem-intro .speak {
+  margin: 8px auto 0;
+}
+.poem-tip {
+  max-width: 260px;
+}
+.poem-tip span {
+  display: grid;
+  gap: 2px;
+  text-align: left;
+}
+.poem-tip b {
+  font-family: var(--serif);
+}
+.poetry.is-galaxy .poem-plan {
+  display: none;
+}
+@media (max-width: 759px) {
+  .poetry.is-galaxy .page-head .lede {
+    display: none;
+  }
+  .poetry.is-galaxy .page-head .display {
+    font-size: 26px;
+  }
+}
+.poem-snippet {
+  font-family: var(--serif);
+  font-style: normal;
+  font-size: 0.9rem;
+  color: var(--ink-2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

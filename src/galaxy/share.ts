@@ -3,8 +3,24 @@ import { toast } from "../ui/Toast";
 const SERIF = '"Fraunces Variable", "Songti SC", "Noto Serif SC", Georgia, serif';
 const SANS = '-apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif';
 
+/** Poster text; the defaults describe the word galaxy. */
+export interface GalaxyCopy {
+  heading: string;
+  /** Line under the count, given the total number of stars. */
+  detail: (total: number) => string;
+  tag: string;
+  file: string;
+}
+
+const WORD_COPY: GalaxyCopy = {
+  heading: "我的词汇星图",
+  detail: (total) => `共 ${total.toLocaleString()} 个雅思词 · 每学会一个，就点亮一颗`,
+  tag: "一词一画，点亮雅思",
+  file: "word-atlas-galaxy.png",
+};
+
 /** "My word galaxy": the live render framed as a 4:5 poster. */
-export async function shareGalaxy(source: HTMLCanvasElement, lit: number, total: number) {
+export async function shareGalaxy(source: HTMLCanvasElement, lit: number, total: number, copy: GalaxyCopy = WORD_COPY) {
   try {
     const W = 1080;
     const H = 1350;
@@ -29,13 +45,13 @@ export async function shareGalaxy(source: HTMLCanvasElement, lit: number, total:
     const pad = 72;
     g.fillStyle = "rgba(243,236,223,.62)";
     g.font = `500 28px ${SANS}`;
-    g.fillText("我的词汇星图", pad, 1110);
+    g.fillText(copy.heading, pad, 1110);
     g.fillStyle = "#f3ecdf";
     g.font = `600 76px ${SERIF}`;
     g.fillText(`已点亮 ${lit.toLocaleString()} 颗星`, pad, 1196);
     g.font = `400 28px ${SANS}`;
     g.fillStyle = "rgba(243,236,223,.6)";
-    g.fillText(`共 ${total.toLocaleString()} 个雅思词 · 每学会一个，就点亮一颗`, pad, 1248);
+    g.fillText(copy.detail(total), pad, 1248);
     g.fillStyle = "rgba(243,236,223,.16)";
     g.fillRect(pad, H - 66, W - pad * 2, 1);
     g.fillStyle = "#f3ecdf";
@@ -43,11 +59,11 @@ export async function shareGalaxy(source: HTMLCanvasElement, lit: number, total:
     g.fillText("词光 · Word Atlas", pad, H - 26);
     g.font = `400 24px ${SANS}`;
     g.fillStyle = "rgba(243,236,223,.55)";
-    const tag = "一词一画，点亮雅思";
+    const tag = copy.tag;
     g.fillText(tag, W - pad - g.measureText(tag).width, H - 28);
     const blob = await new Promise<Blob | null>((r) => c.toBlob(r, "image/png"));
     if (!blob) throw new Error("no blob");
-    const file = new File([blob], "word-atlas-galaxy.png", { type: "image/png" });
+    const file = new File([blob], copy.file, { type: "image/png" });
     if (navigator.canShare?.({ files: [file] })) {
       await navigator.share({ files: [file] }).catch(() => null);
       return;

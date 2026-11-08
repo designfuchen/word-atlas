@@ -78,6 +78,12 @@ Explore 19 topic groups, rotate and zoom the galaxy, and select a star to open i
 
 **Local first.** Visited entries and media can be cached for offline use. Export a progress backup before moving to another device.
 
+### Poetry
+
+Besides IELTS vocabulary, Word Atlas can teach classical Chinese poems: 176 Tang poems with per-character pinyin, read aloud as a whole or line by line. Review is scheduled with FSRS per couplet (two lines), with next-line, fill-the-gap and arrange-the-characters exercises. Find it under "诗词" in the top navigation.
+
+The data is derived from [chinese-poetry](https://github.com/chinese-poetry/chinese-poetry) (MIT). It is not proofread entry by entry. See [docs/poetry.md](docs/poetry.md) for the format, how to regenerate it and known issues, and [CONTENT_LICENSE.md](CONTENT_LICENSE.md) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for licensing.
+
 Listen to a sample: **abandon** — [UK](public/atlas/audio/uk/abandon.mp3) · [US](public/atlas/audio/us/abandon.mp3) · [Example](public/atlas/audio/ex/abandon.mp3).
 
 ## Quick start

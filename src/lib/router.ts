@@ -6,6 +6,7 @@ export type Route =
   | { page: "atlas"; topic?: string; level?: string; q?: string; view?: string }
   | { page: "learn" }
   | { page: "practice" }
+  | { page: "poetry"; id?: string; learn?: boolean; poem?: string; q?: string; form?: string; stage?: string; theme?: string; level?: string; status?: string; view?: string }
   | { page: "me" }
   | { page: "about" };
 
@@ -25,6 +26,19 @@ function parse(hash: string): Location {
     route = { page: "atlas", topic: params.get("topic") || undefined, level: params.get("level") || undefined, q: params.get("q") || undefined, view: params.get("view") || undefined };
   else if (seg[0] === "learn") route = { page: "learn" };
   else if (seg[0] === "practice") route = { page: "practice" };
+  else if (seg[0] === "poetry" && seg[1] === "learn") route = { page: "poetry", learn: true, poem: params.get("p") || undefined };
+  else if (seg[0] === "poetry")
+    route = {
+      page: "poetry",
+      id: seg[1] ? decodeURIComponent(seg[1]) : undefined,
+      q: params.get("q") || undefined,
+      form: params.get("form") || undefined,
+      stage: params.get("stage") || undefined,
+      theme: params.get("theme") || undefined,
+      level: params.get("level") || undefined,
+      status: params.get("status") || undefined,
+      view: params.get("view") || undefined,
+    };
   else if (seg[0] === "me") route = { page: "me" };
   else if (seg[0] === "about") route = { page: "about" };
   else if (seg[0] === "w" && seg[1]) return { route: { page: "atlas" }, word: decodeURIComponent(seg[1]) };
@@ -40,8 +54,12 @@ export function href(route: Route, word?: string | null) {
     if (route.view) params.set("view", route.view);
   }
   if (word) params.set("w", word);
+  if (route.page === "poetry" && route.learn && route.poem) params.set("p", route.poem);
+  if (route.page === "poetry" && !route.learn && !route.id)
+    for (const k of ["q", "form", "stage", "theme", "level", "status", "view"] as const) if (route[k]) params.set(k, route[k]!);
   const q = params.toString();
-  return `#/${route.page === "today" ? "" : route.page}${q ? `?${q}` : ""}`;
+  const path = route.page === "today" ? "" : route.page === "poetry" && route.learn ? "poetry/learn" : route.page === "poetry" && route.id ? `poetry/${encodeURIComponent(route.id)}` : route.page;
+  return `#/${path}${q ? `?${q}` : ""}`;
 }
 
 let loc = parse(location.hash);

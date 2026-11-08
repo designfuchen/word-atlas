@@ -95,7 +95,7 @@ export const dayKey = (d = new Date()) =>
 const SETTINGS_KEY = "word-atlas:settings";
 const progressKey = (id: string) => `word-atlas:v2:${id}`;
 
-function read<T>(key: string): T | null {
+export function read<T>(key: string): T | null {
   try {
     const raw = localStorage.getItem(key);
     return raw ? (JSON.parse(raw) as T) : null;
@@ -103,7 +103,7 @@ function read<T>(key: string): T | null {
     return null;
   }
 }
-function write(key: string, value: unknown) {
+export function write(key: string, value: unknown) {
   try {
     localStorage.setItem(key, JSON.stringify(value));
     return true;

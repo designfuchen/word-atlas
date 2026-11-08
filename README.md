@@ -108,6 +108,12 @@
 
 </details>
 
+## 诗词
+
+除了雅思词汇，词光还可以背古诗：目前收录 176 首唐诗，带逐字拼音，可以朗读全诗或单句；以「联」（两句）为单位用 FSRS 安排复习，题型有接下句、补全一句和按顺序排字。入口是顶部导航的「诗词」。
+
+诗词数据整理自 [chinese-poetry](https://github.com/chinese-poetry/chinese-poetry)（MIT），内容没有逐首人工审校。数据格式、重新生成的方法和已知问题见 [docs/poetry.md](docs/poetry.md)，授权见 [CONTENT_LICENSE.md](CONTENT_LICENSE.md) 和 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+
 ## 本地运行
 
 需要 **Node.js 20+** 和 npm。仓库含完整图片与录音，首次下载可能较久。
