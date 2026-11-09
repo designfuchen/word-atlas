@@ -1,3 +1,10 @@
+import { shuffle } from "./text";
+
+/** Pick up to `n` practice words from anywhere in the pool: shuffle first, then take. */
+export function practiceBatch(pool: string[], seed: number, n = 10): string[] {
+  return shuffle(pool, seed).slice(0, n);
+}
+
 /** Normalize the typography mobile keyboards commonly substitute. */
 export const clean = (text: string) =>
   text
