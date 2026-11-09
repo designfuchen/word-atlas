@@ -2949,6 +2949,11 @@ code {
   gap: 10px;
   justify-items: center;
 }
+.typing-zh .link {
+  /* Sit above the transparent .typing-input that covers the stage. */
+  position: relative;
+  z-index: 1;
+}
 .typing-text {
   font: 400 clamp(22px, 3.6vw, 32px) / 1.6 var(--mono);
   letter-spacing: 0.01em;
