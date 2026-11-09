@@ -17,6 +17,8 @@
 - 视觉改动请同时检查浅色、深色和 375px 手机宽度。
 - 提交前运行 `npm test`、`npm run check:atlas`、`npm run build`。
 
+GitHub Actions 会在每次推送和 PR 时，使用 Node.js 24 自动安装锁定的依赖，并运行上述三项检查。可以在仓库的 Actions 页面或 PR 的检查区查看结果；也可在 Actions 页面手动运行 Checks。
+
 ## 新素材
 
 新增图片、录音或文本时，请写明来源与授权，只接受可以按 CC BY 4.0 再分发的内容。
