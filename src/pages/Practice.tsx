@@ -125,6 +125,7 @@ function TypingRound({ mode, entries, onExit, onAgain }: { mode: Mode; entries: 
   const [note, setNote] = useState("");
   const started = useRef<number | null>(null);
   const itemRef = useRef({ typed: 0, correct: 0 });
+  const skipped = useRef(0);
   const locked = useRef(false);
   const noteTimer = useRef<number | null>(null);
   const input = useRef<HTMLInputElement>(null);
@@ -198,17 +199,30 @@ function TypingRound({ mode, entries, onExit, onAgain }: { mode: Mode; entries: 
 
   const reveal = () => {
     setRevealed(true);
-    input.current?.focus();
+    // Revealing must not cost the learner the field they were typing in: Android
+    // closes the soft keyboard as soon as the focused input stops accepting text.
+    requestAnimationFrame(() => input.current?.focus());
   };
 
   const skipItem = () => {
     if (locked.current) return;
     locked.current = true;
+    skipped.current += 1;
+    // A revealed item is an attempt the learner could not produce, so it has to
+    // sit in the accuracy denominator: ten skips must not read as 100%.
+    const missing = Math.max(0, Array.from(clean(target)).length - itemRef.current.typed);
+    if (missing > 0) {
+      const t = totalsRef.current;
+      const nt = { ...t, typed: t.typed + missing };
+      totalsRef.current = nt;
+      setTotals(nt);
+    }
     advance();
   };
 
   const onKeyDown = (ev: KeyboardEvent<HTMLInputElement>) => {
-    if (ev.key !== "Enter") return;
+    // Some Android IMEs report the action key only through keyCode.
+    if (ev.key !== "Enter" && ev.keyCode !== 13) return;
     ev.preventDefault();
     if (done || locked.current) return;
     if (revealed) skipItem();
@@ -228,7 +242,10 @@ function TypingRound({ mode, entries, onExit, onAgain }: { mode: Mode; entries: 
           <h1 className="display">
             {m.wpm} <small>WPM</small>
           </h1>
-          <p className="lede">准确率 {m.accuracy}% · {entries.length} 项</p>
+          <p className="lede">
+            准确率 {m.accuracy}% · {entries.length} 项
+            {skipped.current > 0 ? ` · 跳过 ${skipped.current} 项` : ""}
+          </p>
           <div className="summary-actions">
             <button className="btn btn-ghost" onClick={onExit}>
               返回
@@ -292,7 +309,6 @@ function TypingRound({ mode, entries, onExit, onAgain }: { mode: Mode; entries: 
           value={value}
           onChange={(ev) => onChange(ev.target.value)}
           onKeyDown={onKeyDown}
-          readOnly={revealed}
           autoFocus
           autoCapitalize="off"
           autoCorrect="off"
@@ -308,12 +324,17 @@ function TypingRound({ mode, entries, onExit, onAgain }: { mode: Mode; entries: 
         <p className="muted typing-help">
           {revealed ? (
             <>
-              答案已显示。<button className="link" onClick={skipItem}>下一题</button>
+              答案已显示。
+              <button className="btn btn-ghost" onMouseDown={(ev) => ev.preventDefault()} onClick={skipItem}>
+                下一题
+              </button>
             </>
           ) : (
             <>
               {mode === "dictation" ? "听不清可以点「再听一遍」。" : "直接开始输入，全部正确后自动进入下一项。"}
-              <button className="link" onClick={reveal}>看答案</button>
+              <button className="link" onMouseDown={(ev) => ev.preventDefault()} onClick={reveal}>
+                看答案
+              </button>
             </>
           )}
           第 {i + 1}/{entries.length} 项
