@@ -96,7 +96,9 @@ function ensure(word, token) {
     senses: meaning, ex: selected.map((x) => x.ex), col: custom?.col || [], fam: [], syn: [], ant: [],
     tip: custom?.tip || "结合例句判断词性与含义；点击例句中的单词可继续查词。",
     cefr: custom?.cefr || found[0]?.cefr || "B1", topic: found[0]?.topic || "daily",
-    m: ["img", "thumb"].every(folder => fs.existsSync(path.join(root, "public/atlas", folder, `${id}.webp`))) ? 1 : 0,
+    m: (["img", "thumb"].every(folder => fs.existsSync(path.join(root, "public/atlas", folder, `${id}.webp`))) ? 1 : 0)
+      | Object.entries({ uk: 2, us: 4, ex: 8, ex2: 16 }).reduce((flags, [kind, bit]) =>
+        flags | (fs.existsSync(path.join(root, "public/atlas/audio", kind, `${id}.mp3`)) ? bit : 0), 0),
     note: custom?.note || "补充词卡：释义取自 ECDICT；例句取自原词库，难度沿用例句来源词条，尚未逐条审校。",
     supplemental: true,
   };

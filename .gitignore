@@ -10,3 +10,10 @@ output/
 .DS_Store
 .playwright-cli/
 *.tsbuildinfo
+android/.gradle/
+android/local.properties
+android/**/build/
+*.apk
+*.jks
+*.keystore
+__pycache__/

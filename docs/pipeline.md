@@ -38,6 +38,10 @@ npm run check:atlas
 
 提交前运行 `npm test`、`npm run check:atlas`、`npm run build`。补充词卡测试覆盖例句查词、引用与图片配对；自动检查不能证明释义和图意完全准确。
 
+## 补充词卡录音
+
+1,295 张补充词卡配有 4,611 段英美发音与例句录音，沿用 `public/atlas/audio/{uk,us,ex,ex2}/extra-<id>.mp3` 路径。生成来源、声音、文本与哈希记录在 `data/supplemental-audio.json`；生成和授权说明见[补充语音维护说明](supplemental-audio.md)。重新生成词卡会保留已有录音的媒体标志。
+
 ## 质量边界
 
 自动校验覆盖结构、字段、顺序和文件，不覆盖语义正确性。插画和例句没有逐条人工审校；发现问题请提 Issue 或 PR。

@@ -89,9 +89,9 @@ export function About() {
 
         <section className="panel">
           <h3 className="eyebrow">内容从哪里来</h3>
-          <p className="muted">例句补充词卡使用 <a href="https://github.com/skywind3000/ECDICT" target="_blank" rel="noreferrer">ECDICT 英汉词典</a>的释义与词形数据（<a href={`${BASE}atlas/ECDICT-LICENSE.txt`} target="_blank" rel="noreferrer">MIT 授权</a>），并整理了常用基础词和缩写。双语例句复用原词库；补充词卡使用系统语音，可具象呈现的词另配同风格 AI 插画，无独立录音。词典批量释义尚未逐条人工审校。</p>
+          <p className="muted">例句补充词卡使用 <a href="https://github.com/skywind3000/ECDICT" target="_blank" rel="noreferrer">ECDICT 英汉词典</a>的释义与词形数据（<a href={`${BASE}atlas/ECDICT-LICENSE.txt`} target="_blank" rel="noreferrer">MIT 授权</a>），并整理了常用基础词和缩写。双语例句复用原词库；补充词卡的英音、美音和例句朗读由本地 Kokoro 模型合成（英音 Emma，美音 Heart），录音随应用内置，可离线播放。可具象呈现的词另配同风格 AI 插画。词典批量释义和新增发音尚未逐条人工审校。语音模型的 <a href={`${BASE}atlas/KOKORO-LICENSE.txt`} target="_blank" rel="noreferrer">Apache 2.0 授权</a>随包保留。</p>
           <p className="muted">
-            释义、例句、搭配和提示由大语言模型按统一的词典规范重新撰写；插画由图像模型按统一画风逐词绘制；发音和朗读由 ElevenLabs 合成（英音 Alice，美音 Sarah）。所有内容都经过结构和一致性的自动校验，但没有逐条人工审校。看到错的地方，欢迎在 GitHub 提 Issue，或者直接改数据提 PR。
+            原词库的释义、例句、搭配和提示由大语言模型按统一的词典规范重新撰写；插画由图像模型按统一画风逐词绘制；发音和朗读由 ElevenLabs 合成（英音 Alice，美音 Sarah）。所有内容都经过结构和一致性的自动校验，但没有逐条人工审校。看到错的地方，欢迎在 GitHub 提 Issue，或者直接改数据提 PR。
           </p>
           <p className="muted">词光不是官方雅思词表，也不承诺提分。它只想把背单词这件事，做得好看一点、扎实一点。</p>
         </section>
