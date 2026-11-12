@@ -284,7 +284,14 @@ function TypingRound({ mode, entries, onExit, onAgain }: { mode: Mode; entries: 
         {mode !== "word" && (
           <p className="typing-zh">
             {mode === "dictation" && (
-              <button className="link" onClick={() => play(atlas.audio(e, "ex"), e.ex[0].en, settings.accent)}>
+              <button
+                className="link"
+                onMouseDown={(ev) => ev.preventDefault()}
+                onClick={(ev) => {
+                  ev.stopPropagation();
+                  void play(atlas.audio(e, "ex"), e.ex[0].en, settings.accent);
+                }}
+              >
                 再听一遍
               </button>
             )}
@@ -325,14 +332,28 @@ function TypingRound({ mode, entries, onExit, onAgain }: { mode: Mode; entries: 
           {revealed ? (
             <>
               答案已显示。
-              <button className="btn btn-ghost" onMouseDown={(ev) => ev.preventDefault()} onClick={skipItem}>
+              <button
+                className="btn btn-ghost"
+                onMouseDown={(ev) => ev.preventDefault()}
+                onClick={(ev) => {
+                  ev.stopPropagation();
+                  skipItem();
+                }}
+              >
                 下一题
               </button>
             </>
           ) : (
             <>
               {mode === "dictation" ? "听不清可以点「再听一遍」。" : "直接开始输入，全部正确后自动进入下一项。"}
-              <button className="link" onMouseDown={(ev) => ev.preventDefault()} onClick={reveal}>
+              <button
+                className="link"
+                onMouseDown={(ev) => ev.preventDefault()}
+                onClick={(ev) => {
+                  ev.stopPropagation();
+                  reveal();
+                }}
+              >
                 看答案
               </button>
             </>
