@@ -1,6 +1,7 @@
 node_modules/
 dist/
 .local/
+.qwen/
 .env
 .env.*
 !.env.example

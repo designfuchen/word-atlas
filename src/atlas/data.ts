@@ -1,5 +1,6 @@
 import type { Atlas, Entry, IndexRow, WordRef } from "./types";
 import { MEDIA } from "./types";
+import { createWordLookup } from "../lib/wordLookup";
 
 const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
 const url = (p: string) => `${BASE}/atlas/${p}`;
@@ -17,9 +18,11 @@ interface IndexFile {
 }
 
 export async function loadOpenAtlas(): Promise<Atlas> {
-  const res = await fetch(url("index.json"));
+  const [res, extraRes] = await Promise.all([fetch(url("index.json")), fetch(url("supplemental.json"))]);
   if (!res.ok) throw new Error(`词库索引加载失败（${res.status}）`);
+  if (!extraRes.ok) throw new Error(`补充词卡加载失败（${extraRes.status}）`);
   const idx = (await res.json()) as IndexFile;
+  const extra = (await extraRes.json()) as { entries: Entry[]; aliases: Record<string, string> };
   const words: WordRef[] = idx.words.map((r, order) => ({
     id: r[0],
     word: r[1],
@@ -30,8 +33,13 @@ export async function loadOpenAtlas(): Promise<Atlas> {
     media: r[6],
     order,
   }));
+  for (const e of extra.entries) words.push({
+    id: e.id, word: e.w, zh: e.senses.map((s) => `${s.pos} ${s.zh}`.trim()).join("；"),
+    ipa: e.uk || e.us, cefr: Math.max(0, idx.cefr.indexOf(e.cefr)),
+    topic: Math.max(0, idx.topics.findIndex(([id]) => id === e.topic)), media: e.m, order: words.length,
+  });
   const byId = new Map(words.map((w) => [w.id, w]));
-  const cache = new Map<string, Entry>();
+  const cache = new Map<string, Entry>(extra.entries.map((e) => [e.id, e]));
   const pending = new Map<number, Promise<void>>();
 
   const loadChunk = (n: number) => {
@@ -56,13 +64,14 @@ export async function loadOpenAtlas(): Promise<Atlas> {
     id: idx.id,
     name: idx.name,
     kind: "open",
-    count: idx.count,
-    examples: idx.examples,
-    illustrated: idx.illustrated,
+    count: words.length,
+    examples: idx.examples + extra.entries.reduce((sum, e) => sum + e.ex.length, 0),
+    illustrated: idx.illustrated + extra.entries.filter(e => e.m & MEDIA.img).length,
     topics: idx.topics,
     cefr: idx.cefr,
     words,
     byId,
+    lookup: createWordLookup(words, extra.aliases),
     peek: (id) => cache.get(id),
     async entry(id) {
       const hit = cache.get(id);
@@ -158,6 +167,7 @@ export async function loadPrivateAtlas(open: Atlas | null): Promise<Atlas | null
     cefr: open?.cefr ?? ["A1", "A2", "B1", "B2", "C1", "C2"],
     words,
     byId,
+    lookup: createWordLookup(words),
     peek: (id) => entries.get(id),
     entry: async (id) => {
       const e = entries.get(id);
