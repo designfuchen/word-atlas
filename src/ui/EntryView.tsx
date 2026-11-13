@@ -1,9 +1,10 @@
-import { Bookmark, BookmarkCheck, Lightbulb, Share2 } from "lucide-react";
+import { Bookmark, BookmarkCheck, CheckCheck, Lightbulb, Share2 } from "lucide-react";
+import { useEffect } from "react";
 import type { Entry, WordRef } from "../atlas/types";
 import { useAtlas } from "../atlas/context";
 import { splitHighlight, splitPair } from "../lib/text";
-import { formatInterval, isMastered } from "../store/srs";
-import { toggleBookmark, useStore } from "../store/store";
+import { formatInterval, isAutoMastered, isManual, wordState } from "../store/srs";
+import { toggleBookmark, toggleManual, useStore } from "../store/store";
 import { Illustration } from "./Illustration";
 import { Speak } from "./Speak";
 import { shareWord } from "./share";
@@ -64,7 +65,26 @@ export function EntryView({ entry, mode = "detail", eager = true }: { entry: Ent
     const hit = atlas.words.find((x) => x.word.toLowerCase() === w);
     return { label: f, id: hit?.id };
   });
-  const status = card ? (isMastered(card) ? "已掌握" : "学习中") : null;
+  const manual = isManual(card);
+  const auto = isAutoMastered(card);
+  const state = wordState(card);
+  const status = state === "new" ? null : state === "mastered" ? "已掌握" : "学习中";
+
+  // K toggles the manual "already mastered" mark while the sheet is open.
+  useEffect(() => {
+    // Nothing to toggle when FSRS already decided the word is mastered.
+    if (mode !== "detail" || auto) return;
+    const on = (e: KeyboardEvent) => {
+      if (e.metaKey || e.ctrlKey || e.altKey || e.repeat) return;
+      const t = e.target as HTMLElement;
+      if (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.isContentEditable) return;
+      if (e.key !== "k" && e.key !== "K") return;
+      e.preventDefault();
+      toggleManual(entry.id);
+    };
+    window.addEventListener("keydown", on);
+    return () => window.removeEventListener("keydown", on);
+  }, [mode, entry.id, auto]);
 
   return (
     <article className={`entry entry-${mode}`}>
@@ -76,7 +96,7 @@ export function EntryView({ entry, mode = "detail", eager = true }: { entry: Ent
           <div className="entry-tags">
             <span className={`chip chip-level lv-${entry.cefr}`}>{entry.cefr}</span>
             {topic && <span className="chip">{topic[1]}</span>}
-            {status && <span className={`chip chip-status ${status === "已掌握" ? "is-done" : ""}`}>{status}</span>}
+            {status && <span className={`chip chip-status ${state === "mastered" ? "is-done" : ""}`}>{status}</span>}
           </div>
           {mode === "detail" && (
             <div className="entry-actions">
@@ -100,6 +120,28 @@ export function EntryView({ entry, mode = "detail", eager = true }: { entry: Ent
           {entry.w}
         </h2>
         <Pronounce entry={entry} refw={ref ?? entry} />
+
+        {mode === "detail" && (
+          <div className="mark-row">
+            {auto ? (
+              <span className="mark-btn is-on is-locked" title="复习到 FSRS 认定已掌握，无需再安排">
+                <CheckCheck size={16} />
+                <span>已掌握 · FSRS 判定</span>
+              </span>
+            ) : (
+              <button
+                className={`mark-btn ${manual ? "is-on" : ""}`}
+                onClick={() => toggleManual(entry.id)}
+                aria-pressed={manual}
+                title={manual ? "取消已掌握，重新排入复习" : "已经认识这个词：不再新学、不再复习"}
+              >
+                <CheckCheck size={16} />
+                <span>{manual ? "已掌握 · 点此撤销" : "标记为已掌握"}</span>
+                <kbd>K</kbd>
+              </button>
+            )}
+          </div>
+        )}
 
         <ol className="senses">
           {entry.senses.map((s, i) => (
@@ -194,7 +236,15 @@ export function EntryView({ entry, mode = "detail", eager = true }: { entry: Ent
 
         {mode === "detail" && card && (
           <p className="memory-note">
-            {card.due <= Date.now() ? "现在可以复习" : `下次复习 ${formatInterval(card.due - Date.now())}后`} · 记忆稳定度 {card.s < 1 ? "<1" : Math.round(card.s)} 天 · 已复习 {card.reps} 次
+            {manual ? (
+              <>已掌握 · 你手动标记的，不再安排复习。按 <kbd>K</kbd> 或点上方按钮可撤销。</>
+            ) : auto ? (
+              <>已掌握 · 复习进度已达标，不再安排复习。</>
+            ) : (
+              <>
+                {card.due <= Date.now() ? "现在可以复习" : `下次复习 ${formatInterval(card.due - Date.now())}后`} · 记忆稳定度 {card.s < 1 ? "<1" : Math.round(card.s)} 天 · 已复习 {card.reps} 次
+              </>
+            )}
           </p>
         )}
       </div>

@@ -1,12 +1,13 @@
-import { Grid3x3, List, Search, Sparkles, X } from "lucide-react";
+import { Check, Grid3x3, List, Search, Sparkles, X } from "lucide-react";
 import { Galaxy } from "../galaxy/Galaxy";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { useAtlas } from "../atlas/context";
 import type { WordRef } from "../atlas/types";
 import { morphFrom } from "../lib/motion";
 import { go, openWord, type Route } from "../lib/router";
-import { isMastered } from "../store/srs";
-import { useStore } from "../store/store";
+import type { CardState } from "../store/srs";
+import { isAutoMastered, isManual, wordState } from "../store/srs";
+import { toggleManual, useStore } from "../store/store";
 import { Illustration } from "../ui/Illustration";
 import { searchAtlas } from "../ui/Palette";
 import { Speak } from "../ui/Speak";
@@ -81,10 +82,10 @@ export function AtlasPage({
     return base.filter((w) => {
       if (ti >= 0 && w.topic !== ti) return false;
       if (li >= 0 && w.cefr !== li) return false;
-      const c = cards[w.id];
-      if (status === "new") return !c;
-      if (status === "learning") return !!c && !isMastered(c);
-      if (status === "mastered") return isMastered(c);
+      const st = wordState(cards[w.id]);
+      if (status === "new") return st === "new";
+      if (status === "learning") return st === "learning";
+      if (status === "mastered") return st === "mastered";
       if (status === "saved") return saved.has(w.id);
       return true;
     });
@@ -294,7 +295,7 @@ function VirtualGrid({
   cards,
 }: {
   items: WordRef[];
-  cards: Record<string, { s: number; st: number }>;
+  cards: Record<string, CardState>;
 }) {
   const atlas = useAtlas();
   const box = useRef<HTMLDivElement>(null);
@@ -314,12 +315,7 @@ function VirtualGrid({
       for (let c = 0; c < cols; c++) {
         const w = items[r * cols + c];
         if (!w) break;
-        const card = cards[w.id];
-        const st = card
-          ? card.st === 2 && card.s >= 21
-            ? "is-mastered"
-            : "is-learning"
-          : "";
+        const st = wordState(cards[w.id]) === "mastered" ? "is-mastered" : cards[w.id] ? "is-learning" : "";
         visible.push(
           <button
             key={w.id}
@@ -363,7 +359,7 @@ function VirtualList({
   cards,
 }: {
   items: WordRef[];
-  cards: Record<string, { s: number; st: number }>;
+  cards: Record<string, CardState>;
 }) {
   const atlas = useAtlas();
   const accent = useStore((s) => s.settings.accent);
@@ -374,6 +370,9 @@ function VirtualList({
     <div ref={box} className="vlist" style={{ height: items.length * rowH }}>
       {items.slice(a, b).map((w, i) => {
         const card = cards[w.id];
+        const auto = isAutoMastered(card);
+        const manual = isManual(card);
+        const cls = auto || manual ? "is-mastered" : card ? "is-learning" : "";
         return (
           <div
             key={w.id}
@@ -382,7 +381,7 @@ function VirtualList({
             onClick={() => openWord(w.id)}
             role="button"
             tabIndex={0}
-            onKeyDown={(e) => e.key === "Enter" && openWord(w.id)}
+            onKeyDown={(e) => e.target === e.currentTarget && e.key === "Enter" && openWord(w.id)}
           >
             <Illustration
               src={atlas.img(w, "thumb")}
@@ -395,9 +394,26 @@ function VirtualList({
             </span>
             <span className="row-ipa ipa">{w.ipa}</span>
             <span className="row-zh">{w.zh}</span>
-            <span
-              className={`row-dot ${card ? (card.st === 2 && card.s >= 21 ? "is-mastered" : "is-learning") : ""}`}
-            />
+            {auto ? (
+              <span className={`row-mark ${cls} is-auto`} title="FSRS 判定已掌握" aria-hidden="true">
+                <Check size={13} strokeWidth={3} />
+              </span>
+            ) : (
+              <button
+                className={`row-mark ${cls}`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggleManual(w.id);
+                }}
+                // Enter on this button must not also trigger the row's open hook.
+                onKeyDown={(e) => e.stopPropagation()}
+                aria-pressed={manual}
+                aria-label={manual ? `取消已掌握：${w.word}` : `标记为已掌握：${w.word}`}
+                title={manual ? "取消已掌握，回到复习队列" : "标记为已掌握，不再复习"}
+              >
+                {manual && <Check size={13} strokeWidth={3} />}
+              </button>
+            )}
             <Speak
               url={atlas.audio(w, accent)}
               text={w.word}

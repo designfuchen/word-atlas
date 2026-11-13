@@ -1,6 +1,6 @@
 import { useSyncExternalStore } from "react";
 import type { Accent } from "../atlas/types";
-import type { CardState, Grade } from "./srs";
+import { clearCardManual, isManual, markCardManual, type CardState, type Grade } from "./srs";
 
 export type QuizKind = "meaning" | "picture" | "listen" | "spell";
 export type Step = { id: string; kind: "intro" } | { id: string; kind: QuizKind; retry?: boolean; options?: string[] };
@@ -24,6 +24,7 @@ export interface DayStat {
   r: number; // graded reviews (first attempts)
   c: number; // correct first attempts
   t: number; // active seconds
+  k: number; // words marked as known by hand
 }
 
 export interface TypingRound {
@@ -130,7 +131,10 @@ function validCard(v: unknown): v is CardState {
     num(v.lapses, 0) &&
     [0, 1, 2, 3].includes(v.st as number) &&
     (v.last === undefined || num(v.last, 0)) &&
-    num(v.seen, 0)
+    num(v.seen, 0) &&
+    (v.k === undefined || v.k === 1) &&
+    (v.kNew === undefined || v.kNew === 1) &&
+    (v.kAt === undefined || num(v.kAt, 0))
   );
 }
 
@@ -143,7 +147,13 @@ export function sanitizeProgress(v: unknown, datasetId: string): Progress {
   if (isObj(v.days))
     for (const [k, d] of Object.entries(v.days))
       if (/^\d{4}-\d{2}-\d{2}$/.test(k) && isObj(d) && num(d.n, 0) && num(d.r, 0) && num(d.c, 0) && num(d.t, 0))
-        out.days[k] = { n: d.n as number, r: d.r as number, c: d.c as number, t: d.t as number };
+        out.days[k] = {
+          n: d.n as number,
+          r: d.r as number,
+          c: d.c as number,
+          t: d.t as number,
+          k: num(d.k, 0) ? (d.k as number) : 0,
+        };
   if (Array.isArray(v.typing))
     out.typing = v.typing
       .filter(
@@ -266,12 +276,18 @@ export function useStore<T>(select: (s: State) => T): T {
 
 export function bumpDay(p: Progress, patch: Partial<DayStat>): Progress {
   const k = dayKey();
-  const d = p.days[k] ?? { n: 0, r: 0, c: 0, t: 0 };
+  const d = p.days[k] ?? { n: 0, r: 0, c: 0, t: 0, k: 0 };
   return {
     ...p,
     days: {
       ...p.days,
-      [k]: { n: d.n + (patch.n ?? 0), r: d.r + (patch.r ?? 0), c: d.c + (patch.c ?? 0), t: d.t + (patch.t ?? 0) },
+      [k]: {
+        n: d.n + (patch.n ?? 0),
+        r: d.r + (patch.r ?? 0),
+        c: d.c + (patch.c ?? 0),
+        t: d.t + (patch.t ?? 0),
+        k: d.k + (patch.k ?? 0),
+      },
     },
   };
 }
@@ -281,6 +297,30 @@ export function toggleBookmark(id: string) {
     ...p,
     bookmarks: p.bookmarks.includes(id) ? p.bookmarks.filter((x) => x !== id) : [id, ...p.bookmarks],
   }));
+}
+
+/* ---------- 手动标记「已掌握」 ---------- */
+
+/** Mark or unmark a word as mastered by hand. Unmarking a never-answered word removes it. */
+export function setManual(id: string, on: boolean) {
+  store.progress((p) => {
+    const card = p.cards[id];
+    if (on) {
+      if (isManual(card)) return p;
+      const next = { ...p, cards: { ...p.cards, [id]: markCardManual(card, Date.now()) } };
+      return bumpDay(next, { k: 1 });
+    }
+    if (!card || !isManual(card)) return p;
+    const cleared = clearCardManual(card);
+    const cards = { ...p.cards };
+    if (cleared) cards[id] = cleared;
+    else delete cards[id];
+    return { ...p, cards };
+  });
+}
+
+export function toggleManual(id: string) {
+  setManual(id, !isManual(store.get().progress.cards[id]));
 }
 
 /* ---------- backup ---------- */

@@ -1,8 +1,10 @@
-import { Download, RotateCcw, Upload } from "lucide-react";
+import { CheckCheck, Download, RotateCcw, Undo2, Upload } from "lucide-react";
 import { useMemo, useRef } from "react";
 import { useAtlas } from "../atlas/context";
-import { isMastered } from "../store/srs";
-import { dayKey, exportBackup, importBackup, resetProgress, store, useStore, type Settings } from "../store/store";
+import { openWord } from "../lib/router";
+import { manualMasteredIds } from "../store/session";
+import { isManual, isMastered } from "../store/srs";
+import { dayKey, exportBackup, importBackup, resetProgress, setManual, store, useStore, type Settings } from "../store/store";
 import { toast } from "../ui/Toast";
 import { streakOf } from "./Today";
 
@@ -26,11 +28,22 @@ export function Me({ privateAvailable }: { privateAvailable: boolean }) {
       end.setDate(end.getDate() + i);
       const start = new Date(end);
       start.setHours(0, 0, 0, 0);
-      return cards.filter((x) => (i === 0 ? x.due <= end.getTime() : x.due >= start.getTime() && x.due <= end.getTime())).length;
+      // 已掌握的词不再排复习，不进入预测。
+      return cards.filter((x) => !isMastered(x) && (i === 0 ? x.due <= end.getTime() : x.due >= start.getTime() && x.due <= end.getTime())).length;
     });
     void now;
-    return { learned: cards.length, mastered: cards.filter(isMastered).length, reviews: r, accuracy: r ? Math.round((c / r) * 100) : 0, minutes: Math.round(t / 60), forecast };
+    return {
+      learned: cards.length,
+      mastered: cards.filter(isMastered).length,
+      manual: cards.filter(isManual).length,
+      reviews: r,
+      accuracy: r ? Math.round((c / r) * 100) : 0,
+      minutes: Math.round(t / 60),
+      forecast,
+    };
   }, [progress]);
+
+  const manual = useMemo(() => manualMasteredIds(progress).slice(0, 24), [progress]);
 
   const set = (patch: Partial<Settings>) => store.settings(patch);
   const download = () => {
@@ -68,7 +81,7 @@ export function Me({ privateAvailable }: { privateAvailable: boolean }) {
           <dd>{stats.learned.toLocaleString()}</dd>
         </div>
         <div>
-          <dt>长期记住</dt>
+          <dt>已掌握</dt>
           <dd>{stats.mastered.toLocaleString()}</dd>
         </div>
         <div>
@@ -91,7 +104,9 @@ export function Me({ privateAvailable }: { privateAvailable: boolean }) {
         <section className="panel">
           <h3 className="eyebrow">过去 20 周</h3>
           <Heatmap days={progress.days} />
-          <p className="muted">一格是一天，颜色越深，那天答得越多。「长期记住」指记忆稳定度超过 21 天。</p>
+          <p className="muted">
+            一格是一天，颜色越深，那天答得越多（复习加标记）。「已掌握」= FSRS 认定记得牢，或者你自己手动标记；两种都不再排复习。
+          </p>
         </section>
 
         <section className="panel">
@@ -179,6 +194,38 @@ export function Me({ privateAvailable }: { privateAvailable: boolean }) {
           )}
         </section>
 
+        <section className="panel mark-panel">
+          <h3 className="eyebrow">
+            <CheckCheck size={14} /> 手动标记的已掌握 · {stats.manual.toLocaleString()} 个
+          </h3>
+          <p className="muted">
+            这些是你自己标成「已掌握」的：不再安排新学，也不再排复习。撤销后重新回到学习队列。
+            靠复习自然达标的那 {Math.max(0, stats.mastered - stats.manual).toLocaleString()} 个词不在这里，它们本来就记住了。
+          </p>
+          {manual.length === 0 ? (
+            <p className="muted">还没有标记。在图鉴里打开任意词条，按 <kbd>K</kbd> 就能把它标成已掌握。</p>
+          ) : (
+            <ul className="mark-list">
+              {manual.map((id) => {
+                const w = atlas.byId.get(id);
+                if (!w) return null;
+                return (
+                  <li key={id}>
+                    <button className="mark-word" onClick={() => openWord(id)}>
+                      <span lang="en">{w.word}</span>
+                      <small>{w.zh}</small>
+                    </button>
+                    <button className="icon-btn" onClick={() => setManual(id, false)} aria-label={`取消已掌握：${w.word}`} title="取消已掌握">
+                      <Undo2 size={15} />
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
+          {stats.manual > manual.length && <p className="muted">只显示最近 {manual.length} 个。</p>}
+        </section>
+
         <section className="panel">
           <h3 className="eyebrow">数据</h3>
           <p className="muted">进度只存在这台设备的浏览器里：没有账号，没有服务器。换设备时，导出备份再导入即可。</p>
@@ -231,7 +278,7 @@ function Toggle({ label, on, set }: { label: string; on: boolean; set: (v: boole
   );
 }
 
-function Heatmap({ days }: { days: Record<string, { r: number }> }) {
+function Heatmap({ days }: { days: Record<string, { r: number; k?: number }> }) {
   const weeks = 20;
   const end = new Date();
   const start = new Date();
@@ -240,14 +287,14 @@ function Heatmap({ days }: { days: Record<string, { r: number }> }) {
   const d = new Date(start);
   for (let i = 0; i < (weeks + 1) * 7; i++) {
     const k = dayKey(d);
-    cells.push({ k, v: days[k]?.r ?? 0, future: d > end });
+    cells.push({ k, v: (days[k]?.r ?? 0) + (days[k]?.k ?? 0), future: d > end });
     d.setDate(d.getDate() + 1);
   }
   const lvl = (v: number) => (v === 0 ? 0 : v < 10 ? 1 : v < 25 ? 2 : v < 50 ? 3 : 4);
   return (
     <div className="heatmap" role="img" aria-label="学习热力图">
       {cells.map((c) => (
-        <span key={c.k} className={`h${c.future ? "x" : lvl(c.v)}`} title={`${c.k} · ${c.v} 题`} />
+        <span key={c.k} className={`h${c.future ? "x" : lvl(c.v)}`} title={`${c.k} · ${c.v} 次`} />
       ))}
     </div>
   );
