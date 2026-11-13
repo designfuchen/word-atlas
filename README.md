@@ -15,7 +15,7 @@
 
 <br>
 
-**词光 iOS App 测试版已开放，免费下载：[api.billswise.cn/app](https://api.billswise.cn/app/)**
+**词光 iOS App 已在 App Store 上架，免费下载：[App Store · 搜索「词光」](https://apps.apple.com/app/id6827459612)**
 
 [![关注 @yangleiocx3](https://img.shields.io/badge/%E5%85%B3%E6%B3%A8%E6%88%91-@yangleiocx3-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/yangleiocx3)
 

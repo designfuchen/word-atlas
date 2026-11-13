@@ -15,7 +15,7 @@
 
 <br>
 
-**The Word Atlas iOS app beta is open and free: [api.billswise.cn/app](https://api.billswise.cn/app/)**
+**The Word Atlas iOS app (词光) is now on the App Store, free: [Download on the App Store](https://apps.apple.com/app/id6827459612)**
 
 [![Follow @yangleiocx3](https://img.shields.io/badge/Follow_me-@yangleiocx3-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/yangleiocx3)
 
