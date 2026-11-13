@@ -19,6 +19,12 @@
 
 [![Follow @yangleiocx3](https://img.shields.io/badge/Follow_me-@yangleiocx3-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/yangleiocx3)
 
+<br>
+
+<a href="https://0xlei.tech/words/"><img src="https://0xlei.tech/words/beta/banner.png" alt="Word Atlas iOS beta — scan with WeChat to join the beta group" width="100%"></a>
+
+**The Word Atlas iOS app is in development.** Scan the code with WeChat to join the beta group. If the code has expired, open the [website](https://0xlei.tech/words/) and tap 「内测」 in the top bar to add the author on WeChat.
+
 </div>
 
 ---
