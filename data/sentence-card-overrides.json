@@ -1,0 +1,1252 @@
+{
+  "a": {
+    "uk": "/ə/",
+    "senses": [
+      {
+        "pos": "art.",
+        "zh": "一个；一类中的任意一个",
+        "en": "one unspecified person or thing"
+      }
+    ],
+    "tip": "辅音音素前用 a；元音音素前用 an。",
+    "col": [
+      "a book｜一本书"
+    ],
+    "cefr": "A1",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "an": {
+    "uk": "/ən/",
+    "senses": [
+      {
+        "pos": "art.",
+        "zh": "一个（用于元音音素前）",
+        "en": "one unspecified person or thing before a vowel sound"
+      }
+    ],
+    "tip": "看发音而非字母：an hour，但 a university。",
+    "col": [
+      "an hour｜一小时"
+    ],
+    "cefr": "A1",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "the": {
+    "uk": "/ðə/",
+    "senses": [
+      {
+        "pos": "art.",
+        "zh": "这；那（表示特指）",
+        "en": "marks a specific or previously mentioned person or thing"
+      }
+    ],
+    "tip": "the 表示双方已知或已提及的人或事物。",
+    "col": [
+      "the same｜相同的"
+    ],
+    "cefr": "A1",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "to": {
+    "uk": "/tuː/",
+    "senses": [
+      {
+        "pos": "prep.",
+        "zh": "到；向；给；用于不定式前",
+        "en": "towards a place; also marks an infinitive"
+      }
+    ],
+    "tip": "to 后接动词原形时常是不定式；介词 to 后可接名词。",
+    "col": [
+      "want to do｜想要做"
+    ],
+    "cefr": "A1",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "of": {
+    "uk": "/ɒv/",
+    "senses": [
+      {
+        "pos": "prep.",
+        "zh": "……的；属于；关于",
+        "en": "belonging to or connected with something"
+      }
+    ],
+    "tip": "常用于表达所属、组成或数量关系。",
+    "col": [
+      "a cup of tea｜一杯茶"
+    ],
+    "cefr": "A1",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "for": {
+    "uk": "/fɔː/",
+    "senses": [
+      {
+        "pos": "prep.",
+        "zh": "为了；给；持续（一段时间）",
+        "en": "intended for someone, a purpose, or a length of time"
+      }
+    ],
+    "tip": "for 后可接持续时长；since 后接起点。",
+    "col": [
+      "for two hours｜持续两小时"
+    ],
+    "cefr": "A1",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "at": {
+    "uk": "/æt/",
+    "senses": [
+      {
+        "pos": "prep.",
+        "zh": "在（某地点或时刻）；向",
+        "en": "at a particular place, time, or target"
+      }
+    ],
+    "tip": "具体时刻常用 at，如 at nine。",
+    "col": [
+      "at home｜在家"
+    ],
+    "cefr": "A1",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "be": {
+    "uk": "/biː/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "是；存在；处于；构成进行或被动形式",
+        "en": "exist or have a state; also forms progressive and passive verbs"
+      }
+    ],
+    "tip": "am、is、are、was、were、been 都是 be 的形式。",
+    "col": [
+      "be ready｜准备好"
+    ],
+    "cefr": "A1",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "have": {
+    "uk": "/hæv/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "有；经历；用于构成完成时",
+        "en": "possess or experience; also forms perfect tenses"
+      }
+    ],
+    "tip": "have/has/had + 过去分词可构成完成时。",
+    "col": [
+      "have a look｜看一看"
+    ],
+    "cefr": "A1",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "we": {
+    "uk": "/wiː/",
+    "senses": [
+      {
+        "pos": "pron.",
+        "zh": "我们（主格）",
+        "en": "the speaker and one or more other people"
+      }
+    ],
+    "tip": "we 作主语；us 作宾语；our 表示“我们的”。",
+    "col": [
+      "we all｜我们所有人"
+    ],
+    "cefr": "A1",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "i": {
+    "uk": "/aɪ/",
+    "senses": [
+      {
+        "pos": "pron.",
+        "zh": "我（主格）",
+        "en": "the person who is speaking or writing"
+      }
+    ],
+    "tip": "I 在句中任何位置都要大写；宾格是 me。",
+    "col": [
+      "I think｜我认为"
+    ],
+    "cefr": "A1",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "you": {
+    "uk": "/juː/",
+    "senses": [
+      {
+        "pos": "pron.",
+        "zh": "你；你们",
+        "en": "the person or people being addressed"
+      }
+    ],
+    "tip": "you 可表示单数或复数，作主语和宾语形式相同。",
+    "col": [
+      "thank you｜谢谢你"
+    ],
+    "cefr": "A1",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "she": {
+    "uk": "/ʃiː/",
+    "senses": [
+      {
+        "pos": "pron.",
+        "zh": "她（主格）",
+        "en": "a female person previously mentioned"
+      }
+    ],
+    "tip": "she 作主语；宾格和形容词性物主代词是 her。",
+    "col": [
+      "she is｜她是"
+    ],
+    "cefr": "A1",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "he": {
+    "uk": "/hiː/",
+    "senses": [
+      {
+        "pos": "pron.",
+        "zh": "他（主格）",
+        "en": "a male person previously mentioned"
+      }
+    ],
+    "tip": "he 作主语；him 作宾语；his 表示“他的”。",
+    "col": [
+      "he is｜他是"
+    ],
+    "cefr": "A1",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "their": {
+    "uk": "/ðeə/",
+    "senses": [
+      {
+        "pos": "det.",
+        "zh": "他们的；她们的；它们的",
+        "en": "belonging to people or things already mentioned"
+      }
+    ],
+    "tip": "their 后接名词；不要与 there、they’re 混淆。",
+    "col": [
+      "their home｜他们的家"
+    ],
+    "cefr": "A1",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "its": {
+    "uk": "/ɪts/",
+    "senses": [
+      {
+        "pos": "det.",
+        "zh": "它的",
+        "en": "belonging to a thing or animal already mentioned"
+      }
+    ],
+    "tip": "its 表示“它的”；it’s 是 it is 或 it has。",
+    "col": [
+      "its name｜它的名字"
+    ],
+    "cefr": "A1",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "me": {
+    "uk": "/miː/",
+    "senses": [
+      {
+        "pos": "pron.",
+        "zh": "我（宾格）",
+        "en": "the speaker as the object of a verb or preposition"
+      }
+    ],
+    "tip": "动词或介词后常用 me，如 help me、with me。",
+    "col": [
+      "help me｜帮助我"
+    ],
+    "cefr": "A1",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "us": {
+    "uk": "/ʌs/",
+    "senses": [
+      {
+        "pos": "pron.",
+        "zh": "我们（宾格）",
+        "en": "the speaker and others as an object"
+      }
+    ],
+    "tip": "us 作宾语；we 作主语。",
+    "col": [
+      "with us｜和我们一起"
+    ],
+    "cefr": "A1",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "may": {
+    "uk": "/meɪ/",
+    "senses": [
+      {
+        "pos": "modal v.",
+        "zh": "可能；可以（表示许可）",
+        "en": "expresses possibility or permission"
+      }
+    ],
+    "tip": "表示可能或许可时小写；May 大写也指五月。",
+    "col": [
+      "may be｜可能是"
+    ],
+    "cefr": "A1",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "could": {
+    "uk": "/kʊd/",
+    "senses": [
+      {
+        "pos": "modal v.",
+        "zh": "能够；可能；可以（委婉请求）",
+        "en": "expresses past ability, possibility, or a polite request"
+      }
+    ],
+    "tip": "could 可表示过去的能力，也可用于委婉请求。",
+    "col": [
+      "could you｜能请你……吗"
+    ],
+    "cefr": "A1",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "would": {
+    "uk": "/wʊd/",
+    "senses": [
+      {
+        "pos": "modal v.",
+        "zh": "会；愿意；用于假设或委婉表达",
+        "en": "expresses imagined situations, willingness, or polite requests"
+      }
+    ],
+    "tip": "would like 表示“想要”，比 want 委婉。",
+    "col": [
+      "would like｜想要"
+    ],
+    "cefr": "A1",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "might": {
+    "uk": "/maɪt/",
+    "senses": [
+      {
+        "pos": "modal v.",
+        "zh": "可能；也许",
+        "en": "expresses that something is possible"
+      }
+    ],
+    "tip": "might 后接动词原形，常表示不确定的可能性。",
+    "col": [
+      "might happen｜可能发生"
+    ],
+    "cefr": "A1",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "should": {
+    "uk": "/ʃʊd/",
+    "senses": [
+      {
+        "pos": "modal v.",
+        "zh": "应该；按理会",
+        "en": "expresses advice, duty, or expectation"
+      }
+    ],
+    "tip": "should 后接动词原形；否定为 should not。",
+    "col": [
+      "should do｜应该做"
+    ],
+    "cefr": "A1",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "this": {
+    "uk": "/ðɪs/",
+    "senses": [
+      {
+        "pos": "det./pron.",
+        "zh": "这；这个",
+        "en": "the person or thing nearby or currently discussed"
+      }
+    ],
+    "tip": "this 表示单数；复数用 these。",
+    "col": [
+      "this week｜这周"
+    ],
+    "cefr": "A1",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "how": {
+    "uk": "/haʊ/",
+    "senses": [
+      {
+        "pos": "adv.",
+        "zh": "如何；怎样；多么",
+        "en": "in what way or to what degree"
+      }
+    ],
+    "tip": "how long 问时长，how often 问频率。",
+    "col": [
+      "how much｜多少"
+    ],
+    "cefr": "A1",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "who": {
+    "uk": "/huː/",
+    "senses": [
+      {
+        "pos": "pron.",
+        "zh": "谁；引导指人的关系从句",
+        "en": "asks about a person or introduces a relative clause"
+      }
+    ],
+    "tip": "who 可引导疑问句，也可连接修饰人的从句。",
+    "col": [
+      "who else｜还有谁"
+    ],
+    "cefr": "A1",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "while": {
+    "uk": "/waɪl/",
+    "senses": [
+      {
+        "pos": "conj.",
+        "zh": "当……时；然而；虽然",
+        "en": "during the time that; also introduces a contrast"
+      }
+    ],
+    "tip": "while 既可表示同时发生，也可表示对比。",
+    "col": [
+      "for a while｜一会儿"
+    ],
+    "cefr": "A1",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "not": {
+    "uk": "/nɒt/",
+    "senses": [
+      {
+        "pos": "adv.",
+        "zh": "不；没有",
+        "en": "makes a word or statement negative"
+      }
+    ],
+    "tip": "not 通常置于助动词、情态动词或 be 之后。",
+    "col": [
+      "not yet｜还没有"
+    ],
+    "cefr": "A1",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "work": {
+    "uk": "/wɜːk/",
+    "senses": [
+      {
+        "pos": "n./v.",
+        "zh": "工作；劳动；运转；起作用",
+        "en": "a job or activity; to function or produce a result"
+      }
+    ],
+    "tip": "表示“工作”时 work 通常不可数；job 是可数名词。",
+    "col": [
+      "at work｜在工作"
+    ],
+    "cefr": "A1",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "housing": {
+    "uk": "/ˈhaʊzɪŋ/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "住房；住房供给",
+        "en": "homes available for people to live in"
+      }
+    ],
+    "tip": "表示住房总称时通常不可数，如 affordable housing。",
+    "col": [
+      "affordable housing｜可负担住房"
+    ],
+    "cefr": "A1",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "algal": {
+    "uk": "/ˈælɡəl/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "藻类的",
+        "en": "relating to algae"
+      }
+    ],
+    "tip": "常用于环境话题，如 algal growth、algal blooms。",
+    "col": [
+      "algal growth｜藻类生长"
+    ],
+    "cefr": "B2",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "biofuel": {
+    "uk": "/ˈbaɪəʊfjuːəl/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "生物燃料",
+        "en": "fuel produced from plants or other biological material"
+      }
+    ],
+    "tip": "bio- 表示与生命或生物相关；biofuel 是生物燃料。",
+    "col": [
+      "produce biofuel｜生产生物燃料"
+    ],
+    "cefr": "B2",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "c": {
+    "uk": "/siː/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "字母 C；在 vitamin C 中指维生素 C",
+        "en": "the letter C; used in the name vitamin C"
+      }
+    ],
+    "tip": "例句中的 vitamin C 是“维生素 C”。",
+    "col": [
+      "vitamin C｜维生素C"
+    ],
+    "cefr": "B2",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "café": {
+    "uk": "/ˈkæfeɪ/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "咖啡馆；小餐馆",
+        "en": "a small place serving drinks and light meals"
+      }
+    ],
+    "tip": "也可拼作 cafe；复数为 cafés 或 cafes。",
+    "col": [
+      "a local café｜一家当地咖啡馆"
+    ],
+    "cefr": "B2",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "clinician": {
+    "uk": "/klɪˈnɪʃən/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "临床医生；临床医务人员",
+        "en": "a health professional who treats patients directly"
+      }
+    ],
+    "tip": "clinician 强调直接参与病人诊疗的医务工作者。",
+    "col": [
+      "experienced clinicians｜有经验的临床医生"
+    ],
+    "cefr": "B2",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "dataset": {
+    "uk": "/ˈdeɪtəset/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "数据集",
+        "en": "a collection of related data"
+      }
+    ],
+    "tip": "也可写作 data set；复数为 datasets。",
+    "col": [
+      "a large dataset｜大型数据集"
+    ],
+    "cefr": "B2",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "desalination": {
+    "uk": "/ˌdiːsælɪˈneɪʃən/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "（海水）淡化；脱盐",
+        "en": "the process of removing salt from water"
+      }
+    ],
+    "tip": "常用于缺水和供水话题。",
+    "col": [
+      "desalination technology｜海水淡化技术"
+    ],
+    "cefr": "B2",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "durability": {
+    "uk": "/ˌdjʊərəˈbɪləti/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "耐用性；持久性",
+        "en": "the ability to remain usable for a long time"
+      }
+    ],
+    "tip": "durable 是形容词，durability 是名词。",
+    "col": [
+      "strength and durability｜强度与耐用性"
+    ],
+    "cefr": "B2",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "fertiliser": {
+    "uk": "/ˈfɜːtəlaɪzə/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "肥料",
+        "en": "a substance added to soil to help plants grow"
+      }
+    ],
+    "tip": "fertiliser 是英式拼写，美式常用 fertilizer。",
+    "col": [
+      "organic fertiliser｜有机肥"
+    ],
+    "cefr": "B2",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "illegally": {
+    "uk": "/ɪˈliːɡəli/",
+    "senses": [
+      {
+        "pos": "adv.",
+        "zh": "非法地；违法地",
+        "en": "in a way that is against the law"
+      }
+    ],
+    "tip": "illegal 是形容词；illegally 修饰动作。",
+    "col": [
+      "park illegally｜违法停车"
+    ],
+    "cefr": "B2",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "inbox": {
+    "uk": "/ˈɪnbɒks/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "收件箱",
+        "en": "the place where incoming messages are stored"
+      }
+    ],
+    "tip": "电子邮件的收件箱是 inbox；发件箱是 outbox。",
+    "col": [
+      "check your inbox｜查看收件箱"
+    ],
+    "cefr": "B2",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "lockable": {
+    "uk": "/ˈlɒkəbəl/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "可上锁的",
+        "en": "able to be secured with a lock"
+      }
+    ],
+    "tip": "-able 在这里表示“可以……的”。",
+    "col": [
+      "a lockable drawer｜可上锁的抽屉"
+    ],
+    "cefr": "B2",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "papercut": {
+    "uk": "/ˈpeɪpəkʌt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "剪纸作品；纸张划伤",
+        "en": "a cut-paper design, or a small cut caused by paper"
+      }
+    ],
+    "tip": "本例句的 traditional papercuts 指传统剪纸作品。",
+    "col": [
+      "traditional papercuts｜传统剪纸"
+    ],
+    "cefr": "B2",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "propellent": {
+    "uk": "/prəˈpelənt/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "推进剂",
+        "en": "a substance used to drive something forwards"
+      }
+    ],
+    "tip": "propellent 是 propellant 的另一种拼写。",
+    "col": [
+      "rocket propellent｜火箭推进剂"
+    ],
+    "cefr": "B2",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "searchable": {
+    "uk": "/ˈsɜːtʃəbəl/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "可搜索的；可检索的",
+        "en": "able to be searched for particular information"
+      }
+    ],
+    "tip": "常修饰数据库、目录或文档。",
+    "col": [
+      "a searchable catalog｜可检索目录"
+    ],
+    "cefr": "B2",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "touchscreen": {
+    "uk": "/ˈtʌtʃskriːn/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "触摸屏",
+        "en": "a screen operated by touching it"
+      }
+    ],
+    "tip": "也可写作 touch screen。",
+    "col": [
+      "use a touchscreen｜使用触摸屏"
+    ],
+    "cefr": "B2",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "unexplained": {
+    "uk": "/ˌʌnɪkˈspleɪnd/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "未获解释的；原因不明的",
+        "en": "having no known explanation"
+      }
+    ],
+    "tip": "un- 在这里表示否定，不要遗漏这一层含义。",
+    "col": [
+      "an unexplained event｜原因不明的事件"
+    ],
+    "cefr": "B2",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "unfairness": {
+    "uk": "/ˌʌnˈfeənəs/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "不公平；不公正",
+        "en": "the quality of treating people unjustly"
+      }
+    ],
+    "tip": "unfair 是形容词；unfairness 是名词。",
+    "col": [
+      "perceived unfairness｜感受到的不公"
+    ],
+    "cefr": "B2",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "unrelated": {
+    "uk": "/ˌʌnrɪˈleɪtɪd/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "无关的；无亲属关系的",
+        "en": "not connected or belonging to the same family"
+      }
+    ],
+    "tip": "表示“与……无关”用 unrelated to。",
+    "col": [
+      "unrelated to work｜与工作无关"
+    ],
+    "cefr": "B2",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "untreated": {
+    "uk": "/ˌʌnˈtriːtɪd/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "未经处理的；未经治疗的",
+        "en": "not treated medically or processed"
+      }
+    ],
+    "tip": "可修饰疾病，也可修饰废水等未经处理的物质。",
+    "col": [
+      "untreated waste｜未经处理的废物"
+    ],
+    "cefr": "B2",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "unusable": {
+    "uk": "/ʌnˈjuːzəbəl/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "无法使用的",
+        "en": "not able to be used"
+      }
+    ],
+    "tip": "usable 是“可用的”；unusable 表示相反含义。",
+    "col": [
+      "render unusable｜使无法使用"
+    ],
+    "cefr": "B2",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "weightlessness": {
+    "uk": "/ˈweɪtləsnəs/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "失重状态",
+        "en": "the state of experiencing no apparent weight"
+      }
+    ],
+    "tip": "常用于描述宇航员在轨道飞行中的状态。",
+    "col": [
+      "experience weightlessness｜体验失重"
+    ],
+    "cefr": "B2",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "workspace": {
+    "uk": "/ˈwɜːkspeɪs/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "工作空间；工作区",
+        "en": "a place or area used for working"
+      }
+    ],
+    "tip": "可指实际办公区域，也可指软件中的工作区。",
+    "col": [
+      "shared workspaces｜共享工作空间"
+    ],
+    "cefr": "B2",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "clinicians": {
+    "alias": "clinician"
+  },
+  "datasets": {
+    "alias": "dataset"
+  },
+  "cafés": {
+    "alias": "café"
+  },
+  "papercuts": {
+    "alias": "papercut"
+  },
+  "propellents": {
+    "alias": "propellent"
+  },
+  "touchscreens": {
+    "alias": "touchscreen"
+  },
+  "workspaces": {
+    "alias": "workspace"
+  },
+  "billions": {
+    "alias": "billion"
+  },
+  "thousands": {
+    "alias": "thousand"
+  },
+  "wasps": {
+    "alias": "wasp"
+  },
+  "podcasts": {
+    "alias": "podcast"
+  },
+  "smartphones": {
+    "alias": "smartphone"
+  },
+  "websites": {
+    "alias": "website"
+  },
+  "aren't": {
+    "senses": [
+      {
+        "pos": "contraction",
+        "zh": "不是；不在",
+        "en": "Short form of are not."
+      }
+    ],
+    "tip": "aren't 是 are not 的缩写；根据上下文理解时态和含义。",
+    "col": [],
+    "cefr": "A1",
+    "note": "补充词卡：英语常用缩写；双语例句来自原词库。"
+  },
+  "can't": {
+    "senses": [
+      {
+        "pos": "contraction",
+        "zh": "不能；不可能",
+        "en": "Short form of cannot."
+      }
+    ],
+    "tip": "can't 是 cannot 的缩写；根据上下文理解时态和含义。",
+    "col": [],
+    "cefr": "A1",
+    "note": "补充词卡：英语常用缩写；双语例句来自原词库。"
+  },
+  "couldn't": {
+    "senses": [
+      {
+        "pos": "contraction",
+        "zh": "不能；无法",
+        "en": "Short form of could not."
+      }
+    ],
+    "tip": "couldn't 是 could not 的缩写；根据上下文理解时态和含义。",
+    "col": [],
+    "cefr": "A1",
+    "note": "补充词卡：英语常用缩写；双语例句来自原词库。"
+  },
+  "didn't": {
+    "senses": [
+      {
+        "pos": "contraction",
+        "zh": "没有（过去时）",
+        "en": "Short form of did not."
+      }
+    ],
+    "tip": "didn't 是 did not 的缩写；根据上下文理解时态和含义。",
+    "col": [],
+    "cefr": "A1",
+    "note": "补充词卡：英语常用缩写；双语例句来自原词库。"
+  },
+  "doesn't": {
+    "senses": [
+      {
+        "pos": "contraction",
+        "zh": "不（第三人称单数）",
+        "en": "Short form of does not."
+      }
+    ],
+    "tip": "doesn't 是 does not 的缩写；根据上下文理解时态和含义。",
+    "col": [],
+    "cefr": "A1",
+    "note": "补充词卡：英语常用缩写；双语例句来自原词库。"
+  },
+  "don't": {
+    "senses": [
+      {
+        "pos": "contraction",
+        "zh": "不；不要",
+        "en": "Short form of do not."
+      }
+    ],
+    "tip": "don't 是 do not 的缩写；根据上下文理解时态和含义。",
+    "col": [],
+    "cefr": "A1",
+    "note": "补充词卡：英语常用缩写；双语例句来自原词库。"
+  },
+  "hadn't": {
+    "senses": [
+      {
+        "pos": "contraction",
+        "zh": "过去尚未；没有",
+        "en": "Short form of had not."
+      }
+    ],
+    "tip": "hadn't 是 had not 的缩写；根据上下文理解时态和含义。",
+    "col": [],
+    "cefr": "A1",
+    "note": "补充词卡：英语常用缩写；双语例句来自原词库。"
+  },
+  "haven't": {
+    "senses": [
+      {
+        "pos": "contraction",
+        "zh": "尚未；没有",
+        "en": "Short form of have not."
+      }
+    ],
+    "tip": "haven't 是 have not 的缩写；根据上下文理解时态和含义。",
+    "col": [],
+    "cefr": "A1",
+    "note": "补充词卡：英语常用缩写；双语例句来自原词库。"
+  },
+  "i'll": {
+    "senses": [
+      {
+        "pos": "contraction",
+        "zh": "我将；我会",
+        "en": "Short form of I will."
+      }
+    ],
+    "tip": "i'll 是 I will 的缩写；根据上下文理解时态和含义。",
+    "col": [],
+    "cefr": "A1",
+    "note": "补充词卡：英语常用缩写；双语例句来自原词库。"
+  },
+  "i'm": {
+    "senses": [
+      {
+        "pos": "contraction",
+        "zh": "我是；我正在",
+        "en": "Short form of I am."
+      }
+    ],
+    "tip": "i'm 是 I am 的缩写；根据上下文理解时态和含义。",
+    "col": [],
+    "cefr": "A1",
+    "note": "补充词卡：英语常用缩写；双语例句来自原词库。"
+  },
+  "i've": {
+    "senses": [
+      {
+        "pos": "contraction",
+        "zh": "我已经；我有",
+        "en": "Short form of I have."
+      }
+    ],
+    "tip": "i've 是 I have 的缩写；根据上下文理解时态和含义。",
+    "col": [],
+    "cefr": "A1",
+    "note": "补充词卡：英语常用缩写；双语例句来自原词库。"
+  },
+  "it's": {
+    "senses": [
+      {
+        "pos": "contraction",
+        "zh": "它是；它已经",
+        "en": "Short form of it is / it has."
+      }
+    ],
+    "tip": "it's 是 it is / it has 的缩写；根据上下文理解时态和含义。",
+    "col": [],
+    "cefr": "A1",
+    "note": "补充词卡：英语常用缩写；双语例句来自原词库。"
+  },
+  "let's": {
+    "senses": [
+      {
+        "pos": "contraction",
+        "zh": "让我们……",
+        "en": "Short form of let us."
+      }
+    ],
+    "tip": "let's 是 let us 的缩写；根据上下文理解时态和含义。",
+    "col": [],
+    "cefr": "A1",
+    "note": "补充词卡：英语常用缩写；双语例句来自原词库。"
+  },
+  "she's": {
+    "senses": [
+      {
+        "pos": "contraction",
+        "zh": "她是；她已经",
+        "en": "Short form of she is / she has."
+      }
+    ],
+    "tip": "she's 是 she is / she has 的缩写；根据上下文理解时态和含义。",
+    "col": [],
+    "cefr": "A1",
+    "note": "补充词卡：英语常用缩写；双语例句来自原词库。"
+  },
+  "there's": {
+    "senses": [
+      {
+        "pos": "contraction",
+        "zh": "有；已经有",
+        "en": "Short form of there is / there has."
+      }
+    ],
+    "tip": "there's 是 there is / there has 的缩写；根据上下文理解时态和含义。",
+    "col": [],
+    "cefr": "A1",
+    "note": "补充词卡：英语常用缩写；双语例句来自原词库。"
+  },
+  "wasn't": {
+    "senses": [
+      {
+        "pos": "contraction",
+        "zh": "不是；不在（过去时）",
+        "en": "Short form of was not."
+      }
+    ],
+    "tip": "wasn't 是 was not 的缩写；根据上下文理解时态和含义。",
+    "col": [],
+    "cefr": "A1",
+    "note": "补充词卡：英语常用缩写；双语例句来自原词库。"
+  },
+  "we're": {
+    "senses": [
+      {
+        "pos": "contraction",
+        "zh": "我们是；我们正在",
+        "en": "Short form of we are."
+      }
+    ],
+    "tip": "we're 是 we are 的缩写；根据上下文理解时态和含义。",
+    "col": [],
+    "cefr": "A1",
+    "note": "补充词卡：英语常用缩写；双语例句来自原词库。"
+  },
+  "won't": {
+    "senses": [
+      {
+        "pos": "contraction",
+        "zh": "将不；不愿意",
+        "en": "Short form of will not."
+      }
+    ],
+    "tip": "won't 是 will not 的缩写；根据上下文理解时态和含义。",
+    "col": [],
+    "cefr": "A1",
+    "note": "补充词卡：英语常用缩写；双语例句来自原词库。"
+  },
+  "you're": {
+    "senses": [
+      {
+        "pos": "contraction",
+        "zh": "你是；你正在",
+        "en": "Short form of you are."
+      }
+    ],
+    "tip": "you're 是 you are 的缩写；根据上下文理解时态和含义。",
+    "col": [],
+    "cefr": "A1",
+    "note": "补充词卡：英语常用缩写；双语例句来自原词库。"
+  },
+  "you'll": {
+    "senses": [
+      {
+        "pos": "contraction",
+        "zh": "你将；你会",
+        "en": "Short form of you will."
+      }
+    ],
+    "tip": "you'll 是 you will 的缩写；根据上下文理解时态和含义。",
+    "col": [],
+    "cefr": "A1",
+    "note": "补充词卡：英语常用缩写；双语例句来自原词库。"
+  },
+  "men's": {
+    "alias": "man"
+  },
+  "moisturiser": {
+    "uk": "/ˈmɔɪstʃəraɪzə/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "保湿霜；润肤乳",
+        "en": "a cream or lotion that keeps skin from becoming dry"
+      }
+    ],
+    "tip": "英式拼写为 moisturiser，美式通常为 moisturizer。",
+    "col": [
+      "apply moisturiser｜涂抹保湿霜"
+    ],
+    "cefr": "B1",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "organisational": {
+    "uk": "/ˌɔːɡənaɪˈzeɪʃənəl/",
+    "senses": [
+      {
+        "pos": "adj.",
+        "zh": "组织的；组织能力的",
+        "en": "relating to an organisation or to arranging activities"
+      }
+    ],
+    "tip": "美式通常拼作 organizational。",
+    "col": [
+      "organisational skills｜组织能力"
+    ],
+    "cefr": "B2",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "funding": {
+    "uk": "/ˈfʌndɪŋ/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "资金；资助；拨款",
+        "en": "money provided for a particular purpose"
+      }
+    ],
+    "tip": "funding 通常不可数；常与 public、government 连用。",
+    "col": [
+      "public funding｜公共资金"
+    ],
+    "cefr": "B2",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "screening": {
+    "uk": "/ˈskriːnɪŋ/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "筛查；筛选；电影放映",
+        "en": "checking for problems or showing a film"
+      }
+    ],
+    "tip": "health screening 指健康筛查；film screening 指电影放映。",
+    "col": [
+      "health screening｜健康筛查"
+    ],
+    "cefr": "B2",
+    "note": "补充词卡：释义经本次补充整理；双语例句来自原词库。"
+  },
+  "screenings": {
+    "alias": "screening"
+  },
+  "volcanoes": {
+    "alias": "volcano"
+  },
+  "spoke": {
+    "uk": "/spəʊk/",
+    "senses": [
+      {
+        "pos": "v.",
+        "zh": "说话；讲话（speak 的过去式）",
+        "en": "past tense of speak"
+      },
+      {
+        "pos": "n.",
+        "zh": "轮辐；辐条",
+        "en": "one of the rods connecting the centre of a wheel to its rim"
+      }
+    ],
+    "tip": "例句中的 spoke 是 speak 的过去式，表示说话；作名词时也可指车轮的辐条。",
+    "note": "补充词卡：已根据例句整理常用义项，例句取自原词库。"
+  },
+  "sticker": {
+    "uk": "/ˈstɪkə/",
+    "senses": [
+      {
+        "pos": "n.",
+        "zh": "贴纸；粘贴标签",
+        "en": "a small piece of paper or plastic with an adhesive back"
+      }
+    ],
+    "tip": "指可以贴在物体表面的贴纸或标签。",
+    "cefr": "A2",
+    "note": "补充词卡：已根据例句整理常用义项，例句取自原词库。"
+  }
+}
