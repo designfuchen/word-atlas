@@ -87,6 +87,10 @@ export function wordState(c): "new" | "learning" | "mastered";
 | 学习 · 初次见面 | 次要按钮「早就认识它」：标成已掌握，并把这个词本轮剩余步骤一起摘掉 |
 | 我的 · 手动标记面板 | 最近 24 个手动标记，逐个撤销 |
 
+<img src="assets/mastered-intro.jpg" alt="学习页初次见面：早就认识它" width="100%">
+
+<sub>学习页「初次见面」的「早就认识它」：标成已掌握，同时把这个词本轮剩下的步骤一起摘掉（上面的进度条会跟着重算）。</sub>
+
 <img src="assets/mastered-word.jpg" alt="词条面板：标记为已掌握" width="49%"> <img src="assets/mastered-me.jpg" alt="我的：已掌握统计与手动标记撤销列表" width="49%">
 
 <sub>左：词条面板的标记按钮与 <kbd>K</kbd> 提示，标好后 chip 变「已掌握」；右：「我的」里的手动标记撤销列表。</sub>
