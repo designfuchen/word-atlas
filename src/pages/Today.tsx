@@ -22,11 +22,14 @@ function greeting(h: number) {
   return "晚上好";
 }
 
-export function streakOf(days: Record<string, { r: number }>) {
+/** A day counts as active when anything happened: reviewed, or marked mastered by hand. */
+const activeDay = (d?: { r: number; k?: number }) => (d?.r ?? 0) > 0 || (d?.k ?? 0) > 0;
+
+export function streakOf(days: Record<string, { r: number; k?: number }>) {
   let n = 0;
   const d = new Date();
-  if (!(days[dayKey(d)]?.r > 0)) d.setDate(d.getDate() - 1);
-  while (days[dayKey(d)]?.r > 0) {
+  if (!activeDay(days[dayKey(d)])) d.setDate(d.getDate() - 1);
+  while (activeDay(days[dayKey(d)])) {
     n++;
     d.setDate(d.getDate() - 1);
   }

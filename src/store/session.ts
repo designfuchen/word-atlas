@@ -1,12 +1,13 @@
 import type { Atlas, WordRef } from "../atlas/types";
 import { MEDIA } from "../atlas/types";
 import { hashSeed, normalize, shuffle } from "../lib/text";
-import { isMastered, review, Rating, type Grade } from "./srs";
+import { isManual, isMastered, review, Rating, type Grade } from "./srs";
 import { bumpDay, dayKey, store, type ActiveSession, type Progress, type QuizKind, type Settings, type Step } from "./store";
 
 export function dueIds(p: Progress, now = Date.now()) {
   return Object.entries(p.cards)
-    .filter(([, c]) => c.due <= now)
+    // 已掌握（含手动标记）不再排复习。
+    .filter(([, c]) => !isMastered(c) && c.due <= now)
     .sort((a, b) => a[1].due - b[1].due)
     .map(([id]) => id);
 }
@@ -86,7 +87,7 @@ export function distractors(atlas: Atlas, ref: WordRef, kind: QuizKind, seed: nu
 export function buildSession(atlas: Atlas, p: Progress, s: Settings, opts?: { ids?: string[]; reviewOnly?: boolean }): ActiveSession {
   const seed = Date.now();
   const plan = todayPlan(atlas, p, s);
-  const reviewIds = opts?.ids ? opts.ids.filter((id) => p.cards[id]) : plan.due.slice(0, 120);
+  const reviewIds = opts?.ids ? opts.ids.filter((id) => p.cards[id] && !isMastered(p.cards[id])) : plan.due.slice(0, 120);
   const newIds = opts?.ids ? opts.ids.filter((id) => !p.cards[id]) : opts?.reviewOnly ? [] : plan.fresh;
   const steps: Step[] = [];
   const quiz = (id: string, salt: number): Step => {
@@ -153,10 +154,29 @@ export function advance(seconds: number) {
   store.progress((p) => {
     const s = p.session;
     if (!s) return p;
-    const index = s.index + 1;
+    let index = s.index + 1;
+    // Words that became mastered along the way drop out of the queue on the fly.
+    while (index < s.steps.length && isMastered(p.cards[s.steps[index].id])) index++;
     const finished = index >= s.steps.length ? Date.now() : undefined;
     const next = bumpDay(p, { t: Math.max(0, Math.min(90, Math.round(seconds))) });
     return { ...next, session: { ...s, index, pending: undefined, finished } };
+  });
+}
+
+/** Drop every remaining step for one word, e.g. after marking it as already known. */
+export function skipInSession(id: string) {
+  store.progress((p) => {
+    const s = p.session;
+    if (!s) return p;
+    const steps = s.steps.filter((x) => x.id !== id);
+    if (steps.length === s.steps.length) return p;
+    const index = Math.min(s.index, steps.length);
+    const finished = index >= steps.length ? Date.now() : undefined;
+    // It is not a "new word learned today" any more: it was declared known.
+    return {
+      ...p,
+      session: { ...s, steps, index, pending: undefined, finished, newIds: s.newIds.filter((x) => x !== id) },
+    };
   });
 }
 
@@ -167,3 +187,13 @@ export function sessionStats(s: ActiveSession) {
 }
 
 export const masteredCount = (p: Progress) => Object.values(p.cards).filter(isMastered).length;
+/** 手动标记为已掌握的词（可撤销）。 */
+export const manualMasteredCount = (p: Progress) => Object.values(p.cards).filter(isManual).length;
+
+/** Manually mastered words, newest first. */
+export function manualMasteredIds(p: Progress) {
+  return Object.entries(p.cards)
+    .filter(([, c]) => isManual(c))
+    .sort((a, b) => (b[1].kAt ?? b[1].seen) - (a[1].kAt ?? a[1].seen))
+    .map(([id]) => id);
+}

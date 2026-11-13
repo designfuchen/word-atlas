@@ -67,6 +67,7 @@ Explore 19 topic groups, rotate and zoom the galaxy, and select a star to open i
 | **See** | Explore an illustration, bilingual definitions, two original examples, collocations and usage notes. |
 | **Hear** | Switch between UK and US pronunciation and listen to example sentences. A subset includes audio for the second example. |
 | **Recall** | Practise meaning-to-word, illustrated cloze, listening recognition and spelling. |
+| **Skip what you know** | Already know a word? Mark it mastered (button in the card, or press <kbd>K</kbd>): it stops being scheduled, still lights up a star, and can be undone anytime. |
 | **Review** | Let FSRS schedule reviews based on your history. Only the first answer counts toward accuracy. |
 | **Keep** | Track progress in the galaxy, practise typing separately, and export or restore your local progress. |
 

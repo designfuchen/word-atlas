@@ -1,4 +1,4 @@
-import { ArrowRight, Check, Lightbulb, RotateCcw, Share2, Volume2, X } from "lucide-react";
+import { ArrowRight, Check, CheckCheck, Lightbulb, RotateCcw, Share2, Volume2, X } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { prefetch, useAtlas, useEntry } from "../atlas/context";
 import type { Entry, WordRef } from "../atlas/types";
@@ -7,9 +7,9 @@ import { burst } from "../lib/burst";
 import { cue } from "../lib/sound";
 import { go } from "../lib/router";
 import { gap, normalize } from "../lib/text";
-import { answer, advance, buildSession, gradeFor, sessionStats } from "../store/session";
+import { answer, advance, buildSession, gradeFor, sessionStats, skipInSession } from "../store/session";
 import { Rating } from "../store/srs";
-import { store, useStore, type ActiveSession, type QuizKind, type Step } from "../store/store";
+import { setManual, store, useStore, type ActiveSession, type QuizKind, type Step } from "../store/store";
 import { EntryView, Highlight } from "../ui/EntryView";
 import { Illustration } from "../ui/Illustration";
 import { Galaxy } from "../galaxy/Galaxy";
@@ -76,7 +76,7 @@ function Runner({ session }: { session: ActiveSession }) {
         </span>
         <AmbiencePicker />
       </header>
-      <main className="learn-stage" key={`${session.id}-${session.index}`}>
+      <main className="learn-stage" key={`${session.id}-${session.index}-${step.id}`}>
         {step.kind === "intro" ? <Intro step={step} /> : <Quiz step={step as Step & { kind: QuizKind }} session={session} />}
       </main>
     </div>
@@ -101,6 +101,13 @@ function Intro({ step }: { step: Step }) {
     if (store.get().settings.sfx) void cue("flip");
     advance(elapsed());
   }, [elapsed]);
+  // Already know it: mark it mastered and drop the rest of this word's steps.
+  const knowIt = useCallback(() => {
+    stopAudio();
+    if (store.get().settings.sfx) void cue("correct");
+    setManual(step.id, true);
+    skipInSession(step.id);
+  }, [step.id]);
   useKeys({ Enter: next, " ": next });
   if (!entry) return <span className="spinner" />;
   return (
@@ -112,6 +119,9 @@ function Intro({ step }: { step: Step }) {
       <footer className="learn-actions">
         <button className="btn btn-primary btn-xl" onClick={next} autoFocus>
           认识了 <ArrowRight size={20} />
+        </button>
+        <button className="btn btn-ghost" onClick={knowIt} title="标成已掌握：不再新学，也不再复习">
+          <CheckCheck size={17} /> 早就认识它
         </button>
         <span className="hint-keys">
           <kbd>Enter</kbd> 继续
