@@ -2986,6 +2986,13 @@ code {
   inset: 0;
   font-size: 16px;
 }
+/* The transparent input covers the whole stage, so its own controls have to sit
+   above it or every tap lands in the field instead of on the button. */
+.typing-stage button,
+.typing-stage a {
+  position: relative;
+  z-index: 1;
+}
 .typing-help {
   font-size: 13px;
 }
