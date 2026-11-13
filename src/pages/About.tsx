@@ -14,9 +14,9 @@ export function About() {
           <p className="eyebrow">关于词光</p>
           <h1 className="display">一词一画，点亮雅思。</h1>
           <p className="lede">
-            词光把雅思阅读 8000 词整理成 {atlas.count.toLocaleString()} 个词条。每个词一幅原创插画，一句日常例句，一句雅思例句，配英美发音、常用搭配和易混提示。学会一个，就在你的星图上点亮一颗星。
+            词光收录 {atlas.count.toLocaleString()} 个词条，其中 {atlas.illustrated.toLocaleString()} 个配有原创插画。原有词卡提供英美发音和双语例句；补充词卡帮助你理解例句中遇到的其他词。点击例句里的英文单词即可查卡。
           </p>
-          <p className="lede">它免费、开源、无需注册。代码用 MIT，词库用 CC BY 4.0，谁都可以拿去用。</p>
+          <p className="lede">它免费、开源、无需注册。代码用 MIT，原有词库用 CC BY 4.0；补充释义保留来源授权。</p>
           <div className="about-actions">
             <a className="btn btn-primary" href={REPO_URL} target="_blank" rel="noreferrer">
               <Github size={18} /> 在 GitHub 上查看
@@ -33,7 +33,7 @@ export function About() {
           <h3 className="eyebrow">为什么记得住</h3>
           <ul className="feature-list">
             <li>
-              <b>先看见。</b>每个词都有一幅画，画的就是第一句例句里发生的事。
+              <b>先看见。</b>原有词卡配有插画，补充词卡中可具象呈现的词也配有同风格插画。
             </li>
             <li>
               <b>再想起。</b>选义、看图补句、听音辨词、拼写，从认得走到会写。
@@ -89,8 +89,9 @@ export function About() {
 
         <section className="panel">
           <h3 className="eyebrow">内容从哪里来</h3>
+          <p className="muted">例句补充词卡使用 <a href="https://github.com/skywind3000/ECDICT" target="_blank" rel="noreferrer">ECDICT 英汉词典</a>的释义与词形数据（<a href={`${BASE}atlas/ECDICT-LICENSE.txt`} target="_blank" rel="noreferrer">MIT 授权</a>），并整理了常用基础词和缩写。双语例句复用原词库；补充词卡的英音、美音和例句朗读由本地 Kokoro 模型合成（英音 Emma，美音 Heart），录音随应用内置，可离线播放。可具象呈现的词另配同风格 AI 插画。词典批量释义和新增发音尚未逐条人工审校。语音模型的 <a href={`${BASE}atlas/KOKORO-LICENSE.txt`} target="_blank" rel="noreferrer">Apache 2.0 授权</a>随包保留。</p>
           <p className="muted">
-            释义、例句、搭配和提示由大语言模型按统一的词典规范重新撰写；插画由图像模型按统一画风逐词绘制；发音和朗读由 ElevenLabs 合成（英音 Alice，美音 Sarah）。所有内容都经过结构和一致性的自动校验，但没有逐条人工审校。看到错的地方，欢迎在 GitHub 提 Issue，或者直接改数据提 PR。
+            原词库的释义、例句、搭配和提示由大语言模型按统一的词典规范重新撰写；插画由图像模型按统一画风逐词绘制；发音和朗读由 ElevenLabs 合成（英音 Alice，美音 Sarah）。所有内容都经过结构和一致性的自动校验，但没有逐条人工审校。看到错的地方，欢迎在 GitHub 提 Issue，或者直接改数据提 PR。
           </p>
           <p className="muted">词光不是官方雅思词表，也不承诺提分。它只想把背单词这件事，做得好看一点、扎实一点。</p>
         </section>

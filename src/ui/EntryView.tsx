@@ -6,6 +6,7 @@ import { formatInterval, isMastered } from "../store/srs";
 import { toggleBookmark, useStore } from "../store/store";
 import { Illustration } from "./Illustration";
 import { Speak } from "./Speak";
+import { Sentence } from "./Sentence";
 import { shareWord } from "./share";
 import { openWord } from "../lib/router";
 
@@ -28,7 +29,7 @@ export function Pronounce({ entry, refw }: { entry: Entry; refw: WordRef | Entry
   const items: ["uk" | "us", string, string][] = both
     ? [["uk", "英", entry.uk], ["us", "美", entry.us]]
     : [[accent, accent === "uk" ? "英" : "美", entry.uk || entry.us]];
-  if (!both && items[0][2] === "") return null;
+  if (!both && items[0][2] === "") return <div className="pron"><Speak url={atlas.audio(refw, accent)} text={entry.w} accent={accent} size="sm" label="朗读单词" /></div>;
   return (
     <div className="pron">
       {(accent === "us" ? [...items].reverse() : items).map(([acc, label, ipa]) => (
@@ -121,9 +122,9 @@ export function EntryView({ entry, mode = "detail", eager = true }: { entry: Ent
             <ul className="examples">
               {entry.ex.map((x, i) => (
                 <li key={i}>
-                  {entry.ex.length > 1 && <span className={`ex-tag ${i ? "is-ielts" : ""}`}>{i ? "雅思语境" : "日常"}</span>}
+                  {entry.ex.length > 1 && <span className={`ex-tag ${i ? "is-ielts" : ""}`}>{entry.supplemental ? `语境例句 ${i + 1}` : i ? "雅思语境" : "日常"}</span>}
                   <p className="ex-en" lang="en">
-                    <Highlight text={x.en} word={entry.w} />
+                    <Sentence text={x.en} word={entry.w} />
                     <Speak url={exUrls[i] ?? null} text={x.en} accent={i === 1 && exUrls[1] ? "us" : accent} size="sm" className="ex-speak" />
                   </p>
                   <p className="ex-zh">{x.zh}</p>
