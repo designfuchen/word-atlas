@@ -16,6 +16,7 @@
 - 保持“无账号、本地优先、无追踪”的方向。
 - 视觉改动请同时检查浅色、深色和 375px 手机宽度。
 - 提交前运行 `npm test`、`npm run check:atlas`、`npm run build`。
+- 修改公开打包脚本时，另运行 `python3 -m unittest discover -s scripts -p 'test_package_public.py'`，验证输出目录保护与重复导出。
 
 ## 新素材
 

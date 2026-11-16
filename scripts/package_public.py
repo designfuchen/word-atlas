@@ -23,7 +23,7 @@ TOP = {
     "README.md", "README.en.md", "LICENSE", "CONTENT_LICENSE.md", "CONTRIBUTING.md", "SECURITY.md",
     ".gitignore", "package.json", "package-lock.json", "tsconfig.json", "vite.config.ts", "index.html",
 }
-SCRIPTS = {"check-atlas.mjs", "render-cards.mjs", "record-demo.mjs", "package_public.py"}
+SCRIPTS = {"check-atlas.mjs", "render-cards.mjs", "record-demo.mjs", "package_public.py", "test_package_public.py"}
 ATLAS_SCRIPTS = {"common.py", "gen_text.py", "gen_images.py", "gen_brand.py", "gen_word_audio.py", "gen_sentence_audio.py", "gen_sfx.py", "gen_galaxy_audio.sh", "fix_blocked.py", "build_atlas.py", "build_sfx.py"}
 TEXT = {".ts", ".tsx", ".css", ".svg", ".md", ".json", ".mjs", ".js", ".py", ".html", ".csv", ".yml", ".webmanifest", ""}
 PATTERNS = {
@@ -89,9 +89,16 @@ def main() -> int:
     ap.add_argument("--out", required=True)
     a = ap.parse_args()
     out = Path(a.out).resolve()
-    if out == ROOT or ROOT in out.parents:
-        print("refusing to export inside the project")
+    if out == ROOT or ROOT in out.parents or out in ROOT.parents:
+        print("refusing to export inside the project or to an ancestor of it")
         return 2
+    if out.exists():
+        if not out.is_dir():
+            print("refusing to export to a non-directory")
+            return 2
+        if any(out.iterdir()) and not (out / "PUBLIC_MANIFEST.json").is_file():
+            print("refusing to replace a non-empty directory without PUBLIC_MANIFEST.json")
+            return 2
     keep_git = (out / ".git").exists()
     if out.exists():
         for child in out.iterdir():
