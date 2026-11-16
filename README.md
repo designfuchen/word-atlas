@@ -19,6 +19,12 @@
 
 [![关注 @yangleiocx3](https://img.shields.io/badge/%E5%85%B3%E6%B3%A8%E6%88%91-@yangleiocx3-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/yangleiocx3)
 
+<br>
+
+<a href="https://0xlei.tech/words/"><img src="https://0xlei.tech/words/beta/banner.png" alt="词光 iOS 首批内测：微信扫码加入内测群" width="100%"></a>
+
+**词光 iOS 正在开发，首批内测招募中。** 微信扫上图二维码进群；二维码过期或群满了，打开 [网站](https://0xlei.tech/words/) 点顶栏「内测」，加作者微信拉你进群。
+
 </div>
 
 ---

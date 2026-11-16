@@ -14,9 +14,24 @@ ATLAS_BASE=/words/ npm run build
 location ^~ /words/ {
     alias /var/www/word-atlas/;
     try_files $uri $uri/ /words/index.html;
+
+    # 带内容哈希的构建产物与媒体文件可以长期缓存
+    location ~ ^/words/(assets/|atlas/(audio|img|thumb)/) {
+        expires 30d;
+        add_header Cache-Control "public, immutable";
+    }
+
+    # 入口页面、Service Worker 与词条索引每次部署都会变化，必须回源校验
+    location ~ ^/words/(index\.html|sw\.js|atlas/index\.json)$ {
+        expires off;
+        add_header Cache-Control "no-cache";
+    }
+
     expires 7d;
 }
 ```
+
+入口文件与 `atlas/index.json` 不能长期缓存：重新部署后，浏览器仍会使用旧的 `index.html`，它指向的带哈希资源已被删除，页面就打不开了。只有带内容哈希的 `/assets/*` 适合 `immutable` 长缓存；其余文件按需调整。
 
 ## GitHub Pages
 
