@@ -2618,6 +2618,8 @@ code {
   height: 56px;
   opacity: 0;
   font-size: 16px;
+  /* Clicks go to .slots, which focuses the input with the caret at the end. */
+  pointer-events: none;
 }
 .spell-actions {
   display: flex;
@@ -2985,6 +2987,8 @@ code {
   opacity: 0;
   inset: 0;
   font-size: 16px;
+  /* The input covers the stage; let clicks reach the replay button. The stage focuses the input. */
+  pointer-events: none;
 }
 .typing-help {
   font-size: 13px;

@@ -134,6 +134,7 @@ function TypingRound({ mode, entries, onExit, onAgain }: { mode: Mode; entries: 
   }, [i]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => () => stopAudio(), []);
 
+  // The input is capped at the target length by the caller: overflow characters are invisible and made Backspace look stuck.
   const onChange = (next: string) => {
     if (done) return;
     if (started.current === null && next) started.current = performance.now();
@@ -200,7 +201,16 @@ function TypingRound({ mode, entries, onExit, onAgain }: { mode: Mode; entries: 
           <b>{m.wpm}</b> WPM · <b>{m.accuracy}%</b>
         </span>
       </header>
-      <section className="typing-stage" onClick={() => input.current?.focus()}>
+      <section
+        className="typing-stage"
+        onClick={() => {
+          // The input ignores pointer events; focus it here with the caret at the end.
+          const el = input.current;
+          if (!el) return;
+          el.focus();
+          el.setSelectionRange(el.value.length, el.value.length);
+        }}
+      >
         {mode === "word" && (
           <div className="typing-cue">
             <Illustration src={atlas.img(e)} word={e.w} topic={0} eager />
@@ -235,7 +245,12 @@ function TypingRound({ mode, entries, onExit, onAgain }: { mode: Mode; entries: 
           ref={input}
           className="typing-input"
           value={value}
-          onChange={(ev) => onChange(ev.target.value)}
+          onChange={(ev) => onChange(Array.from(ev.target.value).slice(0, Array.from(target).length).join(""))}
+          onSelect={(ev) => {
+            const el = ev.currentTarget;
+            const n = el.value.length;
+            if (el.selectionStart !== n || el.selectionEnd !== n) el.setSelectionRange(n, n);
+          }}
           autoFocus
           autoCapitalize="off"
           autoCorrect="off"
