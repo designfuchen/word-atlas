@@ -1,0 +1,2475 @@
+{
+  "generator": "built-in image_gen",
+  "license": "CC BY 4.0 to the extent grantable",
+  "date": "2026-11-13",
+  "criteria": "Meaning-first composition: concrete nouns use large object close-ups; actions use only essential action cues; abstract concepts use simple conceptual relationships. Avoid people or example scenery overshadowing the target meaning.",
+  "assets": [
+    {
+      "id": "hat",
+      "prompt": "Use case: illustration-story. Create ONE square English vocabulary card illustration for HAT (帽子). The attached existing card is STYLE REFERENCE ONLY, not a composition to preserve. Replace the scene entirely with a single large, unmistakable straw sun hat: wide elliptical brim, rounded crown, dark navy ribbon, slightly tilted three-quarter view. Hat occupies about 75% of image. Warm cream paper background, tiny soft ground shadow, no person, no head, no gardening, no flowers, no landscape, no secondary objects. Match the reference's mid-century editorial illustration, matte gouache/risograph grain, clean simple shapes, warm ochre and muted terracotta, deep navy accents. Attractive vintage field-guide plate. Keep the hat silhouette readable at thumbnail size. No text, letters, labels, logos, frame or watermark. Output square.",
+      "reason": "人物浇花抢占主体，改为帽子特写",
+      "source": "exec-e25b0eeb-c9cc-4d7f-94ec-0c9d37e03f3c.png",
+      "files": [
+        {
+          "path": "public/atlas/img/hat.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "e5056cee5daa36309aebeca14e453c9be7772677d89e08517ed9bdf4194674df",
+          "sha256": "8315e3947b37153c65236dffb2075fdc2177c091565378ff683e07a17566a0cf"
+        },
+        {
+          "path": "public/atlas/thumb/hat.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "10b94b72dc80bb5c42e8edf8ffcd5cd9be25c2ed0cc1d82dcf48ddc1a664732a",
+          "sha256": "9b1068514b297a80ba1e5ce37b8525b185a72ef0ccbdd2d1772af356af495217"
+        }
+      ]
+    },
+    {
+      "id": "why",
+      "meaning": "为什么；追问原因",
+      "prompt": "English vocabulary image for why (为什么；追问原因). An unlit small table lamp with its power cord visibly disconnected from the wall socket. A large dark navy QUESTION MARK floats directly above the dark bulb, and a simple curved arrow follows the cord to the visible gap between plug and socket: the question is WHY the lamp is not lighting, with the reason discoverable in the same simple scene. The questioning mark and cause-effect connection are the focal point. No people. Only lamp, socket, plug, question mark and one arrow. No English or Chinese words. Clear conceptual educational illustration.\nSTYLE: Match the provided reference only in illustration style, NOT subject or composition. Mid-century modern editorial illustration, matte gouache, subtle risograph grain on warm cream paper, deep ink navy, terracotta, mustard ochre, muted sage and soft blue. Square composition, large instantly identifiable focal subject, minimal background, no decorative foliage, no busy story. No words, letters, numbers, captions, labels, logos, frames or watermark. Only a question-mark symbol is allowed if specifically requested. This is a replacement vocabulary illustration; semantic clarity at small thumbnail size is essential.",
+      "source": "exec-653d0ba3-9df6-405f-b790-8b3c87b64c07.png",
+      "files": [
+        {
+          "path": "public/atlas/img/why.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "881361ab60a094c0a705e04a79223d815563462de18480b0e53e70f2e18b53c8",
+          "sha256": "d88b30f7610c8df2c5b2e723c2cca71109b1509dff2da557800d58d05fa1f46a"
+        },
+        {
+          "path": "public/atlas/thumb/why.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "f6a86a8389a6a4f84c5a6d7483017bfa590d75982859ac2127b3abf5435d60c3",
+          "sha256": "784f9724fdeded7cef549e9b7dce51370d17614e0ca52c97954da484253a1823"
+        }
+      ]
+    },
+    {
+      "id": "extra-crayon",
+      "meaning": "蜡笔",
+      "prompt": "English vocabulary image for crayon (蜡笔). Three thick short wax crayons, terracotta, ochre and sage, lying diagonally on blank cream paper beside three matching broad waxy scribble strokes. Large recognizable wax tips and paper sleeves without writing. Crayons fill most of the frame. No people, children, teacher, boxes, room or scenery.\nSTYLE: Match the provided reference only in illustration style, NOT subject or composition. Mid-century modern editorial illustration, matte gouache, subtle risograph grain on warm cream paper, deep ink navy, terracotta, mustard ochre, muted sage and soft blue. Square composition, large instantly identifiable focal subject, minimal background, no decorative foliage, no busy story. No words, letters, numbers, captions, labels, logos, frames or watermark. Only a question-mark symbol is allowed if specifically requested. This is a replacement vocabulary illustration; semantic clarity at small thumbnail size is essential.",
+      "source": "exec-be843ad0-552a-4257-8847-817261d4ff8c.png",
+      "files": [
+        {
+          "path": "public/atlas/img/extra-crayon.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "0c59b35a080a7e9e6bb5e8bcbb5987702f9fb120faaa0cb45a1414502c6e4b18",
+          "sha256": "7d82c202df7d13f678da0232f9cc2ce76e821d3b758fe957e5daf8119af92833"
+        },
+        {
+          "path": "public/atlas/thumb/extra-crayon.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "e8c1d9add9f774c44536f36d62a66a274121b79f19143c9b1a4cceb29b00adc9",
+          "sha256": "426299e24ad8b159da27db9136ca59970187fcb7823974eb8c4f5a49287a859e"
+        }
+      ]
+    },
+    {
+      "id": "extra-lemonade",
+      "meaning": "柠檬水",
+      "prompt": "English vocabulary image for lemonade (柠檬水). One large clear glass pitcher and a smaller drinking glass of pale yellow lemonade with unmistakable lemon slices and a few ice cubes, one cut lemon beside the glass. Dominant drink close-up still life, tiny tabletop shadow only. No people, garden, plants, watering or pouring onto ground.\nSTYLE: Match the provided reference only in illustration style, NOT subject or composition. Mid-century modern editorial illustration, matte gouache, subtle risograph grain on warm cream paper, deep ink navy, terracotta, mustard ochre, muted sage and soft blue. Square composition, large instantly identifiable focal subject, minimal background, no decorative foliage, no busy story. No words, letters, numbers, captions, labels, logos, frames or watermark. Only a question-mark symbol is allowed if specifically requested. This is a replacement vocabulary illustration; semantic clarity at small thumbnail size is essential.",
+      "source": "exec-f9bc82e9-2ef1-4be9-99e1-356b846b1c99.png",
+      "files": [
+        {
+          "path": "public/atlas/img/extra-lemonade.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "0cd4f3d37662b70b88acd4c576f13b2f01f76d7bfbd3663aad47d18f7b5fbb3c",
+          "sha256": "71cabaac877fdd4be56bb08da31aa2a46772207f2ff4a9a4f7bb6b85a644c04c"
+        },
+        {
+          "path": "public/atlas/thumb/extra-lemonade.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "fbb7b69897d04b6acf4fe4350a1e7e5f379ba62ace376b9147be7ee88c45d1c5",
+          "sha256": "9ca9bc913157e049010780b73e4a83ecd882bb9e201a0afad16a66cbc858b764"
+        }
+      ]
+    },
+    {
+      "id": "extra-fingerprint",
+      "meaning": "指纹",
+      "prompt": "English vocabulary image for fingerprint (指纹). One large crisp dark navy fingerprint impression on cream paper, with visible nested curved ridges, central whorl and tiny ridge gaps, like a clean ink fingerprint stamp. A cropped fingertip in the bottom corner gives scale but is much smaller than the print. No face, person, laptop, cleaning cloth or scene.\nSTYLE: Match the provided reference only in illustration style, NOT subject or composition. Mid-century modern editorial illustration, matte gouache, subtle risograph grain on warm cream paper, deep ink navy, terracotta, mustard ochre, muted sage and soft blue. Square composition, large instantly identifiable focal subject, minimal background, no decorative foliage, no busy story. No words, letters, numbers, captions, labels, logos, frames or watermark. Only a question-mark symbol is allowed if specifically requested. This is a replacement vocabulary illustration; semantic clarity at small thumbnail size is essential.",
+      "source": "exec-f55133a5-41d1-44b7-bf6c-8f009a10fa8e.png",
+      "files": [
+        {
+          "path": "public/atlas/img/extra-fingerprint.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "637e2bf4ea859c69e17fdc23ae3b3364aa083c4ec4b6a58dff1392184e76f4f4",
+          "sha256": "2143e6f94245e8fe29c997ca276fb4878e8ea626b4c7b0bfa7a36855d217b2d4"
+        },
+        {
+          "path": "public/atlas/thumb/extra-fingerprint.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "06ae9fa720bafbe3aaa5f75518a3007623480a41a277fe2fe82e0495eaaf0829",
+          "sha256": "9b6417e93e72dfee3961a4cfd14107de293ef16340185953a9b038f37e0b008c"
+        }
+      ]
+    },
+    {
+      "id": "extra-archive",
+      "meaning": "档案；档案馆",
+      "prompt": "English vocabulary image for archive (档案；档案馆). Close view of a tidy archive shelf and one open archival storage box containing upright aged document folders and neatly bundled old papers. Boxes and files dominate, no people or computers, no readable writing. Clear archive storage rather than an office desk.\nSTYLE: Match the provided reference only in illustration style, NOT subject or composition. Mid-century modern editorial illustration, matte gouache, subtle risograph grain on warm cream paper, deep ink navy, terracotta, mustard ochre, muted sage and soft blue. Square composition, large instantly identifiable focal subject, minimal background, no decorative foliage, no busy story. No words, letters, numbers, captions, labels, logos, frames or watermark. Only a question-mark symbol is allowed if specifically requested. This is a replacement vocabulary illustration; semantic clarity at small thumbnail size is essential.",
+      "source": "exec-8590b92e-6217-497b-ae12-47a40c3d7bcf.png",
+      "files": [
+        {
+          "path": "public/atlas/img/extra-archive.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "0265f8c6e8c6b2c9603b854655ef294f1cb6227465e472e998e010dc6970dca5",
+          "sha256": "0c2d0b593aeb252a0f59a0c2d860e6c2787f1d855db55a90204c35f2b23c2c6f"
+        },
+        {
+          "path": "public/atlas/thumb/extra-archive.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "1046e594ecc82b3055348bf51a6421bf0659b2e0503852713bc1d4b732e7a562",
+          "sha256": "3d22bb3a682a92c16bd5200cd78383bfb6ece92a723c6ca90c3fa58c549c286f"
+        }
+      ]
+    },
+    {
+      "id": "extra-footwear",
+      "meaning": "鞋类",
+      "prompt": "English vocabulary image for footwear (鞋类). A simple large still life of three types of footwear: a walking shoe, ankle boot and sandal. Entire silhouettes visible, arranged neatly against cream paper, no people, legs, shop or landscape.\nSTYLE: Match the provided reference only in illustration style, NOT subject or composition. Mid-century modern editorial illustration, matte gouache, subtle risograph grain on warm cream paper, deep ink navy, terracotta, mustard ochre, muted sage and soft blue. Square composition, large instantly identifiable focal subject, minimal background, no decorative foliage, no busy story. No words, letters, numbers, captions, labels, logos, frames or watermark. Only a question-mark symbol is allowed if specifically requested. This is a replacement vocabulary illustration; semantic clarity at small thumbnail size is essential.",
+      "source": "exec-5fcc8f1a-57a4-4587-967e-e0d29c90a236.png",
+      "files": [
+        {
+          "path": "public/atlas/img/extra-footwear.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "70b2fd4144a993f6c2418280bf6bb6b2b96052e41510dee8d32cf4f25cb2349d",
+          "sha256": "1f5e73911ecbaa58458c9d1233db8549e33d1afe3731adf837110b25859419c3"
+        },
+        {
+          "path": "public/atlas/thumb/extra-footwear.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "954b481cd7ab69cd4b0750d25194c2f024f089b18ceca5d49ede25e731af29c3",
+          "sha256": "22bafb52dc672798c0ba9b848acd82b3058e88a266d166467ced6bd15eac642f"
+        }
+      ]
+    },
+    {
+      "id": "extra-palm",
+      "meaning": "手掌",
+      "prompt": "English vocabulary image for palm (手掌). A large open human hand facing the viewer, five anatomically correct fingers gently spread, clearly visible palm creases, cropped just below wrist. Warm terracotta skin, palm central and dominant. No person, face, food, tools or palm trees.\nSTYLE: Match the provided reference only in illustration style, NOT subject or composition. Mid-century modern editorial illustration, matte gouache, subtle risograph grain on warm cream paper, deep ink navy, terracotta, mustard ochre, muted sage and soft blue. Square composition, large instantly identifiable focal subject, minimal background, no decorative foliage, no busy story. No words, letters, numbers, captions, labels, logos, frames or watermark. Only a question-mark symbol is allowed if specifically requested. This is a replacement vocabulary illustration; semantic clarity at small thumbnail size is essential.",
+      "source": "exec-85a3836e-1151-4f57-9fab-ef3ebe2107db.png",
+      "files": [
+        {
+          "path": "public/atlas/img/extra-palm.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "951bb2747b41ed06f1b046a2538a4f9dd58183f27367475fc282dbfec48c1d92",
+          "sha256": "719e8993135e3e830cfa98caa088cac138b3435759baf7e0bec141d389b96a77"
+        },
+        {
+          "path": "public/atlas/thumb/extra-palm.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "7ffadd45bd568d89a00f2b6b6085387524c2d4d76efd9a47af8d31f0a6a54343",
+          "sha256": "4e31bc54b25972f12304d8a13506032a428f54ec4e94e0a680d44e386a0e5b68"
+        }
+      ]
+    },
+    {
+      "id": "extra-rectangle",
+      "meaning": "长方形；矩形",
+      "prompt": "English vocabulary image for rectangle (长方形；矩形). A single very clear flat horizontal rectangle, twice as wide as tall, filled muted terracotta with a deep navy outline, precisely four straight sides and four right angles, face-on without perspective. Small cream margin. No objects, people, microscope, other shapes, diagrams or text. Subtle paper grain gives the same painted vintage style.\nSTYLE: Match the provided reference only in illustration style, NOT subject or composition. Mid-century modern editorial illustration, matte gouache, subtle risograph grain on warm cream paper, deep ink navy, terracotta, mustard ochre, muted sage and soft blue. Square composition, large instantly identifiable focal subject, minimal background, no decorative foliage, no busy story. No words, letters, numbers, captions, labels, logos, frames or watermark. Only a question-mark symbol is allowed if specifically requested. This is a replacement vocabulary illustration; semantic clarity at small thumbnail size is essential.",
+      "source": "exec-1165853a-1e8a-43c3-a0e9-ee6b7ead6b97.png",
+      "files": [
+        {
+          "path": "public/atlas/img/extra-rectangle.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "355a6f4b27acc8f8af495a50a9210e3194d13ba58a8b922ab6da1776542947c9",
+          "sha256": "031bed6f7e88d4eed3f6586eb5e477729d830e729c817eb5f70aa6d526c3c9fa"
+        },
+        {
+          "path": "public/atlas/thumb/extra-rectangle.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "5ff6d7d95d8abbcdba28355b91a6e23edfbfbbb65f5470afcf1a08d9d57b587a",
+          "sha256": "13474bd6c5ad413b9b74d4428d823a73e44df8c46cc8fb86f3d795046371769e"
+        }
+      ]
+    },
+    {
+      "id": "extra-petal",
+      "meaning": "花瓣",
+      "prompt": "English vocabulary image for petal (花瓣). One large detached soft terracotta flower petal, curved rounded edge and narrow base, delicate veins, occupying two thirds of the frame. A much smaller simple daisy in a lower corner has one missing petal, visually showing where the detached petal came from. Petal is absolutely dominant, no garden or person.\nSTYLE: Match the provided reference only in illustration style, NOT subject or composition. Mid-century modern editorial illustration, matte gouache, subtle risograph grain on warm cream paper, deep ink navy, terracotta, mustard ochre, muted sage and soft blue. Square composition, large instantly identifiable focal subject, minimal background, no decorative foliage, no busy story. No words, letters, numbers, captions, labels, logos, frames or watermark. Only a question-mark symbol is allowed if specifically requested. This is a replacement vocabulary illustration; semantic clarity at small thumbnail size is essential.",
+      "source": "exec-99f407ef-3ec2-488c-a2e7-2dbb27ff3dad.png",
+      "files": [
+        {
+          "path": "public/atlas/img/extra-petal.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "4449b604eb7eb58358d472b8a385a8514fc9e823da9590fe0a1392e2c1cae87a",
+          "sha256": "bc150f3bad25be51230e6271544b8c7b3cf0a92709310b1eaa519310f60fc4c1"
+        },
+        {
+          "path": "public/atlas/thumb/extra-petal.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "bbcf778805afa68e205b1b1e7a2719ec4a44ac0fa7f4506db63972a9c0180ea4",
+          "sha256": "afe7b050741c5637224b1b25513468aa350b473de9ec5be391bc99a7ac870f85"
+        }
+      ]
+    },
+    {
+      "id": "extra-raindrop",
+      "meaning": "雨滴",
+      "prompt": "English vocabulary image for raindrop (雨滴). Close-up of three distinct large translucent blue rain droplets falling toward a puddle with one concentric splash ripple. One foremost teardrop is the dominant subject. Small fragment of grey cloud at top only. No people, raincoat, umbrella, town or landscape.\nSTYLE: Match the provided reference only in illustration style, NOT subject or composition. Mid-century modern editorial illustration, matte gouache, subtle risograph grain on warm cream paper, deep ink navy, terracotta, mustard ochre, muted sage and soft blue. Square composition, large instantly identifiable focal subject, minimal background, no decorative foliage, no busy story. No words, letters, numbers, captions, labels, logos, frames or watermark. Only a question-mark symbol is allowed if specifically requested. This is a replacement vocabulary illustration; semantic clarity at small thumbnail size is essential.",
+      "source": "exec-6e6eb6ef-9de5-44df-a6f3-34c19292045b.png",
+      "files": [
+        {
+          "path": "public/atlas/img/extra-raindrop.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "13d28e06fbcfb6749910d5171b0547b10ba5b5878a09ee9b11373de3871b4e0d",
+          "sha256": "711b54e3b1d1da23e7a75219a5ef475ea2f081b01d19896211d9eec6a7688acb"
+        },
+        {
+          "path": "public/atlas/thumb/extra-raindrop.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "748c6592f91de363440695059f30d3c6b661964d418ffef37396c4e33feaed70",
+          "sha256": "fae51d70993baecce17fe9123e7a9b668e2e02479b994111139725ee90b6b86a"
+        }
+      ]
+    },
+    {
+      "id": "extra-germ",
+      "meaning": "病菌",
+      "prompt": "English vocabulary image for germ (病菌). A simplified microscope-view illustration of three large distinct microbes: one rod-shaped bacterium with tiny hairlike appendages, one round clustered bacterium and one curved bacterium. Muted sage and terracotta organisms on pale cream, clear silhouettes, scientific yet approachable, no faces or eyes, no humans, hand washing, soap or kitchen. Not a literal scale diagram.\nSTYLE: Match the provided reference only in illustration style, NOT subject or composition. Mid-century modern editorial illustration, matte gouache, subtle risograph grain on warm cream paper, deep ink navy, terracotta, mustard ochre, muted sage and soft blue. Square composition, large instantly identifiable focal subject, minimal background, no decorative foliage, no busy story. No words, letters, numbers, captions, labels, logos, frames or watermark. Only a question-mark symbol is allowed if specifically requested. This is a replacement vocabulary illustration; semantic clarity at small thumbnail size is essential.",
+      "source": "exec-3366c6c6-abea-43ec-941b-46dcc102326d.png",
+      "files": [
+        {
+          "path": "public/atlas/img/extra-germ.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "22f91c180c3469bff04a31df3ef474e76b13a055a9a67574d3ff9fcab7a8af90",
+          "sha256": "36b96e203984c212ff9737410b22a542036f566ab6b9d70c2cb2b725daff85a7"
+        },
+        {
+          "path": "public/atlas/thumb/extra-germ.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "a2f4b1f4da8014ad31fcd11d1b431c2d5ce58e8506b37838c104f1bef34d3521",
+          "sha256": "57adba72067213acb80951560947ee584b5e85c9086b2d7d7c391bf106146dbb"
+        }
+      ]
+    },
+    {
+      "id": "extra-mosquitoes",
+      "meaning": "蚊子",
+      "prompt": "English vocabulary image for mosquitoes (蚊子). Two large unmistakable mosquitoes in profile, long thin legs, slender segmented bodies, one pair of narrow translucent wings each, long pointed proboscis. One slightly smaller behind the other. Cream uncluttered field-guide background. No humans, insect spray, picnic or flowers. Anatomically coherent insects.\nSTYLE: Match the provided reference only in illustration style, NOT subject or composition. Mid-century modern editorial illustration, matte gouache, subtle risograph grain on warm cream paper, deep ink navy, terracotta, mustard ochre, muted sage and soft blue. Square composition, large instantly identifiable focal subject, minimal background, no decorative foliage, no busy story. No words, letters, numbers, captions, labels, logos, frames or watermark. Only a question-mark symbol is allowed if specifically requested. This is a replacement vocabulary illustration; semantic clarity at small thumbnail size is essential.",
+      "source": "exec-4b2ff0d5-f7ff-452d-8613-baac0b74b716.png",
+      "files": [
+        {
+          "path": "public/atlas/img/extra-mosquitoes.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "7242896048b9b211f9c94f85b1de4c3709fbe4a2e37911519342e3f951e61f7b",
+          "sha256": "b06d3b392edaf7a77e41ef5b1ad006f406e6bc08c94283dfabb05786bc64ac1f"
+        },
+        {
+          "path": "public/atlas/thumb/extra-mosquitoes.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "f815daebd5911a7a21a61368f022d35e2781d5ea634888911d9b6b1f1558ae07",
+          "sha256": "bc0fabaa23e464617da9199c6a99c3af3675048757714d03648d040e8596c5b5"
+        }
+      ]
+    },
+    {
+      "id": "extra-stethoscope",
+      "meaning": "听诊器",
+      "prompt": "English vocabulary image for stethoscope (听诊器). One large complete stethoscope centered on cream paper, navy flexible tubing in a loose U curve, two metal ear tubes with eartips and a circular silver chestpiece facing viewer. All connected correctly. No doctor, patient, hands, room or other medical equipment.\nSTYLE: Match the provided reference only in illustration style, NOT subject or composition. Mid-century modern editorial illustration, matte gouache, subtle risograph grain on warm cream paper, deep ink navy, terracotta, mustard ochre, muted sage and soft blue. Square composition, large instantly identifiable focal subject, minimal background, no decorative foliage, no busy story. No words, letters, numbers, captions, labels, logos, frames or watermark. Only a question-mark symbol is allowed if specifically requested. This is a replacement vocabulary illustration; semantic clarity at small thumbnail size is essential.",
+      "source": "exec-062e120d-57a6-4504-8e5c-ccf83d23c76a.png",
+      "files": [
+        {
+          "path": "public/atlas/img/extra-stethoscope.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "2113548e4b04594de9b5955636973d46ce9b0ed64b35b421dc607d527fcae226",
+          "sha256": "68933e2b113d221f5bd9587063b51769a72cb61c379e0cdb7bdb447442536aee"
+        },
+        {
+          "path": "public/atlas/thumb/extra-stethoscope.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "0b155a247e3d2105aa8157bd8ac3ecc8704ba395fe35eccab16204570b364032",
+          "sha256": "37a1d9f2723cea9dc678776be42c0110edb1f19205aad10a894ba99559d31edc"
+        }
+      ]
+    },
+    {
+      "id": "extra-zip",
+      "meaning": "拉链",
+      "prompt": "English vocabulary image for zip (拉链). Extreme clear close-up of a large partially open zipper on two terracotta fabric strips. Navy metal slider and pull tab center frame, individual interlocking teeth below the slider and separated teeth above. Zipper occupies most of image. No people, face, garment scene or scenery.\nSTYLE: Match the provided reference only in illustration style, NOT subject or composition. Mid-century modern editorial illustration, matte gouache, subtle risograph grain on warm cream paper, deep ink navy, terracotta, mustard ochre, muted sage and soft blue. Square composition, large instantly identifiable focal subject, minimal background, no decorative foliage, no busy story. No words, letters, numbers, captions, labels, logos, frames or watermark. Only a question-mark symbol is allowed if specifically requested. This is a replacement vocabulary illustration; semantic clarity at small thumbnail size is essential.",
+      "source": "exec-1906b983-c9a6-407b-abfc-4b2d9b9f0eeb.png",
+      "files": [
+        {
+          "path": "public/atlas/img/extra-zip.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "64f99fa4db43973bb1ca9037fbbeec3da5f15ef1b7f932db24024dfeeab3f8e6",
+          "sha256": "659c2b95fb2b61e739789a1534ca5078de74330e84ea1655354e8e08e6d35d19"
+        },
+        {
+          "path": "public/atlas/thumb/extra-zip.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "bd39b6fc032b59205804c2bb70ee2a288da5d55954c5ab93db2939799b21c8f5",
+          "sha256": "4d148afd2b1cb3064bee2d77314735c9e4e43137de2decf6ce911ef2639e8b40"
+        }
+      ]
+    },
+    {
+      "id": "extra-spade",
+      "meaning": "铁锹；铲子",
+      "prompt": "English vocabulary image for spade (铁锹；铲子). One complete large garden spade diagonally placed on cream paper: short D-shaped navy handle, ochre wooden shaft, broad flat metal digging blade with slightly pointed edge. A tiny clod of earth beside blade indicates digging. No people, garden story, flowers or other tools.\nSTYLE: Match the provided reference only in illustration style, NOT subject or composition. Mid-century modern editorial illustration, matte gouache, subtle risograph grain on warm cream paper, deep ink navy, terracotta, mustard ochre, muted sage and soft blue. Square composition, large instantly identifiable focal subject, minimal background, no decorative foliage, no busy story. No words, letters, numbers, captions, labels, logos, frames or watermark. Only a question-mark symbol is allowed if specifically requested. This is a replacement vocabulary illustration; semantic clarity at small thumbnail size is essential.",
+      "source": "exec-6df5df1c-197d-4ff2-8f17-39152695dec6.png",
+      "files": [
+        {
+          "path": "public/atlas/img/extra-spade.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "61868fc4c44d89adea25bdddfc9eb6cc4d8387cdc57be893a1562fc083d4c91c",
+          "sha256": "b379712cdd69cccc367f03d8da24134217709d2946293451efd897f199a5ded0"
+        },
+        {
+          "path": "public/atlas/thumb/extra-spade.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "e09c9683c533dc5ff39dcf9caba949a226b28d3daf73b7829d3ab15372f2ad7e",
+          "sha256": "ccc2e898f9124bd99879772e26a5da32419a192278293bbb3848a0a49384998c"
+        }
+      ]
+    },
+    {
+      "id": "extra-thorn",
+      "meaning": "刺；荆棘",
+      "prompt": "English vocabulary image for thorn (刺；荆棘). Macro view of a short rose stem with three very prominent sharp curved thorns projecting outward, one thorn central and largest. One small green leaf for context. No rose bloom competing with the thorns, no person, gloves, garden or pruning tool.\nSTYLE: Match the provided reference only in illustration style, NOT subject or composition. Mid-century modern editorial illustration, matte gouache, subtle risograph grain on warm cream paper, deep ink navy, terracotta, mustard ochre, muted sage and soft blue. Square composition, large instantly identifiable focal subject, minimal background, no decorative foliage, no busy story. No words, letters, numbers, captions, labels, logos, frames or watermark. Only a question-mark symbol is allowed if specifically requested. This is a replacement vocabulary illustration; semantic clarity at small thumbnail size is essential.",
+      "source": "exec-3a3d452a-63f6-4195-ad0f-9f0d4de59284.png",
+      "files": [
+        {
+          "path": "public/atlas/img/extra-thorn.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "aa4a3c2adb815cf4bd382f0a841befb10fbddd291ab3ea1c96894abc549c6871",
+          "sha256": "ce5d24512321a560927b711290aebfc55543dc461b1af82eb1a802d9e13a18e7"
+        },
+        {
+          "path": "public/atlas/thumb/extra-thorn.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "32199911232baf102feac59ccf62b1bd57a6c5c839fc9c442862c19f3084aeeb",
+          "sha256": "b987c11f18d0f71679a7b7e6744453aadc145e2b06825a62c9f16d225351c70c"
+        }
+      ]
+    },
+    {
+      "id": "extra-shoelace",
+      "meaning": "鞋带",
+      "prompt": "English vocabulary image for shoelace (鞋带). Close-up of the upper part of one simple navy sneaker, showing an oversized ochre shoelace clearly threading through eyelets and tied in a large neat bow, its two tips visible. Lace bright and dominant, shoe subdued. No child, legs, outdoor background or running action.\nSTYLE: Match the provided reference only in illustration style, NOT subject or composition. Mid-century modern editorial illustration, matte gouache, subtle risograph grain on warm cream paper, deep ink navy, terracotta, mustard ochre, muted sage and soft blue. Square composition, large instantly identifiable focal subject, minimal background, no decorative foliage, no busy story. No words, letters, numbers, captions, labels, logos, frames or watermark. Only a question-mark symbol is allowed if specifically requested. This is a replacement vocabulary illustration; semantic clarity at small thumbnail size is essential.",
+      "source": "exec-d38cd0cf-748b-471e-aeb8-0c96da9a5abe.png",
+      "files": [
+        {
+          "path": "public/atlas/img/extra-shoelace.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "7a890e6725d7b00fcc8b9880e7575b3dd0d12146047f36d99072452313c5483d",
+          "sha256": "eedc6020dce55a71e1ed05f4294c35b409ddf9b6c2906d4701fdacbbf1c70a33"
+        },
+        {
+          "path": "public/atlas/thumb/extra-shoelace.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "52b437f8478857469fc5d9ac1f064ae350d8da6081cd22eb2d162397e48d04ed",
+          "sha256": "fd1d63f6c95fb22bcffb546effc49871b007623cd56d6690ab0475aed4861be2"
+        }
+      ]
+    },
+    {
+      "id": "extra-pendulum",
+      "meaning": "钟摆",
+      "prompt": "English vocabulary image for pendulum (钟摆). Close-up of a clock pendulum: a long slender straight brass rod ending in a large round ochre bob, suspended from a small pivot above. Two subtle ghosted side positions and short curved motion marks show its side-to-side swing. No clock face, people, room, text or numbers.\nSTYLE: Match the provided reference only in illustration style, NOT subject or composition. Mid-century modern editorial illustration, matte gouache, subtle risograph grain on warm cream paper, deep ink navy, terracotta, mustard ochre, muted sage and soft blue. Square composition, large instantly identifiable focal subject, minimal background, no decorative foliage, no busy story. No words, letters, numbers, captions, labels, logos, frames or watermark. Only a question-mark symbol is allowed if specifically requested. This is a replacement vocabulary illustration; semantic clarity at small thumbnail size is essential.",
+      "source": "exec-cddafacc-27f3-45fb-97b3-fed885ed59cd.png",
+      "files": [
+        {
+          "path": "public/atlas/img/extra-pendulum.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "5c3bbbfa4027b242be2095a866a5a41c64f3fd5821cf9b160061a5b5c03a546f",
+          "sha256": "ba5b891da6a6c34230bb3f728407556c5a728f0820458c9dc74abfe0d5f65fa3"
+        },
+        {
+          "path": "public/atlas/thumb/extra-pendulum.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "aeb5cae261882e89b72b663e1ab2f5c5962336918abdaaa230bafa8f445888c2",
+          "sha256": "7dafec70ce2632adcf15ca9fcdbadb472a80dabdc297d582f7bd2914991e22f6"
+        }
+      ]
+    },
+    {
+      "id": "extra-handlebar",
+      "meaning": "车把",
+      "prompt": "English vocabulary image for handlebar (车把). A large bicycle handlebar isolated in close three-quarter view, silver curved bar, two navy rubber grips and two clear brake levers, short central stem. The bar and both ends are entirely visible. No rider, face, bicycle wheels, bell focal point or landscape.\nSTYLE: Match the provided reference only in illustration style, NOT subject or composition. Mid-century modern editorial illustration, matte gouache, subtle risograph grain on warm cream paper, deep ink navy, terracotta, mustard ochre, muted sage and soft blue. Square composition, large instantly identifiable focal subject, minimal background, no decorative foliage, no busy story. No words, letters, numbers, captions, labels, logos, frames or watermark. Only a question-mark symbol is allowed if specifically requested. This is a replacement vocabulary illustration; semantic clarity at small thumbnail size is essential.",
+      "source": "exec-c55d6426-21e4-4bba-a477-cfe47b4a7c8f.png",
+      "files": [
+        {
+          "path": "public/atlas/img/extra-handlebar.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "0bf97d0af37165939d4edd249d9c36d150d74335dc99d6a6e92a3268d5189376",
+          "sha256": "277bafe88637a74276c10872d76ebf0470902667b41dc1fd6ce6328b62cf8a8f"
+        },
+        {
+          "path": "public/atlas/thumb/extra-handlebar.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "5063d588772de97f249000d2665cab01f14f7cc0b86e76bda883164d23ce3a44",
+          "sha256": "00f2d6613b425ca26e15f6dcf51c0e3dd63d73f6638ff8e31108e1fbb3156faa"
+        }
+      ]
+    },
+    {
+      "id": "extra-timer",
+      "meaning": "计时器",
+      "prompt": "English vocabulary image for timer (计时器). One large mechanical kitchen countdown timer, round ivory dial inside a terracotta casing, one navy pointer, regular short tick marks and a visible winding knob. No digits or words. A tiny winding gesture mark at knob. Timer alone, no cook, food, kitchen or clock on wall.\nSTYLE: Match the provided reference only in illustration style, NOT subject or composition. Mid-century modern editorial illustration, matte gouache, subtle risograph grain on warm cream paper, deep ink navy, terracotta, mustard ochre, muted sage and soft blue. Square composition, large instantly identifiable focal subject, minimal background, no decorative foliage, no busy story. No words, letters, numbers, captions, labels, logos, frames or watermark. Only a question-mark symbol is allowed if specifically requested. This is a replacement vocabulary illustration; semantic clarity at small thumbnail size is essential.",
+      "source": "exec-32433b1e-9a74-49a1-8f8f-91a7c08121fb.png",
+      "files": [
+        {
+          "path": "public/atlas/img/extra-timer.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "4d0d6d102d85b34d912d74aa1c7e8dff4150a669a9d0a5448a219e39857eb981",
+          "sha256": "986fcb9836a3f9e3c6ff24352f824e7bc2a1d673c1688eda1a83e3e2ef5f7ee4"
+        },
+        {
+          "path": "public/atlas/thumb/extra-timer.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "a1aa0b84cf4d3ef56d9bc628a8771c3e3c4aff8b9b2f96fc5b52f2d1cf22576f",
+          "sha256": "04a301c1c1c3580ff060d816d0eb310a89f775a0919f49e00a0566299846c8cc"
+        }
+      ]
+    },
+    {
+      "id": "extra-wig",
+      "meaning": "假发",
+      "prompt": "English vocabulary image for wig (假发). One chestnut bob wig clearly lifted slightly above a plain neutral cream display head, revealing the hollow mesh wig cap underneath and a clean bald display head. Wig fills the top two thirds, display head minimal and faceless. No human person putting it on, no salon or landscape.\nSTYLE: Match the provided reference only in illustration style, NOT subject or composition. Mid-century modern editorial illustration, matte gouache, subtle risograph grain on warm cream paper, deep ink navy, terracotta, mustard ochre, muted sage and soft blue. Square composition, large instantly identifiable focal subject, minimal background, no decorative foliage, no busy story. No words, letters, numbers, captions, labels, logos, frames or watermark. Only a question-mark symbol is allowed if specifically requested. This is a replacement vocabulary illustration; semantic clarity at small thumbnail size is essential.",
+      "source": "exec-d45d10e4-1c13-4262-979a-c43516f90960.png",
+      "files": [
+        {
+          "path": "public/atlas/img/extra-wig.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "2ee6a426b030e4859cb49be6c21cda392625a3d847bf5b50befce0c7efb2b1d0",
+          "sha256": "d0e04efaa326616fbeccd1b1aab18a64d3946820d4986cbc0b6739f7477d5ace"
+        },
+        {
+          "path": "public/atlas/thumb/extra-wig.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "743ca8cc4de141c11712a17621cff12467f3b44e1cad5a31b0fd7b65eb7c87e2",
+          "sha256": "eaa15dff662740812b7ed5559e3d953c5f7e8685bf0f21494387e17caa3d3c08"
+        }
+      ]
+    },
+    {
+      "id": "extra-velvet",
+      "meaning": "天鹅绒",
+      "prompt": "English vocabulary image for velvet (天鹅绒). A large folded drape of deep terracotta velvet fabric with thick plush short pile and rich light-dark directional sheen on its soft rounded folds. Macro fabric texture readable, one rolled edge shows its thickness. Cream background, no jewellery, jewellery box, people or room.\nSTYLE: Match the provided reference only in illustration style, NOT subject or composition. Mid-century modern editorial illustration, matte gouache, subtle risograph grain on warm cream paper, deep ink navy, terracotta, mustard ochre, muted sage and soft blue. Square composition, large instantly identifiable focal subject, minimal background, no decorative foliage, no busy story. No words, letters, numbers, captions, labels, logos, frames or watermark. Only a question-mark symbol is allowed if specifically requested. This is a replacement vocabulary illustration; semantic clarity at small thumbnail size is essential.",
+      "source": "exec-b5f0f3e4-f83b-47a8-a21b-52809b7f82ef.png",
+      "files": [
+        {
+          "path": "public/atlas/img/extra-velvet.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "550f833068b5826c320f1b471ceb00dd6f9dae1acc30f5383615703493e37e47",
+          "sha256": "ba2c6f56540c4e8cdfcb6ef9c5a51722c198715a52ffb39c0cc75c3afa0c0871"
+        },
+        {
+          "path": "public/atlas/thumb/extra-velvet.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "64d3fb10d6b306f8186120fffb43cca49a7e33c790f1f78259e2ce02757cfda9",
+          "sha256": "2087bb35d491a968dea39b3574c52f9eb37eb49475e8d806e79c6add51079b75"
+        }
+      ]
+    },
+    {
+      "id": "extra-dropping",
+      "meaning": "落下；掉落",
+      "prompt": "English vocabulary image for dropping (落下；掉落). A cropped open hand at the very top has just released one terracotta ball. The ball is centrally suspended in empty air, two small motion trails and a downward curved arrow indicate dropping under gravity toward a simple tabletop. No face or whole person, no deer, animal droppings or shop. Focus on the falling action, not the hand.\nSTYLE: Match the provided reference only in illustration style, NOT subject or composition. Mid-century modern editorial illustration, matte gouache, subtle risograph grain on warm cream paper, deep ink navy, terracotta, mustard ochre, muted sage and soft blue. Square composition, large instantly identifiable focal subject, minimal background, no decorative foliage, no busy story. No words, letters, numbers, captions, labels, logos, frames or watermark. Only a question-mark symbol is allowed if specifically requested. This is a replacement vocabulary illustration; semantic clarity at small thumbnail size is essential.",
+      "source": "exec-941a0183-ca49-4d9d-8498-2bf20801ccfd.png",
+      "files": [
+        {
+          "path": "public/atlas/img/extra-dropping.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "924774c6e762a965c304792b3058050ea60478d18215aae913decf8916a7796a",
+          "sha256": "a019069b5402ee07f38cf6643dd4b85b9b51692d4a682155cc64ec85c4e46804"
+        },
+        {
+          "path": "public/atlas/thumb/extra-dropping.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "a8817c7749b9cac8286cec22125cc4896ae01d6f0d7720e169346ef6137dac2a",
+          "sha256": "a80fd83f69464d700c71e57ab135858d7376233ab0aa777996dd4c6c9420075b"
+        }
+      ]
+    },
+    {
+      "id": "extra-seabed",
+      "meaning": "海底；海床",
+      "prompt": "English vocabulary image for seabed (海底；海床). A simple underwater cutaway showing the sandy and rocky seabed filling the lower two thirds, with gently rippled sand, scattered small stones and very sparse short seaweed rooted in the bottom. Clear blue water above, tiny faint fish far in distance only. No dominant lobster, turtle, submarine, diver or reef animals. The sea floor must be unmistakable main subject.\nSTYLE: Match the provided reference only in illustration style, NOT subject or composition. Mid-century modern editorial illustration, matte gouache, subtle risograph grain on warm cream paper, deep ink navy, terracotta, mustard ochre, muted sage and soft blue. Square composition, large instantly identifiable focal subject, minimal background, no decorative foliage, no busy story. No words, letters, numbers, captions, labels, logos, frames or watermark. Only a question-mark symbol is allowed if specifically requested. This is a replacement vocabulary illustration; semantic clarity at small thumbnail size is essential.",
+      "source": "exec-e2269c0e-9e3c-453d-9832-7de11e07d7c1.png",
+      "files": [
+        {
+          "path": "public/atlas/img/extra-seabed.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "a34dce237eafe79c9f84595b9d10dc59f9d37a7bbb029fcbaccf4d1234bd72cd",
+          "sha256": "faee8a6a8cc39ce47a40d5337642b19832496fd2e9c1977c154f02362efb5676"
+        },
+        {
+          "path": "public/atlas/thumb/extra-seabed.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "e876ff6c58fae88840adceb95a7f471672d50762aafb33787df6ca0c23636c58",
+          "sha256": "7e924862cb47798822b60d8dadc5581ec55226e11e2d30bb9111860fe40b6ada"
+        }
+      ]
+    },
+    {
+      "id": "extra-drain",
+      "meaning": "排水口；排水沟",
+      "prompt": "English vocabulary image for drain (排水口；排水沟). Close view of a circular metal drain grate in a pale basin, with a small stream of blue water clearly spiralling into its dark holes. Drain central and large. No person, wetland, birds, river or countryside. Show water being drained away.\nSTYLE: Match the provided reference only in illustration style, NOT subject or composition. Mid-century modern editorial illustration, matte gouache, subtle risograph grain on warm cream paper, deep ink navy, terracotta, mustard ochre, muted sage and soft blue. Square composition, large instantly identifiable focal subject, minimal background, no decorative foliage, no busy story. No words, letters, numbers, captions, labels, logos, frames or watermark. Only a question-mark symbol is allowed if specifically requested. This is a replacement vocabulary illustration; semantic clarity at small thumbnail size is essential.",
+      "source": "exec-fdb1ca70-f7ce-4fb4-93fe-e4bd92b5f832.png",
+      "files": [
+        {
+          "path": "public/atlas/img/extra-drain.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "55577b48518e5d272dd0706fa5b9833c6b16acea5c8905f5d13254f0bf45ac10",
+          "sha256": "0b81595a973f6698908273f02522352435dd6d799c7f5579260c3a56352fbe88"
+        },
+        {
+          "path": "public/atlas/thumb/extra-drain.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "148a844179e7473a428ac5c91c095c1235d0fccb97d3b736aa266cd530deae6f",
+          "sha256": "65786e029875528d8caa31b9917aaa02a7d159cc2e656ae8df8e3260f0671cac"
+        }
+      ]
+    },
+    {
+      "id": "extra-wholegrain",
+      "meaning": "全谷物；全谷的",
+      "prompt": "English vocabulary image for wholegrain (全谷物；全谷的). A large shallow wooden scoop of whole wheat grains with intact brown outer bran, a small cluster of golden wheat ears alongside, and one grain enlarged in a small inset showing outer bran enclosing the inner kernel. Clear grain subject on cream paper. No person eating pasta, dining scene, flour cloud or labels.\nSTYLE: Match the provided reference only in illustration style, NOT subject or composition. Mid-century modern editorial illustration, matte gouache, subtle risograph grain on warm cream paper, deep ink navy, terracotta, mustard ochre, muted sage and soft blue. Square composition, large instantly identifiable focal subject, minimal background, no decorative foliage, no busy story. No words, letters, numbers, captions, labels, logos, frames or watermark. Only a question-mark symbol is allowed if specifically requested. This is a replacement vocabulary illustration; semantic clarity at small thumbnail size is essential.",
+      "source": "exec-121d531c-1577-4698-9609-81b929146dd7.png",
+      "files": [
+        {
+          "path": "public/atlas/img/extra-wholegrain.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "841ffef4bb2dc3bdf00573d5623ff16af47a6412bde0547f472803bbad9cc2ee",
+          "sha256": "0f01453a1d2b7757be4cbd7fc2f0afee9c272b905aa749dbb5072bd39fce36c8"
+        },
+        {
+          "path": "public/atlas/thumb/extra-wholegrain.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "72ca1ef3590a283814318a4a787a954e3f002b66f8fceceb5e8598395f1612be",
+          "sha256": "29d2b0bc9b2c145840aa91448431d801ab15b0a9765599af943ad63029e75b16"
+        }
+      ]
+    },
+    {
+      "id": "paragraph",
+      "meaning": "段落",
+      "reason": "原图铁路桥与段落无关",
+      "prompt": "A large upright cream sheet with THREE clearly separated paragraphs. Middle paragraph occupies center, highlighted pale ochre with a terracotta bracket enclosing its THREE lines. Text exactly: top paragraph 'Birds sing.' then blank line; middle paragraph 'Trees give us shade.\\nTheir leaves keep us cool.\\nWe rest beneath them.' then blank line; bottom paragraph 'Flowers bloom.' At right of middle block small label 'paragraph'. No landscape, no people. Show a block of connected sentences, not a single line.\nSTYLE: One square vocabulary illustration, match provided reference ONLY in mid-century editorial flat gouache shapes, subtle risograph paper grain, warm cream, muted navy, terracotta, ochre, sage. Meaning must read clearly at thumbnail scale. Minimal composition, no unnecessary people or decorations, no watermark. Exact requested English text is allowed and must be correctly spelled.",
+      "source": "exec-2e9a60d3-6a3a-4a06-a510-204eb408db6e.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/paragraph.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "43ac62f9c9cecb0e17d40651693f79c9aef2c6305e95da513072b4eddcc8419f",
+          "sha256": "23b84c5af22dccf4ee34443cb4c2dad404f4c203c578fb71ae8c751e5ddf3769"
+        },
+        {
+          "path": "public/atlas/thumb/paragraph.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "b34dd3874c605990090684ee73a170e1da048ea1b5930f1c0a6c1367318fee42",
+          "sha256": "90f5f5db5e12036ea1d848fb45f4f900b4002d465c04d634dd329a64ff812f3f"
+        }
+      ]
+    },
+    {
+      "id": "alphabet",
+      "meaning": "字母表",
+      "reason": "原图几何积木未表达字母",
+      "prompt": "An elegant classroom alphabet chart filling square frame, with all 26 uppercase English letters in strict row order: row1 A B C D E F G; row2 H I J K L M N; row3 O P Q R S T U; row4 V W X Y Z. Large readable evenly spaced letters in alternating muted navy, ochre, terracotta, sage. Plain cream paper, no people or shape toys. Exact alphabet no duplicates or missing letters.\nSTYLE: One square vocabulary illustration, match provided reference ONLY in mid-century editorial flat gouache shapes, subtle risograph paper grain, warm cream, muted navy, terracotta, ochre, sage. Meaning must read clearly at thumbnail scale. Minimal composition, no unnecessary people or decorations, no watermark. Exact requested English text is allowed and must be correctly spelled.",
+      "source": "exec-03236841-2ccb-45e8-bbce-24059b766613.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/alphabet.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "d37f1e945e0a732591bbff00ee21c9dad7dee35a09b65c10c85eb4d8aacfa969",
+          "sha256": "15090863a10c31dec8666b0988c2a644c55609eef2b518c2a0a5dbba56390be7"
+        },
+        {
+          "path": "public/atlas/thumb/alphabet.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "b0a1cc2bdb0caf863170eac365db117fd207d63ec207341f2458d74542a1e83b",
+          "sha256": "fbb176419fd50a67ec31c51ab6495f71a760eabcf9f3a46eb2fd205e3105896d"
+        }
+      ]
+    },
+    {
+      "id": "grammar",
+      "meaning": "语法",
+      "reason": "原图形状配对不表达语言规则",
+      "prompt": "Clear grammar teaching card showing sentence agreement. Upper row 'She walk.' with muted terracotta cross. Down arrow. Lower row 'She walks.' with sage checkmark. Highlight only final s in walks in terracotta. Below small three colored labels aligned under lower sentence: 'subject' under She and 'verb' under walks. Only these words. Large friendly handprinted typography, spacious cream paper. No people.\nSTYLE: One square vocabulary illustration, match provided reference ONLY in mid-century editorial flat gouache shapes, subtle risograph paper grain, warm cream, muted navy, terracotta, ochre, sage. Meaning must read clearly at thumbnail scale. Minimal composition, no unnecessary people or decorations, no watermark. Exact requested English text is allowed and must be correctly spelled.",
+      "source": "exec-0477e78e-f895-4a79-8952-ff192affead8.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/grammar.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "83879321d404e1bde6d627802e507a73ec243f2eb9e136446653cb8ca5b34e74",
+          "sha256": "63bebdd1f31b59ea5a5b06fd3f580d9ccde84d569c447a4b7dc0cde0f2dce2be"
+        },
+        {
+          "path": "public/atlas/thumb/grammar.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "cd986ec0b61bda43adbd2c56972588819b0261220519eb7adb8e2b2a682b1d98",
+          "sha256": "8a7099fa8dedcb33e61ca4e9a8f443ee752488b448739ec9277fa28d47271ab5"
+        }
+      ]
+    },
+    {
+      "id": "legible",
+      "meaning": "字迹清楚的",
+      "reason": "原图雪地脚印并非清晰字迹",
+      "prompt": "A close view of two paper note cards. Smaller left note has messy overlapping unreadable scribbles, low contrast. Arrow toward a MUCH LARGER central right note with beautifully clear dark navy handwriting exactly 'Meet me at noon.' and a simple sage check mark. Clear readable writing is focal point. One small fountain pen at bottom edge, no person, no landscape.\nSTYLE: One square vocabulary illustration, match provided reference ONLY in mid-century editorial flat gouache shapes, subtle risograph paper grain, warm cream, muted navy, terracotta, ochre, sage. Meaning must read clearly at thumbnail scale. Minimal composition, no unnecessary people or decorations, no watermark. Exact requested English text is allowed and must be correctly spelled.",
+      "source": "exec-9a6c60f1-e80f-48fd-b4f6-be7cbd26b82e.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/legible.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "d72bbb1bd4ff176c2d35be9eb427393d07ff24822a1add0a22037873bc4ed03e",
+          "sha256": "d9582263ee402580051c0e805d24f6dd4cd54a9c1ad08df24c9ee856e990f234"
+        },
+        {
+          "path": "public/atlas/thumb/legible.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "fc54322eb97a8cb50fe1e40db24ef727dc9f8fba6f779326a9b1472b1f2f444e",
+          "sha256": "2e85260a22b41efa474f55e1044c3f79285267e1e7892cb3ce4826b0ea483b7b"
+        }
+      ]
+    },
+    {
+      "id": "caption",
+      "meaning": "图片说明",
+      "reason": "原图鸟巢缺少图片说明文字",
+      "prompt": "One printed photograph-like illustration of a small robin perched on a branch, occupying upper half of a cream rectangular card. DIRECTLY BENEATH the bird image a large clear sentence 'A robin on a branch.' highlighted by pale ochre rectangular band and a terracotta bracket. Small arrow points to this written sentence. The words beneath the picture are dominant and readable; no floating speech bubble, no person, no other objects.\nSTYLE: One square vocabulary illustration, match provided reference ONLY in mid-century editorial flat gouache shapes, subtle risograph paper grain, warm cream, muted navy, terracotta, ochre, sage. Meaning must read clearly at thumbnail scale. Minimal composition, no unnecessary people or decorations, no watermark. Exact requested English text is allowed and must be correctly spelled.",
+      "source": "exec-47e6bd60-c00c-46ec-9991-f71c6481769a.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/caption.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "a47f48196b7d984883131d4008852201e2152ac5076cdf5c968a4ff51fe1cdbd",
+          "sha256": "07a8fa5b42e70bdade59e3e7b0ccb3a0a59c5f7e4af7ed79fcb8cedbc68678cb"
+        },
+        {
+          "path": "public/atlas/thumb/caption.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "f675d894531296bbaceae3eea43d8b2488adf3fc48ca1da9739a9fcfa92b1890",
+          "sha256": "72a1e417d8dd37b29af6116d3214f8ccd1a6b00f19ad9742818e16a50a43f138"
+        }
+      ]
+    },
+    {
+      "id": "subheading",
+      "meaning": "小标题",
+      "reason": "原图文件夹未表现文章内的小标题",
+      "prompt": "A single large straight-on report page. Top heading 'GROWING BEANS' in navy. Below, smaller heading 'Planting' in terracotta with pale ochre highlight, then two gray text-rule lines. Lower heading 'Watering' similarly highlighted then two gray text-rule lines. Bracket at side joins the two smaller headings with label 'subheadings'. Strong typographic hierarchy and whitespace. No people, no folders.\nSTYLE: One square vocabulary illustration, match provided reference ONLY in mid-century editorial flat gouache shapes, subtle risograph paper grain, warm cream, muted navy, terracotta, ochre, sage. Meaning must read clearly at thumbnail scale. Minimal composition, no unnecessary people or decorations, no watermark. Exact requested English text is allowed and must be correctly spelled.",
+      "source": "exec-06d795d0-b760-49dc-bec9-a0d2d8b6c5bc.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/subheading.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "a30c9867afa09fe308b40ab2cd88d53cb0d5f78930f763a1768f91a7d23e5f0d",
+          "sha256": "cb4d3d9b44169c4a4d52e639b6e146f5b05a4da206a8f2932989b6ebebac6061"
+        },
+        {
+          "path": "public/atlas/thumb/subheading.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "493b5be0b79d6bdd72373fa87e3379d76abbf48c5e81d33bde28f62b5aa386e7",
+          "sha256": "ecf21c9f49889ef455505cc3cf9d033d3898c1c03fc3745279efc1e9e381bef0"
+        }
+      ]
+    },
+    {
+      "id": "quote",
+      "meaning": "引用",
+      "reason": "原图听唱片不能明确表达引用原话",
+      "prompt": "Two equal cream panels linked with a navy right arrow. Left shows an open book with clear exact sentence 'Small steps matter.' Right shows a sheet with exactly the SAME words enclosed in large terracotta double quotation marks: “Small steps matter.” Tiny label 'source' below left; tiny label 'quote' below right. Make faithful copying of original words explicit. No people, no record player, no landscape.\nSTYLE: One square vocabulary illustration, match provided reference ONLY in mid-century editorial flat gouache shapes, subtle risograph paper grain, warm cream, muted navy, terracotta, ochre, sage. Meaning must read clearly at thumbnail scale. Minimal composition, no unnecessary people or decorations, no watermark. Exact requested English text is allowed and must be correctly spelled.",
+      "source": "exec-ef2babed-c899-4396-9fb0-81865f162207.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/quote.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "6380ff77f45db578e7ec877a42162929db761a1851d351410fa2e00bcdabb10d",
+          "sha256": "04f84dd9cb103f3b090dc281ce262efb41363e7fb7dcaf484bb9ba875b9c2a24"
+        },
+        {
+          "path": "public/atlas/thumb/quote.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "0485b04a41ab80673b0d2b72d2954ef68811eb144abe8c396c68fcefefef7281",
+          "sha256": "007332a7f640ecc90ec491c1ba5c62d1b0c8c07493de7088b7c4983080c2a81d"
+        }
+      ]
+    },
+    {
+      "id": "quotation",
+      "meaning": "引语",
+      "reason": "原图复述鸟图片无法表达引语",
+      "prompt": "A large cream note card with sentence 'Every day is a new start.' enclosed between very large distinctive opening and closing terracotta double quotation marks. Small open book underneath connected by a thin navy line signifies source. The quoted words and quotation marks dominate 80 percent of image. No people, no decorative foliage.\nSTYLE: One square vocabulary illustration, match provided reference ONLY in mid-century editorial flat gouache shapes, subtle risograph paper grain, warm cream, muted navy, terracotta, ochre, sage. Meaning must read clearly at thumbnail scale. Minimal composition, no unnecessary people or decorations, no watermark. Exact requested English text is allowed and must be correctly spelled.",
+      "source": "exec-fe620a0d-32c8-406f-95ef-fe235795600f.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/quotation.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "3571d1ea24361a0352ad8decdee06e686064c0f21071ea3086861fc178208fc9",
+          "sha256": "af651bc202d8c59fa53dfb5489cf4a453924f95dcbc7fc4194e31d504e5c9537"
+        },
+        {
+          "path": "public/atlas/thumb/quotation.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "a54df1ebdd1f446d9c802a3364ab5be34cbcb5a7c672b20d0dbbfb11fd22ec53",
+          "sha256": "de0315e4093a1f4bffb715ee8b250e2fabb1b519e3d72914c8c83bfc214d9711"
+        }
+      ]
+    },
+    {
+      "id": "war",
+      "meaning": "战争",
+      "reason": "原图军队被大面积山谷景色掩盖",
+      "prompt": "Clear non-graphic editorial illustration of armed conflict. Two opposing small groups of helmeted soldiers and two opposing tanks face across a short central strip of damaged ground. Broken building silhouette and smoke behind. Soldiers and tanks occupy most of frame; landscape minimal. Muted rust and navy uniforms distinguish sides. No real flags, no insignia, no blood, no injured people, no glory pose, no text. Somber clear scene.\nSTYLE: One square vocabulary illustration, match provided reference ONLY in mid-century editorial flat gouache shapes, subtle risograph paper grain, warm cream, muted navy, terracotta, ochre, sage. Meaning must read clearly at thumbnail scale. Minimal composition, no unnecessary people or decorations, no watermark. Exact requested English text is allowed and must be correctly spelled.",
+      "source": "exec-f6ca7602-1d7e-415d-b5c8-0783d5586b0b.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/war.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "575c95a70edca8c903a804a908f4ce08e3fcd61336c9dbcd0eaf3de6b2c7bd09",
+          "sha256": "8c3ad7e504bc4844d6037f31db820b14511fc9ac71b3a81f8a237369e44cfe00"
+        },
+        {
+          "path": "public/atlas/thumb/war.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "e3ff585b5b2194b90f51874a6fea5942001635ec54c9a497c8a44b49053be23b",
+          "sha256": "3158d08d64d57ce4696a6c5b32b836b32a14358416b3f8a6f15dff8c68c03999"
+        }
+      ]
+    },
+    {
+      "id": "toothbrush",
+      "meaning": "牙刷",
+      "reason": "牙刷被洗手池和手部场景分散重点",
+      "prompt": "One large isolated toothbrush diagonally across cream background, sage handle, clearly defined dense white bristles in a rectangular head; bristle detail recognizable. No toothpaste, hands or sink.\nSquare educational vocabulary illustration. Match supplied image ONLY in mid-century flat gouache illustration, subtle grain, warm cream paper, restrained navy terracotta ochre sage palette. Replace composition completely. Target meaning unmistakable at 128px; main object occupies 75-85% image; no decorative foliage, landscape, people performing unrelated actions, no captions or text unless explicitly requested.",
+      "source": "exec-aa9efceb-61fe-4d91-aa06-d67e573126ce.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/toothbrush.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "6b5409f703d6fc29af9c5f44e01d2cae36989b0aaba757de5b6c0ecc809db44d",
+          "sha256": "dcc63487bf0edd984ab5d094e3d76a87151096c497bf0e7c429d05e6f2a55fc7"
+        },
+        {
+          "path": "public/atlas/thumb/toothbrush.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "c33cdd79d5f4fc3e182599d85823e02ab695888ff362f47602b83a67bf01b79a",
+          "sha256": "3d77b14f386898bee8e782413a54982b7c6564f6a12c70b40830864fa8dd8b63"
+        }
+      ]
+    },
+    {
+      "id": "toothpaste",
+      "meaning": "牙膏",
+      "reason": "牙膏在刷牙场景中偏小",
+      "prompt": "Large soft blue toothpaste tube with open nozzle and detached cap. A thick clean striped ribbon of toothpaste curls from nozzle onto plain cream surface. Tube and paste fill composition. No toothbrush, sink or hands.\nSquare educational vocabulary illustration. Match supplied image ONLY in mid-century flat gouache illustration, subtle grain, warm cream paper, restrained navy terracotta ochre sage palette. Replace composition completely. Target meaning unmistakable at 128px; main object occupies 75-85% image; no decorative foliage, landscape, people performing unrelated actions, no captions or text unless explicitly requested.",
+      "source": "exec-faaaac60-589d-4172-b9ad-ee699378dadf.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/toothpaste.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "e4889b6855dd6d2e92b9eac91a251c6d9da7c678316d05b2adec1fabe5fb8f96",
+          "sha256": "e4681e6a743641585938e24bed203d336bdb3dae9ee463d3e01299125531ca0d"
+        },
+        {
+          "path": "public/atlas/thumb/toothpaste.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "b1a73f799696e1df9045547c96d6937e33387f40f3239ffd33e7f12ab9d18cc9",
+          "sha256": "56228569b099cb5f844049545c1f318008ecbfd833dccfbb1039c1c08c6715a4"
+        }
+      ]
+    },
+    {
+      "id": "nose",
+      "meaning": "鼻子",
+      "reason": "闻花动作和风景掩盖鼻子",
+      "prompt": "Extreme close-up three-quarter view of human nose, showing bridge, tip and both nostrils accurately. Crop face to small area around nose, no eyes or mouth, no flower. Nose central and dominant. Tiny thin terracotta pointer to nose tip optional.\nSquare educational vocabulary illustration. Match supplied image ONLY in mid-century flat gouache illustration, subtle grain, warm cream paper, restrained navy terracotta ochre sage palette. Replace composition completely. Target meaning unmistakable at 128px; main object occupies 75-85% image; no decorative foliage, landscape, people performing unrelated actions, no captions or text unless explicitly requested.",
+      "source": "exec-2ff2b413-deba-4276-b4f2-f3ffd213ce41.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/nose.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "c4c9a9d25330ed7150bc6e5fdd92d71c4fd183817ada2ea5507a5f99ea18d992",
+          "sha256": "d6fbc8de6ec50918e4deec2b3d1b51a527b84e500b2b2a812701a8fe975dd269"
+        },
+        {
+          "path": "public/atlas/thumb/nose.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "eab96465e66647c13f13d5a6e0211ad4c319d964e9a8e4cc83487162621be3a2",
+          "sha256": "368e1deb14525da0e94de091d2b42f4469f7e0b604c3274f5238677cd0c8b3e7"
+        }
+      ]
+    },
+    {
+      "id": "ear",
+      "meaning": "耳朵",
+      "reason": "听鸟鸣的场景掩盖耳朵",
+      "prompt": "Large close-up anatomically recognizable human outer ear, helix antihelix concha tragus and earlobe, side view, tiny adjacent strip of hair and cheek as context. Ear fills frame, no birds, hands, scenery.\nSquare educational vocabulary illustration. Match supplied image ONLY in mid-century flat gouache illustration, subtle grain, warm cream paper, restrained navy terracotta ochre sage palette. Replace composition completely. Target meaning unmistakable at 128px; main object occupies 75-85% image; no decorative foliage, landscape, people performing unrelated actions, no captions or text unless explicitly requested.",
+      "source": "exec-f0dd302e-be0d-402a-8d36-6a1c8ed3dc1d.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/ear.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "450648bbf13f6522d5c52bbfd4009ce49565529ac5445150201e50cf66c2aaa5",
+          "sha256": "f171208797de666736105fe6ac36da403ac568f3c37c018edd43d13729ad3f69"
+        },
+        {
+          "path": "public/atlas/thumb/ear.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "d13fa5b85fc8c3f918928d2314e0b09e3c8ecb8afee4927b980e49fcf120cd41",
+          "sha256": "9475254b6e6a0ba6973f150c0d46c9d856280ef375d1269c2b7862c7a5d6159d"
+        }
+      ]
+    },
+    {
+      "id": "eye",
+      "meaning": "眼睛",
+      "reason": "蝴蝶与人物抢占眼睛主体",
+      "prompt": "Extreme close-up of ONE human open eye with navy pupil, sage iris, white sclera and upper/lower lids and eyelashes. Natural anatomy, small eyebrow above. Eye fills composition; no butterfly or flowers.\nSquare educational vocabulary illustration. Match supplied image ONLY in mid-century flat gouache illustration, subtle grain, warm cream paper, restrained navy terracotta ochre sage palette. Replace composition completely. Target meaning unmistakable at 128px; main object occupies 75-85% image; no decorative foliage, landscape, people performing unrelated actions, no captions or text unless explicitly requested.",
+      "source": "exec-ca193fec-01f3-4a39-855f-1306b438a1f4.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/eye.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "0100266b1d67a2a461779458a68bb8cc7dd545fcf9f45b41c392b57be6eb2f7a",
+          "sha256": "260ffdf5aa2240141e5fc66628e4dc001c6bed1fabd2639239a31089d1d24e86"
+        },
+        {
+          "path": "public/atlas/thumb/eye.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "ebb282769487e733d32f6f5e6e3216a8c592c6a631f2cb189785f66d0cdad52d",
+          "sha256": "ca7afcd5c8223255e0710631a315f1b222a51f7c206d50884040df70ae97e619"
+        }
+      ]
+    },
+    {
+      "id": "ankle",
+      "meaning": "脚踝",
+      "reason": "人物远景掩盖脚踝的位置",
+      "prompt": "Side view of bare foot and short lower shin, entire foot visible. A thin terracotta ring precisely surrounds ankle joint at junction of foot and lower leg, with small arrow pointing to bony ankle prominence. Cream background, no injury, no scenery or person.\nSquare educational vocabulary illustration. Match supplied image ONLY in mid-century flat gouache illustration, subtle grain, warm cream paper, restrained navy terracotta ochre sage palette. Replace composition completely. Target meaning unmistakable at 128px; main object occupies 75-85% image; no decorative foliage, landscape, people performing unrelated actions, no captions or text unless explicitly requested.",
+      "source": "exec-ca6995aa-4ed2-45f6-a692-fc41efb03632.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/ankle.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "c7a08611d33b03f7a792920839952bea588d0f933997a99c9f006a15bed03663",
+          "sha256": "b239006f95356494600277f548e6ee7cdd1c1f9a3a835363e25597a6416ddda3"
+        },
+        {
+          "path": "public/atlas/thumb/ankle.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "022b9622927b6c75d8fae49eb2e49b263a511ba519268e72c5d8b3ca77f7257c",
+          "sha256": "bbe7182f924d5f007d6158cd39eb07deb870de3bdcd12bc3ce4a1fc614cefb14"
+        }
+      ]
+    },
+    {
+      "id": "knee",
+      "meaning": "膝盖",
+      "reason": "人物运动场景掩盖膝关节",
+      "prompt": "Close-up side view bent human leg cropped at mid thigh and mid calf. Knee bend occupies center, thin terracotta circle highlights kneecap region, one short pointer. No whole person, hands, shoe or landscape.\nSquare educational vocabulary illustration. Match supplied image ONLY in mid-century flat gouache illustration, subtle grain, warm cream paper, restrained navy terracotta ochre sage palette. Replace composition completely. Target meaning unmistakable at 128px; main object occupies 75-85% image; no decorative foliage, landscape, people performing unrelated actions, no captions or text unless explicitly requested.",
+      "source": "exec-663369a3-e84c-4558-8d4b-4e6cd460a8fc.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/knee.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "f615af9834373fcb68926d4f8116af2684125cf46ba0b4582724ef2d983d297e",
+          "sha256": "dd49d9bf9eb011c702d4612a98ad13b72fa6a58823d0a93200e3bbed71798e75"
+        },
+        {
+          "path": "public/atlas/thumb/knee.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "76f5ccc44a04c48cc9b315581fdc303174ee6ec994ba47aa8ad0dcc337c07c7d",
+          "sha256": "c15208d1c0e9dd405157cc67e97fe0e618c0e5e4542083cbe272877b3ba13915"
+        }
+      ]
+    },
+    {
+      "id": "thumb",
+      "meaning": "拇指",
+      "reason": "橙子成为主体而拇指不明确",
+      "prompt": "Close-up human hand in thumbs-up pose, four fingers folded, single thumb extended vertically and dominant. Thumb warm terracotta, rest hand subdued ochre. Small ring around thumb at upper left and tiny pointer. Accurate five-digit anatomy, no fruit or objects.\nSquare educational vocabulary illustration. Match supplied image ONLY in mid-century flat gouache illustration, subtle grain, warm cream paper, restrained navy terracotta ochre sage palette. Replace composition completely. Target meaning unmistakable at 128px; main object occupies 75-85% image; no decorative foliage, landscape, people performing unrelated actions, no captions or text unless explicitly requested.",
+      "source": "exec-979726a1-1143-408e-91a4-1bc16debb617.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/thumb.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "620e2b6be22a5310de466a5f5d1cba95a7b1366ca1218d3c25425fa4c8eadcde",
+          "sha256": "e5da144a1f5b3942629e5a2ea67da63d0bd6747a458d130b8244458011e3a536"
+        },
+        {
+          "path": "public/atlas/thumb/thumb.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "f11de6ec58b911ae43fc61285a38e1f1d78bea8e729ef49264f0ae56482f61fe",
+          "sha256": "5c70fe3a2ad6e5dde62e064aecdadb63bf621307d7f5973d33b253e8bc4df350"
+        }
+      ]
+    },
+    {
+      "id": "wrist",
+      "meaning": "手腕",
+      "reason": "手镯与装饰干扰手腕含义",
+      "prompt": "Relaxed human hand and lower forearm seen from back, wrist joint central. Thin terracotta oval highlights narrow junction between hand and forearm. Anatomically correct five fingers, no bracelet, watch, jewelry or leaves.\nSquare educational vocabulary illustration. Match supplied image ONLY in mid-century flat gouache illustration, subtle grain, warm cream paper, restrained navy terracotta ochre sage palette. Replace composition completely. Target meaning unmistakable at 128px; main object occupies 75-85% image; no decorative foliage, landscape, people performing unrelated actions, no captions or text unless explicitly requested.",
+      "source": "exec-df7b4525-7888-473d-a02a-eb28dae11600.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/wrist.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "461ff087a225962b08ee1145e70b44a26a31e348a7d4ef755046365ff0da16b8",
+          "sha256": "094e40845f3f83eeb6634460354f6d3538aff1600409e13d498758a33d46a356"
+        },
+        {
+          "path": "public/atlas/thumb/wrist.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "2605c10f0895be667562f7c497cd418604d571e8d051eba2824252f7ff1c7ef5",
+          "sha256": "1238dfa0d64029fd50098831de15f232067dd6d9a76ced0be819f5bc730de79f"
+        }
+      ]
+    },
+    {
+      "id": "hoof",
+      "meaning": "蹄",
+      "reason": "整匹马使马蹄太小",
+      "prompt": "Huge close-up of ONE horse hoof and short lower leg with fetlock above. Three-quarter side view showing hard dark keratin hoof wall, flat ground edge, clear transition from hair to hoof. Plain cream background, no horse head, whole horse or landscape.\nSquare educational vocabulary illustration. Match supplied image ONLY in mid-century flat gouache illustration, subtle grain, warm cream paper, restrained navy terracotta ochre sage palette. Replace composition completely. Target meaning unmistakable at 128px; main object occupies 75-85% image; no decorative foliage, landscape, people performing unrelated actions, no captions or text unless explicitly requested.",
+      "source": "exec-db2a9edb-159b-49cb-8f6e-996eef9cfe9a.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/hoof.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "57e34bdea9e2d6903e8fbf6aaf1d33411a028d5f44c463db24d9183dc0c6220b",
+          "sha256": "69ab016c70f42e809cc164a96d38c6f7f54fba73ff6932602a12c4040a3808d9"
+        },
+        {
+          "path": "public/atlas/thumb/hoof.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "d66127146de15290b49884ff5be3d7847e0fdbd3f60578eb977de380d4dcb448",
+          "sha256": "ab43715f64058cc958019921394f731344621efe7565764ef7b5175f9d2a3ffd"
+        }
+      ]
+    },
+    {
+      "id": "diaphragm",
+      "meaning": "膈肌",
+      "reason": "人物和其他器官掩盖膈肌",
+      "prompt": "Simple educational front-view torso cutaway, pale muted blue lungs above, abdominal cavity below kept faint. Highlight only dome-shaped diaphragm muscle in strong terracotta separating chest and abdomen. It arches upward beneath both lungs. Small thin pointer and exact label 'diaphragm'. No teacher, no arms, no decorative items. Anatomical clarity.\nSquare educational vocabulary illustration. Match supplied image ONLY in mid-century flat gouache illustration, subtle grain, warm cream paper, restrained navy terracotta ochre sage palette. Replace composition completely. Target meaning unmistakable at 128px; main object occupies 75-85% image; no decorative foliage, landscape, people performing unrelated actions, no captions or text unless explicitly requested.",
+      "source": "exec-25500cc9-14c9-43f7-a73e-2bb341bb1725.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/diaphragm.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "a73e7d3eb11624129ad083e3314b33ce315bcf05951ecb80807f06d50dc2e050",
+          "sha256": "a772948c22f43b5eec86f0f303bb40e5324eb711c0d2949a8d6ae575911bff49"
+        },
+        {
+          "path": "public/atlas/thumb/diaphragm.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "147882885e757452d7924f8cc6842140d88f11daeecb6942c0fd31288d54afd6",
+          "sha256": "6bfefff7938c048438c98b19684ce99abdefa2adad9df3587c554a0998d10ad5"
+        }
+      ]
+    },
+    {
+      "id": "tibia",
+      "meaning": "胫骨",
+      "reason": "完整骨架与医生掩盖胫骨",
+      "prompt": "Educational close-up of ONE lower leg skeleton from knee to ankle, front view. Large medial tibia thick and terracotta, slim lateral fibula pale gray, knee and ankle minimal neutral. Pointer exactly to middle of thick tibia, label 'tibia'. No whole skeleton, doctor or scenery. Anatomically faithful two bones.\nSquare educational vocabulary illustration. Match supplied image ONLY in mid-century flat gouache illustration, subtle grain, warm cream paper, restrained navy terracotta ochre sage palette. Replace composition completely. Target meaning unmistakable at 128px; main object occupies 75-85% image; no decorative foliage, landscape, people performing unrelated actions, no captions or text unless explicitly requested.",
+      "source": "exec-8d3dac52-443b-49d2-93f0-203017d7dcc5.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/tibia.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "a408636d3887268b275b813dcee84753f7f6dfd8d329ec230ce2d0aa4d6b0014",
+          "sha256": "347064c17a2b99cda357d88cc340e768d23570bb5f3b620ff6df4c916508871d"
+        },
+        {
+          "path": "public/atlas/thumb/tibia.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "c7d868933c1c4d6d18f3c962e8437ceaba9aad10142d26b026f2d1503a7ad507",
+          "sha256": "5e7c8cbd7c2c4971c80a6ddea6e00e4d527a34c3c51873769aeb9a194bb9ed8c"
+        }
+      ]
+    },
+    {
+      "id": "monday",
+      "meaning": "Monday",
+      "reason": "原图日常活动或无字日历无法确定星期几",
+      "prompt": "A vintage desktop weekly calendar illustration for Monday. Large title 'Monday' centered at top. Beneath it seven vertically stacked horizontal rows with labels in EXACT order: Mon, Tue, Wed, Thu, Fri, Sat, Sun. Highlight ONLY row 1 'Mon' using solid terracotta band and a navy arrow pointing at that row; other six rows muted cream with navy type. All seven distinct rows fully visible. No dates or numbers. The seven-day sequence and selected day must be unambiguous.\nSquare vintage educational illustration, subtle gouache/risograph paper grain, warm cream, navy, sage, terracotta and ochre. Simple large instantly readable design. No people or decorative scenery, no watermark. Keep exact requested text.",
+      "source": "exec-c8c8d4cd-70c2-45a5-92be-2caf1be98b45.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/monday.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "94423f7a5b0610e9b826820f6b51db51d4d66db914a8d945145e6784eaf4403f",
+          "sha256": "16842d2107590adc3e8ed6eb7a057586446d5e0e747692d4e4e5e5ee6114a021"
+        },
+        {
+          "path": "public/atlas/thumb/monday.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "3ff6b0eb3f46b65a0afe195e06f9dee9949c5b31a2d54142c6fc5d0f5378ed80",
+          "sha256": "0b1c8973fe800aedd1abd118ef59ec08324c355228a685597ddd885f36a8fe01"
+        }
+      ]
+    },
+    {
+      "id": "tuesday",
+      "meaning": "Tuesday",
+      "reason": "原图日常活动或无字日历无法确定星期几",
+      "prompt": "A vintage desktop weekly calendar illustration for Tuesday. Large title 'Tuesday' centered at top. Beneath it seven vertically stacked horizontal rows with labels in EXACT order: Mon, Tue, Wed, Thu, Fri, Sat, Sun. Highlight ONLY row 2 'Tue' using solid terracotta band and a navy arrow pointing at that row; other six rows muted cream with navy type. All seven distinct rows fully visible. No dates or numbers. The seven-day sequence and selected day must be unambiguous.\nSquare vintage educational illustration, subtle gouache/risograph paper grain, warm cream, navy, sage, terracotta and ochre. Simple large instantly readable design. No people or decorative scenery, no watermark. Keep exact requested text.",
+      "source": "exec-758a77f4-26ea-4d36-bff1-ce1a1cd04a0d.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/tuesday.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "324b1091863d3efc921cf60ea019d97de6985bc3674d6c2fc43e017b777204d1",
+          "sha256": "a2b3a3cfd8514b86167864501b9c89d5d322d4ff72c97d0df9f9d738a59eed46"
+        },
+        {
+          "path": "public/atlas/thumb/tuesday.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "a061961afcb520fa783a9cb71d505a12ac9c8e1e50b074871c2c58837f6c7a81",
+          "sha256": "acb03646ea87fef21a5caea00dc8ab6df679980c150161c0a52b56eda11669d3"
+        }
+      ]
+    },
+    {
+      "id": "wednesday",
+      "meaning": "Wednesday",
+      "reason": "原图日常活动或无字日历无法确定星期几",
+      "prompt": "A vintage desktop weekly calendar illustration for Wednesday. Large title 'Wednesday' centered at top. Beneath it seven vertically stacked horizontal rows with labels in EXACT order: Mon, Tue, Wed, Thu, Fri, Sat, Sun. Highlight ONLY row 3 'Wed' using solid terracotta band and a navy arrow pointing at that row; other six rows muted cream with navy type. All seven distinct rows fully visible. No dates or numbers. The seven-day sequence and selected day must be unambiguous.\nSquare vintage educational illustration, subtle gouache/risograph paper grain, warm cream, navy, sage, terracotta and ochre. Simple large instantly readable design. No people or decorative scenery, no watermark. Keep exact requested text.",
+      "source": "exec-51b47eb9-0284-4482-9f74-59f04def8c6c.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/wednesday.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "f736f3224af4868a96cb845ad4ef137351a017af2ad63fe679d4354ff33f4219",
+          "sha256": "6d186d6f33968dfd2a615e7926116c3c14b9f72dc1578e2e3db1a2d8d06407da"
+        },
+        {
+          "path": "public/atlas/thumb/wednesday.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "de51f33a9f3ef8e344dbf843ac5078385f235aa5c8b8c79f49a465dabedb0258",
+          "sha256": "6d04636ee530d1ae5473ea9bd7cc6cbc72bcead45010284d8160b586a6ab5183"
+        }
+      ]
+    },
+    {
+      "id": "thursday",
+      "meaning": "Thursday",
+      "reason": "原图日常活动或无字日历无法确定星期几",
+      "prompt": "A vintage desktop weekly calendar illustration for Thursday. Large title 'Thursday' centered at top. Beneath it seven vertically stacked horizontal rows with labels in EXACT order: Mon, Tue, Wed, Thu, Fri, Sat, Sun. Highlight ONLY row 4 'Thu' using solid terracotta band and a navy arrow pointing at that row; other six rows muted cream with navy type. All seven distinct rows fully visible. No dates or numbers. The seven-day sequence and selected day must be unambiguous.\nSquare vintage educational illustration, subtle gouache/risograph paper grain, warm cream, navy, sage, terracotta and ochre. Simple large instantly readable design. No people or decorative scenery, no watermark. Keep exact requested text.",
+      "source": "exec-d4cb75d0-2a4c-4e83-a504-6127deafd805.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/thursday.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "d30606b453bb332c76d02738fa56340b7b5627a5c36549878e50e43605cc358b",
+          "sha256": "4cd45bee8e46376e65d47efad221491dc8288b6b35d6865765cb192d24a03242"
+        },
+        {
+          "path": "public/atlas/thumb/thursday.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "f44d4062365b47d855af46c02d2804ba8135322c3129496dec56c12c63a4ad10",
+          "sha256": "8f91978716cdfde3d11ab01497fa0e67d1cea11770162f1e75a7f64e865d6e61"
+        }
+      ]
+    },
+    {
+      "id": "friday",
+      "meaning": "Friday",
+      "reason": "原图日常活动或无字日历无法确定星期几",
+      "prompt": "A vintage desktop weekly calendar illustration for Friday. Large title 'Friday' centered at top. Beneath it seven vertically stacked horizontal rows with labels in EXACT order: Mon, Tue, Wed, Thu, Fri, Sat, Sun. Highlight ONLY row 5 'Fri' using solid terracotta band and a navy arrow pointing at that row; other six rows muted cream with navy type. All seven distinct rows fully visible. No dates or numbers. The seven-day sequence and selected day must be unambiguous.\nSquare vintage educational illustration, subtle gouache/risograph paper grain, warm cream, navy, sage, terracotta and ochre. Simple large instantly readable design. No people or decorative scenery, no watermark. Keep exact requested text.",
+      "source": "exec-85b37314-6ed9-425c-8fe4-bc3bc060bd94.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/friday.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "d7eb2736f93b60ad8c7fdda52bc75c295e96c41b97e4659d9b48290f184fe919",
+          "sha256": "51f2dab451d5f0ace8ceda70c63bc46730c5f1f250953b51dbd3d5fb0e97cfee"
+        },
+        {
+          "path": "public/atlas/thumb/friday.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "9dc0ff9bc7f6d91d8d7d8672edb9ca34b74f745dce60723a557d9c72a38d8839",
+          "sha256": "946b102e03d3a9eac22b5c5caf724a7ff58490f34d27624194d45208cacaa817"
+        }
+      ]
+    },
+    {
+      "id": "saturday",
+      "meaning": "Saturday",
+      "reason": "原图日常活动或无字日历无法确定星期几",
+      "prompt": "A vintage desktop weekly calendar illustration for Saturday. Large title 'Saturday' centered at top. Beneath it seven vertically stacked horizontal rows with labels in EXACT order: Mon, Tue, Wed, Thu, Fri, Sat, Sun. Highlight ONLY row 6 'Sat' using solid terracotta band and a navy arrow pointing at that row; other six rows muted cream with navy type. All seven distinct rows fully visible. No dates or numbers. The seven-day sequence and selected day must be unambiguous.\nSquare vintage educational illustration, subtle gouache/risograph paper grain, warm cream, navy, sage, terracotta and ochre. Simple large instantly readable design. No people or decorative scenery, no watermark. Keep exact requested text.",
+      "source": "exec-cd09d930-9a63-4323-975a-15e508e816c6.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/saturday.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "194991d3cc8b004274d062b689507742c228373d622de713fa59e5a0153957d4",
+          "sha256": "9a4cb799005d54aa94af29b38db43bdc244bd42f2e2dc3cd97226d25d40643f4"
+        },
+        {
+          "path": "public/atlas/thumb/saturday.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "d5485d03e621d8fa8ef50ffafede946a76ab036cfc29d53865771ea1965446a6",
+          "sha256": "5614eddccca484454eb61f97ea8a4231be188547b17ad2fd2b4617f9a501d63d"
+        }
+      ]
+    },
+    {
+      "id": "sunday",
+      "meaning": "Sunday",
+      "reason": "原图日常活动或无字日历无法确定星期几",
+      "prompt": "A vintage desktop weekly calendar illustration for Sunday. Large title 'Sunday' centered at top. Beneath it seven vertically stacked horizontal rows with labels in EXACT order: Mon, Tue, Wed, Thu, Fri, Sat, Sun. Highlight ONLY row 7 'Sun' using solid terracotta band and a navy arrow pointing at that row; other six rows muted cream with navy type. All seven distinct rows fully visible. No dates or numbers. The seven-day sequence and selected day must be unambiguous.\nSquare vintage educational illustration, subtle gouache/risograph paper grain, warm cream, navy, sage, terracotta and ochre. Simple large instantly readable design. No people or decorative scenery, no watermark. Keep exact requested text.",
+      "source": "exec-7373c50b-77af-484b-85b3-2399753c1041.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/sunday.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "883c5b58e066a25745f9080ae5195749d42999d47c977afacedce8dac011bfc4",
+          "sha256": "9d1316b65a12efe2ac5854899cad3b4062f5640dc6dc3e43fc18d0c800dda0a0"
+        },
+        {
+          "path": "public/atlas/thumb/sunday.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "447f6a0d91d0fd90209b46ab50db596362b34a370b81c87d1df38c760ee1397f",
+          "sha256": "c33a4b636227c188d1ded1aa4670cc375950d0f358f5c446a02ee06e419271ef"
+        }
+      ]
+    },
+    {
+      "id": "north",
+      "meaning": "north",
+      "reason": "原图地球或日出日落不能直接辨识方位",
+      "prompt": "A large simple compass rose with four labels: N at top, S bottom, E right, W left. One broad terracotta arrow begins at center and points UP toward the north label, all other rays very pale gray. Under compass small exact word 'north'. Four labels in correct positions, highlight ONLY north. Compass fills square, cream background, no globe, hiker, sun or landscape.\nSquare vintage educational illustration, subtle gouache/risograph paper grain, warm cream, navy, sage, terracotta and ochre. Simple large instantly readable design. No people or decorative scenery, no watermark. Keep exact requested text.",
+      "source": "exec-2078d1b5-4e3b-4208-944c-c0e9f2d90938.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/north.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "13f3358efd74db457a67cf10db3974ba5cb2bd4febd5fe673243e60a00cc08a8",
+          "sha256": "7fda376bb356b22dda5022504d11b4997e017f4528e2c3cd7d727b3dc3c417a9"
+        },
+        {
+          "path": "public/atlas/thumb/north.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "48492bafda0a2deed37163d12467297a41b14c711f65c9854c8bcd7c982c4b99",
+          "sha256": "7c15b3c04689eec12644c671cab289a818fce80f6ac9c1a8714eaa45919f8b51"
+        }
+      ]
+    },
+    {
+      "id": "south",
+      "meaning": "south",
+      "reason": "原图地球或日出日落不能直接辨识方位",
+      "prompt": "A large simple compass rose with four labels: N at top, S bottom, E right, W left. One broad terracotta arrow begins at center and points DOWN toward the south label, all other rays very pale gray. Under compass small exact word 'south'. Four labels in correct positions, highlight ONLY south. Compass fills square, cream background, no globe, hiker, sun or landscape.\nSquare vintage educational illustration, subtle gouache/risograph paper grain, warm cream, navy, sage, terracotta and ochre. Simple large instantly readable design. No people or decorative scenery, no watermark. Keep exact requested text.",
+      "source": "exec-beadfb69-304e-478b-96ca-b1a9cc85f742.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/south.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "39aafbc9236d9cb09a346416ca3f36d805568ce5a167d35f85868bfefd7f03db",
+          "sha256": "80fdbc4a12e941794214b5a6b142399460533a83b501a98d83cfcd971bc3346a"
+        },
+        {
+          "path": "public/atlas/thumb/south.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "0a6b2bd3d958250fb599842b6543a58b6362fb2bcdc924495ca412ca0b47a462",
+          "sha256": "0b5e66f62da06ee165947bb0d52d10652b14ed084aba83fef5c980940b6147cc"
+        }
+      ]
+    },
+    {
+      "id": "east",
+      "meaning": "east",
+      "reason": "原图地球或日出日落不能直接辨识方位",
+      "prompt": "A large simple compass rose with four labels: N at top, S bottom, E right, W left. One broad terracotta arrow begins at center and points RIGHT toward the east label, all other rays very pale gray. Under compass small exact word 'east'. Four labels in correct positions, highlight ONLY east. Compass fills square, cream background, no globe, hiker, sun or landscape.\nSquare vintage educational illustration, subtle gouache/risograph paper grain, warm cream, navy, sage, terracotta and ochre. Simple large instantly readable design. No people or decorative scenery, no watermark. Keep exact requested text.",
+      "source": "exec-75e7d069-9f30-4ab5-9fa7-a04f49986957.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/east.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "932d07f4ea2109067598c9e1233ae8b77864d63713b8c9f7627eb9cb3f97ada8",
+          "sha256": "d3c77a0a7cedb932b98c7e0e5fb99a48dc2faa3f70e559d1f4ac1bf945b928a6"
+        },
+        {
+          "path": "public/atlas/thumb/east.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "90b8cb141464892cfc959af2aa7d9ec959d321eb762d3f129e9cbf0169a25272",
+          "sha256": "166085d0138dbb7fde59e31619d5d5cb73a774b085013e9aa6a50c8206342186"
+        }
+      ]
+    },
+    {
+      "id": "west",
+      "meaning": "west",
+      "reason": "原图地球或日出日落不能直接辨识方位",
+      "prompt": "A large simple compass rose with four labels: N at top, S bottom, E right, W left. One broad terracotta arrow begins at center and points LEFT toward the west label, all other rays very pale gray. Under compass small exact word 'west'. Four labels in correct positions, highlight ONLY west. Compass fills square, cream background, no globe, hiker, sun or landscape.\nSquare vintage educational illustration, subtle gouache/risograph paper grain, warm cream, navy, sage, terracotta and ochre. Simple large instantly readable design. No people or decorative scenery, no watermark. Keep exact requested text.",
+      "source": "exec-2e85f4b8-2898-45bc-b343-158eb009f2fb.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/west.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "dd3087aff5f0b25e1932f995e2cc8262a4412f363e8a180c73c4344e48da2b94",
+          "sha256": "6947c315a8ff5a1b0a06e7a3d95d0ab54adea686ba443ba9d02da32df9c42239"
+        },
+        {
+          "path": "public/atlas/thumb/west.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "406bf91f7e8949908952c1145c611f10a701280010b79a710cbda01c7fbb37c4",
+          "sha256": "1da09b1a1deaf25bf1fbd2f7bd7047af4572662b6de54507e8106779c849cccd"
+        }
+      ]
+    },
+    {
+      "id": "january",
+      "meaning": "January",
+      "reason": "原图季节活动无法唯一表达具体月份",
+      "prompt": "Large vintage tear-off calendar page. Bold heading 'January', huge central number '1', small line '1 / 12' underneath meaning month position. At bottom a simple horizontal sequence of twelve small numbered circles '1 2 3 4 5 6 7 8 9 10 11 12', with ONLY 1 highlighted terracotta. The month heading and big numeral fill most image. No day grid or dates, no people or seasonal scenery.\nOne square English vocabulary educational illustration. Mid-century flat gouache, subtle risograph grain on warm cream, muted navy terracotta ochre sage. Clean spacious composition. Large readable exact text, no teacher, no decorative landscape, no watermark. Reference is palette and texture only, replace scene entirely.",
+      "source": "exec-482f5259-aa98-4dc0-929f-980e151e6e79.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/january.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "aabb8e300743a2ed29aa2271dd4a2c5c74e19d97e9e33da4fbf5c453a3c9d52f",
+          "sha256": "dc61b9ce604d1c52745bb3ce1263a3cc82b8984ba50b4d7765cf22e5c8c8857a"
+        },
+        {
+          "path": "public/atlas/thumb/january.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "4465a4c8f8bd8976bd103079667a672474635e071d0d9703a9e8843cc43ce30a",
+          "sha256": "167d21d285542727cccfa7e17a21db83334c71f6d8b76b593fd9bac22e224c72"
+        }
+      ]
+    },
+    {
+      "id": "february",
+      "meaning": "February",
+      "reason": "原图季节活动无法唯一表达具体月份",
+      "prompt": "Large vintage tear-off calendar page. Bold heading 'February', huge central number '2', small line '2 / 12' underneath meaning month position. At bottom a simple horizontal sequence of twelve small numbered circles '1 2 3 4 5 6 7 8 9 10 11 12', with ONLY 2 highlighted terracotta. The month heading and big numeral fill most image. No day grid or dates, no people or seasonal scenery.\nOne square English vocabulary educational illustration. Mid-century flat gouache, subtle risograph grain on warm cream, muted navy terracotta ochre sage. Clean spacious composition. Large readable exact text, no teacher, no decorative landscape, no watermark. Reference is palette and texture only, replace scene entirely.",
+      "source": "exec-ed682ee9-deff-4717-ba88-656210d7ebd6.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/february.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "4ab178e48d6f226491ce4f7f825e21f41123c331c33fd524a2267555b0801ad3",
+          "sha256": "8875c9754b84378537c3fabdc15694d7151f6424e80234d82217a5cab48b6766"
+        },
+        {
+          "path": "public/atlas/thumb/february.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "ed8d010aff5a2d537271ecde724de667c663c67c78b4029f6a07556c75d3c00e",
+          "sha256": "50245e4389ea16546ea9cd82275124478161bc86c40cc3e26804dc5891ce9f66"
+        }
+      ]
+    },
+    {
+      "id": "april",
+      "meaning": "April",
+      "reason": "原图季节活动无法唯一表达具体月份",
+      "prompt": "Large vintage tear-off calendar page. Bold heading 'April', huge central number '4', small line '4 / 12' underneath meaning month position. At bottom a simple horizontal sequence of twelve small numbered circles '1 2 3 4 5 6 7 8 9 10 11 12', with ONLY 4 highlighted terracotta. The month heading and big numeral fill most image. No day grid or dates, no people or seasonal scenery.\nOne square English vocabulary educational illustration. Mid-century flat gouache, subtle risograph grain on warm cream, muted navy terracotta ochre sage. Clean spacious composition. Large readable exact text, no teacher, no decorative landscape, no watermark. Reference is palette and texture only, replace scene entirely.",
+      "source": "exec-aaa8d8df-92fa-4694-b586-227a5c9c19e6.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/april.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "d5986b403f79fcb1b3538da1b960c0c833e6f555c78f2e2f842616024f3c9aa0",
+          "sha256": "14b2c136939e7d691a3ed8257cc7bdabce05aafcc208e520ffde55eaf4972054"
+        },
+        {
+          "path": "public/atlas/thumb/april.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "c8ede20f10de23a139d1a4a86d25a87f93e70696f7f31c81421f07711675f720",
+          "sha256": "fe1123919221f0a15b674ee4e044154e58bb7619e323201c7bff853496a5238a"
+        }
+      ]
+    },
+    {
+      "id": "june",
+      "meaning": "June",
+      "reason": "原图季节活动无法唯一表达具体月份",
+      "prompt": "Large vintage tear-off calendar page. Bold heading 'June', huge central number '6', small line '6 / 12' underneath meaning month position. At bottom a simple horizontal sequence of twelve small numbered circles '1 2 3 4 5 6 7 8 9 10 11 12', with ONLY 6 highlighted terracotta. The month heading and big numeral fill most image. No day grid or dates, no people or seasonal scenery.\nOne square English vocabulary educational illustration. Mid-century flat gouache, subtle risograph grain on warm cream, muted navy terracotta ochre sage. Clean spacious composition. Large readable exact text, no teacher, no decorative landscape, no watermark. Reference is palette and texture only, replace scene entirely.",
+      "source": "exec-5b416fbe-6583-4e2d-b288-1802e7e9a71d.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/june.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "813112f84bbfb4b25009d82f840e75ee71330ac9316e5518df530b330a69abb4",
+          "sha256": "7f00b4793d84ebe1885c5e79bca4f59d547d9cd01aacb2b7947b2fe5d8fc43f6"
+        },
+        {
+          "path": "public/atlas/thumb/june.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "30b3fac03241d1677baeeebdcd7bf30909881f547aa979378e92fb85c85227f0",
+          "sha256": "d0ec8f881c6d71b73666324bef36ac7b051534c470f4e0f8f3536d47dd0fc8c6"
+        }
+      ]
+    },
+    {
+      "id": "july",
+      "meaning": "July",
+      "reason": "原图季节活动无法唯一表达具体月份",
+      "prompt": "Large vintage tear-off calendar page. Bold heading 'July', huge central number '7', small line '7 / 12' underneath meaning month position. At bottom a simple horizontal sequence of twelve small numbered circles '1 2 3 4 5 6 7 8 9 10 11 12', with ONLY 7 highlighted terracotta. The month heading and big numeral fill most image. No day grid or dates, no people or seasonal scenery.\nOne square English vocabulary educational illustration. Mid-century flat gouache, subtle risograph grain on warm cream, muted navy terracotta ochre sage. Clean spacious composition. Large readable exact text, no teacher, no decorative landscape, no watermark. Reference is palette and texture only, replace scene entirely.",
+      "source": "exec-b7c7c0ad-1763-4015-94b9-80b987f5eac5.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/july.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "3b1474db9e15013955fe36a59457d4c5055ecc3c3bcab0ab0a11437fc4784f65",
+          "sha256": "96f9cb6444b28fff4eb34ba6997913bc3b90bcdabd7a46b60e02da79e55d9cba"
+        },
+        {
+          "path": "public/atlas/thumb/july.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "56280a24b3d42f2a4290e4cada873883ad97f8338ffe8a8c71674d84588dbeb8",
+          "sha256": "e785d6f09ca018c25112d7d02415f0ffcb628a6216f41429676a3d8eac10244e"
+        }
+      ]
+    },
+    {
+      "id": "august",
+      "meaning": "August",
+      "reason": "原图季节活动无法唯一表达具体月份",
+      "prompt": "Large vintage tear-off calendar page. Bold heading 'August', huge central number '8', small line '8 / 12' underneath meaning month position. At bottom a simple horizontal sequence of twelve small numbered circles '1 2 3 4 5 6 7 8 9 10 11 12', with ONLY 8 highlighted terracotta. The month heading and big numeral fill most image. No day grid or dates, no people or seasonal scenery.\nOne square English vocabulary educational illustration. Mid-century flat gouache, subtle risograph grain on warm cream, muted navy terracotta ochre sage. Clean spacious composition. Large readable exact text, no teacher, no decorative landscape, no watermark. Reference is palette and texture only, replace scene entirely.",
+      "source": "exec-81476120-065c-467b-acf3-6b3082af7095.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/august.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "87de047e317761f85192161331c108cb019046d6fdff918dd8945cbfcb764d83",
+          "sha256": "a37d13683cc52aed4ddcb2a936524e06b2aec31d047fafe00b7ce1bb1bf40ca9"
+        },
+        {
+          "path": "public/atlas/thumb/august.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "e329dd96ce6eb21a67f2c95187c2c34eca07dca3433eedf3a5e2d5b5a9d4adba",
+          "sha256": "f7ebdfd875389b217c110939e8eefad3276d121d3f3af201ec1e7a131b35b518"
+        }
+      ]
+    },
+    {
+      "id": "september",
+      "meaning": "September",
+      "reason": "原图季节活动无法唯一表达具体月份",
+      "prompt": "Large vintage tear-off calendar page. Bold heading 'September', huge central number '9', small line '9 / 12' underneath meaning month position. At bottom a simple horizontal sequence of twelve small numbered circles '1 2 3 4 5 6 7 8 9 10 11 12', with ONLY 9 highlighted terracotta. The month heading and big numeral fill most image. No day grid or dates, no people or seasonal scenery.\nOne square English vocabulary educational illustration. Mid-century flat gouache, subtle risograph grain on warm cream, muted navy terracotta ochre sage. Clean spacious composition. Large readable exact text, no teacher, no decorative landscape, no watermark. Reference is palette and texture only, replace scene entirely.",
+      "source": "exec-4c61c45d-87ef-4e9e-a6a5-591d4e7be17c.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/september.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "90b87e47be937c26398a6d032adddf88d6571ea5daf6af76f3a675169127a60b",
+          "sha256": "c45ed06842d952e66609a92227dd5cbb267ffcc349a7c001d04a12122fa190de"
+        },
+        {
+          "path": "public/atlas/thumb/september.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "ebfaf2c138260f07032047bd1033c3d006494a3da81e3f25e18a063171c57e1e",
+          "sha256": "12baa565501872632b4d96d85380854ecb5d7aee45d344b3ecd3d1d548dc52c9"
+        }
+      ]
+    },
+    {
+      "id": "october",
+      "meaning": "October",
+      "reason": "原图季节活动无法唯一表达具体月份",
+      "prompt": "Large vintage tear-off calendar page. Bold heading 'October', huge central number '10', small line '10 / 12' underneath meaning month position. At bottom a simple horizontal sequence of twelve small numbered circles '1 2 3 4 5 6 7 8 9 10 11 12', with ONLY 10 highlighted terracotta. The month heading and big numeral fill most image. No day grid or dates, no people or seasonal scenery.\nOne square English vocabulary educational illustration. Mid-century flat gouache, subtle risograph grain on warm cream, muted navy terracotta ochre sage. Clean spacious composition. Large readable exact text, no teacher, no decorative landscape, no watermark. Reference is palette and texture only, replace scene entirely.",
+      "source": "exec-93d3cd43-e158-4fd9-9162-61f09c1d2631.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/october.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "4b4d56b0610812fc9f6c50e3a11afa9e167a7d06412b46933d607841f52e6ef4",
+          "sha256": "863804e173eb3759a0b46f4d1513ac79ed1e57c35250db540a6f4d72ace74ed9"
+        },
+        {
+          "path": "public/atlas/thumb/october.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "b3bc773d820360f57e36984c04446788519d8fa56701d79eec1e9efcd25fda02",
+          "sha256": "0890af1bd8610b5ee7fadb77fc32cab2d918a1f6233f83566e1c72c0edb8e239"
+        }
+      ]
+    },
+    {
+      "id": "november",
+      "meaning": "November",
+      "reason": "原图季节活动无法唯一表达具体月份",
+      "prompt": "Large vintage tear-off calendar page. Bold heading 'November', huge central number '11', small line '11 / 12' underneath meaning month position. At bottom a simple horizontal sequence of twelve small numbered circles '1 2 3 4 5 6 7 8 9 10 11 12', with ONLY 11 highlighted terracotta. The month heading and big numeral fill most image. No day grid or dates, no people or seasonal scenery.\nOne square English vocabulary educational illustration. Mid-century flat gouache, subtle risograph grain on warm cream, muted navy terracotta ochre sage. Clean spacious composition. Large readable exact text, no teacher, no decorative landscape, no watermark. Reference is palette and texture only, replace scene entirely.",
+      "source": "exec-28b1770e-86ee-4f03-a9b0-77a7bde8dad7.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/november.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "3986b3eb1b85adb4ae9f1e495e281208e0230ddcdb9968765561cd055250a40e",
+          "sha256": "0a83a3f3379124e61bf4f6a996c89624c02da6f44f468c6c1679a7d26b56b30f"
+        },
+        {
+          "path": "public/atlas/thumb/november.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "70b0958f1d8a66196d3e819036a7f9a1a30c436afa1562ace70261bab1e259a6",
+          "sha256": "f1867d2bd6baa329a9360a4c257441bd1c44d72bccaf26fffbcf4c4eb6763c53"
+        }
+      ]
+    },
+    {
+      "id": "december",
+      "meaning": "December",
+      "reason": "原图季节活动无法唯一表达具体月份",
+      "prompt": "Large vintage tear-off calendar page. Bold heading 'December', huge central number '12', small line '12 / 12' underneath meaning month position. At bottom a simple horizontal sequence of twelve small numbered circles '1 2 3 4 5 6 7 8 9 10 11 12', with ONLY 12 highlighted terracotta. The month heading and big numeral fill most image. No day grid or dates, no people or seasonal scenery.\nOne square English vocabulary educational illustration. Mid-century flat gouache, subtle risograph grain on warm cream, muted navy terracotta ochre sage. Clean spacious composition. Large readable exact text, no teacher, no decorative landscape, no watermark. Reference is palette and texture only, replace scene entirely.",
+      "source": "exec-26c8580a-1eeb-4479-b444-65f11abf6b1d.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/december.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "c1557ef25cfb0c9aca85c05fb67122b8b9701b4a0aaa1c64686e368609234bc1",
+          "sha256": "27f392da61faa734b2b27e863768aefb826e6f8167a4f2ede4f5e70f11675deb"
+        },
+        {
+          "path": "public/atlas/thumb/december.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "95308074aae187558999a940636c7efb75945b42b0ace0d9798f20da71ec0f60",
+          "sha256": "ba88298cd06e4bfd50f55453542c826bef89596e2ef497fd90d9d512f8d76846"
+        }
+      ]
+    },
+    {
+      "id": "word",
+      "meaning": "单词",
+      "reason": "原图人物与无字道具未表达语言概念",
+      "prompt": "Single small apple illustration above a MUCH LARGER cream flashcard showing the single word 'apple' in navy, encircled by a terracotta bracket. Beneath small label 'one word'. Letters joined into one word; no other vocabulary, no person.\nOne square English vocabulary educational illustration. Mid-century flat gouache, subtle risograph grain on warm cream, muted navy terracotta ochre sage. Clean spacious composition. Large readable exact text, no teacher, no decorative landscape, no watermark. Reference is palette and texture only, replace scene entirely.",
+      "source": "exec-b0717115-539e-4273-8761-615af5a394f3.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/word.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "5a8dd91ab6cda57e8fa50db000c26218561fefe6cd0a47ab88195236cf660f3c",
+          "sha256": "6d0e3088aa6dbd9a12f881982367ac2e55602bc3eaa52d96a1f7d98138361d28"
+        },
+        {
+          "path": "public/atlas/thumb/word.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "0600230f76ce0c904242ab54d5c85f985dc1b64c75be32a83aac10b9d46149a1",
+          "sha256": "4db6d6603cf10f51ac67188b0d5eabcb16b8230a19b087d709f3788fd5b9e17e"
+        }
+      ]
+    },
+    {
+      "id": "sentence",
+      "meaning": "句子",
+      "reason": "原图人物与无字道具未表达语言概念",
+      "prompt": "Three linked word cards in one row with exact text 'Birds' 'can' 'fly.' Large bracket underneath spans ALL THREE cards, label 'sentence'. Above a tiny simple bird in flight. Emphasize whole grammatical sentence and final full stop, no people.\nOne square English vocabulary educational illustration. Mid-century flat gouache, subtle risograph grain on warm cream, muted navy terracotta ochre sage. Clean spacious composition. Large readable exact text, no teacher, no decorative landscape, no watermark. Reference is palette and texture only, replace scene entirely.",
+      "source": "exec-ee5c0fc8-193f-4156-9c89-c25e763b2cc3.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/sentence.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "f5f0fda70bfd8a0ff8bb03b833ed3c1eefcc86370b11d4d59d8c1dc5e45213b5",
+          "sha256": "ea7afb99979b145a670e8e56e84601eb4ba6bacb5d38c316d6bf91ea86a7b9c4"
+        },
+        {
+          "path": "public/atlas/thumb/sentence.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "c9ff89296915b276de34ff043e98bc22dd0a62850e109acaa910e3318621c749",
+          "sha256": "812e5336df82259102d3895ede27bdfb6f6917dbbf9cbabcd46da295c471c2aa"
+        }
+      ]
+    },
+    {
+      "id": "noun",
+      "meaning": "名词",
+      "reason": "原图人物与无字道具未表达语言概念",
+      "prompt": "Three equal simple panels: person silhouette with label 'teacher'; small house with label 'home'; apple with label 'apple'. Three WORD labels underlined terracotta and linked to large top heading 'NOUNS'. Clear labels of person place thing, no teacher teaching scene.\nOne square English vocabulary educational illustration. Mid-century flat gouache, subtle risograph grain on warm cream, muted navy terracotta ochre sage. Clean spacious composition. Large readable exact text, no teacher, no decorative landscape, no watermark. Reference is palette and texture only, replace scene entirely.",
+      "source": "exec-11d3fcfc-3eb8-4d40-9e04-f19a4035140b.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/noun.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "3cc98cf517cc67f5ee169567058c24faa0ade7298b4f82d7bdafdd4825f935ae",
+          "sha256": "c2e48b7fcca954e645a811416ff14b81f34e2c523c9a82b2d4c50e92f6f6eb43"
+        },
+        {
+          "path": "public/atlas/thumb/noun.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "9292fd2677b44ee77153d254965480a9a72dbd021cbe0d7707cd6199c0607b04",
+          "sha256": "6df152434d7d48e9fafadc0aa4a5d5ca6d1eea0109dac052815833fbb380c8bc"
+        }
+      ]
+    },
+    {
+      "id": "adjective",
+      "meaning": "形容词",
+      "reason": "原图人物与无字道具未表达语言概念",
+      "prompt": "Two simple apple panels: left red apple and exact phrase 'red apple', right green apple and phrase 'green apple'. Highlight ONLY the words 'red' and 'green' with terracotta underline. Top heading 'ADJECTIVES'. Apples plain recognizable; words color properties clear. No people.\nOne square English vocabulary educational illustration. Mid-century flat gouache, subtle risograph grain on warm cream, muted navy terracotta ochre sage. Clean spacious composition. Large readable exact text, no teacher, no decorative landscape, no watermark. Reference is palette and texture only, replace scene entirely.",
+      "source": "exec-b76bb4f0-e6e6-42da-a5fa-728cd14d4fad.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/adjective.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "bf4d7c20f11e473877e739bbc314f27d967ca417e93704bf07a525078b9fa8a2",
+          "sha256": "7d61b95f6af996c93af8f171fc59937268fb16b972c75761fb4430e5a8451c63"
+        },
+        {
+          "path": "public/atlas/thumb/adjective.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "1964e97ab9c45ba901d69d9c4f6e15c8eaa1a707412d619eda65b23d5478e1c8",
+          "sha256": "c1bc6f4db6baaeed9e2f086a09dc949c2a5a77063be2c05774b2141e4d2902e9"
+        }
+      ]
+    },
+    {
+      "id": "spelling",
+      "meaning": "拼写",
+      "reason": "原图人物与无字道具未表达语言概念",
+      "prompt": "Five individual letter tiles in a single ordered row 'a' 'p' 'p' 'l' 'e'. Down arrow to a single joined word 'apple' on cream paper, with a small apple beside it. Exact five letters, no extra tiles. Text large and central.\nOne square English vocabulary educational illustration. Mid-century flat gouache, subtle risograph grain on warm cream, muted navy terracotta ochre sage. Clean spacious composition. Large readable exact text, no teacher, no decorative landscape, no watermark. Reference is palette and texture only, replace scene entirely.",
+      "source": "exec-00a3d767-9bb6-422e-9ea6-0e1b273c08c8.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/spelling.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "10dcda4cd09ed6dfdbc5dd71fd4e70c6be3724073a7cae1191238ecbad6b0ebe",
+          "sha256": "de7ee61870e6ddebdc1f3a872dcce4f76140653443fc736ef3d360327a5b094b"
+        },
+        {
+          "path": "public/atlas/thumb/spelling.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "2b3c74b94b1f0503b412b5832ef5d268d7526e7120cdbe78480b26ea633c8d22",
+          "sha256": "827c2c1863302cb686c15f3a5477922d1f4405ecf3432f3b4888249c1ece0107"
+        }
+      ]
+    },
+    {
+      "id": "prefix",
+      "meaning": "前缀",
+      "reason": "原图人物与无字道具未表达语言概念",
+      "prompt": "Large central word equation: 'un' + 'happy' = 'unhappy'. The leading 'un' in both occurrences highlighted terracotta, happy navy. Curved arrow points to beginning 'un' of unhappy, label 'prefix'. Below two tiny face icons: happy then sad, to illustrate changed meaning. No people, no cubes.\nOne square English vocabulary educational illustration. Mid-century flat gouache, subtle risograph grain on warm cream, muted navy terracotta ochre sage. Clean spacious composition. Large readable exact text, no teacher, no decorative landscape, no watermark. Reference is palette and texture only, replace scene entirely.",
+      "source": "exec-25f88cb4-aa2f-40c1-b694-33726a197ca0.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/prefix.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "8b34d646a10f6c9d1673faed66111172d3931515daa26cc087afba1c06fe11f2",
+          "sha256": "1341d65b29839bc2b29fde4b136745b81ae9165fff8feb8638af50ab6e32e8f8"
+        },
+        {
+          "path": "public/atlas/thumb/prefix.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "6384c0119947a611f266934d248e234a3d2bc7e31da598ec46e33cb4284c4f83",
+          "sha256": "f643b16a95ada4b3a02cec6d41294c6cf5236eed590886d92989af2ab0e1faa0"
+        }
+      ]
+    },
+    {
+      "id": "suffix",
+      "meaning": "后缀",
+      "reason": "原图人物与无字道具未表达语言概念",
+      "prompt": "Large central word equation: 'help' + 'ful' = 'helpful'. Ending 'ful' in both occurrences terracotta, help navy. Curved arrow points to final 'ful' in helpful, label 'suffix'. Clean simple type diagram, no people or cubes.\nOne square English vocabulary educational illustration. Mid-century flat gouache, subtle risograph grain on warm cream, muted navy terracotta ochre sage. Clean spacious composition. Large readable exact text, no teacher, no decorative landscape, no watermark. Reference is palette and texture only, replace scene entirely.",
+      "source": "exec-186074d1-77c8-431f-a9cc-fd3277fe2ef1.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/suffix.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "91fec4f4c5554443e6cb8074c1a49a4e814c179acd072fe9b1fc7e89e55d2b0f",
+          "sha256": "6db6cea8238a6d01b9de6bb60f4a4ac20ed98fad72d0064f9e760c99e525c1c2"
+        },
+        {
+          "path": "public/atlas/thumb/suffix.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "1103781a07752a9bc7e87dab45b35333fbcb236f673fe1889d20703786790efe",
+          "sha256": "a982aa7e9f5aea9174817bab92b4e4db17753234c89e36d72977eaf540b4b8bf"
+        }
+      ]
+    },
+    {
+      "id": "grammatical",
+      "meaning": "符合语法的",
+      "reason": "原图人物与无字道具未表达语言概念",
+      "prompt": "A large sentence 'She is reading.' with a large sage check mark. Below, smaller 'She are reading.' with terracotta cross, only 'are' underlined. Correct sentence primary emphasis, visually communicates grammatical correctness. No people, no toys.\nOne square English vocabulary educational illustration. Mid-century flat gouache, subtle risograph grain on warm cream, muted navy terracotta ochre sage. Clean spacious composition. Large readable exact text, no teacher, no decorative landscape, no watermark. Reference is palette and texture only, replace scene entirely.",
+      "source": "exec-e21451af-17cd-4bbf-9055-f419dc71d7bb.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/grammatical.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "2a63e6d9d932a1cd9bd53e2c7efb0d13da890801162eff7cf924ef93d1000104",
+          "sha256": "3e4558c59807948570a01c979383d13b7f7255f3dd30b873f6330f87dd2ada54"
+        },
+        {
+          "path": "public/atlas/thumb/grammatical.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "d84310bb72408e3ecef62e5a035f8f29b2270d62230308b753a9fa42d227426b",
+          "sha256": "6643f1c3a62ca5e3c5e66ee16c5646a741fc9db77c3da6a6cc06cb622bc87db1"
+        }
+      ]
+    },
+    {
+      "id": "mouth",
+      "meaning": "嘴",
+      "reason": "原图人物、动作或完整身体使目标部位不够突出",
+      "prompt": "Extreme close-up of a human mouth gently open, lips clearly defined, a few natural white teeth and tongue visible. Crop to cheeks and chin around mouth, exclude nose and eyes. No dentist or tools.\nSquare vintage educational vocabulary illustration. Match input only in mid-century gouache style, warm cream paper, subtle grain, navy/ochre/terracotta/sage. Main body part fills composition, anatomical proportions correct, no unrelated actions or landscape, no decorative plants, no text except requested label. Non-graphic textbook illustration.",
+      "source": "exec-2f4d955d-adcb-4b75-ab32-db02e09d42c0.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/mouth.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "7236c8baf7c78ace9d35e5dcc0619084c7ef0025aec74be137cba273e1f66685",
+          "sha256": "cc320433f1c6e78482354ab9b940eeb032a9067782f3d0c5bcebbfc021b13e65"
+        },
+        {
+          "path": "public/atlas/thumb/mouth.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "4dc2301bf1d32d0fbc44332bce4ed6e49e1411cd0fe6ad00e52280b7682742f6",
+          "sha256": "20ef920db5f174009100acf4ddb195cbad11df325d666785c335ef1b87d4b2d2"
+        }
+      ]
+    },
+    {
+      "id": "head",
+      "meaning": "头",
+      "reason": "原图人物、动作或完整身体使目标部位不够突出",
+      "prompt": "A single human head in three-quarter view with hair, ears, eyes, nose, mouth and chin all visible, cropped at neck, no body. Plain cream background. No hat, no hands. A thin enclosing oval around entire head, small label 'head'.\nSquare vintage educational vocabulary illustration. Match input only in mid-century gouache style, warm cream paper, subtle grain, navy/ochre/terracotta/sage. Main body part fills composition, anatomical proportions correct, no unrelated actions or landscape, no decorative plants, no text except requested label. Non-graphic textbook illustration.",
+      "source": "exec-b9c4ccd4-dc91-4667-bfdb-f0644bc03025.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/head.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "4b08ca2708eecf4590f298b912df80b132ab6c8db2f642108d77408ca1cbf2fc",
+          "sha256": "ff91ce63a6d8cb9574cf1a7a4b6d620533985c54f6c7791c0f4ef19f2ea27e11"
+        },
+        {
+          "path": "public/atlas/thumb/head.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "b6175572edf9a0e2f0d4c7947654ffe33ccc7ef6dc9f75d501ce945e459c9443",
+          "sha256": "6d7ee03151b0927f7c6f089a5f3f939238eaa88f5afdb303b509406dd8a1b925"
+        }
+      ]
+    },
+    {
+      "id": "leg",
+      "meaning": "腿",
+      "reason": "原图人物、动作或完整身体使目标部位不够突出",
+      "prompt": "One full human leg extending diagonally from shorts hem at upper thigh to bare foot. Knee and calf clearly visible, leg dominant. No torso, other leg, hands, landscape. Thin long bracket from upper thigh to ankle indicates the whole leg, not just knee.\nSquare vintage educational vocabulary illustration. Match input only in mid-century gouache style, warm cream paper, subtle grain, navy/ochre/terracotta/sage. Main body part fills composition, anatomical proportions correct, no unrelated actions or landscape, no decorative plants, no text except requested label. Non-graphic textbook illustration.",
+      "source": "exec-774c34c8-8259-4a7a-a836-109bc719340c.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/leg.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "c2c1a46a8ef578ddef16f8de1d92f704c31d35853f6fe330d6bfdfd72fa266d1",
+          "sha256": "06a9fe85496adbf3cc8251ee4787c91b095c4ecdf547f90d445d4e774a9ed57e"
+        },
+        {
+          "path": "public/atlas/thumb/leg.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "edd431c0abf532c202ced7cf5899763a8824685012e8c7a640c93a72f5304960",
+          "sha256": "6e18400632726500cee905fed5dc397f8ab99a058fd83aeef4f047d0f14883b5"
+        }
+      ]
+    },
+    {
+      "id": "feet",
+      "meaning": "双脚",
+      "reason": "原图人物、动作或完整身体使目标部位不够突出",
+      "prompt": "Two anatomically accurate bare human feet side by side seen from above at slight angle, short ankles, all ten toes visible. Both feet equally large fill frame. No whole person, sand, beach or shoes.\nSquare vintage educational vocabulary illustration. Match input only in mid-century gouache style, warm cream paper, subtle grain, navy/ochre/terracotta/sage. Main body part fills composition, anatomical proportions correct, no unrelated actions or landscape, no decorative plants, no text except requested label. Non-graphic textbook illustration.",
+      "source": "exec-e6ed1100-4623-4c7a-809b-8866883c7634.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/feet.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "46975660b8a0679e413b56627878fc6718cdc315e58cf936d086af2a9a16486b",
+          "sha256": "6b9f3cacc0cad1df0ffaab112f2516081bc94f423483b73a079c0bb9fb93ba11"
+        },
+        {
+          "path": "public/atlas/thumb/feet.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "04e546f88c863e1a1af77cffa4eab1f16abcbe95180474091df3a51c5ea83229",
+          "sha256": "454cbf836c756f19902ef4b3769e50efe2c792b2913a875cbd2a199921d82ecc"
+        }
+      ]
+    },
+    {
+      "id": "toe",
+      "meaning": "脚趾",
+      "reason": "原图人物、动作或完整身体使目标部位不够突出",
+      "prompt": "Close-up top view of front half of one bare human foot with exactly five toes. Thin terracotta oval highlights only big toe, short pointer. Toes fill most frame, rear foot fades out. No sand or person.\nSquare vintage educational vocabulary illustration. Match input only in mid-century gouache style, warm cream paper, subtle grain, navy/ochre/terracotta/sage. Main body part fills composition, anatomical proportions correct, no unrelated actions or landscape, no decorative plants, no text except requested label. Non-graphic textbook illustration.\nRevision: Edit this exact illustration. Keep the five toes, foot anatomy, colors, grain and crop unchanged. Remove ONLY the small oval around the second toe. Keep ONE thin terracotta oval around the big toe at right. Add a tiny short arrow pointing to that big toe. No text or additional circles.",
+      "source": "exec-901c2bd5-c9a3-419d-8ae4-a3d457e69dca.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/toe.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "f09d3fee06f2f1c04f0db4c68cee9c6179eaa957af5137e4e1d2ba1dfebc11f2",
+          "sha256": "f0ace6f0cec2f6024f8640a56f508d34b261ff70b11cab031aaebe19fa6ccb7f"
+        },
+        {
+          "path": "public/atlas/thumb/toe.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "ab49a62c07fff68db54d9314645cc8cf13e7e72b96bc11d18e66085bc57fbf4b",
+          "sha256": "ef56f958ed20fe8f7dca1c59785acae7584fdeeb9018355828d5f997476d149f"
+        }
+      ]
+    },
+    {
+      "id": "finger",
+      "meaning": "手指",
+      "reason": "原图人物、动作或完整身体使目标部位不够突出",
+      "prompt": "A large hand pointing upward with index finger extended, other three fingers folded and thumb resting naturally. Highlight entire index finger terracotta, rest hand subdued ochre; tiny pointer to middle of index finger. Accurate five digits. No fruit, tree, landscape.\nSquare vintage educational vocabulary illustration. Match input only in mid-century gouache style, warm cream paper, subtle grain, navy/ochre/terracotta/sage. Main body part fills composition, anatomical proportions correct, no unrelated actions or landscape, no decorative plants, no text except requested label. Non-graphic textbook illustration.",
+      "source": "exec-992be319-01d8-4d49-af20-668adfcb478b.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/finger.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "a2efbf582fbe94c02fbfec52489ec6a1a879b0bd80d67e9cbb78499711e9e5ef",
+          "sha256": "6c8803f870e25ea1ae33f3991beab58b318557b987892d7fdcf6edd08e4303d6"
+        },
+        {
+          "path": "public/atlas/thumb/finger.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "e0162b17784fdd355aa30211a47e34c398fbf5b613ada63299787b7a90150017",
+          "sha256": "5c1b298d393b6d548c98cf2bf919db5a86e01f14cdb1f5fdde0ebe25d08a2fab"
+        }
+      ]
+    },
+    {
+      "id": "neck",
+      "meaning": "脖子",
+      "reason": "原图人物、动作或完整身体使目标部位不够突出",
+      "prompt": "Close-up lower jaw, entire neck and upper shoulders, face cropped above mouth. Thin terracotta oval highlights neck between jaw and collarbones. Neutral relaxed pose, plain crewneck shirt low enough to see neck. No massage therapist or hands.\nSquare vintage educational vocabulary illustration. Match input only in mid-century gouache style, warm cream paper, subtle grain, navy/ochre/terracotta/sage. Main body part fills composition, anatomical proportions correct, no unrelated actions or landscape, no decorative plants, no text except requested label. Non-graphic textbook illustration.",
+      "source": "exec-b6805968-c942-4252-b8af-83da55350fda.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/neck.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "f632faed12ff181703a22bcb5fb043cc241d3fba43421094c375f80938a05894",
+          "sha256": "cad3fb26065943da09dbc18d65ed36b2261e629ac139376fbe01bc89595ef546"
+        },
+        {
+          "path": "public/atlas/thumb/neck.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "6329c35d447e4c39441a6427696670233b036e16ad18e60cbfc757d2b982e9c4",
+          "sha256": "decde54a4210e627c1300c3a94f3d5907588d30eda0cf48cc23b38179202e0bb"
+        }
+      ]
+    },
+    {
+      "id": "shoulder",
+      "meaning": "肩膀",
+      "reason": "原图人物、动作或完整身体使目标部位不够突出",
+      "prompt": "Close-up of one human shoulder joining upper arm and neck, upper torso in simple sleeveless shirt, head cropped above chin. Thin terracotta circle highlights rounded shoulder joint at top outer arm. No child, carrying pose or scenery.\nSquare vintage educational vocabulary illustration. Match input only in mid-century gouache style, warm cream paper, subtle grain, navy/ochre/terracotta/sage. Main body part fills composition, anatomical proportions correct, no unrelated actions or landscape, no decorative plants, no text except requested label. Non-graphic textbook illustration.",
+      "source": "exec-239cd49f-ce5b-4a4c-9c12-e5bacac480d8.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/shoulder.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "996a7d72acbd196f83e669d4370308dbf11a8b4c805254fed0c2597fabc84c04",
+          "sha256": "634e248db2f3801eaf13fc535636348813accc9c855bc179e144915307e42de9"
+        },
+        {
+          "path": "public/atlas/thumb/shoulder.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "8c3ed3ce4f600b82e6937bf8d129d7b993f7335fdf3a070bdfdc79cf81d63bec",
+          "sha256": "b9fbd8c0aaf94b676b401ae3602014483967ac490a56f49b1aa1a5cf46b6ec5c"
+        }
+      ]
+    },
+    {
+      "id": "chest",
+      "meaning": "胸部",
+      "reason": "原图人物、动作或完整身体使目标部位不够突出",
+      "prompt": "Front view of adult torso wearing a plain fitted navy shirt, cropped below chin and at waist. Broad translucent ochre highlighted area covers upper front torso from collarbones to lower ribcage; arrow points center and label 'chest'. No cat, arms folded or other objects.\nSquare vintage educational vocabulary illustration. Match input only in mid-century gouache style, warm cream paper, subtle grain, navy/ochre/terracotta/sage. Main body part fills composition, anatomical proportions correct, no unrelated actions or landscape, no decorative plants, no text except requested label. Non-graphic textbook illustration.",
+      "source": "exec-3d4f3fdd-1da8-4598-8acb-c14f5674eb8c.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/chest.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "40d1ab8f8c8863bf43e1527316bd8cb56c305a3452af86362a8f51fc0fd04ff0",
+          "sha256": "700b4fe973569e37773d33f1db890ee4fe50342663790b135a4299bb6ea00871"
+        },
+        {
+          "path": "public/atlas/thumb/chest.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "6d4c1355009a0944ae5ee55846ffc730e12e4fea7e2ca112d22449945c7601c5",
+          "sha256": "4c6486be42d23da19996a773b1f4d7c97c7a7b3d3b26617bc6d337f95cc72b33"
+        }
+      ]
+    },
+    {
+      "id": "jaw",
+      "meaning": "下颌",
+      "reason": "原图人物、动作或完整身体使目标部位不够突出",
+      "prompt": "Large educational side view of human skull with mandible strongly highlighted terracotta and rest skull pale warm gray. Jaw hinge and lower teeth clear, thin pointer to lower jawbone. No doctor, hands or stand.\nSquare vintage educational vocabulary illustration. Match input only in mid-century gouache style, warm cream paper, subtle grain, navy/ochre/terracotta/sage. Main body part fills composition, anatomical proportions correct, no unrelated actions or landscape, no decorative plants, no text except requested label. Non-graphic textbook illustration.",
+      "source": "exec-809c8b51-de32-4f6f-ae5e-12e7ce71cfb9.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/jaw.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "ad3d7e3434f6568113d7d054fd9e256e73aeb2acf19e4851a62b97ea5700b9a9",
+          "sha256": "6a34f2d14dd82cb27b2f9c30a2d6552600549646ada9145915453c1e254417eb"
+        },
+        {
+          "path": "public/atlas/thumb/jaw.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "b49f88929afdca0fe07c5ebbbac857d142e6c0609925ead54eecc62cd3f6ed10",
+          "sha256": "07315c619dcfdcd246e9171689b9af1f57ca4525a0ef6ec280c8cf4759ee755f"
+        }
+      ]
+    },
+    {
+      "id": "skull",
+      "meaning": "头骨",
+      "reason": "原图人物、动作或完整身体使目标部位不够突出",
+      "prompt": "Single large anatomically recognizable human skull in three-quarter view, ivory bone, eye sockets nasal opening cheekbones and teeth clear, complete mandible. Plain warm cream backdrop. No skeleton body, teacher, classroom or decoration.\nSquare vintage educational vocabulary illustration. Match input only in mid-century gouache style, warm cream paper, subtle grain, navy/ochre/terracotta/sage. Main body part fills composition, anatomical proportions correct, no unrelated actions or landscape, no decorative plants, no text except requested label. Non-graphic textbook illustration.",
+      "source": "exec-32dae118-d4da-4f96-b3ef-18f4f66c0794.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/skull.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "342fe85d362618f183584a4e95e7119561ee48df2313fb2d88f1f2b4d2313926",
+          "sha256": "653aef3e7d89b295ae7641fb917268eaecf4c0b41fdc3bbf2b21cb3df9020c47"
+        },
+        {
+          "path": "public/atlas/thumb/skull.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "8f762c201d659eae663738123066e45c211ad33dbe5fd52665a335611c03e886",
+          "sha256": "2b1842c0749a455ac7d9fd75c80ec0dc08d9655aeaa3037fd22ffe94ad22b284"
+        }
+      ]
+    },
+    {
+      "id": "rib",
+      "meaning": "肋骨",
+      "reason": "原图人物、动作或完整身体使目标部位不够突出",
+      "prompt": "Close-up front view of human rib cage only, pale ivory curved ribs attached to sternum, one middle rib highlighted terracotta from spine around to costal cartilage. Short pointer and small label 'rib'. No whole skeleton, doctor, skull or pelvis.\nSquare vintage educational vocabulary illustration. Match input only in mid-century gouache style, warm cream paper, subtle grain, navy/ochre/terracotta/sage. Main body part fills composition, anatomical proportions correct, no unrelated actions or landscape, no decorative plants, no text except requested label. Non-graphic textbook illustration.",
+      "source": "exec-a3c8bf19-9dd8-4c0b-ad5e-f686ba45e0dd.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/rib.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "b1ae2365e90a182b4c8fe2d568dee26c6507a93deb13ab527fc8ed59702ee328",
+          "sha256": "feafabc52ecafda5ef05e342306e209578137058ed7d51e8a319a2c6363f5a4d"
+        },
+        {
+          "path": "public/atlas/thumb/rib.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "c59dda9ec265fad6fa2f3135deb7ce50a313e317d6f603c9280d76accc5ca756",
+          "sha256": "1fc4bb32e4901b814bcaaf63810dfe612d3aa9708933ae39e58c33936f972150"
+        }
+      ]
+    },
+    {
+      "id": "lung",
+      "meaning": "肺",
+      "reason": "原图人物、动作或完整身体使目标部位不够突出",
+      "prompt": "One large pair of human lungs connected to trachea and branching bronchi, muted terracotta tissue, right lung three lobes and left lung two with cardiac notch, gentle textbook flat illustration. Plain cream background, no person, heart or other organs.\nSquare vintage educational vocabulary illustration. Match input only in mid-century gouache style, warm cream paper, subtle grain, navy/ochre/terracotta/sage. Main body part fills composition, anatomical proportions correct, no unrelated actions or landscape, no decorative plants, no text except requested label. Non-graphic textbook illustration.",
+      "source": "exec-58d3f4e8-dc36-44f6-ad38-04e4406e518b.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/lung.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "9c0cbb11ed3ed3e44fa1176658e70bbf902670557f8f67a8a21319a72ccb7bf4",
+          "sha256": "026bf457baa342adb1ff6d0ea04bb6769a4f6d7c06061866d575d4602da4e00a"
+        },
+        {
+          "path": "public/atlas/thumb/lung.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "1fa81c5cf0744f431688d72da6406d07dcf802caecdfde6e6d1fdf3854fbc7ad",
+          "sha256": "02ffd119fca279fc8f25140034918681ba56e77406b05df4531141e04745eaff"
+        }
+      ]
+    },
+    {
+      "id": "kidney",
+      "meaning": "肾",
+      "reason": "原图人物、动作或完整身体使目标部位不够突出",
+      "prompt": "Two large kidney-shaped human kidneys placed symmetrically, warm terracotta, each with renal pelvis and a short ureter exiting medial concavity. Small unobtrusive pale torso outline behind establishes lower back position. Kidneys occupy most composition. No doctor, whole vascular system or other organs.\nSquare vintage educational vocabulary illustration. Match input only in mid-century gouache style, warm cream paper, subtle grain, navy/ochre/terracotta/sage. Main body part fills composition, anatomical proportions correct, no unrelated actions or landscape, no decorative plants, no text except requested label. Non-graphic textbook illustration.",
+      "source": "exec-48c63bbc-f44b-469d-924b-55531525bfd5.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/kidney.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "6eb01742606cf5c63fcbcb9f532a427c987f9fd81ea0564dc95d3cd24345dfc1",
+          "sha256": "6a57c2862339eee873cf21a8ff1cf0dd03389d83b42b940c52e9f4dbff00757e"
+        },
+        {
+          "path": "public/atlas/thumb/kidney.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "5672f5c8f77762794fccd5a3316d21e72ba0f4eb3c748a68060103d0b5a5aedb",
+          "sha256": "110d1862b6a658aa6b9fafe2ec92033dbef4e3ad3c9893cded66e8d878f10813"
+        }
+      ]
+    },
+    {
+      "id": "metre",
+      "meaning": "米",
+      "reason": "原图尺子没有明确长度标识",
+      "prompt": "A large simple wooden metre stick, horizontal, endpoints clearly labelled 0 and 100 cm. Above it a double-headed arrow spanning the whole stick labelled '1 m'. Ten equally spaced main intervals; no dense unreadable marks. Bottom equation '1 m = 100 cm'.\nSquare vocabulary illustration, match original mid-century gouache, warm cream paper with subtle grain, navy, ochre, terracotta, sage palette. Large unmistakable educational subject; no people, plants, landscape or distracting objects. Exact requested English/numeric labels only. Legible at thumbnail size.",
+      "source": "exec-7fc7e3da-6d40-4e13-bb09-d14d31bd19c1.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/metre.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "67ad528c708253a6e383b048c1ae25540a55f855609b20c11ddb56f21d054657",
+          "sha256": "31931a5461368822d2dac30c05366807cb69ebfd117faa5d70d4f5d6e9120192"
+        },
+        {
+          "path": "public/atlas/thumb/metre.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "061eb4050613b2c6cfa0c59eab94b5dc95f7019301e20a356fbb46cb1d9c4a8a",
+          "sha256": "b0d2a840e099340b079cda7f41595003360e3d1f0a0798091f707c70f6c94c0e"
+        }
+      ]
+    },
+    {
+      "id": "kilometre",
+      "meaning": "千米",
+      "reason": "原图道路风景无法区分具体距离单位",
+      "prompt": "A very simple overhead straight road joining two large milestone signs, left '0 m', right '1000 m'. One prominent dimension line over road labelled '1 km'. Bottom equation '1 km = 1000 m'. No cyclist or scenery.\nSquare vocabulary illustration, match original mid-century gouache, warm cream paper with subtle grain, navy, ochre, terracotta, sage palette. Large unmistakable educational subject; no people, plants, landscape or distracting objects. Exact requested English/numeric labels only. Legible at thumbnail size.",
+      "source": "exec-2cf14809-b858-47ae-a757-f3c0e395a25f.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/kilometre.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "944f5f8b8f173c7129c6a660c1dddee18962559557bbd05ea63eb27e37d5e0d3",
+          "sha256": "c9f11dd4c1f14df82271379de352d3bc3058bd4d7223eef50fab03ee9b32b3f5"
+        },
+        {
+          "path": "public/atlas/thumb/kilometre.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "ed3aabf8e577aff8c6551b83405e0318d678c7970ff137cd4d6624052996336b",
+          "sha256": "8cd87c6e43422099e703c3830871873823d807d8e26efba9cf553133ab5bc2df"
+        }
+      ]
+    },
+    {
+      "id": "mile",
+      "meaning": "英里",
+      "reason": "原图行走场景缺少英里距离标识",
+      "prompt": "A simple straight road between two milestone posts. Prominent dimension arrow spanning road with label '1 mile'. Large clear conversion beneath '1 mile ≈ 1.61 km'. No walker, bicycle or scenery.\nSquare vocabulary illustration, match original mid-century gouache, warm cream paper with subtle grain, navy, ochre, terracotta, sage palette. Large unmistakable educational subject; no people, plants, landscape or distracting objects. Exact requested English/numeric labels only. Legible at thumbnail size.\nRevision: Fix the visual diagram: remove perspective road entirely. Draw a single horizontal straight road segment seen from directly overhead, running LEFT TO RIGHT from the left milestone 0 mile to right milestone 1 mile. Dimension arrow runs parallel ABOVE road indicating distance traveled along road, never across road width. Retain warm gouache paper style and correct bottom text '1 mile ≈ 1.61 km'. Clean uncluttered diagram.",
+      "source": "exec-4cc68c2d-cc4a-4020-bc22-7d2f0c21b616.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/mile.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "15a0b9480884f4b749a381e5543abf1003dafb65c9b8e444c244b16968aac93d",
+          "sha256": "ba85ffacbcd2d5d960f56d5bff897191732daa0c32608dd081facddf2594f6bf"
+        },
+        {
+          "path": "public/atlas/thumb/mile.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "9cae3a3f983fbe482a37ec5aa2569197925a20357d3d78d1a8285fef336e576e",
+          "sha256": "bc5dc3bab5b07278d94a0947e72c44e3be842b652cab45ce7f351a3f2647e716"
+        }
+      ]
+    },
+    {
+      "id": "centimetre",
+      "meaning": "厘米",
+      "reason": "原图方块缺少尺度参照",
+      "prompt": "Macro view of a ruler segment showing EXACTLY numbered major marks 0, 1, 2 with small cm label. Ten equal millimetre subdivisions between each major mark. A red double-headed arrow from 0 to 1 labelled '1 cm'. Bottom '1 cm = 10 mm'.\nSquare vocabulary illustration, match original mid-century gouache, warm cream paper with subtle grain, navy, ochre, terracotta, sage palette. Large unmistakable educational subject; no people, plants, landscape or distracting objects. Exact requested English/numeric labels only. Legible at thumbnail size.",
+      "source": "exec-2675290a-4a1d-4d39-8fcd-526977f25ad2.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/centimetre.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "37fa6df2ab5d7ac86dbfbe1005d58227e1975cb347f05378ffb28bc6849d951e",
+          "sha256": "e870e92e82948140a329eb36806c8a99e9fff32c2aeab2603ceb00531531151d"
+        },
+        {
+          "path": "public/atlas/thumb/centimetre.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "688a41d3f5b6802f77606aa05ccfce2188edcfc0d7c2f05080ead65556e64818",
+          "sha256": "1b0e917552abbd471b9a35bcfb6dfb486bccf21954c4c3742ce66f3cf1403a0a"
+        }
+      ]
+    },
+    {
+      "id": "millimetre",
+      "meaning": "毫米",
+      "reason": "原图只有铅笔尖没有毫米尺度",
+      "prompt": "A greatly enlarged ruler section between 0 cm and 1 cm with EXACTLY ten equal divisions. Highlight ONLY first interval in terracotta and arrow label '1 mm'. Bottom equation '10 mm = 1 cm'. No pencil.\nSquare vocabulary illustration, match original mid-century gouache, warm cream paper with subtle grain, navy, ochre, terracotta, sage palette. Large unmistakable educational subject; no people, plants, landscape or distracting objects. Exact requested English/numeric labels only. Legible at thumbnail size.",
+      "source": "exec-86db7186-6144-4640-b1ef-ac62dbb14e00.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/millimetre.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "16be6f8d4828ea4bd54e3cc65ec68421d835148b8d1da296aa5cb15d1c75092a",
+          "sha256": "354e9540e3ff651e65a52df5e03993d0ede8730f3d7e1615a368ed89fceeb6db"
+        },
+        {
+          "path": "public/atlas/thumb/millimetre.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "5912bc52038966f435a1557cc0337006776d8221f099bf565aa476d85ff604d3",
+          "sha256": "71465440ecf0ebb99e1317e4b3007a3c597ab43217cae7ea73d8ef7cb940a824"
+        }
+      ]
+    },
+    {
+      "id": "seventeen",
+      "meaning": "十七",
+      "reason": "原图珠子分散且有遮挡无法直观数出十七",
+      "prompt": "Huge bold navy numeral '17' at top. Beneath exactly SEVENTEEN identical round ochre counters: first row 5, second row 5, third row 5, fourth row 2 centered. Clearly spaced. Small word 'seventeen' below. No extra dots or ornaments.\nSquare vocabulary illustration, match original mid-century gouache, warm cream paper with subtle grain, navy, ochre, terracotta, sage palette. Large unmistakable educational subject; no people, plants, landscape or distracting objects. Exact requested English/numeric labels only. Legible at thumbnail size.",
+      "source": "exec-2ed77590-97ec-4a73-bbd8-a98602e6c97b.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/seventeen.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "54aad680a7c6711bc1e6293473e319f38d3eada7f1a7c325ada63636e04f7f4e",
+          "sha256": "694ffad236a9fdfe46a65c4c16d4327864b06ce1e2f675779d9c2f389dfc6c0b"
+        },
+        {
+          "path": "public/atlas/thumb/seventeen.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "8b193047ea6d74d2b19da51a2a7f1a37027f4363703678e93f426bea0b90e1a5",
+          "sha256": "03fb96f2e63f2d5e56578ef27da75337f5cb97982028eef580637496012f77e6"
+        }
+      ]
+    },
+    {
+      "id": "hundred",
+      "meaning": "一百",
+      "reason": "原图积木有散落及遮挡使数量不明确",
+      "prompt": "Huge numeral '100' at top. Below a simple flat SQUARE ten by ten grid with exactly 10 columns and 10 rows, alternating cream and muted ochre cells. Small bottom equation '10 × 10 = 100'. No perspective, people or loose blocks.\nSquare vocabulary illustration, match original mid-century gouache, warm cream paper with subtle grain, navy, ochre, terracotta, sage palette. Large unmistakable educational subject; no people, plants, landscape or distracting objects. Exact requested English/numeric labels only. Legible at thumbnail size.",
+      "source": "exec-f0482acd-946b-475b-b8d0-cec437723640.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/hundred.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "13e8249f9865c9db7a675ac1bf9bbf089bf3dd53aabbbe0e985b5370729f0341",
+          "sha256": "1bfd260d6b12572b6ebdcb2639593cc5e6e7e8426c015030b18b092d7c0591c1"
+        },
+        {
+          "path": "public/atlas/thumb/hundred.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "2c258ce138152c0c7cfb7481725204e48c1edb4350faf1ce6a2b887194cdedc5",
+          "sha256": "0c535ffa3f7ba15d74717aad7685cc97b11365c4c743d26d51f13036f058520a"
+        }
+      ]
+    },
+    {
+      "id": "thousand",
+      "meaning": "一千",
+      "reason": "原图三维球体有遮挡难以核实一千",
+      "prompt": "Huge numeral '1000' at top. Below exactly TEN small rectangular bundles in two rows of five, each bundle clearly labelled '100'. Bottom equation '10 × 100 = 1000'. No tiny dots, no perspective or people.\nSquare vocabulary illustration, match original mid-century gouache, warm cream paper with subtle grain, navy, ochre, terracotta, sage palette. Large unmistakable educational subject; no people, plants, landscape or distracting objects. Exact requested English/numeric labels only. Legible at thumbnail size.",
+      "source": "exec-2ccda7df-4e66-4c6e-8d55-0cbccaa373d2.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/thousand.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "b434e2e3e9c02cbe19bdca6f210df146795459685d0049d1d1c52873acd25c6a",
+          "sha256": "8484a723089bd6912b042eb06bb5e76f294e88fa32c56ee6692a728c3a3930f8"
+        },
+        {
+          "path": "public/atlas/thumb/thousand.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "faf176b1010d347ac741ff2cd26a396282df0cc5588a7bc29bbdcf66535849c1",
+          "sha256": "3009672d627b178123e1c188fc4baf9e9f33ccba711eec58ae9d919c569211de"
+        }
+      ]
+    },
+    {
+      "id": "ruler",
+      "meaning": "直尺",
+      "reason": "原图儿童画线占主要画面且尺上刻度不清",
+      "prompt": "One large wooden school ruler diagonally on cream paper. Clear straight edge, measurement tick marks and clearly sequential small numbers 0 1 2 3 4 5 6 7 8 9 10 with cm at end. Ruler fills image. No hands, pencils or desk clutter.\nSquare vocabulary illustration, match original mid-century gouache, warm cream paper with subtle grain, navy, ochre, terracotta, sage palette. Large unmistakable educational subject; no people, plants, landscape or distracting objects. Exact requested English/numeric labels only. Legible at thumbnail size.\nRevision: Keep this wooden ruler image, composition, gouache texture and numbers 0 through 10 exactly. DELETE ALL short minor tick marks. Leave ONLY eleven equally spaced long marks corresponding to eleven numbers 0,1,2,3,4,5,6,7,8,9,10. No minor marks whatsoever. Keep cm. Do not crop ruler.",
+      "source": "exec-edc8899a-fc82-494d-8075-b8a41b28a446.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/ruler.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "7334c609c25a16e4c1a084219903ce2e83121a8f7debaa5726ca4390257e4ef7",
+          "sha256": "c1ff1403f094e0edad64a37fb6d2e2e0c5f9b7bd103bf33660baf5ed154a4fe9"
+        },
+        {
+          "path": "public/atlas/thumb/ruler.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "2273a51b82bd3ef76a10d9af54e51c8a1a32b33ad37cf6e44dcc8f82167772b2",
+          "sha256": "26a97f6b27406a24312ead69f96590fa61e3e5b92e7e30b90205333c6a777faf"
+        }
+      ]
+    },
+    {
+      "id": "pen",
+      "meaning": "钢笔",
+      "reason": "原图花朵与画画动作比钢笔突出",
+      "prompt": "One oversized navy fountain pen diagonal with unmistakable gold metal split nib visible in foreground, cap beside it, small dark ink stroke beneath nib. Main pen fills frame. No hand, flowers, notebook or other tools.\nSquare vocabulary illustration, match original mid-century gouache, warm cream paper with subtle grain, navy, ochre, terracotta, sage palette. Large unmistakable educational subject; no people, plants, landscape or distracting objects. Exact requested English/numeric labels only. Legible at thumbnail size.\nRevision: Keep the beautiful navy gold fountain pen, cap and ink stroke unchanged. Remove ALL typography completely: remove Fountain Pen heading, Noun badge, whole definition, No.27 badge including outline. Fill those areas with matching plain warm cream paper. Absolutely no letters, words, numbers, labels or badges anywhere. Image only.",
+      "source": "exec-9ebc3e77-f48e-40bf-a716-92f35d4ab21d.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/pen.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "e317a1ee284298e9845b18e55d334c14081d020f203dad8a635fcd8b1a2e09d4",
+          "sha256": "d088b5d3ba58000d41010dca402013407252e5abf46f86eaffa38404b0324faf"
+        },
+        {
+          "path": "public/atlas/thumb/pen.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "60b1e52d79d5b32d724d34d57939f506a82d2632932d78248695445125f7e242",
+          "sha256": "3efa9c1633ff2b931f9d57c38b157da5694940de18d1cc814960a1e6c9c497c4"
+        }
+      ]
+    },
+    {
+      "id": "pencil",
+      "meaning": "铅笔",
+      "reason": "原图猫的画像占据主体",
+      "prompt": "One oversized sharpened ochre wooden graphite pencil diagonal, clearly exposed wood cone and black graphite point, small pink eraser at opposite end. Small graphite line beneath tip. No hand, drawing, cat or objects.\nSquare vocabulary illustration, match original mid-century gouache, warm cream paper with subtle grain, navy, ochre, terracotta, sage palette. Large unmistakable educational subject; no people, plants, landscape or distracting objects. Exact requested English/numeric labels only. Legible at thumbnail size.",
+      "source": "exec-5548dfac-96c1-444c-9668-cbd848cfb7b3.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/pencil.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "09c5891e15b0477ff247eccff4de1a8f1dd3b0a0a1a356a8ba9ac8c2eb3f6544",
+          "sha256": "f20334d33483259b0039080cb55762c838364a1cb1a8099f05e36ac9677c63eb"
+        },
+        {
+          "path": "public/atlas/thumb/pencil.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "0daa831fbcff2da2e99e82a500cbf8d5dbda742d7958b079050eba7f86500fc8",
+          "sha256": "a8f103a8336240233e9412d325d7182e3833984a993fce6ecd1acc29fef3260d"
+        }
+      ]
+    },
+    {
+      "id": "price",
+      "meaning": "价格",
+      "reason": "原图买卖场景没有显示价格",
+      "prompt": "One small plain teacup with one LARGE attached paper price tag, prominently and clearly reading '$5'. Tag occupies half composition, thin string visibly attaches it to cup handle. No shopkeeper, customers or coins.\nSquare vocabulary illustration, match original mid-century gouache, warm cream paper with subtle grain, navy, ochre, terracotta, sage palette. Large unmistakable educational subject; no people, plants, landscape or distracting objects. Exact requested English/numeric labels only. Legible at thumbnail size.",
+      "source": "exec-b497788f-2d5f-44aa-8274-a766214f1581.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/price.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "27a6bc44753ec17a942caa5c1677be94e2c279e18cbddc93c4978ab873633951",
+          "sha256": "78ea7cd88bb8672a672e02e5b0a16f496dc4636ce5e4eb21ab7a508340b8786e"
+        },
+        {
+          "path": "public/atlas/thumb/price.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "4206f8e5ba7b5e4d32044686a4c10668517629d30e519a2348f317da2f07dce6",
+          "sha256": "5ed458f68e311351296c3790d25f0a7f076e0b4db1e8ee294cf699ab033be061"
+        }
+      ]
+    },
+    {
+      "id": "cash",
+      "meaning": "现金",
+      "reason": "原图交易人物和摊位掩盖现金",
+      "prompt": "Large close-up still life of two stylized generic paper banknotes and several coins, all clearly separated and recognizable, occupying whole frame. Bills marked 10 and 20 without real country seals, coins simple. No hands, wallet, people or stalls.\nSquare vocabulary illustration, match original mid-century gouache, warm cream paper with subtle grain, navy, ochre, terracotta, sage palette. Large unmistakable educational subject; no people, plants, landscape or distracting objects. Exact requested English/numeric labels only. Legible at thumbnail size.",
+      "source": "exec-8c17cb26-8180-48b2-8b9c-5ed6d58e914e.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/cash.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "085f85da55cae1b3e44f83518aedb74931a9d8c4575b40822521973c9423153e",
+          "sha256": "e3045a47d7b6905fb0cc8c1cc1720bdc2c5fd77bcb960c31453655618c7f03d8"
+        },
+        {
+          "path": "public/atlas/thumb/cash.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "1f069a886cc4f869a64c8b32fd13766dd00034733a7b932ab9617236b30729d6",
+          "sha256": "0def59a29a59b3a3ba34e8136f565318da1eb05d719bc93dd07008bef5ddfd20"
+        }
+      ]
+    },
+    {
+      "id": "money",
+      "meaning": "钱",
+      "reason": "原图钱币很小而购物人物占主要画面",
+      "prompt": "Simple large still life of three generic stylized banknotes fanned out behind a short stack of gold and silver coins. Notes marked 5, 10, 20, no real currency detail. Currency fills frame; no people, groceries or background scene.\nSquare vocabulary illustration, match original mid-century gouache, warm cream paper with subtle grain, navy, ochre, terracotta, sage palette. Large unmistakable educational subject; no people, plants, landscape or distracting objects. Exact requested English/numeric labels only. Legible at thumbnail size.",
+      "source": "exec-5fb9b316-5756-4e80-8c42-4f470c55bf9c.png",
+      "date": "2026-11-16",
+      "files": [
+        {
+          "path": "public/atlas/img/money.webp",
+          "width": 512,
+          "height": 512,
+          "previousSha256": "9878ccb599f65be8fa54c9b5a8697a78721f20b808a79199c5c5c713fa24dc95",
+          "sha256": "819050918cf1110b1ced1ba09a55ac076c731b21b58b702ab4ef310b24db4403"
+        },
+        {
+          "path": "public/atlas/thumb/money.webp",
+          "width": 256,
+          "height": 256,
+          "previousSha256": "7e77527ba7b990d97b46c4c8230d76a8919f427170435b2b11092a09c0c7a688",
+          "sha256": "c6792a388456c39b4428ab31e9b2a6a3857112ba3d0d076004531d23784bce6b"
+        }
+      ]
+    }
+  ],
+  "lastUpdated": "2026-11-16"
+}

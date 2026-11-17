@@ -36,6 +36,8 @@ npm run check:atlas
 
 `node scripts/prepare-supplemental-art.mjs` 只整理提示词，不调用图像服务。生成并检查新图片后，使用 `python scripts/install-supplemental-art.py <词条id> <源PNG路径>` 安装（需要 Pillow）；脚本输出 quality 88 的 WebP 图像对并更新清单和词卡标志，拒绝覆盖已有图片。
 
+重绘时以词义为主：具体名词优先使用物体特写，动作只保留必要线索，避免人物和例句背景抢占主体。已审核的替换记录保存在 `data/illustration-revisions.json`，包括完整提示词、内置 image_gen 来源、替换前后哈希及图像尺寸。完整图与缩略图沿用原路径成对更新，词条 ID、文字、语音和学习记录不变。原始 PNG 保留于本地 `output/image-revisions/`，不随分支提交。
+
 提交前运行 `npm test`、`npm run check:atlas`、`npm run build`。补充词卡测试覆盖例句查词、引用与图片配对；自动检查不能证明释义和图意完全准确。
 
 ## 补充词卡录音

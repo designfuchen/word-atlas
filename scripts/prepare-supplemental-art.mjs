@@ -9,13 +9,16 @@ const selected = new Set(`abdomen appliance artisan artwork ash attic backyard b
 for (const word of 'archive dad drainage dropping ensemble fixture flatmate forage freshwater groundwater headteacher heatwave interior laser metalworking mining organism particle processor rainwater restorer scrap screening seawater sediment sensor shipbuilding sitter terrain valuables ventilation venue veterinary voyage wastewater weightlessness wholegrain wholemeal'.split(' ')) selected.add(word);
 const style = 'Mid-century modern editorial illustration, like a plate from a vintage illustrated field guide. Strict limited palette: deep ink navy, warm terracotta, mustard ochre, muted sage green and soft sky blue on warm cream paper. Flat geometric shapes, confident clean silhouettes, subtle risograph grain and paper texture, gentle shading, one clear focal subject with generous negative space, centered square composition, calm and charming mood. Absolutely no text, letters, words, numbers, captions, signs, logos, watermarks or frames.';
 const data = JSON.parse(fs.readFileSync(path.join(root, 'public/atlas/supplemental.json'), 'utf8'));
+// Keep the reviewed card identity after the spelling correction tong -> tongs.
+selected.delete('tong');
+selected.add('tongs');
 const previousPath = path.join(root, 'data/supplemental-art.json');
 const previous = fs.existsSync(previousPath) ? JSON.parse(fs.readFileSync(previousPath, 'utf8')).assets : [];
 const assets = data.entries.filter(e => selected.has(e.w)).map(e => {
   const prior = previous.find(a => a.id === e.id);
   return {
     id: e.id, word: e.w, status: prior?.status || 'pending',
-    prompt: `Create one square vocabulary illustration for "${e.w}". Show a clear, recognizable concrete subject or visible action matching its use in this example: ${e.ex[0].en} (${e.ex[0].zh}). Dictionary meanings for context only: ${e.senses.map(s => s.zh).join('; ')}. Depict only the meaning used in the example, avoiding unrelated alternate definitions. The target word must be the unmistakable visual focus. Use a simple natural scene, not an infographic or collage. ${style}`,
+    prompt: `Create one square vocabulary illustration for "${e.w}". Dictionary meanings: ${e.senses.map(s => s.zh).join('; ')}. Use this example only to disambiguate the sense, NOT as a scene to reproduce: ${e.ex[0].en} (${e.ex[0].zh}). Make the target meaning instantly recognizable at thumbnail size. For concrete nouns, show a large close-up of the object occupying most of the frame with a minimal background; omit people unless the noun denotes a person. For body parts, show the relevant part in close-up. For actions, retain only the essential subject and action cues. Do not let faces, gestures, example activities or scenery compete with the target meaning. Never depict an incidental object instead of the headword. ${style}`,
     ...(prior?.source ? {source:prior.source} : {}),
   };
 });
