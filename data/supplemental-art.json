@@ -2028,7 +2028,7 @@
     },
     {
       "id": "extra-tong",
-      "word": "tongs",
+      "word": "tong",
       "status": "generated",
       "prompt": "Create one square vocabulary illustration for \"tong\". Show a clear, recognizable concrete subject or visible action matching its use in this example: The worker lifted a shiny ingot with heavy tongs. (工人用沉重的钳子夹起了一块闪亮的金属锭。). Dictionary meanings for context only: 钳子, 帮会; 用钳子钳起. Depict only the meaning used in the example, avoiding unrelated alternate definitions. The target word must be the unmistakable visual focus. Use a simple natural scene, not an infographic or collage. Mid-century modern editorial illustration, like a plate from a vintage illustrated field guide. Strict limited palette: deep ink navy, warm terracotta, mustard ochre, muted sage green and soft sky blue on warm cream paper. Flat geometric shapes, confident clean silhouettes, subtle risograph grain and paper texture, gentle shading, one clear focal subject with generous negative space, centered square composition, calm and charming mood. Absolutely no text, letters, words, numbers, captions, signs, logos, watermarks or frames. Any people must wear ordinary clothing or appropriate work/sports attire.",
       "source": "exec-6a1b9428-12e9-4a3f-8168-84cfe9cc8a07.png"

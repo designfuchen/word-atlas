@@ -44,6 +44,8 @@ npm run check:atlas
 
 1,295 张补充词卡配有 4,611 段英美发音与例句录音，沿用 `public/atlas/audio/{uk,us,ex,ex2}/extra-<id>.mp3` 路径。生成来源、声音、文本与哈希记录在 `data/supplemental-audio.json`；生成和授权说明见[补充语音维护说明](supplemental-audio.md)。重新生成词卡会保留已有录音的媒体标志。
 
+本次两轮插画调整共替换 105 张词卡（80 张原词卡、25 张补充词卡），对应 210 个大图及缩略图文件。`data/original-illustration-audit.json` 记录 7,298 张原图的首轮筛查；详细复核尚未完成，待复核项不是已确认错误。本次图片更新不包含另行准备的词卡内容、音频更新或 Android 打包改动。
+
 ## 质量边界
 
 自动校验覆盖结构、字段、顺序和文件，不覆盖语义正确性。插画和例句没有逐条人工审校；发现问题请提 Issue 或 PR。

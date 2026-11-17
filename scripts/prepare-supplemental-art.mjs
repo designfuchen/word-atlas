@@ -9,9 +9,6 @@ const selected = new Set(`abdomen appliance artisan artwork ash attic backyard b
 for (const word of 'archive dad drainage dropping ensemble fixture flatmate forage freshwater groundwater headteacher heatwave interior laser metalworking mining organism particle processor rainwater restorer scrap screening seawater sediment sensor shipbuilding sitter terrain valuables ventilation venue veterinary voyage wastewater weightlessness wholegrain wholemeal'.split(' ')) selected.add(word);
 const style = 'Mid-century modern editorial illustration, like a plate from a vintage illustrated field guide. Strict limited palette: deep ink navy, warm terracotta, mustard ochre, muted sage green and soft sky blue on warm cream paper. Flat geometric shapes, confident clean silhouettes, subtle risograph grain and paper texture, gentle shading, one clear focal subject with generous negative space, centered square composition, calm and charming mood. Absolutely no text, letters, words, numbers, captions, signs, logos, watermarks or frames.';
 const data = JSON.parse(fs.readFileSync(path.join(root, 'public/atlas/supplemental.json'), 'utf8'));
-// Keep the reviewed card identity after the spelling correction tong -> tongs.
-selected.delete('tong');
-selected.add('tongs');
 const previousPath = path.join(root, 'data/supplemental-art.json');
 const previous = fs.existsSync(previousPath) ? JSON.parse(fs.readFileSync(previousPath, 'utf8')).assets : [];
 const assets = data.entries.filter(e => selected.has(e.w)).map(e => {
