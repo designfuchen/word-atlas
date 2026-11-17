@@ -10,6 +10,8 @@
     "test": "node --import tsx --test src/**/*.test.ts",
     "check:atlas": "node scripts/check-atlas.mjs",
     "build:atlas": "python3 scripts/atlas/build_atlas.py",
+    "build:sentence-cards": "node scripts/build-sentence-cards.mjs",
+    "check:sentence-cards": "node --import tsx --test src/lib/wordLookup.test.ts",
     "render:cards": "node scripts/render-cards.mjs",
     "pack:public": "python3 scripts/package_public.py --out ../开源发布/word-atlas",
     "format": "prettier --write src vite.config.ts scripts/*.mjs package.json tsconfig.json"

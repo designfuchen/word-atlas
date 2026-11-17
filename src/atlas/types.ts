@@ -28,6 +28,8 @@ export interface Entry {
   tip: string;
   cefr: string;
   topic: string;
+  /** Additional dictionary card using examples from the original atlas. */
+  supplemental?: boolean;
   /** Usage caution (register, offensiveness, spelling), shown with the entry. */
   note?: string;
   /** Media bit flags, see MEDIA. */
@@ -61,6 +63,7 @@ export interface Atlas {
   cefr: string[];
   words: WordRef[];
   byId: Map<string, WordRef>;
+  lookup: (word: string) => WordRef | undefined;
   /** Loads full entries; chunked for the open atlas, in-memory for private sets. */
   entry: (id: string) => Promise<Entry>;
   peek: (id: string) => Entry | undefined;
