@@ -224,7 +224,7 @@ function Quiz({ step, session }: { step: Step & { kind: QuizKind }; session: Act
       </section>
 
       {step.kind === "spell" ? (
-        <SpellInput entry={entry} pending={pending} hints={hints} onHint={() => setHints((h) => Math.min(entry.w.length - 1, h + 1))} onSubmit={(v) => submit(v, normalize(v) === normalize(entry.w))} />
+        <SpellInput entry={entry} pending={pending} hints={hints} onHint={() => setHints((h) => h + 1)} onSubmit={(v) => submit(v, normalize(v) === normalize(entry.w))} />
       ) : (
         <ul className={`options ${step.kind === "meaning" ? "options-zh" : "options-en"}`}>
           {options.map((o, i) => {
@@ -279,11 +279,27 @@ function SpellInput({ entry, pending, hints, onHint, onSubmit }: { entry: Entry;
   const [value, setValue] = useState("");
   const input = useRef<HTMLInputElement>(null);
   const target = entry.w;
-  const prefix = target.slice(0, hints);
-  useEffect(() => {
-    if (hints && !normalize(value).startsWith(normalize(prefix))) setValue(prefix);
-    input.current?.focus();
-  }, [hints]); // eslint-disable-line react-hooks/exhaustive-deps
+  const chars = Array.from(target);
+  void hints;
+  // Length of the correctly typed prefix (case-insensitive). A hint reveals the next letter after it.
+  const typedChars = Array.from(value);
+  let okLen = 0;
+  while (okLen < typedChars.length && okLen < chars.length && typedChars[okLen].toLowerCase() === chars[okLen].toLowerCase()) okLen++;
+  // Keep the caret at the end and the value no longer than the slots, so the slots always show
+  // exactly what Backspace will delete. Hidden overflow characters used to make deletion look stuck.
+  const focusEnd = () => {
+    const el = input.current;
+    if (!el) return;
+    el.focus();
+    const n = el.value.length;
+    el.setSelectionRange(n, n);
+  };
+  const hint = () => {
+    if (okLen >= chars.length - 1) return;
+    setValue(chars.slice(0, okLen + 1).join(""));
+    onHint();
+    requestAnimationFrame(focusEnd);
+  };
   const shown = pending ? pending.value : value;
   return (
     <form
@@ -293,7 +309,7 @@ function SpellInput({ entry, pending, hints, onHint, onSubmit }: { entry: Entry;
         if (!pending && value.trim()) onSubmit(value);
       }}
     >
-      <div className="slots" aria-hidden="true" onClick={() => input.current?.focus()}>
+      <div className="slots" aria-hidden="true" onClick={focusEnd}>
         {Array.from(target).map((ch, i) => {
           const typed = shown[i];
           const ok = typed !== undefined && typed.toLowerCase() === ch.toLowerCase();
@@ -308,7 +324,12 @@ function SpellInput({ entry, pending, hints, onHint, onSubmit }: { entry: Entry;
         ref={input}
         className="spell-input"
         value={shown}
-        onChange={(e) => !pending && setValue(e.target.value.slice(0, target.length + 6))}
+        onChange={(e) => !pending && setValue(Array.from(e.target.value).slice(0, chars.length).join(""))}
+        onSelect={(e) => {
+          const el = e.currentTarget;
+          const n = el.value.length;
+          if (el.selectionStart !== n || el.selectionEnd !== n) el.setSelectionRange(n, n);
+        }}
         autoFocus
         autoCapitalize="off"
         autoCorrect="off"
@@ -320,7 +341,7 @@ function SpellInput({ entry, pending, hints, onHint, onSubmit }: { entry: Entry;
       />
       {!pending && (
         <div className="spell-actions">
-          <button type="button" className="btn btn-ghost" onClick={onHint} disabled={hints >= target.length - 1}>
+          <button type="button" className="btn btn-ghost" onClick={hint} disabled={okLen >= chars.length - 1}>
             <Lightbulb size={17} /> 提示字母
           </button>
           <button type="submit" className="btn btn-primary" disabled={!value.trim()}>
