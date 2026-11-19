@@ -15,16 +15,11 @@
 
 <br>
 
-**词光 iOS App 测试版已开放，免费下载：[api.billswise.cn/app](https://api.billswise.cn/app/)**
+<br>
 
-[![关注 @yangleiocx3](https://img.shields.io/badge/%E5%85%B3%E6%B3%A8%E6%88%91-@yangleiocx3-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/yangleiocx3)
+**The Word Atlas iOS app (词光) is now on the App Store, free: [Download on the App Store](https://apps.apple.com/app/id6827459612)**
 
-### 请我喝杯咖啡
-
-这个项目开源，又免费，我自己投了很多钱和时间。觉得有用的话，请我喝杯咖啡吧。
-
-<table><tr><td align="center"><img src="docs/assets/sponsor/wechatpay.png" width="240" alt="微信赞助二维码"><br>微信</td><td align="center"><img src="docs/assets/sponsor/alipay.png" width="240" alt="支付宝赞助二维码"><br>支付宝</td></tr></table>
-
+[![Follow @yangleiocx3](https://img.shields.io/badge/Follow_me-@yangleiocx3-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/yangleiocx3)
 </div>
 
 ---
