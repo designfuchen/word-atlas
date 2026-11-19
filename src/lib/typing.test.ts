@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { clean, same, typingDelta, typingMetrics } from "./typing";
+import { clean, practiceBatch, same, typingDelta, typingMetrics } from "./typing";
 
 test("typing counts inserted characters and does not reward deletions", () => {
   assert.deepEqual(typingDelta("", "c", "cat"), { total: 1, correct: 1 });
@@ -99,4 +99,14 @@ test("metrics never emit NaN, Infinity, negatives or accuracy above 100", () => 
   assert.deepEqual(typingMetrics(20, 10, 10, 60000), { accuracy: 100, wpm: 2 });
   assert.deepEqual(typingMetrics(-1, 10, -10, 60000), { accuracy: 0, wpm: 0 });
   assert.deepEqual(typingMetrics(NaN, Infinity, 2, Infinity), { accuracy: 100, wpm: 0 });
+});
+
+test("practice can draw words from the whole pool, not just the first 60", () => {
+  const pool = Array.from({ length: 70 }, (_, i) => `w${i}`);
+  const reachable = new Set<string>();
+  for (let seed = 1; seed <= 200; seed++) practiceBatch(pool, seed).forEach((id) => reachable.add(id));
+  assert.ok(
+    Array.from({ length: 10 }, (_, i) => `w${60 + i}`).some((id) => reachable.has(id)),
+    "words after index 60 should be reachable",
+  );
 });
