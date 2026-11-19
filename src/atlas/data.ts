@@ -11,6 +11,8 @@ interface IndexFile {
   examples: number;
   illustrated: number;
   chunk: number;
+  /** Content hash of the entry chunks; busts their cache-first Service Worker entries. */
+  hash?: string;
   topics: [string, string][];
   cefr: string[];
   words: IndexRow[];
@@ -20,6 +22,7 @@ export async function loadOpenAtlas(): Promise<Atlas> {
   const res = await fetch(url("index.json"));
   if (!res.ok) throw new Error(`词库索引加载失败（${res.status}）`);
   const idx = (await res.json()) as IndexFile;
+  const version = idx.hash ? `?v=${encodeURIComponent(idx.hash)}` : "";
   const words: WordRef[] = idx.words.map((r, order) => ({
     id: r[0],
     word: r[1],
@@ -37,7 +40,7 @@ export async function loadOpenAtlas(): Promise<Atlas> {
   const loadChunk = (n: number) => {
     let p = pending.get(n);
     if (!p) {
-      p = fetch(url(`entries/${n}.json`))
+      p = fetch(url(`entries/${n}.json${version}`))
         .then((r) => {
           if (!r.ok) throw new Error(`词条加载失败（${r.status}）`);
           return r.json() as Promise<Entry[]>;

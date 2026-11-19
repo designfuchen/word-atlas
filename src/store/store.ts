@@ -134,10 +134,38 @@ function validCard(v: unknown): v is CardState {
   );
 }
 
+const STEP_KINDS = new Set(["intro", "meaning", "picture", "listen", "spell"]);
+const GRADES = [1, 2, 3, 4];
+const RESERVED_KEYS = new Set(["__proto__", "constructor", "prototype"]);
+
+function validStep(v: unknown): v is Step {
+  return (
+    isObj(v) &&
+    typeof v.id === "string" &&
+    typeof v.kind === "string" &&
+    STEP_KINDS.has(v.kind) &&
+    (v.retry === undefined || typeof v.retry === "boolean") &&
+    (v.options === undefined || (Array.isArray(v.options) && v.options.every((x) => typeof x === "string")))
+  );
+}
+
+function validSession(v: unknown): v is ActiveSession {
+  if (!isObj(v)) return false;
+  if (typeof v.id !== "string" || !Array.isArray(v.steps) || !v.steps.every(validStep)) return false;
+  if (!num(v.index, 0) || !num(v.started, 0)) return false;
+  if (!isObj(v.graded) || !Object.values(v.graded).every((g) => GRADES.includes(g as number))) return false;
+  if (!Array.isArray(v.newIds) || !v.newIds.every((x) => typeof x === "string")) return false;
+  if (!Array.isArray(v.reviewIds) || !v.reviewIds.every((x) => typeof x === "string")) return false;
+  if (v.finished !== undefined && !num(v.finished, 0)) return false;
+  if (v.pending !== undefined && (!isObj(v.pending) || typeof v.pending.correct !== "boolean" || typeof v.pending.value !== "string")) return false;
+  return true;
+}
+
 export function sanitizeProgress(v: unknown, datasetId: string): Progress {
   const out = emptyProgress(datasetId);
   if (!isObj(v) || v.version !== 2) return out;
-  if (isObj(v.cards)) for (const [k, c] of Object.entries(v.cards)) if (validCard(c)) out.cards[k] = c;
+  if (isObj(v.cards))
+    for (const [k, c] of Object.entries(v.cards)) if (!RESERVED_KEYS.has(k) && validCard(c)) out.cards[k] = c;
   if (Array.isArray(v.bookmarks)) out.bookmarks = v.bookmarks.filter((x): x is string => typeof x === "string").slice(0, 20000);
   if (Array.isArray(v.mistakes)) out.mistakes = v.mistakes.filter((x): x is string => typeof x === "string").slice(0, 300);
   if (isObj(v.days))
@@ -152,8 +180,7 @@ export function sanitizeProgress(v: unknown, datasetId: string): Progress {
       )
       .slice(-500);
   const s = v.session;
-  if (isObj(s) && typeof s.id === "string" && Array.isArray(s.steps) && num(s.index, 0) && isObj(s.graded))
-    out.session = s as unknown as ActiveSession;
+  if (validSession(s)) out.session = { ...s, index: Math.min(s.index, s.steps.length) };
   return out;
 }
 
@@ -209,9 +236,11 @@ function scheduleSave() {
 export function flush() {
   window.clearTimeout(saveTimer);
   if (!dirty) return;
-  dirty = false;
   const progressOk = loadedId !== state.progress.datasetId || write(progressKey(state.progress.datasetId), state.progress);
   const ok = progressOk && write(SETTINGS_KEY, state.settings);
+  // Keep the change pending after a failed write (e.g. QuotaExceededError) so the
+  // next flush retries instead of silently dropping it.
+  dirty = !ok;
   if (ok === state.saveError) {
     state = { ...state, saveError: !ok };
     emit();
@@ -224,6 +253,9 @@ if (typeof window !== "undefined") {
   // Another tab saved: adopt its data instead of keeping a stale copy.
   window.addEventListener("storage", (e) => {
     if (!e.newValue) return;
+    // This tab has unsaved edits (still inside the debounce window): adopting the
+    // other tab's snapshot here would discard them.
+    if (dirty) return;
     try {
       if (e.key === SETTINGS_KEY) state = { ...state, settings: sanitizeSettings(JSON.parse(e.newValue)) };
       else if (e.key === progressKey(state.progress.datasetId))
@@ -304,6 +336,10 @@ export function importBackup(text: string): { ok: true; cards: number } | { ok: 
   }
   if (!isObj(data) || data.app !== "word-atlas" || data.version !== 2 || !isObj(data.progress))
     return { ok: false, error: "这不是词光的学习备份。" };
+  // The outer envelope and the progress payload are versioned separately: a v1
+  // progress payload would otherwise be sanitized to an empty progress and then
+  // saved over the learner's real cards.
+  if (data.progress.version !== 2) return { ok: false, error: "备份的内部数据版本不受支持，请使用当前版本导出的备份。" };
   const id = state.progress.datasetId;
   if (data.progress.datasetId !== id) return { ok: false, error: "备份来自另一个词库，请先切换到对应词库。" };
   const progress = sanitizeProgress({ ...data.progress, session: null }, id);

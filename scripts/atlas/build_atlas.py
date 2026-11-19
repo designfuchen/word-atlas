@@ -134,9 +134,12 @@ def main():
         zh = f'{s0["pos"]} {s0["zh"]}'.strip()
         index.append([c["id"], c["w"], zh, c["uk"] or c["us"], CEFR.index(c["cefr"]), TOPIC_INDEX[c["topic"]], m])
 
+    chunks = []
     for n in range(0, len(entries), 100):
         chunk = [{k: v for k, v in c.items() if not k.startswith("_")} for c in entries[n : n + 100]]
-        (PUB / "entries" / f"{n // 100}.json").write_text(json.dumps(chunk, ensure_ascii=False, separators=(",", ":")))
+        text = json.dumps(chunk, ensure_ascii=False, separators=(",", ":"))
+        chunks.append(text)
+        (PUB / "entries" / f"{n // 100}.json").write_text(text)
 
     meta = {
         "id": "word-atlas-open",
@@ -147,6 +150,9 @@ def main():
         "examples": sum(len(c["ex"]) for c in entries),
         "illustrated": sum(1 for m in flags if m & 1),
         "voiced": sum(1 for m in flags if m & 2),
+        # Content hash so the client (and its cache-first Service Worker) can
+        # request the current entry chunks instead of a stale cached copy.
+        "hash": hashlib.sha1("".join(chunks).encode()).hexdigest()[:12],
         "chunk": 100,
         "topics": TOPICS,
         "cefr": CEFR,

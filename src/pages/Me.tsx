@@ -43,6 +43,8 @@ export function Me({ privateAvailable }: { privateAvailable: boolean }) {
   };
   const restore = async (f: File) => {
     if (f.size > 30 * 1024 * 1024) return toast("文件太大，不像是学习备份。", "warn");
+    const existing = Object.keys(store.get().progress.cards).length;
+    if (existing && !confirm(`导入备份会覆盖当前 ${existing} 个词的学习记录，确定继续？`)) return;
     const r = importBackup(await f.text());
     toast(r.ok ? `已恢复 ${r.cards} 个词的记忆` : r.error, r.ok ? "ok" : "warn");
   };

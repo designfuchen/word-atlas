@@ -45,7 +45,9 @@ export function shuffle<T>(xs: T[], seed = Math.random() * 2 ** 31): T[] {
   let x = Math.floor(seed) || 1;
   for (let i = out.length - 1; i > 0; i--) {
     x = (Math.imul(1664525, x) + 1013904223) >>> 0;
-    const j = x % (i + 1);
+    // Scale the whole 32-bit state: `x % (i + 1)` only uses the low bits, whose
+    // lowest bit merely alternates and biases the answer towards the first slot.
+    const j = Math.floor((x / 2 ** 32) * (i + 1));
     [out[i], out[j]] = [out[j], out[i]];
   }
   return out;

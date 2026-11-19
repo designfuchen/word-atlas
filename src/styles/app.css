@@ -436,12 +436,12 @@ code {
   gap: 8px;
 }
 .chips-scroll {
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  scrollbar-width: none;
-  margin: 0 calc(-1 * var(--gutter));
-  padding: 2px var(--gutter);
-  mask-image: linear-gradient(90deg, transparent, #000 var(--gutter), #000 calc(100% - var(--gutter)), transparent);
+  /* Wrap instead of scrolling horizontally: with 19 topics the last two chips
+     used to sit off-screen and were easy to miss. */
+  flex-wrap: wrap;
+  overflow-x: visible;
+  margin: 0;
+  padding: 0;
 }
 .chips-scroll::-webkit-scrollbar {
   display: none;
@@ -2227,6 +2227,19 @@ code {
   display: grid;
   place-items: center;
 }
+.learn-error {
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 48px 24px;
+  text-align: center;
+}
+.learn-error-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
 .learn-top {
   position: sticky;
   top: 0;
@@ -2985,6 +2998,12 @@ code {
   opacity: 0;
   inset: 0;
   font-size: 16px;
+}
+/* The transparent input covers the whole stage; keep the replay control above it
+   so its clicks are not swallowed (issue #2/#6). */
+.typing-zh .link {
+  position: relative;
+  z-index: 2;
 }
 .typing-help {
   font-size: 13px;

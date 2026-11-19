@@ -36567,54 +36567,6 @@
   "id": "madam"
  },
  {
-  "w": "missed",
-  "uk": "/mɪst/",
-  "us": "/mɪst/",
-  "senses": [
-   {
-    "pos": "v.",
-    "zh": "错过；未赶上",
-    "en": "failed to catch, attend, or take advantage of something"
-   },
-   {
-    "pos": "v.",
-    "zh": "未击中；未察觉",
-    "en": "failed to hit or notice someone or something"
-   },
-   {
-    "pos": "v.",
-    "zh": "想念",
-    "en": "felt sad because someone or something was absent"
-   }
-  ],
-  "ex": [
-   {
-    "en": "We missed the bus and walked home together.",
-    "zh": "我们没赶上公交车，便一起走回了家。"
-   },
-   {
-    "en": "Students who missed lessons due to illness should receive additional support to catch up with their classmates.",
-    "zh": "因病缺课的学生应获得额外帮助，以跟上同学的学习进度。"
-   }
-  ],
-  "col": [
-   "missed opportunity｜错失的机会",
-   "missed call｜未接来电",
-   "missed deadline｜未按期完成"
-  ],
-  "fam": [
-   "miss (v.)",
-   "missing (adj.)"
-  ],
-  "syn": [],
-  "ant": [],
-  "tip": "miss的过去式和过去分词；词尾-ed读/t/。",
-  "cefr": "A2",
-  "topic": "daily",
-  "note": "",
-  "id": "missed"
- },
- {
   "w": "gold",
   "uk": "/ɡəʊld/",
   "us": "/ɡoʊld/",

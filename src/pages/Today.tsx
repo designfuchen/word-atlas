@@ -1,5 +1,5 @@
 import { ArrowRight, Flame, Keyboard, Sparkles } from "lucide-react";
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { prefetch, useAtlas, useEntry } from "../atlas/context";
 import { go, openWord } from "../lib/router";
 import { cue } from "../lib/sound";
@@ -37,7 +37,22 @@ export function Today() {
   const atlas = useAtlas();
   const progress = useStore((s) => s.progress);
   const settings = useStore((s) => s.settings);
-  const plan = useMemo(() => todayPlan(atlas, progress, settings), [atlas, progress, settings]);
+  // Reviews become due while the page is open; recompute the plan as time passes
+  // and when the tab regains focus instead of freezing "all done" forever.
+  const [clock, setClock] = useState(() => Date.now());
+  useEffect(() => {
+    const tick = () => setClock(Date.now());
+    const timer = window.setInterval(tick, 60_000);
+    const vis = () => document.visibilityState === "visible" && tick();
+    window.addEventListener("focus", tick);
+    document.addEventListener("visibilitychange", vis);
+    return () => {
+      window.clearInterval(timer);
+      window.removeEventListener("focus", tick);
+      document.removeEventListener("visibilitychange", vis);
+    };
+  }, []);
+  const plan = useMemo(() => todayPlan(atlas, progress, settings), [atlas, progress, settings, clock]);
   // Warm the first cards of today's journey so the session opens instantly.
   const firstIds = [...plan.due.slice(0, 4), ...plan.fresh.slice(0, 6)].join(",");
   useEffect(() => {

@@ -43,7 +43,9 @@ export function Practice() {
   }, [atlas, progress.cards, progress.mistakes, progress.bookmarks, source, startLevel]);
 
   const start = async () => {
-    const ids = shuffle(pool.slice(0, 60), hashSeed(String(Date.now()))).slice(0, 10);
+    // Shuffle the whole pool first, then take a round: slicing before shuffling
+    // made everything past the first 60 words unreachable.
+    const ids = shuffle(pool, hashSeed(String(Date.now()))).slice(0, 10);
     const entries = (await prefetch(atlas, ids)).filter((e): e is Entry => !!e && (mode === "word" || e.ex.length > 0));
     if (entries.length) setRound({ entries, key: Date.now() });
   };
@@ -121,6 +123,9 @@ function TypingRound({ mode, entries, onExit, onAgain }: { mode: Mode; entries: 
   const [totals, setTotals] = useState(totalsRef.current);
   const [done, setDone] = useState(false);
   const started = useRef<number | null>(null);
+  // Set while the 260 ms transition to the next item is pending, so late
+  // keystrokes cannot settle the same item (and its metrics) twice.
+  const settling = useRef(false);
   const input = useRef<HTMLInputElement>(null);
   const e = entries[i];
   const target = mode === "word" ? e.w : e.ex[0].en;
@@ -128,6 +133,7 @@ function TypingRound({ mode, entries, onExit, onAgain }: { mode: Mode; entries: 
   useEffect(() => {
     setValue("");
     started.current = null;
+    settling.current = false;
     input.current?.focus();
     if (mode === "dictation") void play(atlas.audio(e, "ex"), e.ex[0].en, settings.accent);
     if (mode === "word" && settings.autoplay) void play(atlas.audio(e, settings.accent), e.w, settings.accent);
@@ -147,6 +153,8 @@ function TypingRound({ mode, entries, onExit, onAgain }: { mode: Mode; entries: 
   };
 
   const finishItem = (final: string) => {
+    if (settling.current) return;
+    settling.current = true;
     const ms = started.current ? performance.now() - started.current : 0;
     const accepted = correctCharacterCount(final, target);
     if (settings.sfx) void cue("correct");
