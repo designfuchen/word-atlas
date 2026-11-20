@@ -49,17 +49,22 @@ function quizKind(ref: WordRef, p: Progress, s: Settings, salt: number): QuizKin
   return roll < 50 ? "listen" : hasImg ? "picture" : "meaning";
 }
 
+/** Distinct meaning segments of a zh gloss (senses and sub-meanings), with pos tags stripped. */
+function senses(zh: string): Set<string> {
+  return new Set(zh.split(/[｜|；;，,]/).map((s) => normalize(s.trim().replace(/^[a-z.]+\s*/, ""))).filter(Boolean));
+}
+
 /** Distractors that look plausible: same level, similar spelling or length, different meaning. */
 export function distractors(atlas: Atlas, ref: WordRef, kind: QuizKind, seed: number) {
   const target = normalize(ref.word);
-  const zhCore = ref.zh.replace(/^[a-z.]+\s*/, "").split(/[；;，,]/)[0];
+  const refSenses = senses(ref.zh);
   const scored: [number, WordRef][] = [];
   const pool = atlas.words;
   const start = Math.max(0, ref.order - 400);
   for (let i = start; i < Math.min(pool.length, ref.order + 400); i++) {
     const w = pool[i];
     if (w.id === ref.id || normalize(w.word) === target) continue;
-    if (zhCore && w.zh.includes(zhCore)) continue;
+    if ([...senses(w.zh)].some((s) => refSenses.has(s))) continue; // shares a meaning with the answer
     let score = hashSeed(w.id + seed) % 100;
     if (kind === "listen" || kind === "picture") {
       if (w.word[0]?.toLowerCase() === target[0]) score += 120;
@@ -74,9 +79,9 @@ export function distractors(atlas: Atlas, ref: WordRef, kind: QuizKind, seed: nu
   const seen = new Set<string>();
   const picks: string[] = [];
   for (const [, w] of scored) {
-    const key = kind === "meaning" ? w.zh : normalize(w.word);
-    if (seen.has(key)) continue;
-    seen.add(key);
+    const keys = kind === "meaning" ? [...senses(w.zh)] : [normalize(w.word)];
+    if (keys.some((k) => seen.has(k))) continue;
+    keys.forEach((k) => seen.add(k));
     picks.push(w.id);
     if (picks.length === 3) break;
   }
