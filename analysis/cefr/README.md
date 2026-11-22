@@ -36,9 +36,12 @@
 `inflected` 屈折形重复、`case-error` 大小写错误、`merged-headword` 合并词头、`rare-tail` 词频 > 3 万或不在榜。
 
 `learner-patch.csv` 字段：`type`（`fix` 等级修正 / `add` 补充词）、`word`、`atlas_level`（词光等级）、
-`cefr_level`（CEFR 首义等级）、`cefr_levels`（该词在 EVP 的等级区间）、`delta`（CEFR − 词光）、
-`first_sense_guide` / `first_sense_pos`（首义标记与词性）、`freq_rank`、`atlas_senses_zh`（词光原义项）、
-`note`（`severe` 偏差 ≥2 级 / `minor` 1 级 / `missing` 词光未收）。
+`atlas_first_sense`（词光首义，`senses[0]`）、`cefr_level`（入门义项等级）、`cefr_levels`（该词在 EVP 的等级区间）、
+`delta`（入门级 − 词光等级）、`evp_guideword` / `evp_pos`（入门义项的 guideword 与词性）、`freq_rank`、
+`atlas_senses_zh`（词光全部义项）、`note`（`severe` 偏差 ≥2 级 / `minor` 1 级 / `missing` 词光未收）。
+
+> 术语：「入门义项」指该词在 EVP 中等级最低的那条义项。EVP 逐义项定级，条目之间没有词典式的释义顺序，
+> 所以入门义项不等于「第一个释义」；它与「词光首义」（`senses[0]`）是两个体系里的东西，表中分列。
 
 ## 关键数字
 
