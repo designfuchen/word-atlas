@@ -37,11 +37,13 @@
 
 `learner-patch.csv` 字段：`type`（`fix` 等级修正 / `add` 补充词）、`word`、`atlas_level`（词光等级）、
 `atlas_first_sense`（词光首义，`senses[0]`）、`cefr_level`（入门义项等级）、`cefr_levels`（该词在 EVP 的等级区间）、
-`delta`（入门级 − 词光等级）、`evp_guideword` / `evp_pos`（入门义项的 guideword 与词性）、`freq_rank`、
-`atlas_senses_zh`（词光全部义项）、`note`（`severe` 偏差 ≥2 级 / `minor` 1 级 / `missing` 词光未收）。
+`delta`（入门级 − 词光等级）、`evp_entries`（入门等级下的全部条目，格式 `guideword / 词性`，多条用 ` | ` 分隔）、
+`entry_count`（该等级的条目数）、`freq_rank`、`atlas_senses_zh`（词光全部义项）、
+`note`（`severe` 偏差 ≥2 级 / `minor` 1 级 / `missing` 词光未收）。
 
-> 术语：「入门义项」指该词在 EVP 中等级最低的那条义项。EVP 逐义项定级，条目之间没有词典式的释义顺序，
-> 所以入门义项不等于「第一个释义」；它与「词光首义」（`senses[0]`）是两个体系里的东西，表中分列。
+> 术语：EVP 的一条记录 = 词头 + guideword + 词性 + 等级，guideword 只是义项标签（类似分类名），不是释义。
+> 「入门等级」是该词在 EVP 的最低等级；「入门义项」是该等级下的**全部条目**，可能多条（全库 17.3% 的词不止一条）。
+> 它与「词光首义」（`senses[0]`，词光自己的排列顺序）是两个体系的东西，表中分列。
 
 ## 关键数字
 
