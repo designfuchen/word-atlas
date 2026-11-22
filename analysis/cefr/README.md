@@ -9,6 +9,8 @@
 | --- | --- |
 | `AUDIT-REPORT.md` | 完整审计报告（markdown，含方法、全部数据表、结论与评分） |
 | `IMPROVEMENT-FEASIBILITY.md` | 改进可行性分析（方案 A–D、投入产出、影响面、验收标准） |
+| `LEARNER-PATCH.md` | 面向学习者的补丁清单：词头 / CEFR 等级 / 义项，词表不更新时怎么自学 |
+| `learner-patch.csv` | 2,210 条等级修正（`type=fix`）+ 1,502 条补充词（`type=add`） |
 | `report.html` | 分级比对报告（第一份，可视化） |
 | `report-authority.html` | 权威性 / 专业性审计报告（第二份，可视化） |
 | `evp-bre-senses.csv` | EVP 英式全量义项：base_word / guideword / level / part_of_speech / topic（**不随仓库分发**，见「数据来源与授权」） |
@@ -32,6 +34,11 @@
 `awl` 与 `awl_family`、`nawl`、`evp_levels`、`evp_min`、`freq_rank`（OpenSubtitles 50k 排名），
 `flags` 为空格分隔的标记：`proper` 专有名词、`multiword`、`hyphen`、`brE-only` 只收英式、`us-variant` 美式变体、
 `inflected` 屈折形重复、`case-error` 大小写错误、`merged-headword` 合并词头、`rare-tail` 词频 > 3 万或不在榜。
+
+`learner-patch.csv` 字段：`type`（`fix` 等级修正 / `add` 补充词）、`word`、`atlas_level`（词光等级）、
+`cefr_level`（CEFR 首义等级）、`cefr_levels`（该词在 EVP 的等级区间）、`delta`（CEFR − 词光）、
+`first_sense_guide` / `first_sense_pos`（首义标记与词性）、`freq_rank`、`atlas_senses_zh`（词光原义项）、
+`note`（`severe` 偏差 ≥2 级 / `minor` 1 级 / `missing` 词光未收）。
 
 ## 关键数字
 
