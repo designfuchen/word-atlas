@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>词光词头权威性与专业性审计</title>
+<style>
+  :root{
+    --bg:#0b0d11; --panel:#14171d; --panel2:#191d25; --line:#242a34;
+    --txt:#e7eaf1; --mut:#929aab; --dim:#6c7484; --acc:#ffb26b;
+    --a1:#3fb9a4; --a2:#43a7d6; --b1:#5b8def; --b2:#8b6cf0; --c1:#c264e0; --c2:#ef6a8b;
+    --ok:#4dd0a7; --bad:#ef6a8b; --mid:#ffb26b;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);
+    font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,-apple-system,sans-serif;
+    line-height:1.75;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:56px 28px 96px}
+  header{margin-bottom:44px;border-bottom:1px solid var(--line);padding-bottom:34px}
+  .kicker{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-bottom:14px}
+  h1{font-size:38px;line-height:1.25;margin:0 0 14px;font-weight:650;letter-spacing:-.02em}
+  .sub{color:var(--mut);font-size:15px;max-width:780px}
+  .meta{margin-top:18px;font-size:12.5px;color:var(--dim);display:flex;gap:20px;flex-wrap:wrap}
+  h2{font-size:22px;margin:62px 0 8px;font-weight:620;letter-spacing:-.01em}
+  h2 .num{color:var(--dim);font-size:13px;font-weight:400;margin-right:10px;letter-spacing:.1em}
+  h3{font-size:15px;margin:28px 0 10px;font-weight:600;color:#cdd3e0}
+  p{color:#c3c9d6;font-size:14.5px;margin:10px 0}
+  .lead{color:var(--mut);font-size:14px;margin-bottom:22px}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px 22px 16px;margin:22px 0}
+  .panel .cap{font-size:11.5px;color:var(--dim);margin-top:10px}
+  table{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--dim);font-weight:500;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+  tr:last-child td{border-bottom:none}
+  code{background:#1d222b;padding:1px 6px;border-radius:4px;font-size:12.5px;color:#a8b4d0;
+    font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+  .note{background:linear-gradient(180deg,#191d25,#151920);border:1px solid var(--line);
+    border-left:3px solid var(--acc);border-radius:8px;padding:16px 18px;margin:22px 0;font-size:13.5px;color:#c9cfdc}
+  .note b{color:var(--acc);font-weight:600}
+  .note.bad{border-left-color:var(--bad)} .note.bad b{color:var(--bad)}
+  .note.ok{border-left-color:var(--ok)} .note.ok b{color:var(--ok)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  ul{font-size:14px;color:#c3c9d6;padding-left:20px;margin:10px 0}
+  li{margin:6px 0}
+  .score{display:grid;grid-template-columns:170px 1fr 54px;gap:14px;align-items:center;
+    padding:11px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+  .score:last-child{border-bottom:none}
+  .score .bar{height:8px;background:#1a1e26;border-radius:4px;position:relative;overflow:hidden}
+  .score .bar i{position:absolute;left:0;top:0;bottom:0;border-radius:4px}
+  .score .v{text-align:right;font-variant-numeric:tabular-nums;color:var(--mut)}
+  .score .ev{grid-column:2/4;font-size:11.5px;color:var(--dim);margin-top:-6px}
+  .score-wrap{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:8px 22px 14px;margin:22px 0}
+  svg text{font-family:inherit}
+  footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);font-size:12px;color:var(--dim)}
+  @media(max-width:820px){.two{grid-template-columns:1fr}h1{font-size:30px}.score{grid-template-columns:120px 1fr 44px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">AUTHORITY AUDIT · 2026-11-23</div>
+  <h1>这 7,298 个词头，<br>够不够权威</h1>
+  <p class="sub">上一份报告量的是「等级标得准不准」，这一份量「词选得对不对、标注靠不靠得住」。
+  用了五套外部基准：NGSL（2,809 通用核心词）、COCA 5,000（美国当代语料高频）、AWL（570 学术词族）、
+  NAWL（963 学术词）、EVP（CEFR 义项词表），逐词核对 <code>data/word-atlas.json</code>。</p>
+  <div class="meta"><span>7,298 词头</span><span>5 套外部基准</span><span>逐词审计结果：headword-audit.csv</span></div>
+</header>
+
+<div class="score-wrap">
+  <div class="score"><span>选词可追溯性</span><div class="bar"><i style="width:10%;background:#ef6a8b"></i></div><span class="v">0.5</span><span class="ev">没有来源字段、没有参照词表、没有版本对应；文档里 CEFR 明确写作「估计难度」</span></div>
+  <div class="score"><span>通用核心覆盖</span><div class="bar"><i style="width:90%;background:#4dd0a7"></i></div><span class="v">4.5</span><span class="ev">NGSL 内容词 92.4%，COCA 前 2,000 内容词 93.1%，前 1,000 名词 97.1%</span></div>
+  <div class="score"><span>学术词覆盖</span><div class="bar"><i style="width:70%;background:#ffb26b"></i></div><span class="v">3.5</span><span class="ev">AWL 570 族覆盖 524（91.9%），但缺 aspect / potential / emphasis / phenomenon 等 46 族</span></div>
+  <div class="score"><span>分级可信度</span><div class="bar"><i style="width:70%;background:#ffb26b"></i></div><span class="v">3.5</span><span class="ev">等级与词频秩相关 ρ=0.71，但只有 54.2% 与 EVP 首个义项一致</span></div>
+  <div class="score"><span>边界控制</span><div class="bar"><i style="width:50%;background:#ffb26b"></i></div><span class="v">2.5</span><span class="ev">12.3% 的单词落在词频 3 万位之后或榜外；98 个专有名词混排</span></div>
+  <div class="score"><span>内部一致性</span><div class="bar"><i style="width:50%;background:#ffb26b"></i></div><span class="v">2.5</span><span class="ev">拼写双标（12 组双收、8 组只收英式、0 组只收美式）、5 组屈折形与原形并存</span></div>
+  <div class="score"><span>标注完整度</span><div class="bar"><i style="width:80%;background:#4dd0a7"></i></div><span class="v">4.0</span><span class="ev">音标 100%、双例句 100%、搭配 100%、词源 92.5%；但没有引用、义项上限 3</span></div>
+</div>
+
+<h2><span class="num">01</span>先说清一件事：这是生成物，不是编纂物</h2>
+<p>权威词表（Oxford 3000、NGSL、AWL、EVP）的权威性来自三件事：<b>有语料库依据、有编纂者署名、有版本与修订记录</b>。
+词光在这三项上都是空的——但项目自己也说清楚了：</p>
+<div class="note">
+“释义、例句与搭配由大语言模型按统一词典规范撰写……经过自动结构与一致性校验，但<b>尚未逐条人工审校</b>，可能有错。
+不是官方雅思词表，也不承诺提分。” —— README
+</div>
+<p><code>docs/dataset.md</code> 里 <code>cefr</code> 字段的定义是「<b>估计难度</b>」。这是诚实的表述，但也意味着：
+这份词表在定义上就不是「权威分级」，而是「一个自洽的估计值」。所以审计的重点不该是「符不符合某本标准」，
+而是「在没有标准可依的情况下，它的选词与标注是否经得起外部检验」。</p>
+
+<h2><span class="num">02</span>核心覆盖：这部分比预期好</h2>
+<p class="lead">把五套基准当分母，看词光覆盖了多少。</p>
+
+<div class="panel">
+  <div id="cov"></div>
+  <div class="cap">NGSL / COCA 取「内容词」口径（剔除 the / of / be 等功能词）；AWL 按 570 个词族计；EVP 按词头匹配。</div>
+</div>
+
+<table>
+  <tr><th>基准</th><th>规模</th><th class="num">词光覆盖</th><th>说明</th></tr>
+  <tr><td>NGSL 1.01</td><td>2,854 词元</td><td class="num">92.4%</td><td>缺 214 个内容词，其余 39 个是功能词</td></tr>
+  <tr><td>COCA 前 2,000</td><td>1,863 内容词</td><td class="num">93.1%</td><td>前 1,000 名词 97.1%、动词 94.0%、形容词 92.7%</td></tr>
+  <tr><td>AWL 学术词族</td><td>570 族</td><td class="num">91.9%</td><td>缺 46 族（见下节）</td></tr>
+  <tr><td>EVP / CEFR</td><td>6,547 单词头</td><td class="num">66.3%</td><td>见上一份报告</td></tr>
+  <tr><td>NAWL 学术词</td><td>963</td><td class="num">59.8%</td><td>偏理工医科（abdominal / amino / algorithm），非雅思主战场</td></tr>
+</table>
+
+<p>通用英语的骨架是完整的：COCA 前 1,000 的名词收了 97%，NGSL 里 92% 的内容词在。
+作为一份面向雅思的 7,298 词表，<b>这个覆盖度是合格的，甚至好于多数同类自建词表</b>。
+问题不在「收没收够」，在「漏了哪些」。</p>
+
+<h2><span class="num">03</span>但缺口很集中，而且集中在最该有的地方</h2>
+
+<h3>A. 高频内容词缺口</h3>
+<p>下面这些词不在词光里——不是生僻词，是英语里排前 2,000 的词：</p>
+<div class="panel">
+<table>
+  <tr><th>缺口</th><th>COCA 排名</th><th>为什么该有</th></tr>
+  <tr><td><code>work</code>（v. / n.）</td><td>117 / 199</td><td>最高频动词之一，雅思写作高频</td></tr>
+  <tr><td><code>go</code></td><td>35</td><td>基础移动动词</td></tr>
+  <tr><td><code>check</code> / <code>reveal</code> / <code>thank</code></td><td>857 / 930 / 498</td><td>动词缺口共 13 个（top 1,000）</td></tr>
+  <tr><td><code>happy</code> / <code>deep</code> / <code>entire</code> / <code>likely</code></td><td>748 / 978 / 871 / 625</td><td>形容词缺口共 8 个（top 1,000）</td></tr>
+  <tr><td><code>part</code> / <code>page</code> / <code>song</code> / <code>center</code></td><td>178 / 709 / 854 / 531</td><td>高频名词</td></tr>
+  <tr><td><code>colour</code> 有、<code>color</code> 无；<code>centre</code> 有、<code>center</code> 无</td><td>—</td><td>见第 05 节拼写策略</td></tr>
+</table>
+<div class="cap">按 COCA 词性标注统计：top 1,000 动词缺 13/218、名词缺 12/410、形容词缺 8/110。</div>
+</div>
+
+<h3>B. 学术词缺口 —— 对雅思产品来说更致命</h3>
+<p>AWL 570 个词族里，词光缺 46 族。其中不少是 Sub-list 1–4 的核心学术词：</p>
+<div class="panel">
+<table>
+  <tr><th>AWL 子表</th><th>缺失词族</th></tr>
+  <tr><td>S1–S3</td><td><code>legislate</code> <code>aspect</code> <code>equate</code> <code>perceive</code> <code>potential</code> <code>emphasis</code> <code>scheme</code></td></tr>
+  <tr><td>S4–S5</td><td><code>contrast</code> <code>ethnic</code> <code>internal</code> <code>output</code> <code>parallel</code> <code>subsequent</code> <code>enable</code> <code>notion</code> <code>revenue</code> <code>whereas</code></td></tr>
+  <tr><td>S6–S8</td><td><code>acknowledge</code> <code>federal</code> <code>incorporate</code> <code>index</code> <code>rational</code> <code>foundation</code> <code>paradigm</code> <code>phenomenon</code> <code>infrastructure</code> <code>widespread</code> <code>minimise</code></td></tr>
+  <tr><td>S9–S10</td><td><code>anticipate</code> <code>duration</code> <code>passive</code> <code>preliminary</code> <code>qualitative</code> <code>rigid</code> <code>scenario</code> <code>trigger</code> <code>albeit</code> <code>nonetheless</code></td></tr>
+</table>
+<div class="cap">全量缺失清单见 headword-audit.csv（<code>awl</code> 列为空且 <code>awl_family</code> 有值时可反查）。</div>
+</div>
+<div class="note bad">
+<b>这是最该修的一处。</b><code>aspect</code>、<code>potential</code>、<code>contrast</code>、<code>phenomenon</code>、<code>whereas</code>、
+<code>foundation</code>、<code>infrastructure</code>、<code>scenario</code> 这类词是雅思大作文的骨架词，缺了它们，
+再补 100 个 <code>staphylococcus</code> 也换不回来。
+</div>
+
+<h2><span class="num">04</span>边界：12.3% 落在长尾</h2>
+<p class="lead">用 OpenSubtitles 50k 词频表给每个词定位，看有多少落在「3 万位之后或根本不在榜」。</p>
+
+<div class="panel">
+  <div id="tail"></div>
+  <div class="cap">按词光自报等级分组，仅统计 7,210 个单词词头；红色段为 886 个长尾词（不在榜者按 50,001 计）。88 个多词/连字符条目不在分母内。</div>
+</div>
+
+<div class="two">
+  <div class="panel" style="margin:0">
+    <h3 style="margin-top:0">长尾集中在 C1/C2，这是合理的</h3>
+    <p style="font-size:13px;margin-top:0">886 个长尾词里，C1 有 510、C2 有 204，占 81%。
+    高级词本来就低频，这部分不是问题。</p>
+    <p style="font-size:13px;color:var(--mut)">真正扎眼的是 A1 2 个、A2 23 个、B1 33 个：
+    <code>photocopier</code>（A2）、<code>rucksack</code>（A2）、<code>dustbin</code>（A2）、<code>ladybird</code>（B1）——
+    词频都在 2 万位之后，标成 A2/B1 更像「教材里出现过」而不是「学习者该先会」。</p>
+  </div>
+  <div class="panel" style="margin:0">
+    <h3 style="margin-top:0">98 个专有名词没有单独归类</h3>
+    <p style="font-size:13px;margin-top:0">7 个星期、10 个月份、25 个地名、16 个国籍/语言，另有
+    <code>God</code> <code>Bible</code> <code>Islam</code> <code>Marxism</code> <code>Leninism</code> <code>Saturn</code> <code>PC</code> <code>ZIP code</code>。</p>
+    <p style="font-size:13px;color:var(--mut)">专有名词进词表没问题，但它们与普通词混在同一个分级体系里，
+    既拉低了「A1 词汇量」的含金量，也让 CEFR 对照失真（EVP 基本不收专有名词）。</p>
+  </div>
+</div>
+
+<h2><span class="num">05</span>内部一致性：拼写和词形的双标</h2>
+<p>这是最能说明「缺少编纂规范」的一组证据——同一件事，词表内部有两种做法。</p>
+
+<table>
+  <tr><th>问题</th><th class="num">数量</th><th>例子</th></tr>
+  <tr><td>同一词的英美拼写<b>都收</b></td><td class="num">12 组</td><td>favourite + favorite、organise + organize、grey + gray、programme + program</td></tr>
+  <tr><td>只收英式拼写</td><td class="num">8 组</td><td>colour、centre、theatre、metre、defence、offence、neighbour、travelling</td></tr>
+  <tr><td>只收美式</td><td class="num">0 组</td><td>—</td></tr>
+  <tr><td>英美<b>不同词</b>都收（非拼写变体）</td><td class="num">15 组</td><td>film + movie、flat + apartment、lorry + truck、petrol + gas、biscuit + cookie</td></tr>
+  <tr><td>两个词合并成一个词头</td><td class="num">1 条</td><td><code>cheque/check</code>（词头带斜杠，全库唯一）</td></tr>
+  <tr><td>原形与屈折形<b>并存</b></td><td class="num">5 组</td><td>chip + chips、child + children、foot + feet、woman + women、person + people</td></tr>
+  <tr><td>过时连字符写法</td><td class="num">72 个</td><td><code>dining-room</code>、<code>tape-recorder</code>、<code>mid-day</code>、<code>bread-earner</code>、<code>epoch-making</code></td></tr>
+  <tr><td>大小写错误</td><td class="num">2 条</td><td><code>TRUE</code>、<code>FALSE</code> 全大写（应为 true / false）</td></tr>
+  <tr><td>词头形式不规范</td><td class="num">1 条</td><td><code>Mister</code>（词典词头应为 Mr / mister）</td></tr>
+  <tr><td>月份不成套</td><td class="num">缺 2 个</td><td>有 10 个月份，缺 March（并入 march 动词）与 May（<code>may</code> 整个词都没有）</td></tr>
+</table>
+
+<p>这些不是内容错误，是<b>没有编纂规范</b>的症状：如果先定一条规则（「本表为英式拼写，美式变体只在差异显著时单列」），
+上面 8 类问题会自动消失。它们目前是随机分布的，说明每条词目是独立生成的，没有横向对齐。</p>
+
+<h2><span class="num">06</span>分级：经验上站得住，标准上对不上</h2>
+
+<div class="panel">
+  <div id="freq"></div>
+  <div class="cap">各等级词头在 OpenSubtitles 50k 词频表中的中位排名（对数刻度）；数字越小越高频。</div>
+</div>
+
+<p>中位排名从 A1 的 866 一路单调升到 C2 的 30,603，等级与词频的秩相关 <b>ρ = 0.71</b>。
+这说明分级不是拍脑袋：它确实跟着「这个词有多常用」在走。作为一份没有语料库支撑的估计值，
+这个内部一致性是可信的。</p>
+
+<p>但和 EVP 对照就露馅了——上一份报告的结论：只有 <b>54.2%</b> 的等级与 EVP 首个义项一致，
+整体偏乐观 <b>0.44 级</b>，C1 段有 <b>71%</b> 被 EVP 判为 C2。也就是说：
+<b>词光的等级是一把自洽的尺子，但刻度比 CEFR 松半格，越往上松得越多。</b></p>
+
+<div class="note ok">
+<b>归纳一下：</b>词光的「专业性」在工程层面是过关的——字段齐全、音标 100%、双例句 100%、搭配 100%、
+结构校验通过、等级与词频单调对应；缺的是「权威性」的三根支柱：可追溯的来源、可核验的引用、可复现的选词规则。
+前者是产品力，后者是学术信用，两件事不能互相替代。
+</div>
+
+<h2><span class="num">07</span>要补的话，按这个顺序</h2>
+<ul>
+  <li><b>补 46 个 AWL 词族</b>（aspect / potential / emphasis / contrast / phenomenon / whereas / acknowledge / foundation / infrastructure / scenario / trigger…）。这是雅思场景下回报最高的一步，46 条就能补上学术骨架。</li>
+  <li><b>补高频实义词</b>：实义动词 5 个（go / work / thank / check / reveal），高频形容词 7 个（happy / deep / entire / likely / past / religious / federal）。数量少，但都是「学习者一定会遇到」的词。功能词（be / have / do / would / may 等）若不收，应在文档里写明是刻意的边界。</li>
+  <li><b>确定拼写政策并统一执行</b>：要么纯英式（删掉 12 个美式重复项），要么双收但加 <code>variant</code> 字段。同时清理 <code>cheque/check</code>、<code>TRUE/FALSE</code>、<code>Mister</code>。</li>
+  <li><b>给词表加三列元数据</b>：<code>freq_rank</code>（语料排名）、<code>source</code>（NGSL / AWL / COCA 频段 / 话题补充）、<code>proper</code>（专有名词标记）。数据已在 <code>headword-audit.csv</code> 里，合并即可。</li>
+  <li><b>把 <code>cefr</code> 改名或加注</b>：叫 <code>cefr_estimate</code>，并在 UI 上写「参考 CEFR 的估计难度」，避免读者误以为是官方分级。</li>
+  <li><b>放开义项上限</b>：现在全库每个词最多 3 个义项，而 <code>in</code> 在 EVP 里有 15 个。建议对高频词按需扩展到 5–6 个，低频词保持 1–2 个。</li>
+</ul>
+
+<h2><span class="num">08</span>口径与数据</h2>
+<ul>
+  <li><b>NGSL 1.01</b>：Browne, Culligan &amp; Phillips，2,854 条（含补充词），匹配时计入全部词形。</li>
+  <li><b>COCA 5,000</b>：美国当代英语语料库高频表，按词形去重后 4,350 条，带词性标注。</li>
+  <li><b>AWL</b>：Coxhead (2000)，570 个词族 + 子表编号；匹配时计入全部派生形。</li>
+  <li><b>NAWL</b>：新学术词表 963 条。</li>
+  <li><b>词频</b>：OpenSubtitles 2018 英语 50k 词频表，作为口语/通用频率代理；不在榜者按 50,001 计。</li>
+  <li><b>EVP</b>：上一轮抓取的 CEFR 义项词表，英式，去重后 14,586 条义项 / 6,547 个单词头。</li>
+  <li>所有匹配均为「小写 + 去首尾空白 + 撇号归一 + 连字符归一」，不含词形还原以外的语义对齐。</li>
+</ul>
+
+<footer>
+  逐词审计：<code>analysis/cefr/headword-audit.csv</code>（7,298 行，含 ngsl / coca / awl / nawl / evp / freq_rank / flags）<br>
+  外部基准原始文件：<code>analysis/cefr/refs/</code>　·　上一份报告：<code>analysis/cefr/report.html</code>
+</footer>
+
+</div>
+
+<script>
+const COV=[["NGSL 内容词",92.4,"#4dd0a7"],["COCA 前2000 内容词",93.1,"#4dd0a7"],["AWL 570 词族",91.9,"#4dd0a7"],["EVP / CEFR 词头",66.3,"#ffb26b"],["NAWL 963",59.8,"#ef6a8b"]];
+const LV=['A1','A2','B1','B2','C1','C2'];
+const MED=[866,2607,4467,8636,18399,30603];
+const TAIL=[[2,783],[23,1016],[33,1432],[114,2113],[510,1594],[204,272]];
+const COL={A1:'#3fb9a4',A2:'#43a7d6',B1:'#5b8def',B2:'#8b6cf0',C1:'#c264e0',C2:'#ef6a8b'};
+
+function el(t,a={}){const e=document.createElementNS('http://www.w3.org/2000/svg',t);for(const k in a)e.setAttribute(k,a[k]);return e;}
+function txt(x,y,s,o={}){const t=el('text',{x,y,fill:o.fill||'#929aab','font-size':o.size||11,'text-anchor':o.anchor||'start','font-weight':o.w||400});t.textContent=s;return t;}
+
+// coverage
+(function(){
+  const W=1000,H=250,pad={l:170,r:110,t:14,b:30};
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,width:'100%'});
+  const iw=W-pad.l-pad.r, bh=22, gap=22;
+  [0,25,50,75,100].forEach(v=>{
+    const x=pad.l+iw*v/100;
+    svg.appendChild(el('line',{x1:x,y1:pad.t,x2:x,y2:H-pad.b,stroke:'#242a34'}));
+    svg.appendChild(txt(x,H-pad.b+16,v+'%',{anchor:'middle',size:10,fill:'#6c7484'}));
+  });
+  COV.forEach((d,i)=>{
+    const y=pad.t+i*(bh+gap);
+    svg.appendChild(txt(pad.l-12,y+bh/2+4,d[0],{anchor:'end',size:12,fill:'#c3c9d6'}));
+    svg.appendChild(el('rect',{x:pad.l,y,width:iw,height:bh,rx:4,fill:'#1a1e26'}));
+    svg.appendChild(el('rect',{x:pad.l,y,width:iw*d[1]/100,height:bh,rx:4,fill:d[2],opacity:.9}));
+    svg.appendChild(txt(pad.l+iw*d[1]/100+10,y+bh/2+4,d[1]+'%',{size:12,fill:'#e7eaf1',w:600}));
+  });
+  document.getElementById('cov').appendChild(svg);
+})();
+
+// tail by level: stacked raw vs tail
+(function(){
+  const W=1000,H=272,pad={l:44,r:20,t:26,b:62};
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,width:'100%'});
+  const max=2200, iw=W-pad.l-pad.r, bw=iw/6;
+  [0,500,1000,1500,2000].forEach(v=>{
+    const y=H-pad.b-(H-pad.t-pad.b)*v/max;
+    svg.appendChild(el('line',{x1:pad.l,y1:y,x2:W-pad.r,y2:y,stroke:'#242a34'}));
+    svg.appendChild(txt(pad.l-8,y+4,v,{anchor:'end',size:10,fill:'#6c7484'}));
+  });
+  TAIL.forEach((d,i)=>{
+    const [rare,total]=d;
+    const x=pad.l+bw*i+bw*0.2, w=bw*0.6;
+    const hAll=(H-pad.t-pad.b)*total/max;
+    const hRare=(H-pad.t-pad.b)*rare/max;
+    svg.appendChild(el('rect',{x,y:H-pad.b-hAll,width:w,height:hAll,rx:3,fill:'#2a3040'}));
+    svg.appendChild(el('rect',{x,y:H-pad.b-hRare,width:w,height:hRare,rx:3,fill:'#ef6a8b',opacity:.85}));
+    svg.appendChild(txt(x+w/2,H-pad.b-hAll-8,total,{anchor:'middle',size:10.5,fill:'#8a93a5'}));
+    if(rare>8){
+      if(hAll-hRare>26) svg.appendChild(txt(x+w/2,H-pad.b-hRare-8,rare,{anchor:'middle',size:10.5,fill:'#ef6a8b',w:600}));
+      else if(hRare>20) svg.appendChild(txt(x+w/2,H-pad.b-10,rare,{anchor:'middle',size:10,fill:'#fff',w:600}));
+    }
+    svg.appendChild(txt(x+w/2,H-pad.b+18,LV[i],{anchor:'middle',size:11.5,fill:COL[LV[i]],w:600}));
+  });
+  svg.appendChild(txt(pad.l,H-6,'深灰 = 该级总词数    红色 = 其中词频 > 3 万或不在榜',{size:10.5,fill:'#6c7484'}));
+  document.getElementById('tail').appendChild(svg);
+})();
+
+// median rank by level (log)
+(function(){
+  const W=1000,H=250,pad={l:70,r:30,t:24,b:40};
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,width:'100%'});
+  const iw=W-pad.l-pad.r, bw=iw/6;
+  const maxL=Math.log10(40000), minL=Math.log10(500);
+  [1000,3000,10000,30000].forEach(v=>{
+    const y=H-pad.b-(H-pad.t-pad.b)*((Math.log10(v)-minL)/(maxL-minL));
+    svg.appendChild(el('line',{x1:pad.l,y1:y,x2:W-pad.r,y2:y,stroke:'#242a34'}));
+    svg.appendChild(txt(pad.l-10,y+4,v.toLocaleString(),{anchor:'end',size:10,fill:'#6c7484'}));
+  });
+  const pts=MED.map((v,i)=>[pad.l+bw*i+bw/2, H-pad.b-(H-pad.t-pad.b)*((Math.log10(v)-minL)/(maxL-minL))]);
+  pt=pts.map(p=>p.join(',')).join(' ');
+  svg.appendChild(el('polyline',{points:pt,fill:'none',stroke:'#ffb26b','stroke-width':2.5}));
+  pts.forEach((p,i)=>{
+    svg.appendChild(el('circle',{cx:p[0],cy:p[1],r:4.5,fill:'#ffb26b'}));
+    svg.appendChild(txt(p[0],p[1]-12,MED[i].toLocaleString(),{anchor:'middle',size:10.5,fill:'#e7eaf1'}));
+    svg.appendChild(txt(p[0],H-pad.b+18,LV[i],{anchor:'middle',size:11.5,fill:COL[LV[i]],w:600}));
+  });
+  document.getElementById('freq').appendChild(svg);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>词光 × CEFR 词表比对报告</title>
+<style>
+  :root{
+    --bg:#0b0d11; --panel:#14171d; --panel2:#191d25; --line:#242a34;
+    --txt:#e7eaf1; --mut:#929aab; --dim:#6c7484;
+    --a1:#3fb9a4; --a2:#43a7d6; --b1:#5b8def; --b2:#8b6cf0; --c1:#c264e0; --c2:#ef6a8b;
+    --warn:#ffb26b; --ok:#4dd0a7;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);
+    font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,-apple-system,sans-serif;
+    line-height:1.75;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:56px 28px 96px}
+  header{margin-bottom:52px;border-bottom:1px solid var(--line);padding-bottom:34px}
+  .kicker{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-bottom:14px}
+  h1{font-size:38px;line-height:1.25;margin:0 0 14px;font-weight:650;letter-spacing:-.02em}
+  h1 em{font-style:normal;color:var(--accent,#7c8cff)}
+  .sub{color:var(--mut);font-size:15px;max-width:760px}
+  .meta{margin-top:18px;font-size:12.5px;color:var(--dim);display:flex;gap:20px;flex-wrap:wrap}
+  h2{font-size:22px;margin:64px 0 8px;font-weight:620;letter-spacing:-.01em}
+  h2 .num{color:var(--dim);font-size:13px;font-weight:400;margin-right:10px;letter-spacing:.1em}
+  h3{font-size:15px;margin:30px 0 10px;font-weight:600;color:#cdd3e0}
+  p{color:#c3c9d6;font-size:14.5px;margin:10px 0}
+  .lead{color:var(--mut);font-size:14px;margin-bottom:24px}
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:26px 0 8px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 16px}
+  .card .n{font-size:29px;font-weight:650;letter-spacing:-.02em;line-height:1.2}
+  .card .n small{font-size:14px;color:var(--mut);font-weight:400;margin-left:2px}
+  .card .l{font-size:11.5px;color:var(--mut);margin-top:6px;letter-spacing:.02em}
+  .card .s{font-size:11px;color:var(--dim);margin-top:2px}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px 22px 16px;margin:22px 0}
+  .panel .cap{font-size:11.5px;color:var(--dim);margin-top:10px;letter-spacing:.02em}
+  table{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--dim);font-weight:500;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+  tr:last-child td{border-bottom:none}
+  code{background:#1d222b;padding:1px 6px;border-radius:4px;font-size:12.5px;color:#a8b4d0;
+    font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+  .pill{display:inline-block;padding:1px 8px;border-radius:100px;font-size:11px;font-weight:600;letter-spacing:.03em}
+  .tag{font-size:11px;color:var(--dim);border:1px solid var(--line);border-radius:5px;padding:1px 6px;margin-left:6px}
+  .note{background:linear-gradient(180deg,#191d25,#151920);border:1px solid var(--line);
+    border-left:3px solid var(--warn);border-radius:8px;padding:16px 18px;margin:22px 0;font-size:13.5px;color:#c9cfdc}
+  .note b{color:var(--warn);font-weight:600}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  ul{font-size:14px;color:#c3c9d6;padding-left:20px;margin:10px 0}
+  li{margin:6px 0}
+  svg text{font-family:inherit}
+  footer{margin-top:72px;padding-top:24px;border-top:1px solid var(--line);font-size:12px;color:var(--dim)}
+  @media(max-width:820px){.cards{grid-template-columns:repeat(2,1fr)}.two{grid-template-columns:1fr}h1{font-size:30px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">DATA AUDIT · 2026-11-23</div>
+  <h1>词光的 7,298 个词头，<br>和 CEFR 的词表差在哪</h1>
+  <p class="sub">对 englishprofile.org 的 English Vocabulary Profile（EVP）做了完整抓取，得到 15,696 条义项级记录，
+  再与词光 <code>data/word-atlas.json</code> 的 7,298 个词头逐条比对。核心结论：两边的差异主要不在「等级标得准不准」，
+  而在<b>分级单位</b>——EVP 给每个义项定级，词光给整个词定级。</p>
+  <div class="meta">
+    <span>来源：englishprofile.org/?menu=evp-online</span>
+    <span>EVP 英式 15,696 条 · 美式 15,389 条</span>
+    <span>词光 7,298 词头</span>
+  </div>
+</header>
+
+<div class="cards">
+  <div class="card"><div class="n">66.3<small>%</small></div><div class="l">词头能在 EVP 找到对应</div><div class="s">4,838 / 7,298</div></div>
+  <div class="card"><div class="n">54.2<small>%</small></div><div class="l">等级 = EVP 首个义项级</div><div class="s">±1 级内 93.2%</div></div>
+  <div class="card"><div class="n">29.0<small>%</small></div><div class="l">EVP 义项落在所标等级上</div><div class="s">11,439 个义项中 3,319 个</div></div>
+  <div class="card"><div class="n">36.3<small>%</small></div><div class="l">的词在 EVP 里跨 ≥2 个等级</div><div class="s">1,757 / 4,838</div></div>
+</div>
+
+<h2><span class="num">01</span>两个词表不是同一种东西</h2>
+<p class="lead">先把分母对齐。EVP 的「一条」是一个义项，词光的「一条」是一个词。</p>
+
+<div class="panel">
+<table>
+  <tr><th></th><th>词光 Word Atlas</th><th>EVP（英式）</th><th>EVP（美式）</th></tr>
+  <tr><td>切分单位</td><td>词头（word）</td><td>义项（sense）</td><td>义项</td></tr>
+  <tr><td>条目数</td><td class="num">7,298</td><td class="num">15,696</td><td class="num">15,389</td></tr>
+  <tr><td>去掉官网重复行后</td><td class="num">7,298</td><td class="num">14,586</td><td class="num">14,339</td></tr>
+  <tr><td>不同词头</td><td class="num">7,298</td><td class="num">9,751<span class="tag">含 3,204 短语</span></td><td class="num">9,590</td></tr>
+  <tr><td>单词词头</td><td class="num">7,282</td><td class="num">6,547</td><td class="num">6,516</td></tr>
+  <tr><td>等级字段</td><td>每词 1 个</td><td>每义项 1 个</td><td>每义项 1 个</td></tr>
+</table>
+<div class="cap">EVP 官网自身的列表里存在 1,110 条完全重复的行（按「词头+义项标记+等级+词性」判定），去重后为 14,586 条义项。</div>
+</div>
+
+<p>EVP 的「义项标记」是 guideword，例如 <code>a</code> 有三条：NOT PARTICULAR / ANY/EVERY / ONE，都是 A1。
+单词头里义项最多的是 <code>on</code>（19 个）和 <code>take</code>（18 个），从 A1 一路铺到 C2；
+如果把以 <code>in</code> 开头的短语词条也算进来，<code>in</code> 名下共 171 条记录。词光这边 <code>in</code> 是 A1、3 个中文义项。
+当一个词在参考体系里横跨 6 个等级时，「给这个词一个等级」本身就已经丢掉了大部分信息。</p>
+
+<h2><span class="num">02</span>覆盖率断层：C1/C2 几乎对不上</h2>
+<p class="lead">按词光自己的等级分组，看有多少词能在 EVP 里找到。</p>
+
+<div class="panel">
+  <div id="cov"></div>
+  <div class="cap">分母为词光各等级词数；分子为在 EVP（英式）中能匹配到词头或短语词头的词数。</div>
+</div>
+
+<p>A1 到 B1 的覆盖率在 89–96%，到 B2 掉到 73%，C1 只剩 <b>26%</b>，C2 只有 <b>1.5%</b>（274 个词里 4 个）。
+换句话说，词光越往上走，越是在说 CEFR 之外的东西。</p>
+
+<div class="two">
+  <div class="panel" style="margin:0">
+    <h3 style="margin-top:0">词光的 C1/C2 在 EVP 眼里是什么</h3>
+    <p style="font-size:13px;margin-top:0">1,882 个 C1/C2 词（占词光 25.8%），只有 <b>423 个</b>能在 EVP 找到，占 22.5%。<br>
+    其中 271 个被 EVP 判为 C2，其余散落在 B2/C1。</p>
+    <p style="font-size:13px;color:var(--mut)">例：<code>threshold</code> <code>inherent</code> <code>empirical</code> <code>whereby</code> <code>curb</code> <code>infer</code> 词光标 C1，EVP 全部是 C2。</p>
+  </div>
+  <div class="panel" style="margin:0">
+    <h3 style="margin-top:0">EVP 的 C2 词在词光眼里是什么</h3>
+    <p style="font-size:13px;margin-top:0">EVP 有 1,710 个 C2 单词头，词光收了其中 1,113 个（65%），但绝大多数被标成 B2/C1。</p>
+    <p style="font-size:13px;color:var(--mut)">而词光自己的 274 个 C2 词——<code>avenge</code> <code>bestow</code> <code>deplore</code> <code>vortex</code> <code>preclude</code> <code>staphylococcus</code>——基本都不在 EVP 里。两套「高级词」几乎不重叠。</p>
+  </div>
+</div>
+
+<h2><span class="num">03</span>等级一致率：取决于你怎么把义项压成一个词</h2>
+<p class="lead">CEFR 没有「词的等级」，只有「义项的等级」。要跟词光的单词级标签比，必须先选一个归并规则——选哪个，结论完全不同。</p>
+
+<div class="panel">
+  <div id="rules"></div>
+  <div class="cap">以 4,838 个可比词为分母。min = 取该词最易义项的等级；mode = 义项数最多的等级；max = 最难义项。</div>
+</div>
+
+<p><b>取最易义项（min）：</b>54.2% 完全一致，93.2% 在 ±1 级内，平均偏差 −0.44 级。这个口径下两套体系其实是「基本对得上」的，
+因为词光的等级大致等于「这个词该在第几级第一次出现」，而这正是 EVP 最易义项的含义。</p>
+<p><b>取最难义项（max）：</b>完全一致掉到 31.6%，±1 级内只有 66.3%，平均偏差 −1.29 级。
+同一批词、同一批数据，只是换了个归并规则，一致率就从 93% 掉到 66%。这个落差本身就是答案：
+<b>词级标签的「准确率」不是词表质量问题，而是定义问题。</b></p>
+
+<h3>词光等级 × EVP 最易义项等级</h3>
+<div class="panel">
+  <div id="heat"></div>
+  <div class="cap">行 = 词光标注，列 = EVP 该词最易义项的等级；格子数字为词数，颜色深浅为该行占比。</div>
+</div>
+
+<p>矩阵不是随机噪声，是<b>一条稳定的斜线向右下方偏移</b>：</p>
+<ul>
+  <li>词光 A1 → EVP A2 及以上的有 253 个，占 A1 组的 34%</li>
+  <li>词光 A2 → EVP B1 及以上的有 420 个，占 45%</li>
+  <li>词光 B2 → EVP C1/C2 的有 655 个，占 44%</li>
+  <li>词光 C1 → EVP C2 的有 271 个，占 <b>71%</b></li>
+</ul>
+<p>也就是说：<b>词光系统性地比 CEFR 乐观约半级，越往高级偏得越多。</b>这不是随机误差，是整体标尺的偏移。</p>
+
+<h2><span class="num">04</span>义项维度：一个标签最多覆盖三成</h2>
+<p class="lead">把词光的标签放回 EVP 的义项集合里，看它能「解释」多少义项。</p>
+
+<div class="panel">
+  <div id="fit"></div>
+  <div class="cap">4,838 个可比词共对应 11,439 个 EVP 义项；其中 3,319 个（29.0%）的等级恰好等于词光标注。</div>
+</div>
+
+<div class="cards" style="grid-template-columns:repeat(3,1fr)">
+  <div class="card"><div class="n">30.7<small>%</small></div><div class="l">的词，全部义项都在所标等级上</div><div class="s">1,485 词</div></div>
+  <div class="card"><div class="n">44.3<small>%</small></div><div class="l">的词，没有任何一个义项在所标等级上</div><div class="s">2,144 词</div></div>
+  <div class="card"><div class="n">36.3<small>%</small></div><div class="l">的词跨 ≥2 个等级</div><div class="s">最多跨 6 级（46 词）</div></div>
+</div>
+
+<div class="panel">
+  <div id="span"></div>
+  <div class="cap">EVP 中同一词头所跨等级数（仅统计跨 ≥2 级的 1,757 个词）。</div>
+</div>
+
+<p>最能说明问题的是词光自己的义项数：</p>
+<table>
+  <tr><th>词光给出的中文义项数</th><th class="num">词数</th><th class="num">EVP 跨 ≥2 级</th><th class="num">占比</th></tr>
+  <tr><td>1 个义项</td><td class="num">1,454</td><td class="num">71</td><td class="num">4.9%</td></tr>
+  <tr><td>2 个义项</td><td class="num">1,873</td><td class="num">676</td><td class="num">36.1%</td></tr>
+  <tr><td>3 个及以上</td><td class="num">1,511</td><td class="num">1,010</td><td class="num"><b>66.8%</b></td></tr>
+</table>
+<p>词光已经识别出这些词是多义词（写了 3 个中文义项），却仍然只给一个等级。三分之二的多义词，
+其不同义项在 CEFR 里分属不同等级——这正是「按词分级」和「按义项分级」的差价。</p>
+
+<h2><span class="num">05</span>三类系统性偏差</h2>
+
+<h3>A. 把「概念简单」当成「学得早」</h3>
+<p>词光标 A1、EVP 标 B1 的一大批词，都是具体名词——概念上三岁小孩都懂，但教学大纲里出现得晚：</p>
+<div class="panel">
+<table>
+  <tr><th>词</th><th>词光</th><th>EVP</th><th>说明</th></tr>
+  <tr><td>rainy / toothpaste / tiger / giraffe / strawberry</td><td><span class="pill" style="background:#3fb9a422;color:#3fb9a4">A1</span></td><td><span class="pill" style="background:#5b8def22;color:#5b8def">B1</span></td><td>具体名词，教材出现晚</td></tr>
+  <tr><td>gym / lady / writer / pants / alphabet</td><td><span class="pill" style="background:#3fb9a422;color:#3fb9a4">A1</span></td><td><span class="pill" style="background:#5b8def22;color:#5b8def">B1</span></td><td>同上</td></tr>
+  <tr><td>tool / lower / gardening / mother-in-law</td><td><span class="pill" style="background:#43a7d622;color:#43a7d6">A2</span></td><td><span class="pill" style="background:#8b6cf022;color:#8b6cf0">B2</span></td><td>差 2 级</td></tr>
+</table>
+<div class="cap">CEFR 的等级来自语料库与教材的实际出现顺序，不是概念难度评分。</div>
+</div>
+
+<h3>B. 词光标的是「另一个义项」</h3>
+<div class="panel">
+<table>
+  <tr><th>词</th><th>词光</th><th>EVP 各义项</th><th>错位原因</th></tr>
+  <tr><td>chip</td><td>B2</td><td>A1 薯条 / B2 芯片 / C2 介入</td><td>词光取「芯片」，EVP 首义是「薯条」</td></tr>
+  <tr><td>bear</td><td>B2</td><td>A2 熊 / B2 忍受 / C1 携带 / C2 生育</td><td>词光取「忍受」，EVP 首义是动物</td></tr>
+  <tr><td>comparative</td><td>B2</td><td>A2 比较级（语法）/ C1 相对的 / C2 相对而言</td><td>词光取「相对的」，EVP 首义是语法术语</td></tr>
+  <tr><td>slim</td><td>B1</td><td>A1 苗条 / C2 渺茫</td><td>词光取「微弱」，EVP 首义是身材</td></tr>
+  <tr><td>soul</td><td>B2</td><td>A2 灵魂乐 / B2 灵魂 / B2 人</td><td>词光取哲学义，EVP 首义是音乐类型</td></tr>
+</table>
+<div class="cap">这类差异不是「标错」，而是两个体系讨论的不是同一个东西。</div>
+</div>
+
+<h3>C. 高级段越界</h3>
+<p>词光的 C1/C2 有大量 EVP 根本没收录的词：<code>avenge</code> <code>bestow</code> <code>deplore</code> <code>splint</code>
+<code>infantry</code> <code>depute</code> <code>wreathe</code> <code>vortex</code> <code>preclude</code> <code>surmise</code>
+<code>staphylococcus</code> <code>pilferage</code>——偏文学、偏生僻、甚至专业术语。CEFR 的 C2 不是「最难的词」，而是
+「熟练使用者仍会用到的高阶词」，两者词表天然不同。</p>
+
+<h2><span class="num">06</span>结论</h2>
+<div class="note">
+<b>「出入巨大」是真的，但它不是准确率问题。</b>把词光的等级和 EVP 最易义项对比，93.2% 在 ±1 级内——作为单词级标注，
+这个精度已经相当好。真正巨大的出入在三个地方：<br><br>
+1. <b>覆盖</b>：31.9% 的词在 EVP 里不存在；C1 段 74%、C2 段 98% 不在。<br>
+2. <b>义项</b>：词光的标签平均只能解释 29% 的义项；44.3% 的词一个义项都对不上。<br>
+3. <b>标尺</b>：词光系统性乐观约半级，C1 段偏差达 −0.68 级，71% 的 C1 词被 EVP 判为 C2。
+</div>
+
+<h3>如果要把词光接到 CEFR 上</h3>
+<ul>
+  <li><b>不要给词一个等级，给一个区间。</b>用 <code>evp_min</code>–<code>evp_max</code>（如 <code>bear</code>: A2–C2），比单值诚实得多；数据已在 <code>atlas-vs-evp.csv</code>。</li>
+  <li><b>义项级对齐。</b>词光已有 <code>senses[]</code>，把每个中文义项对到 EVP 的 guideword，等级挂在义项上，才是 CEFR 的原意。</li>
+  <li><b>给 C1/C2 加「超出 CEFR 范围」标记。</b>EVP 只有 6,547 个单词头，词光有 7,282 个，必然有 30% 越界；越界不是错，但需要标注，否则用户会以为 CEFR 认可这个分级。</li>
+  <li><b>校准整体偏移。</b>若要保留单词级标签，把 B2 及以上整体上调约半级，能显著提高与 EVP 的一致性。</li>
+</ul>
+
+<h2><span class="num">07</span>方法与局限</h2>
+<ul>
+  <li><b>抓取</b>：站点是 Bubble 单页应用，数据经 Elasticsearch 加密传输。通过浏览器把 Display 设为 All、逐屏滚动触发渲染，从 DOM 抽取全部 15,696 行（与站点自带计数一致）；美式词表同法抓取 15,389 行。</li>
+  <li><b>去重</b>：官网列表含 1,110 条完全重复行，按四元组去重后 14,586 条义项。</li>
+  <li><b>匹配</b>：优先精确词头；其次「冠词/助动词 + 词」与短语首词（<code>the moon</code>、<code>depend on/upon sb/sth</code>）；再退到词形还原；最后是短语内嵌。等级比较只使用前两类，并剔除专有名词，共 4,838 词。</li>
+  <li><b>局限</b>：未做义项级语义对齐，因此「词光指的是哪个义项」只能靠等级反推；EVP 的 BrE/AmE 两版等级略有差异，本报告以英式为主；2,325 个未匹配词中约 59 个可在美式词表找到，其余多为专有名词、美式用法或超出 EVP 范围。</li>
+</ul>
+
+<footer>
+  数据文件：<code>analysis/cefr/evp-bre-senses.csv</code> · <code>evp-ame-senses.csv</code> · <code>atlas-vs-evp.csv</code><br>
+  抓取自 englishprofile.org（Cambridge University Press & Assessment），仅用于研究比对。<br>
+  续篇：<a href="report-authority.html" style="color:#7c8cff;text-decoration:none">词头权威性与专业性审计 →</a>
+</footer>
+
+</div>
+
+<script>
+const LV=['A1','A2','B1','B2','C1','C2'];
+const COL={A1:'#3fb9a4',A2:'#43a7d6',B1:'#5b8def',B2:'#8b6cf0',C1:'#c264e0',C2:'#ef6a8b'};
+const cov=[["A1",785,754,96.1],["A2",1039,942,90.7],["B1",1465,1300,88.7],["B2",2127,1554,73.1],["C1",1608,419,26.1],["C2",274,4,1.5]];
+const conf=[[490,237,16,0,0,0],[21,491,391,25,1,3],[5,73,787,367,29,15],[1,8,89,748,430,225],[0,0,0,10,103,271],[0,0,0,0,0,2]];
+const rules=[["取最易义项 min",54.2,93.2,-0.44],["取义项最多的等级 mode",47.7,86.2,-0.65],["取最难义项 max",31.6,66.3,-1.29]];
+const span=[[2,1072],[3,386],[4,175],[5,78],[6,46]];
+
+function el(t,a={}){const e=document.createElementNS('http://www.w3.org/2000/svg',t);for(const k in a)e.setAttribute(k,a[k]);return e;}
+function txt(x,y,s,o={}){const t=el('text',{x,y,fill:o.fill||'#929aab','font-size':o.size||11,'text-anchor':o.anchor||'start','font-weight':o.w||400});t.textContent=s;return t;}
+
+// 1 coverage bars
+(function(){
+  const W=1000,H=250,pad={l:46,r:120,t:16,b:28};
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,width:'100%'});
+  const max=100, iw=W-pad.l-pad.r;
+  [0,25,50,75,100].forEach(v=>{
+    const x=pad.l+iw*v/max;
+    svg.appendChild(el('line',{x1:x,y1:pad.t,x2:x,y2:H-pad.b,stroke:'#242a34','stroke-width':1}));
+    svg.appendChild(txt(x,H-pad.b+16,v+'%',{anchor:'middle',size:10,fill:'#6c7484'}));
+  });
+  const bh=24,gap=12;
+  cov.forEach((d,i)=>{
+    const y=pad.t+i*(bh+gap);
+    svg.appendChild(txt(pad.l-10,y+bh/2+4,d[0],{anchor:'end',size:12,fill:COL[d[0]],w:600}));
+    svg.appendChild(el('rect',{x:pad.l,y,width:iw,height:bh,rx:4,fill:'#1a1e26'}));
+    const w=iw*d[3]/max;
+    svg.appendChild(el('rect',{x:pad.l,y,width:w,height:bh,rx:4,fill:COL[d[0]],opacity:.85}));
+    svg.appendChild(txt(pad.l+w+10,y+bh/2+4,d[3]+'%',{size:12,fill:'#e7eaf1',w:600}));
+    svg.appendChild(txt(pad.l+w+62,y+bh/2+4,d[2]+' / '+d[1],{size:11,fill:'#6c7484'}));
+  });
+  document.getElementById('cov').appendChild(svg);
+})();
+
+// 2 rules
+(function(){
+  const W=1000,H=214,pad={l:190,r:120,t:14,b:30};
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,width:'100%'});
+  const iw=W-pad.l-pad.r;
+  const barH=20,gap=18;
+  rules.forEach((d,i)=>{
+    const y=pad.t+i*(barH*2+gap);
+    svg.appendChild(txt(pad.l-12,y+barH-4,d[0],{anchor:'end',size:12,fill:'#c3c9d6'}));
+    // exact
+    svg.appendChild(el('rect',{x:pad.l,y,width:iw,height:barH,rx:3,fill:'#1a1e26'}));
+    svg.appendChild(el('rect',{x:pad.l,y,width:iw*d[1]/100,height:barH,rx:3,fill:'#7c8cff',opacity:.9}));
+    svg.appendChild(txt(pad.l+iw*d[1]/100+8,y+barH-5,d[1]+'% 完全一致',{size:11,fill:'#aab3ff'}));
+    // within1
+    const y2=y+barH+5;
+    svg.appendChild(el('rect',{x:pad.l,y:y2,width:iw,height:barH,rx:3,fill:'#1a1e26'}));
+    svg.appendChild(el('rect',{x:pad.l,y:y2,width:iw*d[2]/100,height:barH,rx:3,fill:'#3fb9a4',opacity:.75}));
+    svg.appendChild(txt(pad.l+iw*d[2]/100+8,y2+barH-5,d[2]+'% 在 ±1 级内',{size:11,fill:'#6cd3b8'}));
+  });
+  svg.appendChild(txt(pad.l,H-8,'紫色 = 完全一致   ·   绿色 = 含 ±1 级容差',{size:10,fill:'#6c7484'}));
+  document.getElementById('rules').appendChild(svg);
+})();
+
+// 3 heatmap
+(function(){
+  const W=1000,H=392,pad={l:70,r:20,t:54,b:20};
+  const cw=(W-pad.l-pad.r)/6, ch=52;
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,width:'100%'});
+  LV.forEach((l,j)=>svg.appendChild(txt(pad.l+cw*j+cw/2,pad.t-28,l,{anchor:'middle',size:12,fill:COL[l],w:600})));
+  
+  conf.forEach((row,i)=>{
+    const y=pad.t+i*ch;
+    svg.appendChild(txt(pad.l-12,y+ch/2+4,LV[i],{anchor:'end',size:12,fill:COL[LV[i]],w:600}));
+    const tot=row.reduce((a,b)=>a+b,0);
+    row.forEach((v,j)=>{
+      const x=pad.l+cw*j;
+      const share=v/tot;
+      svg.appendChild(el('rect',{x:x+2,y:y+2,width:cw-4,height:ch-4,rx:5,fill:v?`rgba(124,140,255,${0.12+share*0.78})`:'#14171d'}));
+      if(v) svg.appendChild(txt(x+cw/2,y+ch/2+1,String(v),{anchor:'middle',size:13,fill:share>.45?'#fff':'#c3c9d6',w:600}));
+      if(v) svg.appendChild(txt(x+cw/2,y+ch/2+15,Math.round(share*100)+'%',{anchor:'middle',size:9.5,fill:'#8f97a8'}));
+    });
+  });
+  svg.appendChild(txt(16,pad.t+ch*3,'词光标注',{size:10.5,fill:'#6c7484',anchor:'start'}));
+  document.getElementById('heat').appendChild(svg);
+})();
+
+// 4 sense fit
+(function(){
+  const W=1000,H=92;
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,width:'100%'});
+  const x=0,y=18,w=W,h=30;
+  svg.appendChild(el('rect',{x,y,width:w,height:h,rx:5,fill:'#1a1e26'}));
+  svg.appendChild(el('rect',{x,y,width:w*0.29,height:h,rx:5,fill:'#7c8cff'}));
+  svg.appendChild(txt(12,y+h/2+4,'29.0% 义项等级 = 词光标注 (3,319)',{size:12,fill:'#fff',w:600}));
+  svg.appendChild(txt(w*0.29+12,y+h/2+4,'71.0% 落在其他等级 (8,120)',{size:12,fill:'#929aab'}));
+  document.getElementById('fit').appendChild(svg);
+})();
+
+// 5 span
+(function(){
+  const W=1000,H=210,pad={l:40,r:20,t:20,b:40};
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,width:'100%'});
+  const max=1250, iw=W-pad.l-pad.r, bw=iw/span.length;
+  [0,250,500,750,1000].forEach(v=>{
+    const y=H-pad.b-(H-pad.t-pad.b)*v/max;
+    svg.appendChild(el('line',{x1:pad.l,y1:y,x2:W-pad.r,y2:y,stroke:'#242a34'}));
+    svg.appendChild(txt(pad.l-8,y+4,v,{anchor:'end',size:10,fill:'#6c7484'}));
+  });
+  span.forEach((d,i)=>{
+    const hh=(H-pad.t-pad.b)*d[1]/max;
+    const x=pad.l+bw*i+bw*0.22, y=H-pad.b-hh;
+    svg.appendChild(el('rect',{x,y,width:bw*0.56,height:hh,rx:4,fill:'#7c8cff',opacity:.85}));
+    svg.appendChild(txt(x+bw*0.28,y-8,d[1],{anchor:'middle',size:11,fill:'#c3c9d6',w:600}));
+    svg.appendChild(txt(x+bw*0.28,H-pad.b+18,d[0]+' 级',{anchor:'middle',size:11,fill:'#6c7484'}));
+  });
+  document.getElementById('span').appendChild(svg);
+})();
+</script>
+</body>
+</html>
