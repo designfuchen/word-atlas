@@ -1,532 +1,334 @@
-# 词光不更新时，自己怎么打补丁
+# 词光补丁清单
 
-> 按**词头 · CEFR 等级 · 义项**整理的自学修正清单。
-> 依据 `AUDIT-REPORT.md`；完整数据见 `learner-patch.csv`（可导入 Anki 或表格）。
-> 适用：继续用词光背词，但想让等级与义项对齐 CEFR。2026-11-23。
+> 词表本身不更新，靠自学补。只回答三件事：**等级怎么换算、哪些词背反了、还缺哪些词**。
+> 依据 EVP 全量比对（15,696 条义项，见 `AUDIT-REPORT.md`）；逐词数据见 `learner-patch.csv`。
+>
+> 文中两个词先分清：**词光首义** = 词光自己列的第一条义项；**入门义** = CEFR 认为这个词最早该会的那条义项。两者不一致，才需要按第 2 节改。
 
----
+## 先做这三件事
 
-## 一句话版本
-
-1. **等级偏乐观约半级**：词光标 B2 的，按 C1 的力气学；标 C1 的，按 C2。
-2. **6 个词把进阶义当成了入门义**，先把基础义补上；另有 3 个只是等级标高了，义项没错。
-3. **词光缺 1,502 个 CEFR 收录的单词**，其中 A1/A2 基础词 80 个、学术词 46 个，优先补这些。
-
-### 怎么用这份清单
-
-- 只想调整心里的难度尺子 → 看第 1 节，5 行表。
-- 想按清单补词 → 直接跳到第 4 节，或把 `learner-patch.csv` 导入 Anki 后筛 `type=add`。
-- 想重背被标错或需要上调预期的词 → 第 2 节（9 个）+ 第 3 节（319 个）。
-
-### 六个概念，别混
-
-EVP 的**一条记录就是一条义项**，由四样东西组成：**释义 + 义项标记 + 词性 + 等级**；词头只是它挂在谁名下。
-
-| 概念 | 是什么 | 容易混成什么 |
-| --- | --- | --- |
-| **义项**（entry） | EVP 的一条记录：释义 + 标记 + 词性 + 等级 | 不是「词」的另一个说法 |
-| **释义**（definition） | 这条义项的含义，取自详情页 | — |
-| **义项标记**（guideword） | 给义项起的分类名，用来区分同词不同义（`FRIED FOOD`、`ANIMAL`） | **不是释义**；可缺失，入门义项里 62.7% 没有标记 |
-| **词性**（part of speech） | noun / verb / adjective … | 不是义项本身 |
-| **等级**（level） | A1–C2，逐条义项给定 | 不是「这个词」的属性 |
-| **入门义项** | 该词在最低等级下的那一组记录（17.3% 的词不止一条） | 不是「第一条」 |
-
-「义项标记」与「词性」两列按位置一一对应，同一词有多条时用「；」分隔——所以会出现 `verb；verb`（两条都是动词）这种写法，不是重复。所以 `FRIED FOOD · noun` 是**标记 + 词性**，不是义项内容；义项内容在「释义」列。第 3、4 节只列标记与词性——那两张表是拿来找词的，不是拿来读释义的；完整释义见 `evp-definitions.csv`。
+1. **等级往上算半级**：B2 按 C1 准备，C1 按 C2。
+2. **补 9 个词的入门义**（第 2 节）——它们的基础义可能没背过。
+3. **补词**：先补最常用的 16 个（4.1），再补 A1–A2 缺的 71 个（4.2），最后学术词 46 个（4.3）。
 
 ---
 
-## 1. 先改换算习惯
+## 1. 等级换算表
 
-最高性价比的一步：不改词表，只在脑子里做一次换算。依据是 4,838 个可比词的混淆矩阵。
+4,838 个可比词里，词光标注与 CEFR 实际等级的对应：
 
-| 词光标为 | 确实是该级的比例 | 建议按 | 你的动作 |
+| 词光标为 | 确实是该级 | 建议按 | 怎么做 |
 | --- | ---: | --- | --- |
 | A1 | 66% | A1 | 放心背 |
 | A2 | 53% | A2 | 基本可信 |
 | B1 | 62% | B1 | 基本可信 |
-| B2 | 50% | **C1** | 一半以上是 C1/C2 |
+| B2 | 50% | **C1** | 一半其实是 C1/C2 |
 | C1 | 27% | **C2** | 71% 被 CEFR 判为 C2 |
-| C2 | — | **超出 CEFR** | 词光的 C2 大多不在 CEFR 词表内 |
+| C2 | — | **超纲词** | 大多不在 CEFR 词表内 |
 
-换句话说：**词光越往上，越不能当分级用。** B2 是需要重新校准的线，C1 之后基本失效。
+**A1–B1 可以信，B2 开始往上加半级，C1 之后不能当分级用。**
 
 ---
 
-## 2. 入门义项选错了：先把基础义补上
+## 2. 九个要注意的词
 
-### 2.1 入门义项不同（6 个）
+### 2.1 义项排反了（6 个）
 
-词光给的义项没错，但**不是 CEFR 认为最早该会的那个**。先补入门义项，再回到进阶义。
+词光的义项没写错，但**不是 CEFR 认为最早该会的那个**。先把入门义补上。
 
-| 词头 | 词光等级 | 词光首义 | 入门义项（释义） | 义项标记 | 词性 | 入门级 | 类型 · 怎么补 |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| chip | B2 | n. 芯片；集成电路 | a long thin piece of potato that is cooked in oil | FRIED FOOD | noun | A1 | **缺义**：词光只有芯片 / 碎屑 / 碰掉，没有「薯条」义，需要新增。 |
-| bear | B2 | v. 忍受；承受；承担 | a large, strong, wild animal with thick fur | （无标签） | noun | A2 | **顺序**：「熊」在第 2 条，且词性由动词变成名词。 |
-| identification | B2 | n. 识别；鉴定 | an official document that shows or proves who you are | DOCUMENT | noun | A2 | **顺序**：「身份证明」在第 2 条，词光首义是「识别」。 |
-| soul | B2 | n. 灵魂；心灵 | popular music which expresses deep feelings, originall… | MUSIC | noun | A2 | **顺序**：「灵魂乐」在第 3 条，词光首义是「灵魂」。 |
-| comparative | B2 | adj. 比较的；对比的 | the form of an adjective or adverb that expresses a di… | ADJECTIVE | noun | A2 | **顺序**：「比较级」在第 3 条（名词），与 EVP 这条同词性，只是排在了最后。 |
-| crisp | B2 | adj. 脆的；酥脆的 | a very thin slice of potato that has been cooked in oi… | （无标签） | noun | A2 | **顺序**：「薯片」在第 3 条；词光首义是形容词「脆的」，EVP 这条是名词，词性都不同。 |
+| 词 | 词光等级 | 词光首义 | CEFR 入门义（释义） | 中文 | 怎么补 |
+| --- | --- | --- | --- | --- | --- |
+| chip | B2 | n. 芯片；集成电路 | a long thin piece of potato that is cooked in oil | 英式薯条 | 缺义：词光只有芯片 / 碎屑 / 碰掉 |
+| bear | B2 | v. 忍受；承受；承担 | a large, strong, wild animal with thick fur | 熊 | 顺序：熊在第 2 条，词性也从动词变名词 |
+| identification | B2 | n. 识别；鉴定 | an official document that shows or proves who you are | 身份证明 | 顺序：身份证明在第 2 条 |
+| soul | B2 | n. 灵魂；心灵 | popular music which expresses deep feelings, originally perf… | 灵魂乐 | 顺序：灵魂乐在第 3 条 |
+| comparative | B2 | adj. 比较的；对比的 | the form of an adjective or adverb that expresses a differen… | 比较级 | 顺序：比较级在第 3 条 |
+| crisp | B2 | adj. 脆的；酥脆的 | a very thin slice of potato that has been cooked in oil and… | 薯片 | 顺序：薯片在第 3 条，词光首义是形容词 |
 
 ### 2.2 只是等级标高了（3 个）
 
-义项和 CEFR 一致，只是词光把难度标高了。按 CEFR 的等级学即可，别被标签吓到。
+义项没错，按 CEFR 的等级学就行，别被词光的标签吓到。
 
-| 词头 | 词光等级 | 词光首义 | 入门义项（释义） | 义项标记 | 词性 | 入门级 | 说明 |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| golden | B2 | adj. 金色的 | made of gold；being the bright yellow colour of gold | METAL；COLOUR | adjective；adjective | A2 | 词光首义「金色的」对应 EVP 的 COLOUR 义，两者都是 A2；EVP 另有 METAL「金制的」也是 A2。 |
-| rap | B2 | n. 说唱音乐 | a type of music in which the words are spoken… | （无标签） | noun | A2 | 义项一致，只是等级标高了。 |
-| slim | B1 | adj. 苗条的 | Someone who is slim is thin in an attractive w… | THIN | adjective | A1 | 义项一致，只是等级标高了。 |
-
----
-
-## 3. 等级差 2 级及以上：328 个词
-
-其中 **319 个是「词光标低」**——你按更低的等级背了它，CEFR 认为要到更高等级才算掌握。这不是让你重背，而是提示：你只掌握了它最基础的一面。其余 9 个是上一节的反向情况。
-
-常见原因有三类，看表时留意：
-
-- **词光收的是另一个义项**：`cookie` 词光按美式「饼干」标 A2，EVP 英式只收 C2 的「曲奇」；
-- **CEFR 只收某个固定搭配**：`crying` 在 EVP 里只有 `be crying out for sth`（C2）；
-- **词光把词元拆开了**：`clothing`、`learning`、`saving` 这类 -ing 名词单独成条，CEFR 按词族计。
-
-下表按 **入门等级** 分组，每级按词频排序；EVP 入门义项超过 2 条的只显示前 2 条，完整 328 条见 CSV。
-
-> 表里的「（无标签）」表示 EVP 这条记录没有给 guideword——62.7% 的词在入门等级都是这样。这种情况下只能看到词性，具体含义要回查词光的对应义项。
-
-### 入门级 B1（16 个）
-
-| 词头 | 词光等级 | 义项标记 | 词性 | 入门级 | 全区间 | 词频 |
-| --- | --- | --- | --- | --- | --- | ---: |
-| lady | A1 | （无标签） | noun | B1 | B1 | 479 |
-| feeling | A1 | EMOTION；IDEA；PHYSICAL SENSE | noun；noun；noun | B1 | B1/B2 | 553 |
-| personal | A1 | RELATING TO A PERSON；FOR ONE PERSON；PRIVATE | adjective；adjective；adjective | B1 | B1 | 912 |
-| relax | A1 | BECOME HAPPY | verb | B1 | B1/C1 | 919 |
-| smell | A1 | USE NOSE；UNPLEASANT；CHARACTERISTIC；（无标签） | verb；verb；noun；phrase | B1 | B1/B2 | 968 |
-| smile | A1 | （无标签）；（无标签） | verb；noun | B1 | B1 | 1,190 |
-| pants | A1 | （无标签） | noun | B1 | B1 | 1,373 |
-| delicious | A1 | （无标签） | adjective | B1 | B1 | 2,018 |
-| writer | A1 | （无标签） | noun | B1 | B1 | 2,549 |
-| tiger | A1 | （无标签） | noun | B1 | B1 | 2,693 |
-| gym | A1 | EXERCISES；BUILDING | noun；noun | B1 | B1 | 2,992 |
-| strawberry | A1 | （无标签） | noun | B1 | B1 | 7,907 |
-| rainy | A1 | （无标签） | adjective | B1 | B1 | 9,557 |
-| toothpaste | A1 | （无标签） | noun | B1 | B1 | 11,792 |
-| alphabet | A1 | （无标签） | noun | B1 | B1 | 12,664 |
-| giraffe | A1 | （无标签） | noun | B1 | B1 | 13,464 |
-
-### 入门级 B2（25 个）
-
-| 词头 | 词光等级 | 义项标记 | 词性 | 入门级 | 全区间 | 词频 |
-| --- | --- | --- | --- | --- | --- | ---: |
-| cause | A2 | REASON WHY；（无标签） | noun；verb | B2 | B2/C1/C2 | 555 |
-| lower | A2 | MOVE；REDUCE | verb；verb | B2 | B2 | 1,966 |
-| sale | A2 | SELL | noun | B2 | B2 | 2,419 |
-| learning | A2 | （无标签） | noun | B2 | B2 | 2,513 |
-| tail | A2 | ANIMAL | noun | B2 | B2/C2 | 2,607 |
-| task | A2 | （无标签） | noun | B2 | B2 | 2,698 |
-| nail | A2 | METAL；BODY PART | noun；noun | B2 | B2 | 3,261 |
-| naughty | A2 | （无标签） | adjective | B2 | B2 | 3,809 |
-| tool | A2 | MAKE/REPAIR；EQUIPMENT | noun；noun | B2 | B2/C1 | 4,294 |
-| cherry | A2 | （无标签） | noun | B2 | B2 | 4,436 |
-| clothing | A2 | （无标签） | noun | B2 | B2 | 4,525 |
-| bench | A2 | （无标签） | noun | B2 | B2 | 4,762 |
-| subway | A2 | （无标签） | noun | B2 | B2 | 5,171 |
-| cloth | A2 | MATERIAL；FOR CLEANING | noun；noun | B2 | B2 | 5,646 |
-| sadly | A2 | NOT HAPPY；NOT SATISFACTORY | adverb；adverb | B2 | B2 | 6,001 |
-| mother-in-law | A2 | （无标签） | noun | B2 | B2 | 7,493 |
-| father-in-law | A2 | （无标签） | noun | B2 | B2 | 7,816 |
-| gardener | A2 | （无标签） | noun | B2 | B2 | 8,032 |
-| bakery | A2 | （无标签） | noun | B2 | B2 | 8,663 |
-| crocodile | A2 | （无标签） | noun | B2 | B2 | 9,430 |
-| pancake | A2 | （无标签） | noun | B2 | B2 | 11,118 |
-| zebra | A2 | （无标签） | noun | B2 | B2 | 12,535 |
-| gardening | A2 | （无标签） | noun | B2 | B2 | 12,577 |
-| pyjamas | A2 | （无标签） | noun | B2 | B2 | 16,393 |
-| non-smoking | A2 | （无标签） | adjective | B2 | B2 | 40,909 |
-
-### 入门级 C1（32 个）
-
-| 词头 | 词光等级 | 义项标记 | 词性 | 入门级 | 全区间 | 词频 |
-| --- | --- | --- | --- | --- | --- | ---: |
-| bet | B1 | （无标签） | verb | C1 | C1/C2 | 654 |
-| suppose | A2 | LIKELY；（无标签） | verb；phrase | C1 | C1 | 765 |
-| lay | B1 | （无标签）；（无标签） | phrasal verb；phrase | C1 | C1 | 1,370 |
-| scare | B1 | FRIGHTEN；（无标签） | verb；phrasal verb | C1 | C1/C2 | 2,002 |
-| saving | B1 | LESS MONEY | noun | C1 | C1 | 2,062 |
-| march | B1 | （无标签）；SHOW DISAGREEMENT；SOLDIERS' WALK | noun；verb；verb | C1 | C1/C2 | 2,164 |
-| campaign | B1 | ACTIVITIES；WAR；（无标签） | noun；noun；verb | C1 | C1 | 2,464 |
-| tank | B1 | VEHICLE | noun | C1 | C1/C2 | 2,616 |
-| hop | B1 | MOVE QUICKLY | verb | C1 | C1/C2 | 3,632 |
-| assignment | B1 | （无标签） | noun | C1 | C1 | 3,917 |
-| nap | B1 | （无标签） | noun | C1 | C1 | 4,505 |
-| quote | B1 | REPEAT；GIVE EXAMPLE | verb；verb | C1 | C1/C2 | 4,794 |
-| coal | B1 | FUEL | noun | C1 | C1 | 4,937 |
-| compliment | B1 | （无标签） | verb | C1 | C1/C2 | 5,035 |
-| appetite | B1 | FOOD | noun | C1 | C1 | 5,046 |
-| bubble | B1 | （无标签）；（无标签） | noun；phrase | C1 | C1/C2 | 5,289 |
-| journal | B1 | MAGAZINE | noun | C1 | C1/C2 | 5,583 |
-| pony | B1 | （无标签） | noun | C1 | C1 | 5,749 |
-| straw | B1 | （无标签） | noun | C1 | C1/C2 | 6,162 |
-| lounge | B1 | （无标签） | noun | C1 | C1 | 6,730 |
-| vest | B1 | UNDERWEAR | noun | C1 | C1 | 6,771 |
-| workshop | B1 | （无标签） | noun | C1 | C1 | 7,254 |
-| transportation | B1 | （无标签） | noun | C1 | C1 | 7,798 |
-| pyramid | B1 | （无标签） | noun | C1 | C1 | 8,143 |
-| mat | B1 | （无标签） | noun | C1 | C1 | 8,515 |
-| chilly | B1 | （无标签） | adjective | C1 | C1 | 8,801 |
-| workplace | B1 | （无标签） | noun | C1 | C1 | 11,984 |
-| historian | B1 | （无标签） | noun | C1 | C1 | 13,442 |
-| listener | B1 | （无标签） | noun | C1 | C1 | 14,631 |
-| trainee | B1 | （无标签） | noun | C1 | C1 | 15,210 |
-| similarly | B1 | （无标签） | adverb | C1 | C1 | 18,165 |
-| newsletter | B1 | （无标签） | noun | C1 | C1 | 23,950 |
-
-### 入门级 C2（246 个，列前 40）
-
-| 词头 | 词光等级 | 义项标记 | 词性 | 入门级 | 全区间 | 词频 |
-| --- | --- | --- | --- | --- | --- | ---: |
-| crying | B1 | （无标签） | phrasal verb | C2 | C2 | 892 |
-| narrator | B2 | （无标签） | noun | C2 | C2 | 1,197 |
-| commander | B2 | （无标签） | noun | C2 | C2 | 1,396 |
-| goodness | B2 | （无标签） | noun | C2 | C2 | 1,925 |
-| suck | B2 | （无标签） | verb | C2 | C2 | 2,014 |
-| mercy | B2 | KINDNESS | noun | C2 | C2 | 2,110 |
-| prime | B2 | MAIN | adjective | C2 | C2 | 2,191 |
-| sin | B2 | RELIGION；MORALLY WRONG | noun；noun | C2 | C2 | 2,458 |
-| flesh | B2 | BODY | noun | C2 | C2 | 2,642 |
-| pathetic | B2 | BAD；SAD | adjective；adjective | C2 | C2 | 2,790 |
-| siren | B2 | （无标签） | noun | C2 | C2 | 2,840 |
-| surrender | B2 | （无标签） | verb | C2 | C2 | 2,991 |
-| skull | B2 | （无标签） | noun | C2 | C2 | 3,024 |
-| crystal | B2 | GLASS | noun | C2 | C2 | 3,102 |
-| lad | B2 | （无标签） | noun | C2 | C2 | 3,104 |
-| motion | B2 | MOVEMENT；SUGGESTION | noun；noun | C2 | C2 | 3,116 |
-| chill | B2 | COLD；FEAR | noun；noun | C2 | C2 | 3,201 |
-| spit | B2 | （无标签） | verb | C2 | C2 | 3,202 |
-| nerve | B2 | PART OF THE BODY；RUDENESS；BEING BRAVE | noun；noun；noun | C2 | C2 | 3,209 |
-| conscience | B2 | （无标签） | noun | C2 | C2 | 3,295 |
-| pit | B2 | （无标签） | noun | C2 | C2 | 3,365 |
-| pat | B2 | （无标签） | verb | C2 | C2 | 3,492 |
-| snap | B2 | BREAK；LOSE CONTROL；SPEAK ANGRILY；（无标签） | verb；verb；verb；phrase | C2 | C2 | 3,542 |
-| sneak | B2 | （无标签） | phrase | C2 | C2 | 3,648 |
-| pole | B1 | （无标签） | noun | C2 | C2 | 3,729 |
-| core | B2 | IMPORTANT PART；FRUIT | noun；noun | C2 | C2 | 3,776 |
-| warehouse | B2 | （无标签） | noun | C2 | C2 | 3,872 |
-| hostage | B2 | PERSON | noun | C2 | C2 | 3,873 |
-| fraud | B2 | CRIME；TRICK | noun；noun | C2 | C2 | 3,904 |
-| throne | B2 | （无标签）；FOR KING/QUEEN | phrase；noun | C2 | C2 | 3,965 |
-| wicked | B2 | （无标签） | adjective | C2 | C2 | 3,971 |
-| combat | B2 | （无标签）；（无标签） | noun；verb | C2 | C2 | 4,075 |
-| weed | B2 | （无标签） | noun | C2 | C2 | 4,080 |
-| barn | B2 | （无标签） | noun | C2 | C2 | 4,092 |
-| cookie | A2 | （无标签） | noun | C2 | C2 | 4,160 |
-| nest | B1 | BIRDS；（无标签） | noun；verb | C2 | C2 | 4,183 |
-| medication | B2 | （无标签） | noun | C2 | C2 | 4,189 |
-| tire | B1 | BECOME TIRED；（无标签） | verb；phrasal verb | C2 | C2 | 4,411 |
-| retreat | B2 | （无标签）；MOVE；PLACE；（无标签） | verb；noun；noun；phrase | C2 | C2 | 4,498 |
-| alliance | B2 | （无标签） | noun | C2 | C2 | 4,523 |
-
-> 其余 206 个见 `learner-patch.csv`（`type=fix`、`cefr_level=C2`、`note=severe`）。
+| 词 | 词光等级 | CEFR | 说明 |
+| --- | --- | --- | --- |
+| golden | B2 | A2 | 「金色的」= EVP 的 COLOUR，两边都是 A2 |
+| rap | B2 | A2 | 说唱，义项一致 |
+| slim | B1 | A1 | 苗条，义项一致 |
 
 ---
 
-## 4. 该补的词
+## 3. 这些词，词光说简单了
 
-词光未收录、CEFR 收录的单词共 1,502 个。按优先级分三块。
+还有 319 个词的 CEFR 等级比词光高 2 级以上。不是让你重背，而是提醒：**你以为会了，其实只掌握了最基础的一面。**
 
-### 4.1 高频核心缺口（COCA 前 1,000，16 个）
+下表按 CEFR 等级排，B1/B2 全列，C1/C2 只列高频；完整 319 条见 CSV（`note=severe`）。
 
-这些不是生僻词，是最常用的词。缺了会直接卡住听说读写。
+| 词 | 词光 | CEFR | 入门义 | 词频 |
+| --- | --- | --- | --- | ---: |
+| lady | A1 | B1 | noun（无标记） | 479 |
+| feeling | A1 | B1 | EMOTION（noun）；IDEA（noun） 等 3 条 | 553 |
+| personal | A1 | B1 | RELATING TO A PERSON（adjective）；FOR ONE PERSON（adjective） 等 3 条 | 912 |
+| relax | A1 | B1 | BECOME HAPPY（verb） | 919 |
+| smell | A1 | B1 | USE NOSE（verb）；UNPLEASANT（verb） 等 4 条 | 968 |
+| smile | A1 | B1 | verb（无标记）；noun（无标记） | 1,190 |
+| pants | A1 | B1 | noun（无标记） | 1,373 |
+| delicious | A1 | B1 | adjective（无标记） | 2,018 |
+| writer | A1 | B1 | noun（无标记） | 2,549 |
+| tiger | A1 | B1 | noun（无标记） | 2,693 |
+| gym | A1 | B1 | EXERCISES（noun）；BUILDING（noun） | 2,992 |
+| strawberry | A1 | B1 | noun（无标记） | 7,907 |
+| rainy | A1 | B1 | adjective（无标记） | 9,557 |
+| toothpaste | A1 | B1 | noun（无标记） | 11,792 |
+| alphabet | A1 | B1 | noun（无标记） | 12,664 |
+| giraffe | A1 | B1 | noun（无标记） | 13,464 |
+| cause | A2 | B2 | REASON WHY（noun）；verb（无标记） | 555 |
+| lower | A2 | B2 | MOVE（verb）；REDUCE（verb） | 1,966 |
+| sale | A2 | B2 | SELL（noun） | 2,419 |
+| learning | A2 | B2 | noun（无标记） | 2,513 |
+| tail | A2 | B2 | ANIMAL（noun） | 2,607 |
+| task | A2 | B2 | noun（无标记） | 2,698 |
+| nail | A2 | B2 | METAL（noun）；BODY PART（noun） | 3,261 |
+| naughty | A2 | B2 | adjective（无标记） | 3,809 |
+| tool | A2 | B2 | MAKE/REPAIR（noun）；EQUIPMENT（noun） | 4,294 |
+| cherry | A2 | B2 | noun（无标记） | 4,436 |
+| clothing | A2 | B2 | noun（无标记） | 4,525 |
+| bench | A2 | B2 | noun（无标记） | 4,762 |
+| subway | A2 | B2 | noun（无标记） | 5,171 |
+| cloth | A2 | B2 | MATERIAL（noun）；FOR CLEANING（noun） | 5,646 |
+| sadly | A2 | B2 | NOT HAPPY（adverb）；NOT SATISFACTORY（adverb） | 6,001 |
+| mother-in-law | A2 | B2 | noun（无标记） | 7,493 |
+| father-in-law | A2 | B2 | noun（无标记） | 7,816 |
+| gardener | A2 | B2 | noun（无标记） | 8,032 |
+| bakery | A2 | B2 | noun（无标记） | 8,663 |
+| crocodile | A2 | B2 | noun（无标记） | 9,430 |
+| pancake | A2 | B2 | noun（无标记） | 11,118 |
+| zebra | A2 | B2 | noun（无标记） | 12,535 |
+| gardening | A2 | B2 | noun（无标记） | 12,577 |
+| pyjamas | A2 | B2 | noun（无标记） | 16,393 |
+| non-smoking | A2 | B2 | adjective（无标记） | 40,909 |
+| bet | B1 | C1 | verb（无标记） | 654 |
+| suppose | A2 | C1 | LIKELY（verb）；phrase（无标记） | 765 |
+| lay | B1 | C1 | phrasal verb（无标记）；phrase（无标记） | 1,370 |
+| scare | B1 | C1 | FRIGHTEN（verb）；phrasal verb（无标记） | 2,002 |
+| saving | B1 | C1 | LESS MONEY（noun） | 2,062 |
+| march | B1 | C1 | noun（无标记）；SHOW DISAGREEMENT（verb） 等 3 条 | 2,164 |
+| campaign | B1 | C1 | ACTIVITIES（noun）；WAR（noun） 等 3 条 | 2,464 |
+| tank | B1 | C1 | VEHICLE（noun） | 2,616 |
+| hop | B1 | C1 | MOVE QUICKLY（verb） | 3,632 |
+| assignment | B1 | C1 | noun（无标记） | 3,917 |
+| nap | B1 | C1 | noun（无标记） | 4,505 |
+| quote | B1 | C1 | REPEAT（verb）；GIVE EXAMPLE（verb） | 4,794 |
+| coal | B1 | C1 | FUEL（noun） | 4,937 |
+| compliment | B1 | C1 | verb（无标记） | 5,035 |
+| appetite | B1 | C1 | FOOD（noun） | 5,046 |
+| bubble | B1 | C1 | noun（无标记）；phrase（无标记） | 5,289 |
+| journal | B1 | C1 | MAGAZINE（noun） | 5,583 |
+| pony | B1 | C1 | noun（无标记） | 5,749 |
+| straw | B1 | C1 | noun（无标记） | 6,162 |
+| lounge | B1 | C1 | noun（无标记） | 6,730 |
+| crying | B1 | C2 | phrasal verb（无标记） | 892 |
+| narrator | B2 | C2 | noun（无标记） | 1,197 |
+| commander | B2 | C2 | noun（无标记） | 1,396 |
+| goodness | B2 | C2 | noun（无标记） | 1,925 |
+| suck | B2 | C2 | verb（无标记） | 2,014 |
+| mercy | B2 | C2 | KINDNESS（noun） | 2,110 |
+| prime | B2 | C2 | MAIN（adjective） | 2,191 |
+| sin | B2 | C2 | RELIGION（noun）；MORALLY WRONG（noun） | 2,458 |
+| flesh | B2 | C2 | BODY（noun） | 2,642 |
+| pathetic | B2 | C2 | BAD（adjective）；SAD（adjective） | 2,790 |
 
-| 词头 | 义项标记 | 词性 | 入门级 | 词频 | 备注 |
-| --- | --- | --- | --- | ---: | --- |
-| go | MOVE/TRAVEL；DO SOMETHING | verb；verb | A1 | 47 | 基础移动动词 |
-| work | PLACE；JOB；DO JOB | noun；noun；verb | A1 | 151 | 兼动词与名词 |
-| happy | PLEASED | adjective | A1 | 296 | 核心形容词 |
-| part | PIECE | noun | A1 | 380 | 兼名词与动词 |
-| page | PAPER | noun | A1 | 709 |  |
-| thank | （无标签） | verb | A2 | 131 | `thank you` 是 A1 |
-| check | EXAMINE | verb | A2 | 410 | 兼名词 |
-| song | （无标签） | noun | A2 | 679 |  |
-| deep | TOP TO BOTTOM | adjective | A2 | 900 | 兼形容词与副词 |
-| search | TRY TO FIND；USE COMPUTER；TRY TO FIND；USE COMPUTER | verb；verb；noun；noun | B1 | 1,106 | 兼名词与动词 |
-| likely | （无标签） | adjective | B1 | 1,899 |  |
-| entire | （无标签） | adjective | B2 | 814 |  |
-| religious | PERSON；OF RELIGION | adjective；adjective | B2 | 887 |  |
-| reveal | TELL | verb | B2 | 930 |  |
-| trial | IN COURT | noun | B2 | 1,460 |  |
-| federal | — | — | — | 494 | EVP 未收，按 B2 处理 |
+> C1 列了 20 个、C2 列了 10 个；其余 C1 12 个、C2 236 个在 CSV。
 
-### 4.2 学术词缺口（AWL 570 词族中缺 46 族）
+---
 
-雅思写作最直接的缺口，子表数字越小越核心。括号内是该词的入门等级（`—` 表示 EVP 未收）。
+## 4. 要补的词
 
-| 子表 | 缺失词族（入门级） |
+词光未收录、CEFR 收录的单词共 **1,502** 个。按优先级排。
+
+### 4.1 最常用的 16 个（COCA 前 1,000）
+
+这些不是生僻词，缺了会直接卡住听说读写。
+
+| 词 | 中文 | 等级 | 词频 |
+| --- | --- | --- | ---: |
+| go | 移动 | A1 | 47 |
+| work | 工作 | A1 | 151 |
+| happy | 开心 | A1 | 296 |
+| part | 部分 | A1 | 380 |
+| page | 页 | A1 | 1,860 |
+| thank | 感谢 | A2 | 131 |
+| check | 检查 | A2 | 410 |
+| song | 歌 | A2 | 679 |
+| deep | 深的 | A2 | 900 |
+| search | 搜索 | B1 | 1,106 |
+| likely | 可能的 | B1 | 1,899 |
+| entire | 整个的 | B2 | 814 |
+| religious | 宗教的 | B2 | 3,175 |
+| reveal | 揭示 | B2 | 3,440 |
+| trial | 审判 | B2 | 1,460 |
+| federal | 联邦的 | — | 榜外 |
+
+### 4.2 A1–A2 还缺 71 个（已去掉 4.1 的重复）
+
+最该先补的一批，★ = 词频前 300。
+
+| 词 | 等级 | 词频 |
+| --- | --- | ---: |
+| ★ well | A1 | 59 |
+| ★ two | A1 | 133 |
+| ★ dad | A1 | 221 |
+| ★ three | A1 | 231 |
+| five | A1 | 397 |
+| six | A1 | 546 |
+| past | A1 | 596 |
+| cannot | A1 | 605 |
+| ten | A1 | 620 |
+| goodbye | A1 | 728 |
+| seven | A1 | 788 |
+| eight | A1 | 895 |
+| sad | A1 | 956 |
+| mum | A1 | 970 |
+| beer | A1 | 1,080 |
+| twenty | A1 | 2,411 |
+| fifteen | A1 | 3,877 |
+| zoo | A1 | 4,303 |
+| eleven | A1 | 4,903 |
+| thirteen | A1 | 7,790 |
+| fourteen | A1 | 8,020 |
+| nineteen | A1 | 11,511 |
+| while | A2 | 311 |
+| mine | A2 | 421 |
+| himself | A2 | 585 |
+| luck | A2 | 616 |
+| girlfriend | A2 | 966 |
+| boyfriend | A2 | 1,012 |
+| themselves | A2 | 1,151 |
+| herself | A2 | 1,198 |
+| itself | A2 | 1,302 |
+| grandma | A2 | 1,429 |
+| pack | A2 | 1,537 |
+| grandpa | A2 | 1,550 |
+| carefully | A2 | 2,046 |
+| champagne | A2 | 2,338 |
+| daily | A2 | 2,806 |
+| fifth | A2 | 2,959 |
+| fifty | A2 | 3,530 |
+| granny | A2 | 3,833 |
+| sixth | A2 | 4,693 |
+| photographer | A2 | 4,727 |
+| good-looking | A2 | 5,707 |
+| disco | A2 | 6,634 |
+| cheque | A2 | 6,954 |
+| granddad | A2 | 7,770 |
+| lemonade | A2 | 7,863 |
+| hip-hop | A2 | 7,930 |
+| mosque | A2 | 8,792 |
+| eighty | A2 | 11,699 |
+| motorbike | A2 | 11,869 |
+| grandchild | A2 | 12,695 |
+| seventy | A2 | 13,000 |
+| ninety | A2 | 13,012 |
+| right-hand | A2 | 13,101 |
+| singular | A2 | 16,464 |
+| pence | A2 | 16,745 |
+| omelette | A2 | 18,080 |
+| plural | A2 | 19,768 |
+| verb | A2 | 21,020 |
+| policewoman | A2 | 23,569 |
+| businesswoman | A2 | 24,398 |
+| footballer | A2 | 25,094 |
+| kilogram | A2 | 36,902 |
+| salesperson | A2 | 40,786 |
+| washing-up | A2 | 47,925 |
+| headteacher | A2 | 榜外 |
+| let's | A2 | 榜外 |
+| penfriend | A2 | 榜外 |
+| schoolchild | A2 | 榜外 |
+| superlative | A2 | 榜外 |
+
+> 数词缺得最离谱：有 one / four / nine / hundred / thousand / million，却没有 two / three / five / six / seven / eight / ten。
+
+### 4.3 学术词 46 个（AWL 570 词族里缺的）
+
+雅思写作最直接的缺口，子表数字越小越核心。
+
+| 子表 | 词族 |
 | --- | --- |
-| S1 | legislate(—) |
-| S2 | aspect(B2)、equate(C2)、perceive(C1)、potential(B2) |
-| S3 | emphasis(B2)、scheme(B2) |
-| S4 | contrast(B2)、ethnic(C1)、internal(B2)、output(C2)、parallel(C2)、subsequent(C1) |
-| S5 | enable(B2)、notion(C1)、revenue(C1)、whereas(B2) |
-| S6 | acknowledge(C1)、federal(—)、incorporate(C2)、index(C1)、rational(C1) |
-| S7 | foundation(C1)、paradigm(C2)、phenomenon(C1) |
-| S8 | commodity(C1)、complement(—)、infrastructure(C1)、minimise(—)、widespread(C1) |
-| S9 | anticipate(C1)、duration(C1)、ethic(—)、passive(B1)、preliminary(C1)、protocol(—)、qualitative(—)、rigid(C2)、scenario(C2)、supplement(C2)、trigger(C1) |
-| S10 | albeit(C2)、invoke(—)、levy(—)、nonetheless(C1)、pose(C1) |
+| S1 | legislate |
+| S2 | aspect、equate、perceive、potential |
+| S3 | emphasis、scheme |
+| S4 | contrast、ethnic、internal、output、parallel、subsequent |
+| S5 | enable、notion、revenue、whereas |
+| S6 | acknowledge、federal、incorporate、index、rational |
+| S7 | foundation、paradigm、phenomenon |
+| S8 | commodity、complement、infrastructure、minimise、widespread |
+| S9 | anticipate、duration、ethic、passive、preliminary、protocol、qualitative、rigid、scenario、supplement、trigger |
+| S10 | albeit、invoke、levy、nonetheless、pose |
 
-### 4.3 CEFR 各级缺口
+### 4.4 B1 以上还缺的（列前 40）
 
-A1、A2 全列（基础词缺失影响最大），B1 起只列高频的。
+B1–C1 共缺 957 个，按词频列前 40；C2 另有 459 个，见 CSV。
 
-#### A1（27 个）
-
-> 最刺眼的是数词：收了 one / four / nine / hundred / thousand / million，却缺 **two / three / five / six / seven / eight / ten**——1 到 10 里只剩 1、4、9。
-
-| 词头 | 义项标记 | 词性 | 词频 |
-| --- | --- | --- | ---: |
-| go | MOVE/TRAVEL；DO SOMETHING | verb；verb | 47 |
-| well | IN A GOOD WAY；HEALTHY；EXPRESSING DOUBT | adverb；adjective；exclamation | 59 |
-| two | NUMBER | number | 133 |
-| work | PLACE；JOB；DO JOB | noun；noun；verb | 151 |
-| dad | （无标签） | noun | 221 |
-| three | （无标签） | number | 231 |
-| happy | PLEASED | adjective | 296 |
-| part | PIECE | noun | 380 |
-| five | （无标签） | number | 397 |
-| six | （无标签） | number | 546 |
-| past | TIME | preposition | 596 |
-| cannot | （无标签） | modal verb | 605 |
-| ten | （无标签） | number | 620 |
-| goodbye | （无标签） | exclamation | 728 |
-| seven | （无标签） | number | 788 |
-| eight | （无标签） | number | 895 |
-| sad | （无标签） | adjective | 956 |
-| mum | （无标签） | noun | 970 |
-| beer | （无标签） | noun | 1,080 |
-| page | PAPER | noun | 1,860 |
-| twenty | NUMBER | number | 2,411 |
-| fifteen | （无标签） | number | 3,877 |
-| zoo | （无标签） | noun | 4,303 |
-| eleven | （无标签） | number | 4,903 |
-| thirteen | （无标签） | number | 7,790 |
-| fourteen | （无标签） | number | 8,020 |
-| nineteen | （无标签） | number | 11,511 |
-
-#### A2（53 个）
-
-| 词头 | 义项标记 | 词性 | 词频 |
-| --- | --- | --- | ---: |
-| thank | （无标签） | verb | 131 |
-| while | DURING | conjunction | 311 |
-| check | EXAMINE | verb | 410 |
-| mine | （无标签） | pronoun | 421 |
-| himself | REFLEXIVE | pronoun | 585 |
-| luck | CHANCE | noun | 616 |
-| song | （无标签） | noun | 679 |
-| deep | TOP TO BOTTOM | adjective | 900 |
-| girlfriend | ROMANCE | noun | 966 |
-| boyfriend | （无标签） | noun | 1,012 |
-| themselves | REFLEXIVE | pronoun | 1,151 |
-| herself | REFLEXIVE | pronoun | 1,198 |
-| itself | REFLEXIVE | pronoun | 1,302 |
-| grandma | （无标签） | noun | 1,429 |
-| pack | （无标签） | verb | 1,537 |
-| grandpa | （无标签） | noun | 1,550 |
-| carefully | （无标签） | adverb | 2,046 |
-| champagne | （无标签） | noun | 2,338 |
-| daily | EVERY DAY；（无标签） | adjective；adverb | 2,806 |
-| fifth | （无标签） | number | 2,959 |
-| fifty | （无标签） | number | 3,530 |
-| granny | （无标签） | noun | 3,833 |
-| sixth | （无标签） | number | 4,693 |
-| photographer | （无标签） | noun | 4,727 |
-| good-looking | （无标签） | adjective | 5,707 |
-| disco | （无标签） | noun | 6,634 |
-| cheque | （无标签） | noun | 6,954 |
-| granddad | （无标签） | noun | 7,770 |
-| lemonade | （无标签） | noun | 7,863 |
-| hip-hop | （无标签） | noun | 7,930 |
-| mosque | （无标签） | noun | 8,792 |
-| eighty | （无标签） | number | 11,699 |
-| motorbike | （无标签） | noun | 11,869 |
-| grandchild | （无标签） | noun | 12,695 |
-| seventy | （无标签） | number | 13,000 |
-| ninety | NUMBER | number | 13,012 |
-| right-hand | （无标签） | adjective | 13,101 |
-| singular | （无标签）；（无标签） | adjective；noun | 16,464 |
-| pence | （无标签） | noun | 16,745 |
-| omelette | （无标签） | noun | 18,080 |
-| plural | （无标签） | noun | 19,768 |
-| verb | （无标签） | noun | 21,020 |
-| policewoman | （无标签） | noun | 23,569 |
-| businesswoman | （无标签） | noun | 24,398 |
-| footballer | （无标签） | noun | 25,094 |
-| kilogram | （无标签） | noun | 36,902 |
-| salesperson | （无标签） | noun | 40,786 |
-| washing-up | （无标签） | noun | 47,925 |
-| headteacher | （无标签） | noun | 榜外 |
-| let's | （无标签） | phrase | 榜外 |
-| penfriend | （无标签） | noun | 榜外 |
-| schoolchild | （无标签） | noun | 榜外 |
-| superlative | （无标签） | noun | 榜外 |
-
-#### B1（91 个，列前 50）
-
-| 词头 | 义项标记 | 词性 | 词频 |
-| --- | --- | --- | ---: |
-| seriously | BADLY | adverb | 807 |
-| whether | IF | conjunction | 916 |
-| killer | （无标签） | noun | 950 |
-| quit | STOP WORK；STOP SOMETHING | verb；verb | 1,047 |
-| search | TRY TO FIND；USE COMPUTER；TRY TO FIND；USE COMPUTER | verb；verb；noun；noun | 1,106 |
-| somehow | WAY NOT KNOWN | adverb | 1,464 |
-| likely | （无标签） | adjective | 1,899 |
-| cancer | （无标签） | noun | 1,940 |
-| particularly | （无标签） | adverb | 2,870 |
-| lightning | （无标签） | noun | 3,656 |
-| safely | （无标签） | adverb | 3,757 |
-| baker | （无标签） | noun | 4,055 |
-| broad | WIDE | adjective | 4,600 |
-| breast | （无标签） | noun | 4,692 |
-| teenage | （无标签） | adjective | 4,876 |
-| kindly | （无标签） | adverb | 4,919 |
-| fry | （无标签） | verb | 5,007 |
-| secretly | （无标签） | adverb | 5,281 |
-| forehead | （无标签） | noun | 5,699 |
-| leaf | PLANT | noun | 5,736 |
-| beautifully | （无标签） | adverb | 6,238 |
-| rider | （无标签） | noun | 6,959 |
-| keeper | LOOKING AFTER；FOOTBALL | noun；noun | 7,156 |
-| camel | （无标签） | noun | 7,566 |
-| aspirin | （无标签） | noun | 7,889 |
-| fax | （无标签） | verb | 8,063 |
-| surprisingly | （无标签） | adverb | 8,094 |
-| juicy | WITH JUICE | adjective | 8,415 |
-| kitten | （无标签） | noun | 8,455 |
-| nightclub | （无标签） | noun | 8,510 |
-| server | （无标签） | noun | 8,513 |
-| briefly | （无标签） | adverb | 8,914 |
-| disc | RECORDING | noun | 9,492 |
-| unemployment | （无标签） | noun | 10,318 |
-| examiner | （无标签） | noun | 10,867 |
-| underpants | （无标签） | noun | 11,040 |
-| babysit | （无标签） | verb | 11,754 |
-| animation | （无标签） | noun | 11,780 |
-| middle-aged | （无标签） | adjective | 11,865 |
-| amazingly | （无标签） | adverb | 12,217 |
-| diver | （无标签） | noun | 12,266 |
-| knickers | （无标签） | noun | 12,983 |
-| politely | （无标签） | adverb | 13,339 |
-| swimmer | （无标签） | noun | 13,457 |
-| dangerously | （无标签） | adverb | 13,484 |
-| bravely | （无标签） | adverb | 14,182 |
-| accurately | （无标签） | adverb | 14,416 |
-| passive | GRAMMAR | adjective | 14,470 |
-| unimportant | （无标签） | adjective | 14,859 |
-| sweatshirt | （无标签） | noun | 17,601 |
-
-> 其余 41 个见 CSV（`type=add`、`cefr_level=B1`）。
-
-#### B2（474 个，列前 20）
-
-| 词头 | 义项标记 | 词性 | 词频 |
-| --- | --- | --- | ---: |
-| known | FAMILIAR | adjective | 643 |
-| darling | （无标签） | noun | 707 |
-| weird | （无标签） | adjective | 724 |
-| entire | （无标签） | adjective | 814 |
-| bloody | COVERED IN BLOOD | adjective | 1,001 |
-| stuck | NOT MOVE | adjective | 1,081 |
-| mission | PURPOSE | noun | 1,164 |
-| heaven | AFTER LIFE；SOMETHING NICE | noun；noun | 1,166 |
-| witness | （无标签）；（无标签） | noun；verb | 1,232 |
-| beg | VERY POOR；STRONG REQUEST | verb；verb | 1,381 |
-| justice | FAIRNESS；LAW | noun；noun | 1,394 |
-| devil | EVIL BEING | noun | 1,400 |
-| trial | IN COURT | noun | 1,460 |
-| aware | （无标签） | adjective | 1,642 |
-| command | ORDER；KNOWLEDGE | noun；noun | 1,649 |
-| settle | LIVE；DECIDE | verb；verb | 1,719 |
-| naked | NO CLOTHES | adjective | 1,802 |
-| revenge | （无标签） | noun | 1,897 |
-| liar | （无标签） | noun | 1,944 |
-| sexy | （无标签） | adjective | 2,082 |
-
-> 其余 454 个见 CSV（`type=add`、`cefr_level=B2`）。
-
-#### C1（398 个，列前 20）
-
-| 词头 | 义项标记 | 词性 | 词频 |
-| --- | --- | --- | ---: |
-| fake | （无标签） | adjective | 1,566 |
-| witch | （无标签） | noun | 2,334 |
-| sacrifice | （无标签）；（无标签） | noun；verb | 2,440 |
-| empire | BUSINESSES；COUNTRIES | noun；noun | 2,550 |
-| glory | PRAISE；QUALITY | noun；noun | 2,623 |
-| alert | （无标签）；（无标签） | adjective；noun | 2,677 |
-| saint | （无标签） | noun | 2,696 |
-| aboard | （无标签） | adverb | 2,974 |
-| trigger | （无标签） | verb | 3,143 |
-| officially | （无标签） | adverb | 3,296 |
-| pulse | （无标签） | noun | 3,473 |
-| technically | SCIENCE/INDUSTRY | adverb | 3,552 |
-| walker | （无标签） | noun | 3,669 |
-| junk | （无标签） | noun | 3,679 |
-| serial | （无标签）；（无标签） | adjective；noun | 3,777 |
-| foundation | START；ORGANIZATION | noun；noun | 4,065 |
-| rocky | WITH ROCKS | adjective | 4,139 |
-| palm | TREE | noun | 4,184 |
-| scan | READ；COMPUTER | verb；verb | 4,569 |
-| personnel | （无标签） | noun | 4,654 |
-
-> 其余 378 个见 CSV（`type=add`、`cefr_level=C1`）。
-
-#### C2（459 个，列前 15）
-
-| 词头 | 义项标记 | 词性 | 词频 |
-| --- | --- | --- | ---: |
-| squad | （无标签） | noun | 2,522 |
-| trash | （无标签） | noun | 2,586 |
-| custody | CHILD；PRISON | noun；noun | 2,705 |
-| virgin | （无标签）；（无标签） | noun；adjective | 2,739 |
-| crush | CROWD；（无标签）；LOVE | noun；verb；noun | 2,994 |
-| corpse | （无标签） | noun | 3,622 |
-| trauma | （无标签） | noun | 3,755 |
-| resistance | DISAGREE；FIGHT；ORGANIZATION；ILLNESS | noun；noun；noun；noun | 3,790 |
-| buzz | EXCITEMENT；SOUND；SOUND；ENERGY | noun；noun；verb；verb | 3,980 |
-| patch | AREA；MATERIAL；LAND；（无标签） | noun；noun；noun；verb | 4,127 |
-| forgiveness | （无标签） | noun | 4,341 |
-| raid | SOLDIERS；POLICE；POLICE；SOLDIERS | noun；noun；verb；verb | 4,835 |
-| fist | （无标签） | noun | 4,909 |
-| blackmail | （无标签）；（无标签） | noun；verb | 4,978 |
-| ritual | （无标签） | noun | 5,001 |
-
-> 其余 444 个见 CSV（`type=add`、`cefr_level=C2`）。
+| 词 | 等级 | 词频 |
+| --- | --- | ---: |
+| seriously | B1 | 807 |
+| whether | B1 | 916 |
+| killer | B1 | 950 |
+| quit | B1 | 1,047 |
+| somehow | B1 | 1,464 |
+| cancer | B1 | 1,940 |
+| particularly | B1 | 2,870 |
+| lightning | B1 | 3,656 |
+| safely | B1 | 3,757 |
+| baker | B1 | 4,055 |
+| broad | B1 | 4,600 |
+| breast | B1 | 4,692 |
+| teenage | B1 | 4,876 |
+| kindly | B1 | 4,919 |
+| fry | B1 | 5,007 |
+| secretly | B1 | 5,281 |
+| forehead | B1 | 5,699 |
+| leaf | B1 | 5,736 |
+| beautifully | B1 | 6,238 |
+| rider | B1 | 6,959 |
+| keeper | B1 | 7,156 |
+| camel | B1 | 7,566 |
+| aspirin | B1 | 7,889 |
+| fax | B1 | 8,063 |
+| surprisingly | B1 | 8,094 |
+| juicy | B1 | 8,415 |
+| kitten | B1 | 8,455 |
+| nightclub | B1 | 8,510 |
+| server | B1 | 8,513 |
+| briefly | B1 | 8,914 |
+| disc | B1 | 9,492 |
+| unemployment | B1 | 10,318 |
+| examiner | B1 | 10,867 |
+| underpants | B1 | 11,040 |
+| babysit | B1 | 11,754 |
+| animation | B1 | 11,780 |
+| middle-aged | B1 | 11,865 |
+| amazingly | B1 | 12,217 |
+| diver | B1 | 12,266 |
+| knickers | B1 | 12,983 |
 
 ---
 
-## 5. 按等级的行动清单
+## 5. 怎么用
 
-| 你的阶段 | 先做这三件事 |
-| --- | --- |
-| A1–A2 | 补 4.3 的 A1/A2 缺词（含 2/3/5/6/7/8/10 这些数词）；补 4.1 的 go / work / happy / page |
-| B1 | 补 AWL S1–S4（13 族）；把第 3 节入门级 B1 的 16 个词重背一遍 |
-| B2 | 词光标 B2 的按 C1 准备；补 AWL S5–S8（17 族）；补 4.3 的 B2 高频缺口 |
-| C1 | 词光标 C1 的按 C2 准备（71% 会被判 C2）；补 AWL S9–S10（16 族） |
-| C2 | 词光的 C2 不等于 CEFR C2，按超纲词看待；重点转向 4.3 的缺口 |
+- **补词**：`learner-patch.csv` 导入 Anki，筛 `type=add`，按 4.1 → 4.2 → 4.3 的顺序建卡。
+- **改卡**：筛 `type=fix` 且 `note=severe`，把等级标签换成 `cefr_level`。
+- **查义项**：`evp-definitions.csv` 有每条的英文定义，用来核对词光的中文义项。
 
 ---
 
-## 6. 口径说明
+## 6. 口径
 
-- **可比词 4,838 个**：词头精确匹配、非专有名词；不含短语式词头（`the moon`、`depend on/upon sth`）与词形推断。
-- **偏差 = 入门级 − 词光等级**。正数表示词光标低了（CEFR 更晚要求），负数表示标高了。
-- **入门等级**取该词在 EVP 中最低的等级；**入门义项**是该等级下的全部条目，可能 1 条也可能多条（全库 17.3% 的词不止一条）。
-- **guideword** 是 EVP 给义项起的标签，用来区分同词的不同义项，**不是释义**；它可缺失，入门等级里 62.7% 的词没有标签。
-- 只统计词头与词光完全相同的条目，不借用短语条目的等级（如 `living room` 不算 `living`）。
-- **缺词**已剔除：功能词、屈折形（things / working）、拼写变体（color / center）、专有名词、感叹词与缩写。
-- **释义**取自 EVP 详情页（`?refid=`），按「词头 + 等级 + 词性 + guideword」与列表条目对齐，覆盖率 99.5%；未匹配的 72 条多为短语。
-- 词频来自 OpenSubtitles 50k 语料；「榜外」表示不在前 5 万。
+- **可比词 4,838 个**：词头精确匹配、非专有名词；不含短语词头与词形推断。
+- **入门等级** = 该词在 EVP 的最低等级；**入门义项** = 该等级下的全部记录（17.3% 的词不止一条）。
+- 第 3 节「入门义」列是 EVP 的 guideword（义项分类名，如 `FRIED FOOD`），**不是释义**；释义见 `evp-definitions.csv`。
+- 未收录判定已剔除：功能词、屈折形、拼写变体、专有名词、感叹词。
+- 词频来自 OpenSubtitles 50k；「榜外」= 不在前 5 万。
 
-> 完整数据：`learner-patch.csv` —— 2,210 条等级修正（`type=fix`）+ 1,502 条补充词（`type=add`），含词头、词光首义、入门义项（全部条目）、入门级、词频。
+> 全部数据：`learner-patch.csv`（2,210 条等级修正 + 1,502 条补充词）。
 
