@@ -3,12 +3,14 @@
 > 词表本身不更新，靠自学补。只回答三件事：**等级怎么换算、哪些词背反了、还缺哪些词**。
 > 依据 EVP 全量比对（15,696 条义项，见 `AUDIT-REPORT.md`）；逐词数据见 `learner-patch.csv`。
 >
-> 文中两个词先分清：**词光首义** = 词光自己列的第一条义项；**入门义** = CEFR 认为这个词最早该会的那条义项。两者不一致，才需要按第 2 节改。
+> 先分清四样东西：**释义**是这条义项的意思（英文原句）；**义项标记**（guideword）是 EVP 给义项起的分类名（如 `FRIED FOOD`），不是意思；**词性**是 noun / verb 这类；**等级**是 A1–C2。
+>
+> 两个词：**词光首义** = 词光自己列的第一条；**入门义** = CEFR 认为这个词最早该会的那组义项（按释义算）。两者不一致，才需要按第 2 节改。
 
 ## 先做这三件事
 
 1. **等级往上算半级**：B2 按 C1 准备，C1 按 C2。
-2. **补 9 个词的入门义**（第 2 节）——它们的基础义可能没背过。
+2. **看 9 个词的义项和等级**（第 2 节）——6 个要补入门义，3 个只是等级标错。
 3. **补词**：先补最常用的 16 个（4.1），再补 A1–A2 缺的 71 个（4.2），最后学术词 46 个（4.3）。
 
 ---
@@ -34,15 +36,15 @@
 
 ### 2.1 义项排反了（6 个）
 
-词光的义项没写错，但**不是 CEFR 认为最早该会的那个**。先把入门义补上。
+词光写的义项本身不算错，只是**不是 CEFR 认为最早该会的那个**——`chip` 更是完全没有「薯条」这一义。先把入门义补上。
 
-| 词 | 词光等级 | 词光首义 | CEFR 入门义（释义） | 中文 | 怎么补 |
+| 词 | 词光等级 | 词光首义 | 入门义（EVP 释义） | 中文 | 怎么补 |
 | --- | --- | --- | --- | --- | --- |
 | chip | B2 | n. 芯片；集成电路 | a long thin piece of potato that is cooked in oil | 英式薯条 | 缺义：词光只有芯片 / 碎屑 / 碰掉 |
 | bear | B2 | v. 忍受；承受；承担 | a large, strong, wild animal with thick fur | 熊 | 顺序：熊在第 2 条，词性也从动词变名词 |
 | identification | B2 | n. 识别；鉴定 | an official document that shows or proves who you are | 身份证明 | 顺序：身份证明在第 2 条 |
-| soul | B2 | n. 灵魂；心灵 | popular music which expresses deep feelings, originally perf… | 灵魂乐 | 顺序：灵魂乐在第 3 条 |
-| comparative | B2 | adj. 比较的；对比的 | the form of an adjective or adverb that expresses a differen… | 比较级 | 顺序：比较级在第 3 条 |
+| soul | B2 | n. 灵魂；心灵 | popular music which expresses deep feelings, originally… | 灵魂乐 | 顺序：灵魂乐在第 3 条 |
+| comparative | B2 | adj. 比较的；对比的 | the form of an adjective or adverb that expresses a… | 比较级 | 顺序：比较级在第 3 条 |
 | crisp | B2 | adj. 脆的；酥脆的 | a very thin slice of potato that has been cooked in oil and… | 薯片 | 顺序：薯片在第 3 条，词光首义是形容词 |
 
 ### 2.2 只是等级标高了（3 个）
@@ -63,79 +65,79 @@
 
 下表按 CEFR 等级排，B1/B2 全列，C1/C2 只列高频；完整 319 条见 CSV（`note=severe`）。
 
-| 词 | 词光 | CEFR | 入门义 | 词频 |
-| --- | --- | --- | --- | ---: |
-| lady | A1 | B1 | noun（无标记） | 479 |
-| feeling | A1 | B1 | EMOTION（noun）；IDEA（noun） 等 3 条 | 553 |
-| personal | A1 | B1 | RELATING TO A PERSON（adjective）；FOR ONE PERSON（adjective） 等 3 条 | 912 |
-| relax | A1 | B1 | BECOME HAPPY（verb） | 919 |
-| smell | A1 | B1 | USE NOSE（verb）；UNPLEASANT（verb） 等 4 条 | 968 |
-| smile | A1 | B1 | verb（无标记）；noun（无标记） | 1,190 |
-| pants | A1 | B1 | noun（无标记） | 1,373 |
-| delicious | A1 | B1 | adjective（无标记） | 2,018 |
-| writer | A1 | B1 | noun（无标记） | 2,549 |
-| tiger | A1 | B1 | noun（无标记） | 2,693 |
-| gym | A1 | B1 | EXERCISES（noun）；BUILDING（noun） | 2,992 |
-| strawberry | A1 | B1 | noun（无标记） | 7,907 |
-| rainy | A1 | B1 | adjective（无标记） | 9,557 |
-| toothpaste | A1 | B1 | noun（无标记） | 11,792 |
-| alphabet | A1 | B1 | noun（无标记） | 12,664 |
-| giraffe | A1 | B1 | noun（无标记） | 13,464 |
-| cause | A2 | B2 | REASON WHY（noun）；verb（无标记） | 555 |
-| lower | A2 | B2 | MOVE（verb）；REDUCE（verb） | 1,966 |
-| sale | A2 | B2 | SELL（noun） | 2,419 |
-| learning | A2 | B2 | noun（无标记） | 2,513 |
-| tail | A2 | B2 | ANIMAL（noun） | 2,607 |
-| task | A2 | B2 | noun（无标记） | 2,698 |
-| nail | A2 | B2 | METAL（noun）；BODY PART（noun） | 3,261 |
-| naughty | A2 | B2 | adjective（无标记） | 3,809 |
-| tool | A2 | B2 | MAKE/REPAIR（noun）；EQUIPMENT（noun） | 4,294 |
-| cherry | A2 | B2 | noun（无标记） | 4,436 |
-| clothing | A2 | B2 | noun（无标记） | 4,525 |
-| bench | A2 | B2 | noun（无标记） | 4,762 |
-| subway | A2 | B2 | noun（无标记） | 5,171 |
-| cloth | A2 | B2 | MATERIAL（noun）；FOR CLEANING（noun） | 5,646 |
-| sadly | A2 | B2 | NOT HAPPY（adverb）；NOT SATISFACTORY（adverb） | 6,001 |
-| mother-in-law | A2 | B2 | noun（无标记） | 7,493 |
-| father-in-law | A2 | B2 | noun（无标记） | 7,816 |
-| gardener | A2 | B2 | noun（无标记） | 8,032 |
-| bakery | A2 | B2 | noun（无标记） | 8,663 |
-| crocodile | A2 | B2 | noun（无标记） | 9,430 |
-| pancake | A2 | B2 | noun（无标记） | 11,118 |
-| zebra | A2 | B2 | noun（无标记） | 12,535 |
-| gardening | A2 | B2 | noun（无标记） | 12,577 |
-| pyjamas | A2 | B2 | noun（无标记） | 16,393 |
-| non-smoking | A2 | B2 | adjective（无标记） | 40,909 |
-| bet | B1 | C1 | verb（无标记） | 654 |
-| suppose | A2 | C1 | LIKELY（verb）；phrase（无标记） | 765 |
-| lay | B1 | C1 | phrasal verb（无标记）；phrase（无标记） | 1,370 |
-| scare | B1 | C1 | FRIGHTEN（verb）；phrasal verb（无标记） | 2,002 |
-| saving | B1 | C1 | LESS MONEY（noun） | 2,062 |
-| march | B1 | C1 | noun（无标记）；SHOW DISAGREEMENT（verb） 等 3 条 | 2,164 |
-| campaign | B1 | C1 | ACTIVITIES（noun）；WAR（noun） 等 3 条 | 2,464 |
-| tank | B1 | C1 | VEHICLE（noun） | 2,616 |
-| hop | B1 | C1 | MOVE QUICKLY（verb） | 3,632 |
-| assignment | B1 | C1 | noun（无标记） | 3,917 |
-| nap | B1 | C1 | noun（无标记） | 4,505 |
-| quote | B1 | C1 | REPEAT（verb）；GIVE EXAMPLE（verb） | 4,794 |
-| coal | B1 | C1 | FUEL（noun） | 4,937 |
-| compliment | B1 | C1 | verb（无标记） | 5,035 |
-| appetite | B1 | C1 | FOOD（noun） | 5,046 |
-| bubble | B1 | C1 | noun（无标记）；phrase（无标记） | 5,289 |
-| journal | B1 | C1 | MAGAZINE（noun） | 5,583 |
-| pony | B1 | C1 | noun（无标记） | 5,749 |
-| straw | B1 | C1 | noun（无标记） | 6,162 |
-| lounge | B1 | C1 | noun（无标记） | 6,730 |
-| crying | B1 | C2 | phrasal verb（无标记） | 892 |
-| narrator | B2 | C2 | noun（无标记） | 1,197 |
-| commander | B2 | C2 | noun（无标记） | 1,396 |
-| goodness | B2 | C2 | noun（无标记） | 1,925 |
-| suck | B2 | C2 | verb（无标记） | 2,014 |
-| mercy | B2 | C2 | KINDNESS（noun） | 2,110 |
-| prime | B2 | C2 | MAIN（adjective） | 2,191 |
-| sin | B2 | C2 | RELIGION（noun）；MORALLY WRONG（noun） | 2,458 |
-| flesh | B2 | C2 | BODY（noun） | 2,642 |
-| pathetic | B2 | C2 | BAD（adjective）；SAD（adjective） | 2,790 |
+| 词 | 词光 | CEFR | 入门义（EVP 释义） | 词性 | 词频 |
+| --- | --- | --- | --- | --- | ---: |
+| lady | A1 | B1 | a polite or old fashioned way of referring to or talking to a woman | noun | 479 |
+| feeling | A1 | B1 | emotion<br>an idea that something is true or exists<br>when you feel something physical | noun | 553 |
+| personal | A1 | B1 | relating to or belonging to a particular person<br>designed for or used by one person<br>relating to the private parts of someone's life, including their relationships or… | adjective | 912 |
+| relax | A1 | B1 | to become happy and comfortable because nothing is worrying you, or to make someone do… | verb | 919 |
+| smell | A1 | B1 | to notice something by using your nose<br>to have an unpleasant smell<br>the quality that something has which you notice by using your nose | verb<br>verb<br>noun | 968 |
+| smile | A1 | B1 | to make a happy or friendly expression in which the corners of your mouth curve up<br>a happy or friendly expression in which the corners of your mouth curve up | verb<br>noun | 1,190 |
+| pants | A1 | B1 | underwear that covers the bottom | noun | 1,373 |
+| delicious | A1 | B1 | having a very pleasant taste or smell | adjective | 2,018 |
+| writer | A1 | B1 | a person who writes books or articles to be published | noun | 2,549 |
+| tiger | A1 | B1 | a large wild cat that has yellow fur with black lines on it | noun | 2,693 |
+| gym | A1 | B1 | exercises done inside, especially as a school subject<br>a building or room with equipment for doing exercises | noun | 2,992 |
+| strawberry | A1 | B1 | a small, red fruit with a green leaf at the top and small, brown seeds on its surface | noun | 7,907 |
+| rainy | A1 | B1 | raining a lot | adjective | 9,557 |
+| toothpaste | A1 | B1 | a substance that you use to clean your teeth | noun | 11,792 |
+| alphabet | A1 | B1 | a set of letters arranged in a fixed order which is used for writing a language | noun | 12,664 |
+| giraffe | A1 | B1 | a large African animal with a very long neck and long legs | noun | 13,464 |
+| cause | A2 | B2 | the reason why something, especially something bad, happens<br>to make something happen, especially something bad | noun<br>verb | 555 |
+| lower | A2 | B2 | to move something into a low position<br>to reduce the amount or level of something | verb | 1,966 |
+| sale | A2 | B2 | the act of selling something, or the time when something is sold | noun | 2,419 |
+| learning | A2 | B2 | the process of getting knowledge or a new skill | noun | 2,513 |
+| tail | A2 | B2 | the long, narrow part that sticks out at the back of an animal's body | noun | 2,607 |
+| task | A2 | B2 | a piece of work, especially something unpleasant or difficult | noun | 2,698 |
+| nail | A2 | B2 | a thin piece of metal with a sharp end, used to join pieces of wood together<br>the hard surface at the end of your fingers and toes | noun | 3,261 |
+| naughty | A2 | B2 | When children are naughty, or their behaviour is naughty, they behave badly. | adjective | 3,809 |
+| tool | A2 | B2 | a piece of equipment that you use with your hands in order to make or repair something<br>a thing that helps you to do a particular activity | noun | 4,294 |
+| cherry | A2 | B2 | a small, round, soft red or black fruit with a single hard seed in the middle | noun | 4,436 |
+| clothing | A2 | B2 | clothes, especially of a particular type | noun | 4,525 |
+| bench | A2 | B2 | a long seat for two or more people, usually made of wood or metal | noun | 4,762 |
+| subway | A2 | B2 | a passage under a road or railway for people to walk through | noun | 5,171 |
+| cloth | A2 | B2 | material made from cotton, wool, etc. and used, for example, to make clothes or curtains<br>a small piece of material used for cleaning or drying things | noun | 5,646 |
+| sadly | A2 | B2 | in an unhappy way<br>in a way that is not satisfactory | adverb | 6,001 |
+| mother-in-law | A2 | B2 | the mother of your husband or wife | noun | 7,493 |
+| father-in-law | A2 | B2 | the father of your husband or wife | noun | 7,816 |
+| gardener | A2 | B2 | someone who works in a garden, growing plants and making it look attractive | noun | 8,032 |
+| bakery | A2 | B2 | a place where bread, cakes, etc. are made or sold | noun | 8,663 |
+| crocodile | A2 | B2 | a large reptile with a long mouth and sharp teeth, that lives in lakes and rivers | noun | 9,430 |
+| pancake | A2 | B2 | a thin, flat food made from flour, milk, and egg mixed together and cooked in a pan | noun | 11,118 |
+| zebra | A2 | B2 | an African animal like a horse with black and white lines | noun | 12,535 |
+| gardening | A2 | B2 | the job or activity of growing a garden and keeping it attractive | noun | 12,577 |
+| pyjamas | A2 | B2 | soft loose clothing which is worn in bed and consists of trousers and a type of shirt | noun | 16,393 |
+| non-smoking | A2 | B2 | describes a place where people are not allowed to smoke | adjective | 40,909 |
+| bet | B1 | C1 | to risk money on the result of a game, competition, etc. | verb | 654 |
+| suppose | A2 | C1 | to think that something is likely to be true | verb | 765 |
+| lay | B1 | C1 | — | — | 1,370 |
+| scare | B1 | C1 | to frighten a person or animal | verb | 2,002 |
+| saving | B1 | C1 | when you use or spend less money than you would usually have to | noun | 2,062 |
+| march | B1 | C1 | an organized walk by a group to show that they disagree with something<br>to walk through a public place as a group to show that you disagree with something<br>When soldiers march, they walk together with regular steps. | noun<br>verb<br>verb | 2,164 |
+| campaign | B1 | C1 | a series of organized activities or events intended to achieve a result<br>a series of military attacks<br>to organize a series of activities to try to achieve something | noun<br>noun<br>verb | 2,464 |
+| tank | B1 | C1 | a large, strong military vehicle with a gun on it which moves on wheels inside large… | noun | 2,616 |
+| hop | B1 | C1 | to go somewhere quickly or get into or out of a vehicle quickly | verb | 3,632 |
+| assignment | B1 | C1 | a piece of work given to someone, especially as part of their studies or job | noun | 3,917 |
+| nap | B1 | C1 | a short sleep | noun | 4,505 |
+| quote | B1 | C1 | to repeat the words that someone else has said or written<br>to give a fact or example to support what you are saying | verb | 4,794 |
+| coal | B1 | C1 | a hard, black substance that is dug from under the ground and burnt as fuel | noun | 4,937 |
+| compliment | B1 | C1 | to praise or express admiration for someone | verb | 5,035 |
+| appetite | B1 | C1 | the feeling that makes you want to eat | noun | 5,046 |
+| bubble | B1 | C1 | a ball of air or gas with liquid around it | noun | 5,289 |
+| journal | B1 | C1 | a magazine containing articles about a particular subject | noun | 5,583 |
+| pony | B1 | C1 | a small horse | noun | 5,749 |
+| straw | B1 | C1 | the long, dried stems of plants such as wheat, often given to animals for sleeping on… | noun | 6,162 |
+| lounge | B1 | C1 | a room in a hotel, theatre, airport, etc. where people can relax or wait | noun | 6,730 |
+| crying | B1 | C2 | — | — | 892 |
+| narrator | B2 | C2 | the person who tells the story in a book, film, play, etc. | noun | 1,197 |
+| commander | B2 | C2 | an officer who is in charge of a military operation, or an officer of middle rank in… | noun | 1,396 |
+| goodness | B2 | C2 | the quality of being good | noun | 1,925 |
+| suck | B2 | C2 | to have something in your mouth and use your tongue, lips, etc. to pull on it or to get… | verb | 2,014 |
+| mercy | B2 | C2 | kindness that makes you forgive someone, usually someone that you have authority over | noun | 2,110 |
+| prime | B2 | C2 | main or most important | adjective | 2,191 |
+| sin | B2 | C2 | something which is against the rules of a religion<br>something that you should not do because it is morally wrong | noun | 2,458 |
+| flesh | B2 | C2 | the soft part of a person's or animal's body between the skin and bones | noun | 2,642 |
+| pathetic | B2 | C2 | showing no skill, effort, or bravery<br>sad and weak | adjective | 2,790 |
 
 > C1 列了 20 个、C2 列了 10 个；其余 C1 12 个、C2 236 个在 CSV。
 
@@ -149,7 +151,7 @@
 
 这些不是生僻词，缺了会直接卡住听说读写。
 
-| 词 | 中文 | 等级 | 词频 |
+| 词 | 中文（参考） | 等级 | 词频 |
 | --- | --- | --- | ---: |
 | go | 移动 | A1 | 47 |
 | work | 工作 | A1 | 151 |
@@ -326,7 +328,9 @@ B1–C1 共缺 957 个，按词频列前 40；C2 另有 459 个，见 CSV。
 
 - **可比词 4,838 个**：词头精确匹配、非专有名词；不含短语词头与词形推断。
 - **入门等级** = 该词在 EVP 的最低等级；**入门义项** = 该等级下的全部记录（17.3% 的词不止一条）。
-- 第 3 节「入门义」列是 EVP 的 guideword（义项分类名，如 `FRIED FOOD`），**不是释义**；释义见 `evp-definitions.csv`。
+- 第 3 节的「入门义」是 EVP 的**英文释义原句**（超过 88 字符截断），该等级有几条就列几条，词性单列并按行对应；`—` 表示 EVP 这条没有给定义。
+- 词性列：该级义项词性都一样时只写一次；不一样时按行对应，如 `verb<br>verb<br>noun`。
+- **义项标记**（guideword）不在正文表格里——它是分类名，62.7% 的入门记录没有，列出来大半是空白；需要时看 CSV 的 `evp_guidewords`。
 - 未收录判定已剔除：功能词、屈折形、拼写变体、专有名词、感叹词。
 - 词频来自 OpenSubtitles 50k；「榜外」= 不在前 5 万。
 

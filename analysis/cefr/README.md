@@ -39,8 +39,8 @@
 
 `learner-patch.csv` 字段：`type`（`fix` 等级修正 / `add` 补充词）、`word`、`atlas_level`（词光等级）、
 `atlas_first_sense`（词光首义，`senses[0]`）、`cefr_level`（入门义项等级）、`cefr_levels`（该词在 EVP 的等级区间）、
-`delta`（入门级 − 词光等级）、`evp_guidewords`（入门等级下各条义项的标记，` | ` 分隔）、
-`evp_pos`（与之对应的词性，` | ` 分隔）、`entry_count`（该等级的条数）、`freq_rank`、
+`delta`（入门级 − 词光等级）、`evp_definitions`（入门等级下各条义项的英文释义原句，` | ` 分隔）、
+`evp_guidewords`（与之对应的义项标记）、`evp_pos`（与之对应的词性）、`entry_count`（该等级的条数）、`freq_rank`、
 `atlas_senses_zh`（词光全部义项）、`note`（`severe` 偏差 ≥2 级 / `minor` 1 级 / `missing` 词光未收）。
 
 > 术语：**EVP 的一条记录就是一条义项**，由 释义 + 义项标记（guideword）+ 词性 + 等级 组成。
