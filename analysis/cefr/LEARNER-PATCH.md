@@ -9,7 +9,7 @@
 ## 一句话版本
 
 1. **等级偏乐观约半级**：词光标 B2 的，按 C1 的力气学；标 C1 的，按 C2。
-2. **5 个词把进阶义当成了入门义**，先把基础义补上；另有 4 个只是等级标高了，义项没错。
+2. **6 个词把进阶义当成了入门义**，先把基础义补上；另有 3 个只是等级标高了，义项没错。
 3. **词光缺 1,502 个 CEFR 收录的单词**，其中 A1/A2 基础词 80 个、学术词 46 个，优先补这些。
 
 ### 怎么用这份清单
@@ -32,6 +32,8 @@ EVP 的一条记录由四样东西组成：**词头 + guideword + 词性 + 等�
 
 换句话说：**「入门义项」是一个集合，不是一条记录；guideword 是分类标签，不是意思。**
 
+本版的「释义」列取自每条的 Details 详情页（逐条定义），全库 14,586 条义项抓到 14,514 条（99.5%）。
+
 ---
 
 ## 1. 先改换算习惯
@@ -53,28 +55,28 @@ EVP 的一条记录由四样东西组成：**词头 + guideword + 词性 + 等�
 
 ## 2. 入门义项选错了：先把基础义补上
 
-### 2.1 入门义项不同（5 个）
+### 2.1 入门义项不同（6 个）
 
 词光给的义项没错，但**不是 CEFR 认为最早该会的那个**。先补入门义项，再回到进阶义。
 
-| 词头 | 词光等级 | 词光首义 | EVP 入门义项 | 入门级 | 类型 | 怎么补 |
+| 词头 | 词光等级 | 词光首义 | EVP 入门义项 | 释义（EVP） | 入门级 | 类型 · 怎么补 |
 | --- | --- | --- | --- | --- | --- | --- |
-| chip | B2 | n. 芯片；集成电路 | FRIED FOOD · noun（英式薯条） | A1 | 缺义 | 词光只有芯片 / 碎屑 / 碰掉，没有「薯条」义，需要新增。 |
-| bear | B2 | v. 忍受；承受；承担 | （无标签） · noun（熊） | A2 | 顺序 | 「熊」在第 2 条，且词性由动词变成名词。 |
-| identification | B2 | n. 识别；鉴定 | DOCUMENT · noun（身份证明） | A2 | 顺序 | 「身份证明」在第 2 条，词光首义是「识别」。 |
-| soul | B2 | n. 灵魂；心灵 | MUSIC · noun（灵魂乐） | A2 | 顺序 | 「灵魂乐」在第 3 条，词光首义是「灵魂」。 |
-| comparative | B2 | adj. 比较的；对比的 | ADJECTIVE · noun（形容词的比较级） | A2 | 顺序 | 「比较级」在第 3 条（名词），与 EVP 这条同词性，只是排在了最后。 |
+| chip | B2 | n. 芯片；集成电路 | FRIED FOOD · noun | a long thin piece of potato that is cooked in oil | A1 | **缺义**：词光只有芯片 / 碎屑 / 碰掉，没有「薯条」义，需要新增。 |
+| bear | B2 | v. 忍受；承受；承担 | （无标签） · noun | a large, strong, wild animal with thick fur | A2 | **顺序**：「熊」在第 2 条，且词性由动词变成名词。 |
+| identification | B2 | n. 识别；鉴定 | DOCUMENT · noun | an official document that shows or proves who you are | A2 | **顺序**：「身份证明」在第 2 条，词光首义是「识别」。 |
+| soul | B2 | n. 灵魂；心灵 | MUSIC · noun | popular music which expresses deep feelings, originally perfor… | A2 | **顺序**：「灵魂乐」在第 3 条，词光首义是「灵魂」。 |
+| comparative | B2 | adj. 比较的；对比的 | ADJECTIVE · noun | the form of an adjective or adverb that expresses a difference… | A2 | **顺序**：「比较级」在第 3 条（名词），与 EVP 这条同词性，只是排在了最后。 |
+| crisp | B2 | adj. 脆的；酥脆的 | （无标签） · noun | a very thin slice of potato that has been cooked in oil and is… | A2 | **顺序**：「薯片」在第 3 条；词光首义是形容词「脆的」，EVP 这条是名词，词性都不同。 |
 
-### 2.2 只是等级标高了（4 个）
+### 2.2 只是等级标高了（3 个）
 
 义项和 CEFR 一致，只是词光把难度标高了。按 CEFR 的等级学即可，别被标签吓到。
 
-| 词头 | 词光等级 | 词光首义 | 入门级 | 说明 |
-| --- | --- | --- | --- | --- |
-| golden | B2 | adj. 金色的 | A2 | 首义与 EVP 一致（METAL / COLOUR），只是等级标高了。 |
-| rap | B2 | n. 说唱音乐 | A2 | 义项一致，只是等级标高了。 |
-| slim | B1 | adj. 苗条的 | A1 | 义项一致，只是等级标高了。 |
-| crisp | B2 | adj. 脆的 | A2 | 义项一致，只是等级标高了。 |
+| 词头 | 词光等级 | 词光首义 | 释义（EVP） | 入门级 | 说明 |
+| --- | --- | --- | --- | --- | --- |
+| golden | B2 | adj. 金色的 | made of gold；being the bright yellow colour of gold | A2 | 词光首义「金色的」对应 EVP 的 COLOUR 义，两者都是 A2；EVP 另有 METAL「金制的」也是 A2。 |
+| rap | B2 | n. 说唱音乐 | a type of music in which the words are spoken… | A2 | 义项一致，只是等级标高了。 |
+| slim | B1 | adj. 苗条的 | Someone who is slim is thin in an attractive w… | A1 | 义项一致，只是等级标高了。 |
 
 ---
 
@@ -524,6 +526,7 @@ A1、A2 全列（基础词缺失影响最大），B1 起只列高频的。
 - **guideword** 是 EVP 给义项起的标签，用来区分同词的不同义项，**不是释义**；它可缺失，入门等级里 62.7% 的词没有标签。
 - 只统计词头与词光完全相同的条目，不借用短语条目的等级（如 `living room` 不算 `living`）。
 - **缺词**已剔除：功能词、屈折形（things / working）、拼写变体（color / center）、专有名词、感叹词与缩写。
+- **释义**取自 EVP 详情页（`?refid=`），按「词头 + 等级 + 词性 + guideword」与列表条目对齐，覆盖率 99.5%；未匹配的 72 条多为短语。
 - 词频来自 OpenSubtitles 50k 语料；「榜外」表示不在前 5 万。
 
 > 完整数据：`learner-patch.csv` —— 2,210 条等级修正（`type=fix`）+ 1,502 条补充词（`type=add`），含词头、词光首义、入门义项（全部条目）、入门级、词频。

@@ -2,3 +2,6 @@
 refs/
 evp-bre-senses.csv
 evp-ame-senses.csv
+
+# EVP 逐条定义（Cambridge 内容，不随仓库分发）
+evp-definitions.csv

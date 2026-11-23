@@ -18,7 +18,9 @@
 | `atlas-vs-evp.csv` | 逐词分级比对结果，见下 |
 | `headword-audit.csv` | 逐词权威性审计：ngsl / coca / awl / nawl / evp / freq_rank / flags |
 | `refs/` | 外部基准原始文件（NGSL、COCA 5000、AWL.json、NAWL.json、en_50k.txt），**不随仓库分发** |
-| `crawl-evp.cjs` | 抓取脚本（Playwright） |
+| `crawl-evp.cjs` | 抓列表页（Playwright） |
+| `crawl-evp-details.cjs` | 抓详情页定义：refid 1–6969，一页一个词头，含每条义项的英文定义 |
+| `evp-definitions.csv` | 列表 + 逐条定义（14,586 行，99.5% 有定义，**不随仓库分发**） |
 
 `atlas-vs-evp.csv` 字段：
 
@@ -60,6 +62,7 @@
 - NGSL 内容词覆盖 92.4%（缺 214 个内容词）；COCA 前 2,000 内容词 93.1%
 - AWL 570 个词族覆盖 524（91.9%），缺 46 族，含 aspect / potential / emphasis / contrast / phenomenon / whereas
 - NAWL 963 覆盖 59.8%；EVP 66.3%
+- 详情页抓取：6,969 个 refid，6,772 页有内容；14,586 条义项中 14,514 条拿到英文定义（99.5%）
 - 938 词（12.9%）落在词频 3 万位之后或榜外，其中 A1 4 / A2 36 / B1 44
 - 98 个专有名词未归类；英式美式 27 组双收、10 组只收英式；5 组原形与屈折形并存
 - 等级与词频秩相关 ρ = 0.71，各等级中位词频 866 / 2,607 / 4,467 / 8,636 / 18,399 / 30,603
@@ -92,12 +95,13 @@ node analysis/cefr/crawl-evp.cjs "American English" .tmp-build/raw_ame.json
 | 数据 | 来源 | 获取方式 |
 | --- | --- | --- |
 | EVP 英式 / 美式全量义项 | [englishprofile.org](https://englishprofile.org/?menu=evp-online)，Cambridge University Press & Assessment | `node analysis/cefr/crawl-evp.cjs "British English" .tmp-build/raw_bre.json` |
+| EVP 逐条定义 | 同上（详情页 `?refid=ID_00000000`） | `node analysis/cefr/crawl-evp-details.cjs 1 6969 5 .tmp-build/detail_all.jsonl` |
 | NGSL 1.01 | newgeneralservicelist.com（CC BY-SA） | 从官网下载 `NGSL 1.01 by band` |
 | COCA 5,000 | 美国当代英语语料库高频表 | 公开镜像，按来源方条款使用 |
 | AWL | Coxhead (2000) | 公开镜像（`AWL.json`） |
 | NAWL | newgeneralservicelist.com | 公开镜像（`NAWL.json`） |
 | 词频表 | OpenSubtitles 2018 `en_50k` | 公开镜像 |
 
-`.gitignore` 已排除 `refs/`、`evp-bre-senses.csv`、`evp-ame-senses.csv`。原因有二：
+`.gitignore` 已排除 `refs/`、`evp-bre-senses.csv`、`evp-ame-senses.csv`、`evp-definitions.csv`。原因有二：
 一是 EVP 是 Cambridge 的版权数据，整表再分发不在合理使用范围内；二是这些数据都能由仓库内的抓取脚本或公开链接复原，
 不值得把 1.5MB 第三方语料固化进版本库。报告里引用的数字与样例均可在 `atlas-vs-evp.csv`、`headword-audit.csv` 中复核。
