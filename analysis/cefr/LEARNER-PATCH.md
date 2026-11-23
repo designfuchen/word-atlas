@@ -110,7 +110,7 @@
 | non-smoking | A2 | B2 | describes a place where people are not allowed to smoke | adjective | 40,909 |
 | bet | B1 | C1 | to risk money on the result of a game, competition, etc. | verb | 654 |
 | suppose | A2 | C1 | to think that something is likely to be true | verb | 765 |
-| lay | B1 | C1 | — | — | 1,370 |
+| lay | B1 | C1 | to stop employing someone, usually because there is no work for them to do（短语：lay sb off or lay off sb）<br>to put something down somewhere carefully（短语：lay sth down/in/on, etc.）<br>to explain something clearly, usually in writing（短语：lay sth out or lay out sth） | phrasal verb<br>phrase<br>phrasal verb | 1,370 |
 | scare | B1 | C1 | to frighten a person or animal | verb | 2,002 |
 | saving | B1 | C1 | when you use or spend less money than you would usually have to | noun | 2,062 |
 | march | B1 | C1 | an organized walk by a group to show that they disagree with something<br>to walk through a public place as a group to show that you disagree with something<br>When soldiers march, they walk together with regular steps. | noun<br>verb<br>verb | 2,164 |
@@ -128,7 +128,7 @@
 | pony | B1 | C1 | a small horse | noun | 5,749 |
 | straw | B1 | C1 | the long, dried stems of plants such as wheat, often given to animals for sleeping on… | noun | 6,162 |
 | lounge | B1 | C1 | a room in a hotel, theatre, airport, etc. where people can relax or wait | noun | 6,730 |
-| crying | B1 | C2 | — | — | 892 |
+| crying | B1 | C2 | to need something very much（短语：be crying out for sth） | phrasal verb | 892 |
 | narrator | B2 | C2 | the person who tells the story in a book, film, play, etc. | noun | 1,197 |
 | commander | B2 | C2 | an officer who is in charge of a military operation, or an officer of middle rank in… | noun | 1,396 |
 | goodness | B2 | C2 | the quality of being good | noun | 1,925 |
@@ -330,6 +330,7 @@ B1–C1 共缺 957 个，按词频列前 40；C2 另有 459 个，见 CSV。
 - **入门等级** = 该词在 EVP 的最低等级；**入门义项** = 该等级下的全部记录（17.3% 的词不止一条）。
 - 第 3 节的「入门义」是 EVP 的**英文释义原句**（超过 88 字符截断），该等级有几条就列几条，词性单列并按行对应；`—` 表示 EVP 这条没有给定义。
 - 词性列：该级义项词性都一样时只写一次；不一样时按行对应，如 `verb<br>verb<br>noun`。
+- 少数词的等级来自短语而非原词（如 `lay` 的 C1 是 `lay sth down/in/on, etc.`），这类在释义后用「（短语：…）」注明，词性也按短语记。
 - **义项标记**（guideword）不在正文表格里——它是分类名，62.7% 的入门记录没有，列出来大半是空白；需要时看 CSV 的 `evp_guidewords`。
 - 未收录判定已剔除：功能词、屈折形、拼写变体、专有名词、感叹词。
 - 词频来自 OpenSubtitles 50k；「榜外」= 不在前 5 万。
