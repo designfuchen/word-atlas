@@ -31,7 +31,7 @@ EVP 的**一条记录就是一条义项**，由四样东西组成：**释义 + �
 | **等级**（level） | A1–C2，逐条义项给定 | 不是「这个词」的属性 |
 | **入门义项** | 该词在最低等级下的那一组记录（17.3% 的词不止一条） | 不是「第一条」 |
 
-所以 `FRIED FOOD · noun` 是**标记 + 词性**，不是义项内容；义项内容在「释义」列。第 3、4 节只列标记与词性——那两张表是拿来找词的，不是拿来读释义的；完整释义见 `evp-definitions.csv`。
+「义项标记」与「词性」两列按位置一一对应，同一词有多条时用「；」分隔——所以会出现 `verb；verb`（两条都是动词）这种写法，不是重复。所以 `FRIED FOOD · noun` 是**标记 + 词性**，不是义项内容；义项内容在「释义」列。第 3、4 节只列标记与词性——那两张表是拿来找词的，不是拿来读释义的；完整释义见 `evp-definitions.csv`。
 
 ---
 
@@ -73,7 +73,7 @@ EVP 的**一条记录就是一条义项**，由四样东西组成：**释义 + �
 
 | 词头 | 词光等级 | 词光首义 | 入门义项（释义） | 义项标记 | 词性 | 入门级 | 说明 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| golden | B2 | adj. 金色的 | made of gold；being the bright yellow colour of gold | METAL；COLOUR | adjective | A2 | 词光首义「金色的」对应 EVP 的 COLOUR 义，两者都是 A2；EVP 另有 METAL「金制的」也是 A2。 |
+| golden | B2 | adj. 金色的 | made of gold；being the bright yellow colour of gold | METAL；COLOUR | adjective；adjective | A2 | 词光首义「金色的」对应 EVP 的 COLOUR 义，两者都是 A2；EVP 另有 METAL「金制的」也是 A2。 |
 | rap | B2 | n. 说唱音乐 | a type of music in which the words are spoken… | （无标签） | noun | A2 | 义项一致，只是等级标高了。 |
 | slim | B1 | adj. 苗条的 | Someone who is slim is thin in an attractive w… | THIN | adjective | A1 | 义项一致，只是等级标高了。 |
 
@@ -98,16 +98,16 @@ EVP 的**一条记录就是一条义项**，由四样东西组成：**释义 + �
 | 词头 | 词光等级 | 义项标记 | 词性 | 入门级 | 全区间 | 词频 |
 | --- | --- | --- | --- | --- | --- | ---: |
 | lady | A1 | （无标签） | noun | B1 | B1 | 479 |
-| feeling | A1 | EMOTION；IDEA；PHYSICAL SENSE | noun | B1 | B1/B2 | 553 |
-| personal | A1 | RELATING TO A PERSON；FOR ONE PERSON；PRIVATE | adjective | B1 | B1 | 912 |
+| feeling | A1 | EMOTION；IDEA；PHYSICAL SENSE | noun；noun；noun | B1 | B1/B2 | 553 |
+| personal | A1 | RELATING TO A PERSON；FOR ONE PERSON；PRIVATE | adjective；adjective；adjective | B1 | B1 | 912 |
 | relax | A1 | BECOME HAPPY | verb | B1 | B1/C1 | 919 |
-| smell | A1 | USE NOSE；UNPLEASANT；CHARACTERISTIC；（无标签） | verb；noun；phrase | B1 | B1/B2 | 968 |
+| smell | A1 | USE NOSE；UNPLEASANT；CHARACTERISTIC；（无标签） | verb；verb；noun；phrase | B1 | B1/B2 | 968 |
 | smile | A1 | （无标签）；（无标签） | verb；noun | B1 | B1 | 1,190 |
 | pants | A1 | （无标签） | noun | B1 | B1 | 1,373 |
 | delicious | A1 | （无标签） | adjective | B1 | B1 | 2,018 |
 | writer | A1 | （无标签） | noun | B1 | B1 | 2,549 |
 | tiger | A1 | （无标签） | noun | B1 | B1 | 2,693 |
-| gym | A1 | EXERCISES；BUILDING | noun | B1 | B1 | 2,992 |
+| gym | A1 | EXERCISES；BUILDING | noun；noun | B1 | B1 | 2,992 |
 | strawberry | A1 | （无标签） | noun | B1 | B1 | 7,907 |
 | rainy | A1 | （无标签） | adjective | B1 | B1 | 9,557 |
 | toothpaste | A1 | （无标签） | noun | B1 | B1 | 11,792 |
@@ -119,20 +119,20 @@ EVP 的**一条记录就是一条义项**，由四样东西组成：**释义 + �
 | 词头 | 词光等级 | 义项标记 | 词性 | 入门级 | 全区间 | 词频 |
 | --- | --- | --- | --- | --- | --- | ---: |
 | cause | A2 | REASON WHY；（无标签） | noun；verb | B2 | B2/C1/C2 | 555 |
-| lower | A2 | MOVE；REDUCE | verb | B2 | B2 | 1,966 |
+| lower | A2 | MOVE；REDUCE | verb；verb | B2 | B2 | 1,966 |
 | sale | A2 | SELL | noun | B2 | B2 | 2,419 |
 | learning | A2 | （无标签） | noun | B2 | B2 | 2,513 |
 | tail | A2 | ANIMAL | noun | B2 | B2/C2 | 2,607 |
 | task | A2 | （无标签） | noun | B2 | B2 | 2,698 |
-| nail | A2 | METAL；BODY PART | noun | B2 | B2 | 3,261 |
+| nail | A2 | METAL；BODY PART | noun；noun | B2 | B2 | 3,261 |
 | naughty | A2 | （无标签） | adjective | B2 | B2 | 3,809 |
-| tool | A2 | MAKE/REPAIR；EQUIPMENT | noun | B2 | B2/C1 | 4,294 |
+| tool | A2 | MAKE/REPAIR；EQUIPMENT | noun；noun | B2 | B2/C1 | 4,294 |
 | cherry | A2 | （无标签） | noun | B2 | B2 | 4,436 |
 | clothing | A2 | （无标签） | noun | B2 | B2 | 4,525 |
 | bench | A2 | （无标签） | noun | B2 | B2 | 4,762 |
 | subway | A2 | （无标签） | noun | B2 | B2 | 5,171 |
-| cloth | A2 | MATERIAL；FOR CLEANING | noun | B2 | B2 | 5,646 |
-| sadly | A2 | NOT HAPPY；NOT SATISFACTORY | adverb | B2 | B2 | 6,001 |
+| cloth | A2 | MATERIAL；FOR CLEANING | noun；noun | B2 | B2 | 5,646 |
+| sadly | A2 | NOT HAPPY；NOT SATISFACTORY | adverb；adverb | B2 | B2 | 6,001 |
 | mother-in-law | A2 | （无标签） | noun | B2 | B2 | 7,493 |
 | father-in-law | A2 | （无标签） | noun | B2 | B2 | 7,816 |
 | gardener | A2 | （无标签） | noun | B2 | B2 | 8,032 |
@@ -153,13 +153,13 @@ EVP 的**一条记录就是一条义项**，由四样东西组成：**释义 + �
 | lay | B1 | （无标签）；（无标签） | phrasal verb；phrase | C1 | C1 | 1,370 |
 | scare | B1 | FRIGHTEN；（无标签） | verb；phrasal verb | C1 | C1/C2 | 2,002 |
 | saving | B1 | LESS MONEY | noun | C1 | C1 | 2,062 |
-| march | B1 | （无标签）；SHOW DISAGREEMENT；SOLDIERS' WALK | noun；verb | C1 | C1/C2 | 2,164 |
-| campaign | B1 | ACTIVITIES；WAR；（无标签） | noun；verb | C1 | C1 | 2,464 |
+| march | B1 | （无标签）；SHOW DISAGREEMENT；SOLDIERS' WALK | noun；verb；verb | C1 | C1/C2 | 2,164 |
+| campaign | B1 | ACTIVITIES；WAR；（无标签） | noun；noun；verb | C1 | C1 | 2,464 |
 | tank | B1 | VEHICLE | noun | C1 | C1/C2 | 2,616 |
 | hop | B1 | MOVE QUICKLY | verb | C1 | C1/C2 | 3,632 |
 | assignment | B1 | （无标签） | noun | C1 | C1 | 3,917 |
 | nap | B1 | （无标签） | noun | C1 | C1 | 4,505 |
-| quote | B1 | REPEAT；GIVE EXAMPLE | verb | C1 | C1/C2 | 4,794 |
+| quote | B1 | REPEAT；GIVE EXAMPLE | verb；verb | C1 | C1/C2 | 4,794 |
 | coal | B1 | FUEL | noun | C1 | C1 | 4,937 |
 | compliment | B1 | （无标签） | verb | C1 | C1/C2 | 5,035 |
 | appetite | B1 | FOOD | noun | C1 | C1 | 5,046 |
@@ -192,28 +192,28 @@ EVP 的**一条记录就是一条义项**，由四样东西组成：**释义 + �
 | suck | B2 | （无标签） | verb | C2 | C2 | 2,014 |
 | mercy | B2 | KINDNESS | noun | C2 | C2 | 2,110 |
 | prime | B2 | MAIN | adjective | C2 | C2 | 2,191 |
-| sin | B2 | RELIGION；MORALLY WRONG | noun | C2 | C2 | 2,458 |
+| sin | B2 | RELIGION；MORALLY WRONG | noun；noun | C2 | C2 | 2,458 |
 | flesh | B2 | BODY | noun | C2 | C2 | 2,642 |
-| pathetic | B2 | BAD；SAD | adjective | C2 | C2 | 2,790 |
+| pathetic | B2 | BAD；SAD | adjective；adjective | C2 | C2 | 2,790 |
 | siren | B2 | （无标签） | noun | C2 | C2 | 2,840 |
 | surrender | B2 | （无标签） | verb | C2 | C2 | 2,991 |
 | skull | B2 | （无标签） | noun | C2 | C2 | 3,024 |
 | crystal | B2 | GLASS | noun | C2 | C2 | 3,102 |
 | lad | B2 | （无标签） | noun | C2 | C2 | 3,104 |
-| motion | B2 | MOVEMENT；SUGGESTION | noun | C2 | C2 | 3,116 |
-| chill | B2 | COLD；FEAR | noun | C2 | C2 | 3,201 |
+| motion | B2 | MOVEMENT；SUGGESTION | noun；noun | C2 | C2 | 3,116 |
+| chill | B2 | COLD；FEAR | noun；noun | C2 | C2 | 3,201 |
 | spit | B2 | （无标签） | verb | C2 | C2 | 3,202 |
-| nerve | B2 | PART OF THE BODY；RUDENESS；BEING BRAVE | noun | C2 | C2 | 3,209 |
+| nerve | B2 | PART OF THE BODY；RUDENESS；BEING BRAVE | noun；noun；noun | C2 | C2 | 3,209 |
 | conscience | B2 | （无标签） | noun | C2 | C2 | 3,295 |
 | pit | B2 | （无标签） | noun | C2 | C2 | 3,365 |
 | pat | B2 | （无标签） | verb | C2 | C2 | 3,492 |
-| snap | B2 | BREAK；LOSE CONTROL；SPEAK ANGRILY；（无标签） | verb；phrase | C2 | C2 | 3,542 |
+| snap | B2 | BREAK；LOSE CONTROL；SPEAK ANGRILY；（无标签） | verb；verb；verb；phrase | C2 | C2 | 3,542 |
 | sneak | B2 | （无标签） | phrase | C2 | C2 | 3,648 |
 | pole | B1 | （无标签） | noun | C2 | C2 | 3,729 |
-| core | B2 | IMPORTANT PART；FRUIT | noun | C2 | C2 | 3,776 |
+| core | B2 | IMPORTANT PART；FRUIT | noun；noun | C2 | C2 | 3,776 |
 | warehouse | B2 | （无标签） | noun | C2 | C2 | 3,872 |
 | hostage | B2 | PERSON | noun | C2 | C2 | 3,873 |
-| fraud | B2 | CRIME；TRICK | noun | C2 | C2 | 3,904 |
+| fraud | B2 | CRIME；TRICK | noun；noun | C2 | C2 | 3,904 |
 | throne | B2 | （无标签）；FOR KING/QUEEN | phrase；noun | C2 | C2 | 3,965 |
 | wicked | B2 | （无标签） | adjective | C2 | C2 | 3,971 |
 | combat | B2 | （无标签）；（无标签） | noun；verb | C2 | C2 | 4,075 |
@@ -223,7 +223,7 @@ EVP 的**一条记录就是一条义项**，由四样东西组成：**释义 + �
 | nest | B1 | BIRDS；（无标签） | noun；verb | C2 | C2 | 4,183 |
 | medication | B2 | （无标签） | noun | C2 | C2 | 4,189 |
 | tire | B1 | BECOME TIRED；（无标签） | verb；phrasal verb | C2 | C2 | 4,411 |
-| retreat | B2 | （无标签）；MOVE；PLACE；（无标签） | verb；noun；phrase | C2 | C2 | 4,498 |
+| retreat | B2 | （无标签）；MOVE；PLACE；（无标签） | verb；noun；noun；phrase | C2 | C2 | 4,498 |
 | alliance | B2 | （无标签） | noun | C2 | C2 | 4,523 |
 
 > 其余 206 个见 `learner-patch.csv`（`type=fix`、`cefr_level=C2`、`note=severe`）。
@@ -240,8 +240,8 @@ EVP 的**一条记录就是一条义项**，由四样东西组成：**释义 + �
 
 | 词头 | 义项标记 | 词性 | 入门级 | 词频 | 备注 |
 | --- | --- | --- | --- | ---: | --- |
-| go | MOVE/TRAVEL；DO SOMETHING | verb | A1 | 47 | 基础移动动词 |
-| work | PLACE；JOB；DO JOB | noun；verb | A1 | 151 | 兼动词与名词 |
+| go | MOVE/TRAVEL；DO SOMETHING | verb；verb | A1 | 47 | 基础移动动词 |
+| work | PLACE；JOB；DO JOB | noun；noun；verb | A1 | 151 | 兼动词与名词 |
 | happy | PLEASED | adjective | A1 | 296 | 核心形容词 |
 | part | PIECE | noun | A1 | 380 | 兼名词与动词 |
 | page | PAPER | noun | A1 | 709 |  |
@@ -249,10 +249,10 @@ EVP 的**一条记录就是一条义项**，由四样东西组成：**释义 + �
 | check | EXAMINE | verb | A2 | 410 | 兼名词 |
 | song | （无标签） | noun | A2 | 679 |  |
 | deep | TOP TO BOTTOM | adjective | A2 | 900 | 兼形容词与副词 |
-| search | TRY TO FIND；USE COMPUTER；TRY TO FIND；USE COMPUTER | verb；noun | B1 | 1,106 | 兼名词与动词 |
+| search | TRY TO FIND；USE COMPUTER；TRY TO FIND；USE COMPUTER | verb；verb；noun；noun | B1 | 1,106 | 兼名词与动词 |
 | likely | （无标签） | adjective | B1 | 1,899 |  |
 | entire | （无标签） | adjective | B2 | 814 |  |
-| religious | PERSON；OF RELIGION | adjective | B2 | 887 |  |
+| religious | PERSON；OF RELIGION | adjective；adjective | B2 | 887 |  |
 | reveal | TELL | verb | B2 | 930 |  |
 | trial | IN COURT | noun | B2 | 1,460 |  |
 | federal | — | — | — | 494 | EVP 未收，按 B2 处理 |
@@ -284,10 +284,10 @@ A1、A2 全列（基础词缺失影响最大），B1 起只列高频的。
 
 | 词头 | 义项标记 | 词性 | 词频 |
 | --- | --- | --- | ---: |
-| go | MOVE/TRAVEL；DO SOMETHING | verb | 47 |
+| go | MOVE/TRAVEL；DO SOMETHING | verb；verb | 47 |
 | well | IN A GOOD WAY；HEALTHY；EXPRESSING DOUBT | adverb；adjective；exclamation | 59 |
 | two | NUMBER | number | 133 |
-| work | PLACE；JOB；DO JOB | noun；verb | 151 |
+| work | PLACE；JOB；DO JOB | noun；noun；verb | 151 |
 | dad | （无标签） | noun | 221 |
 | three | （无标签） | number | 231 |
 | happy | PLEASED | adjective | 296 |
@@ -377,8 +377,8 @@ A1、A2 全列（基础词缺失影响最大），B1 起只列高频的。
 | seriously | BADLY | adverb | 807 |
 | whether | IF | conjunction | 916 |
 | killer | （无标签） | noun | 950 |
-| quit | STOP WORK；STOP SOMETHING | verb | 1,047 |
-| search | TRY TO FIND；USE COMPUTER；TRY TO FIND；USE COMPUTER | verb；noun | 1,106 |
+| quit | STOP WORK；STOP SOMETHING | verb；verb | 1,047 |
+| search | TRY TO FIND；USE COMPUTER；TRY TO FIND；USE COMPUTER | verb；verb；noun；noun | 1,106 |
 | somehow | WAY NOT KNOWN | adverb | 1,464 |
 | likely | （无标签） | adjective | 1,899 |
 | cancer | （无标签） | noun | 1,940 |
@@ -396,7 +396,7 @@ A1、A2 全列（基础词缺失影响最大），B1 起只列高频的。
 | leaf | PLANT | noun | 5,736 |
 | beautifully | （无标签） | adverb | 6,238 |
 | rider | （无标签） | noun | 6,959 |
-| keeper | LOOKING AFTER；FOOTBALL | noun | 7,156 |
+| keeper | LOOKING AFTER；FOOTBALL | noun；noun | 7,156 |
 | camel | （无标签） | noun | 7,566 |
 | aspirin | （无标签） | noun | 7,889 |
 | fax | （无标签） | verb | 8,063 |
@@ -438,15 +438,15 @@ A1、A2 全列（基础词缺失影响最大），B1 起只列高频的。
 | bloody | COVERED IN BLOOD | adjective | 1,001 |
 | stuck | NOT MOVE | adjective | 1,081 |
 | mission | PURPOSE | noun | 1,164 |
-| heaven | AFTER LIFE；SOMETHING NICE | noun | 1,166 |
+| heaven | AFTER LIFE；SOMETHING NICE | noun；noun | 1,166 |
 | witness | （无标签）；（无标签） | noun；verb | 1,232 |
-| beg | VERY POOR；STRONG REQUEST | verb | 1,381 |
-| justice | FAIRNESS；LAW | noun | 1,394 |
+| beg | VERY POOR；STRONG REQUEST | verb；verb | 1,381 |
+| justice | FAIRNESS；LAW | noun；noun | 1,394 |
 | devil | EVIL BEING | noun | 1,400 |
 | trial | IN COURT | noun | 1,460 |
 | aware | （无标签） | adjective | 1,642 |
-| command | ORDER；KNOWLEDGE | noun | 1,649 |
-| settle | LIVE；DECIDE | verb | 1,719 |
+| command | ORDER；KNOWLEDGE | noun；noun | 1,649 |
+| settle | LIVE；DECIDE | verb；verb | 1,719 |
 | naked | NO CLOTHES | adjective | 1,802 |
 | revenge | （无标签） | noun | 1,897 |
 | liar | （无标签） | noun | 1,944 |
@@ -461,8 +461,8 @@ A1、A2 全列（基础词缺失影响最大），B1 起只列高频的。
 | fake | （无标签） | adjective | 1,566 |
 | witch | （无标签） | noun | 2,334 |
 | sacrifice | （无标签）；（无标签） | noun；verb | 2,440 |
-| empire | BUSINESSES；COUNTRIES | noun | 2,550 |
-| glory | PRAISE；QUALITY | noun | 2,623 |
+| empire | BUSINESSES；COUNTRIES | noun；noun | 2,550 |
+| glory | PRAISE；QUALITY | noun；noun | 2,623 |
 | alert | （无标签）；（无标签） | adjective；noun | 2,677 |
 | saint | （无标签） | noun | 2,696 |
 | aboard | （无标签） | adverb | 2,974 |
@@ -473,10 +473,10 @@ A1、A2 全列（基础词缺失影响最大），B1 起只列高频的。
 | walker | （无标签） | noun | 3,669 |
 | junk | （无标签） | noun | 3,679 |
 | serial | （无标签）；（无标签） | adjective；noun | 3,777 |
-| foundation | START；ORGANIZATION | noun | 4,065 |
+| foundation | START；ORGANIZATION | noun；noun | 4,065 |
 | rocky | WITH ROCKS | adjective | 4,139 |
 | palm | TREE | noun | 4,184 |
-| scan | READ；COMPUTER | verb | 4,569 |
+| scan | READ；COMPUTER | verb；verb | 4,569 |
 | personnel | （无标签） | noun | 4,654 |
 
 > 其余 378 个见 CSV（`type=add`、`cefr_level=C1`）。
@@ -487,16 +487,16 @@ A1、A2 全列（基础词缺失影响最大），B1 起只列高频的。
 | --- | --- | --- | ---: |
 | squad | （无标签） | noun | 2,522 |
 | trash | （无标签） | noun | 2,586 |
-| custody | CHILD；PRISON | noun | 2,705 |
+| custody | CHILD；PRISON | noun；noun | 2,705 |
 | virgin | （无标签）；（无标签） | noun；adjective | 2,739 |
-| crush | CROWD；（无标签）；LOVE | noun；verb | 2,994 |
+| crush | CROWD；（无标签）；LOVE | noun；verb；noun | 2,994 |
 | corpse | （无标签） | noun | 3,622 |
 | trauma | （无标签） | noun | 3,755 |
-| resistance | DISAGREE；FIGHT；ORGANIZATION；ILLNESS | noun | 3,790 |
-| buzz | EXCITEMENT；SOUND；SOUND；ENERGY | noun；verb | 3,980 |
-| patch | AREA；MATERIAL；LAND；（无标签） | noun；verb | 4,127 |
+| resistance | DISAGREE；FIGHT；ORGANIZATION；ILLNESS | noun；noun；noun；noun | 3,790 |
+| buzz | EXCITEMENT；SOUND；SOUND；ENERGY | noun；noun；verb；verb | 3,980 |
+| patch | AREA；MATERIAL；LAND；（无标签） | noun；noun；noun；verb | 4,127 |
 | forgiveness | （无标签） | noun | 4,341 |
-| raid | SOLDIERS；POLICE；POLICE；SOLDIERS | noun；verb | 4,835 |
+| raid | SOLDIERS；POLICE；POLICE；SOLDIERS | noun；noun；verb；verb | 4,835 |
 | fist | （无标签） | noun | 4,909 |
 | blackmail | （无标签）；（无标签） | noun；verb | 4,978 |
 | ritual | （无标签） | noun | 5,001 |
